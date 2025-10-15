@@ -42,26 +42,20 @@ jobs:
               # Executa a conversão
               xmind2testlink "$file"
               
-              # O nome do arquivo XML gerado é o mesmo nome do XMind, mas com extensão .xml
-              xml_file="${file%.xmind}.xml"
-              echo "Arquivo XML gerado: $xml_file"
-              
-              # Adiciona o arquivo XML gerado ao Git para que ele seja incluído no commit
-              git config --global user.name 'github-actions[bot]'
-              git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-              git add "$xml_file"
+              # O arquivo XML é gerado no mesmo diretório do XMind
             fi
           done
-          
-          # Verifica se há arquivos XML para commitar e commita se houver
-          if git diff --cached --exit-code; then
-            echo "Nenhum arquivo XML novo ou alterado para commitar."
-          else
-            git commit -m "CI: Gerado(s) arquivo(s) XML do Testlink a partir do(s) XMind(s) alterado(s)"
-            git push
-          fi
 
-      - name: Upload XML artifacts
+      - name: Commit and Push generated XML files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "CI: Gerado(s) arquivo(s) XML do Testlink a partir do(s) XMind(s) alterado(s)"
+          # O arquivo XML tem o mesmo nome do XMind, mas com extensão .xml
+          file_pattern: '**/*.xml'
+          # Garante que apenas os arquivos XML sejam comitados
+          commit_options: '--no-verify --allow-empty'
+
+      - name: Upload XML artifacts (Opcional: para download direto do pipeline)
         uses: actions/upload-artifact@v4
         with:
           name: testlink-xml-files
@@ -69,4 +63,3 @@ jobs:
             **/*.xml
             !node_modules
             !.git
-
