@@ -1,0 +1,72 @@
+name: XMind to Testlink XML Converter
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.xmind'
+
+jobs:
+  convert_xmind:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install xmind2testlink
+
+      - name: Get changed XMind files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          files: |
+            **/*.xmind
+
+      - name: Convert changed XMind files to Testlink XML
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "Arquivos XMind alterados: ${{ steps.changed-files.outputs.all_changed_files }}"
+          
+          # Loop para converter cada arquivo XMind alterado
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if [[ "$file" == *.xmind ]]; then
+              echo "Convertendo $file para XML..."
+              # Executa a conversão
+              xmind2testlink "$file"
+              
+              # O nome do arquivo XML gerado é o mesmo nome do XMind, mas com extensão .xml
+              xml_file="${file%.xmind}.xml"
+              echo "Arquivo XML gerado: $xml_file"
+              
+              # Adiciona o arquivo XML gerado ao Git para que ele seja incluído no commit
+              git config --global user.name 'github-actions[bot]'
+              git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+              git add "$xml_file"
+            fi
+          done
+          
+          # Verifica se há arquivos XML para commitar e commita se houver
+          if git diff --cached --exit-code; then
+            echo "Nenhum arquivo XML novo ou alterado para commitar."
+          else
+            git commit -m "CI: Gerado(s) arquivo(s) XML do Testlink a partir do(s) XMind(s) alterado(s)"
+            git push
+          fi
+
+      - name: Upload XML artifacts (Opcional: para download direto do pipeline)
+        uses: actions/upload-artifact@v4
+        with:
+          name: testlink-xml-files
+          path: |
+            **/*.xml
+            !node_modules
+            !.git
+
