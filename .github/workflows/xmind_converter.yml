@@ -61,7 +61,7 @@ jobs:
             git push
           fi
 
-      - name: Upload XML artifacts (Opcional: para download direto do pipeline)
+      - name: Upload XML artifacts
         uses: actions/upload-artifact@v4
         with:
           name: testlink-xml-files
