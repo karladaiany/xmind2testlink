@@ -6,8 +6,18 @@ on:
       - main
     paths:
       - '**.xmind'
-
+  
+  # Permite o disparo manual do workflow
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Modo de execução'
+        required: true
+        default: 'changed'
+        type: choice
+        options:
+          - changed # Processa apenas arquivos alterados (padrão para push)
+          - all     # Processa todos os arquivos .xmind no repositório
 
 jobs:
   convert_xmind:
@@ -25,6 +35,7 @@ jobs:
       - name: Install dependencies
         run: pip install xmind2testlink
 
+      # Passo para identificar arquivos alterados (usado no modo 'changed')
       - name: Get changed XMind files
         id: changed-files
         uses: tj-actions/changed-files@v40
@@ -32,19 +43,30 @@ jobs:
           files: |
             **/*.xmind
 
-      - name: Convert changed XMind files to Testlink XML
-        if: steps.changed-files.outputs.any_changed == 'true'
+      # ----------------------------------------------------------------------
+      # Lógica de Conversão
+      # ----------------------------------------------------------------------
+      - name: Convert XMind files to Testlink XML
         run: |
-          echo "Arquivos XMind alterados: ${{ steps.changed-files.outputs.all_changed_files }}"
+          MODE="${{ github.event.inputs.mode || 'changed' }}"
           
-          # Loop para converter cada arquivo XMind alterado
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          if [ "$MODE" == "all" ]; then
+            echo "Modo: ALL - Processando todos os arquivos .xmind no repositório."
+            FILES_TO_PROCESS=$(find . -name "*.xmind" -print)
+          elif [ "$MODE" == "changed" ] && [ "${{ steps.changed-files.outputs.any_changed }}" == "true" ]; then
+            echo "Modo: CHANGED - Processando apenas arquivos alterados."
+            FILES_TO_PROCESS="${{ steps.changed-files.outputs.all_changed_files }}"
+          else
+            echo "Nenhum arquivo .xmind para processar neste push/disparo."
+            exit 0
+          fi
+          
+          # Loop para converter cada arquivo
+          for file in $FILES_TO_PROCESS; do
             if [[ "$file" == *.xmind ]]; then
               echo "Convertendo $file para XML..."
               # Executa a conversão
               xmind2testlink "$file"
-              
-              # O arquivo XML é gerado no mesmo diretório do XMind
             fi
           done
 
@@ -52,7 +74,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "CI: Gerado(s) arquivo(s) XML do Testlink a partir do(s) XMind(s) alterado(s)"
-          # O arquivo XML tem o mesmo nome do XMind, mas com extensão .xml
+          # O arquivo XML é gerado no mesmo diretório do XMind
           file_pattern: '**/*.xml'
           # Garante que apenas os arquivos XML sejam comitados
           commit_options: '--no-verify --allow-empty'
