@@ -4,20 +4,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '**.xmind'
   
-  # Permite o disparo manual do workflow
+  # Permite o disparo manual do workflow (sem inputs, pois a lógica de pastas unifica a execução)
   workflow_dispatch:
-    inputs:
-      mode:
-        description: 'Modo de execução'
-        required: true
-        default: 'changed'
-        type: choice
-        options:
-          - changed # Processa apenas arquivos alterados (padrão para push)
-          - all     # Processa todos os arquivos .xmind no repositório
 
 jobs:
   convert_xmind:
@@ -35,55 +24,59 @@ jobs:
       - name: Install dependencies
         run: pip install xmind2testlink
 
-      # Passo para identificar arquivos alterados (usado no modo 'changed')
-      - name: Get changed XMind files
-        id: changed-files
-        uses: tj-actions/changed-files@v40
-        with:
-          files: |
-            **/*.xmind
+      - name: Create 'converted' directory
+        run: mkdir -p converted
 
       # ----------------------------------------------------------------------
-      # Lógica de Conversão
+      # Lógica de Conversão: Processa TODOS os .xmind na pasta 'convert'
       # ----------------------------------------------------------------------
-      - name: Convert XMind files to Testlink XML
+      - name: Convert XMind files in 'convert' folder to Testlink XML
         run: |
-          MODE="${{ github.event.inputs.mode || 'changed' }}"
-          
-          if [ "$MODE" == "all" ]; then
-            echo "Modo: ALL - Processando todos os arquivos .xmind no repositório."
-            FILES_TO_PROCESS=$(find . -name "*.xmind" -print)
-          elif [ "$MODE" == "changed" ] && [ "${{ steps.changed-files.outputs.any_changed }}" == "true" ]; then
-            echo "Modo: CHANGED - Processando apenas arquivos alterados."
-            FILES_TO_PROCESS="${{ steps.changed-files.outputs.all_changed_files }}"
-          else
-            echo "Nenhum arquivo .xmind para processar neste push/disparo."
+          # Verifica se a pasta 'convert' existe
+          if [ ! -d "convert" ]; then
+            echo "A pasta 'convert' não existe. Nenhum arquivo para processar."
             exit 0
           fi
           
-          # Loop para converter cada arquivo
-          for file in $FILES_TO_PROCESS; do
-            if [[ "$file" == *.xmind ]]; then
-              echo "Convertendo $file para XML..."
-              # Executa a conversão
-              xmind2testlink "$file"
+          # Loop para converter cada arquivo .xmind na pasta 'convert'
+          for file_path in convert/*.xmind; do
+            # Verifica se o arquivo existe (para evitar erro se a pasta estiver vazia)
+            if [ -f "$file_path" ]; then
+              echo "Processando $file_path..."
+              
+              # 1. Executa a conversão. O XML é gerado na mesma pasta 'convert'.
+              xmind2testlink "$file_path"
+              
+              # 2. Define o nome base do arquivo (sem o caminho 'convert/')
+              file_name=$(basename "$file_path")
+              
+              # 3. Move o ARQUIVO .xmind original para a pasta 'converted'
+              mv "$file_path" "converted/$file_name"
+              echo "Movido $file_name para 'converted/'"
             fi
           done
+
+      - name: Move generated XML files to 'converted' folder
+        run: |
+          # Move todos os arquivos .xml da pasta 'convert' para a pasta 'converted'
+          find convert -maxdepth 1 -name "*.xml" -exec mv {} converted/ \;
+          
+          # Verifica se algum arquivo foi movido (apenas para log)
+          if [ "$(find converted -maxdepth 1 -name "*.xml" | wc -l)" -gt 0 ]; then
+            echo "Arquivos XML gerados e movidos com sucesso para a pasta 'converted'."
+          else
+            echo "Nenhum arquivo XML gerado para mover."
+          fi
 
       - name: Commit and Push generated XML files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "CI: Gerado(s) arquivo(s) XML do Testlink a partir do(s) XMind(s) alterado(s)"
-          # O arquivo XML é gerado no mesmo diretório do XMind
-          file_pattern: '**/*.xml'
-          # Garante que apenas os arquivos XML sejam comitados
+          commit_message: "CI: Concluída a conversão. Arquivos movidos para 'converted/'."
+          file_pattern: 'converted/*'
           commit_options: '--no-verify --allow-empty'
 
-      - name: Upload XML artifacts
+      - name: Upload XML artifacts 
         uses: actions/upload-artifact@v4
         with:
           name: testlink-xml-files
-          path: |
-            **/*.xml
-            !node_modules
-            !.git
+          path: converted/
