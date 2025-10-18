@@ -16,70 +16,122 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # ----------------------------------------------------------------------
+      # PASSO DE EFICIÊNCIA: Verifica se há arquivos para processar
+      # ----------------------------------------------------------------------
+      - name: Check for XMind files in 'convert' folder
+        id: check_files
+        run: |
+          mkdir -p convert # Garante que a pasta exista para o find não falhar
+          if find convert -maxdepth 1 -name "*.xmind" -print -quit | grep -q .; then
+            echo "files_exist=true" >> $GITHUB_OUTPUT
+          else
+            echo "files_exist=false" >> $GITHUB_OUTPUT
+            echo "Nenhum arquivo .xmind para processar. Abortando instalação de dependências."
+          fi
+
+      # ----------------------------------------------------------------------
+      # Instalação e Conversão (Condicional)
+      # ----------------------------------------------------------------------
       - name: Set up Python
+        if: steps.check_files.outputs.files_exist == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
-        run: pip install xmind2testlink
+      - name: Install dependencies and Create XML Fix Script
+        if: steps.check_files.outputs.files_exist == 'true'
+        run: |
+          pip install xmind2testlink
+          
+          # Salva o script de correção do XML usando cat << EOF
+          cat << 'EOF' > fix_xml_preconditions.py
+import xml.etree.ElementTree as ET
+import re
+import os
+
+def fix_preconditions(xml_file_path):
+    try:
+        tree = ET.parse(xml_file_path)
+        root = tree.getroot()
+        
+        for testcase in root.findall('.//testcase'):
+            summary_element = testcase.find('summary')
+            preconditions_element = testcase.find('preconditions')
+            
+            if summary_element is not None and preconditions_element is not None:
+                summary_text = summary_element.text
+                
+                # Busca o texto [PRECONDITIONS] e o que vier depois
+                match = re.search(r'\[PRECONDITIONS\]\s*(.*)', summary_text, re.IGNORECASE | re.DOTALL)
+                
+                if match:
+                    precondition_text = match.group(1).strip()
+                    
+                    # 1. Inserir o texto na tag <preconditions>
+                    preconditions_element.text = ET.CDATA(precondition_text)
+                    
+                    # 2. Limpar a tag <summary>
+                    new_summary_text = re.sub(r'\s*\[PRECONDITIONS\].*', '', summary_text, flags=re.IGNORECASE | re.DOTALL).strip()
+                    summary_element.text = ET.CDATA(new_summary_text)
+
+        tree.write(xml_file_path, encoding='UTF-8', xml_declaration=True)
+        print(f"Corrigido o XML: {xml_file_path}")
+    except Exception as e:
+        print(f"Erro ao corrigir XML {xml_file_path}: {e}")
+
+if __name__ == '__main__':
+    # O script é chamado com o caminho do arquivo como argumento
+    import sys
+    fix_preconditions(sys.argv[1])
+            
+EOF
 
       - name: Create 'converted' directory
+        if: steps.check_files.outputs.files_exist == 'true'
         run: mkdir -p converted
 
-      # ----------------------------------------------------------------------
-      # Lógica de Conversão: Processa TODOS os .xmind na pasta 'convert'
-      # ----------------------------------------------------------------------
-      - name: Convert XMind files in 'convert' folder to Testlink XML
+      - name: Convert XMind files to XML and Fix Preconditions
+        if: steps.check_files.outputs.files_exist == 'true'
         run: |
-          # Verifica se a pasta 'convert' existe
-          if [ ! -d "convert" ]; then
-            echo "A pasta 'convert' não existe. Nenhum arquivo para processar."
-            exit 0
-          fi
-          
-          # Loop para converter cada arquivo .xmind na pasta 'convert'
+          # 1. Conversão e Pós-processamento
           for file_path in convert/*.xmind; do
-            # Verifica se o arquivo existe (para evitar erro se a pasta estiver vazia)
             if [ -f "$file_path" ]; then
-              echo "Processando $file_path..."
-              
-              # 1. Executa a conversão. O XML é gerado na mesma pasta 'convert'.
+              echo "Convertendo $file_path..."
               xmind2testlink "$file_path"
               
-              # 2. Define o nome base do arquivo (sem o caminho 'convert/')
-              file_name=$(basename "$file_path")
+              # 2. Pós-processamento do XML para corrigir Preconditions
+              xml_file="${file_path%.xmind}.xml"
+              python3 fix_xml_preconditions.py "$xml_file" # Passa o nome do arquivo como argumento
               
-              # 3. Move o ARQUIVO .xmind original para a pasta 'converted'
+              # 3. Movimentação
+              file_name=$(basename "$file_path")
               mv "$file_path" "converted/$file_name"
-              echo "Movido $file_name para 'converted/'"
+              echo "Movido .xmind para 'converted/$file_name'"
             fi
           done
 
       - name: Move generated XML files to 'converted' folder and Clean up
+        if: steps.check_files.outputs.files_exist == 'true'
         run: |
           # Move todos os arquivos .xml da pasta 'convert' para a pasta 'converted'
           find convert -maxdepth 1 -name "*.xml" -exec mv {} converted/ \;
           
           # Limpeza final: Remove qualquer .xmind residual da pasta 'convert'
-          # O comando rm -f é usado para forçar a remoção e evitar falhas no pipeline
           rm -f convert/*.xmind
           
-          # Verifica se algum arquivo foi movido (apenas para log)
-          if [ "$(find converted -maxdepth 1 -name "*.xml" | wc -l)" -gt 0 ]; then
-            echo "Arquivos XML gerados e movidos com sucesso para a pasta 'converted'."
-          else
-            echo "Nenhum arquivo XML gerado para mover."
-          fi
+          echo "Arquivos XML gerados e movidos com sucesso para a pasta 'converted'."
 
       - name: Commit and Push generated XML files
+        if: steps.check_files.outputs.files_exist == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "CI: Concluída a conversão. Arquivos movidos para 'converted/'."
           file_pattern: 'converted/*'
           commit_options: '--no-verify --allow-empty'
 
-      - name: Upload XML artifacts 
+      - name: Upload XML artifacts
+        if: steps.check_files.outputs.files_exist == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: testlink-xml-files
