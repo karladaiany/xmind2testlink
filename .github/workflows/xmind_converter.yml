@@ -56,10 +56,14 @@ jobs:
             fi
           done
 
-      - name: Move generated XML files to 'converted' folder
+      - name: Move generated XML files to 'converted' folder and Clean up
         run: |
           # Move todos os arquivos .xml da pasta 'convert' para a pasta 'converted'
           find convert -maxdepth 1 -name "*.xml" -exec mv {} converted/ \;
+          
+          # Limpeza final: Remove qualquer .xmind residual da pasta 'convert'
+          # O comando rm -f é usado para forçar a remoção e evitar falhas no pipeline
+          rm -f convert/*.xmind
           
           # Verifica se algum arquivo foi movido (apenas para log)
           if [ "$(find converted -maxdepth 1 -name "*.xml" | wc -l)" -gt 0 ]; then
@@ -67,9 +71,6 @@ jobs:
           else
             echo "Nenhum arquivo XML gerado para mover."
           fi
-
-          # Garante que a pasta 'convert' fique vazia após a conversão
-          find convert -maxdepth 1 -name "*.xmind" -exec rm {} \;
 
       - name: Commit and Push generated XML files
         uses: stefanzweifel/git-auto-commit-action@v5
