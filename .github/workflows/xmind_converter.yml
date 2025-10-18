@@ -1,0 +1,96 @@
+name: XMind to Testlink XML Converter
+
+on:
+  push:
+    branches:
+      - main
+  
+  workflow_dispatch:
+
+jobs:
+  convert_xmind:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        # Instala o xmind2testlink e as bibliotecas necessárias para os scripts de correção
+        run: pip install xmind2testlink xmltodict
+
+      - name: Create 'converted' directory
+        run: mkdir -p converted
+
+      # ----------------------------------------------------------------------
+      # Lógica de Conversão CORRIGIDA: Processa com o Pipeline de 3 Passos
+      # ----------------------------------------------------------------------
+      - name: Convert XMind files in 'convert' folder using custom pipeline
+        run: |
+          # 1. Verifica se a pasta 'convert' existe
+          if [ ! -d "convert" ]; then
+            echo "A pasta 'convert' não existe. Nenhum arquivo para processar."
+            exit 0
+          fi
+          
+          # 2. Loop para converter cada arquivo .xmind na pasta 'convert'
+          for file_path in convert/*.xmind; do
+            if [ -f "$file_path" ]; then
+              echo "Processando $file_path..."
+              
+              # Define os caminhos dos arquivos temporários e finais
+              file_name=$(basename "$file_path")
+              base_name="${file_name%.*}"
+              
+              corrigido_xmind="convert/${base_name}_corrigido.xmind"
+              corrigido_xml="convert/${base_name}_corrigido.xml"
+              final_xml="convert/${base_name}.xml"
+              
+              # Passo 1: Pré-processamento (Injeta 'comments' no XMind)
+              python3 web/preprocess_xmind.py "$file_path" "$corrigido_xmind"
+              
+              # Passo 2: Conversão (Gera o XML com o xmind2testlink)
+              # O xmind2testlink gera o XML com o nome do arquivo de entrada
+              xmind2testlink "$corrigido_xmind"
+              
+              # Passo 3: Pós-processamento (Injeta 'preconditions' no XML)
+              python3 web/postprocess_xml.py "$corrigido_xml" "$corrigido_xmind" "$final_xml"
+              
+              # Limpeza de arquivos temporários
+              rm "$corrigido_xmind"
+              rm "$corrigido_xml"
+              
+              # Move o ARQUIVO .xmind ORIGINAL para a pasta 'converted'
+              mv "$file_path" "converted/$file_name"
+              echo "Movido $file_name para 'converted/'"
+            fi
+          done
+
+      - name: Move generated XML files to 'converted' folder
+        run: |
+          # Move todos os arquivos .xml FINAIS da pasta 'convert' para a pasta 'converted'
+          find convert -maxdepth 1 -name "*.xml" -exec mv {} converted/ \;
+          
+          if [ "$(find converted -maxdepth 1 -name "*.xml" | wc -l)" -gt 0 ]; then
+            echo "Arquivos XML gerados e movidos com sucesso para a pasta 'converted'."
+          else
+            echo "Nenhum arquivo XML gerado para mover."
+          fi
+
+      - name: Commit and Push generated XML files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "CI: Concluída a conversão. Arquivos movidos para 'converted/'."
+          file_pattern: 'converted/*'
+          commit_options: '--no-verify --allow-empty'
+
+      - name: Upload XML artifacts 
+        uses: actions/upload-artifact@v4
+        with:
+          name: testlink-xml-files
+          path: converted/
