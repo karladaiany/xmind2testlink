@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Fluxo de criação">
+		<testcase name="Criar usuário com dados válidos">
+			<summary>
+				
+Verificar se o usuário é criado com sucesso no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar tela de cadastro						
+					</actions>
+					<expectedresults>
+						
+Tela de cadastro deve ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios						
+					</actions>
+					<expectedresults>
+						
+Campos devem aceitar os dado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Salvar"						
+					</actions>
+					<expectedresults>
+						
+Mensagem de sucesso deve ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Validar no banco de dados						
+					</actions>
+					<expectedresults>
+						
+O registro do usuário deve existir na tabela 'users'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Tentativa de criação com e-mail duplicado">
+			<summary>
+				
+O sistema deve impedir a criação de usuários com e-mail já cadastrado.				
+			</summary>
+			<preconditions>Deve existir um usuário com o e-mail cadastrado.
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Preencher e-mail já existente						
+					</actions>
+					<expectedresults>
+						
+O campo e-mail deve exibir um erro de validação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Salvar"						
+					</actions>
+					<expectedresults>
+						
+O usuário não deve ser criado e a mensagem de erro deve persistir						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
