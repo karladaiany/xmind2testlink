@@ -22,7 +22,9 @@ jobs:
 
       - name: Install dependencies
         # Instala o xmind2testlink e as bibliotecas necessárias para os scripts de correção
-        run: pip install xmind2testlink xmltodict
+        run: |
+          pip install .
+          pip install xmltodict
 
       - name: Create 'converted' directory
         run: mkdir -p converted
@@ -32,40 +34,24 @@ jobs:
       # ----------------------------------------------------------------------
       - name: Convert XMind files in 'convert' folder using custom pipeline
         run: |
-          # 1. Verifica se a pasta 'convert' existe
+          # Verifica se a pasta 'convert' existe
           if [ ! -d "convert" ]; then
             echo "A pasta 'convert' não existe. Nenhum arquivo para processar."
             exit 0
           fi
           
-          # 2. Loop para converter cada arquivo .xmind na pasta 'convert'
+          # Loop para converter cada arquivo .xmind na pasta 'convert'
           for file_path in convert/*.xmind; do
             if [ -f "$file_path" ]; then
               echo "Processando $file_path..."
               
-              # Define os caminhos dos arquivos temporários e finais
+              # Executa o pipeline de 3 passos (pré-processamento, conversão, pós-processamento)
+              python3 web/run_converter.py "$file_path"
+              
+              # Define o nome base do arquivo (sem o caminho 'convert/')
               file_name=$(basename "$file_path")
-              base_name="${file_name%.*}"
               
-              corrigido_xmind="convert/${base_name}_corrigido.xmind"
-              corrigido_xml="convert/${base_name}_corrigido.xml"
-              final_xml="convert/${base_name}.xml"
-              
-              # Passo 1: Pré-processamento (Injeta 'comments' no XMind)
-              python3 web/preprocess_xmind.py "$file_path" "$corrigido_xmind"
-              
-              # Passo 2: Conversão (Gera o XML com o xmind2testlink)
-              # O xmind2testlink gera o XML com o nome do arquivo de entrada
-              xmind2testlink "$corrigido_xmind"
-              
-              # Passo 3: Pós-processamento (Injeta 'preconditions' no XML)
-              python3 web/postprocess_xml.py "$corrigido_xml" "$corrigido_xmind" "$final_xml"
-              
-              # Limpeza de arquivos temporários
-              rm "$corrigido_xmind"
-              rm "$corrigido_xml"
-              
-              # Move o ARQUIVO .xmind ORIGINAL para a pasta 'converted'
+              # Move o ARQUIVO .xmind original para a pasta 'converted'
               mv "$file_path" "converted/$file_name"
               echo "Movido $file_name para 'converted/'"
             fi
