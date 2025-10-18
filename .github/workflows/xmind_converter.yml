@@ -45,7 +45,7 @@ jobs:
             if [ -f "$file_path" ]; then
               echo "Processando $file_path..."
               
-              python3 -m xmind2testlink.web.run_converter "$file_path"
+              python3 web/run_converter.py "$file_path"
               
               # Define o nome base do arquivo (sem o caminho 'convert/')
               file_name=$(basename "$file_path")
