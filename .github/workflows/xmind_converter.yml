@@ -68,6 +68,9 @@ jobs:
             echo "Nenhum arquivo XML gerado para mover."
           fi
 
+          # Garante que a pasta 'convert' fique vazia após a conversão
+          find convert -maxdepth 1 -name "*.xmind" -exec rm {} \;
+
       - name: Commit and Push generated XML files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
