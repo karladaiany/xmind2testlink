@@ -9,6 +9,7 @@ from flask import Flask, request, send_from_directory, g, render_template, abort
 from werkzeug.utils import secure_filename
 
 from xmind2testlink.main import xmind_to_suite, xmind_to_testlink
+from .custom_converter import custom_xmind_to_testlink
 from xmind2testlink.sharedparser import flat_suite
 
 UPLOAD_FOLDER = './uploads'
@@ -192,9 +193,9 @@ def download_file(filename):
     if not exists(full_path):
         abort(404)
 
-    xmind_to_testlink(full_path)
+    final_xml_path = custom_xmind_to_testlink(full_path)
 
-    filename = filename[:-5] + 'xml'
+    filename = os.path.basename(final_xml_path)
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
 
 
