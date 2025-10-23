@@ -200,6 +200,15 @@ def parse_steps(steps_dict):
     return steps
 
 
+def get_doc_id(d):
+    """Gets the doc_id from a list of labels."""
+    if isinstance(d.get('labels'), list):
+        for label in d['labels']:
+            if label.strip().startswith('REQ-'):
+                return label.strip()
+    return None
+
+
 def parse_testcase(testcase_dict, parent=None):
     testcase = TestCase()
     nodes = parent + [testcase_dict] if parent else [testcase_dict]
@@ -208,6 +217,7 @@ def parse_testcase(testcase_dict, parent=None):
     testcase.summary = build_testcase_summary(nodes)
     testcase.preconditions = build_testcase_precondition(nodes)
     testcase.importance = get_priority(testcase_dict)
+    testcase.doc_id = get_doc_id(testcase_dict)
 
     testcase.execution_type = get_execution_type(testcase_dict)
     steps_node = testcase_dict.get('topics', None)

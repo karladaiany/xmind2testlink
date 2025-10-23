@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<requirements>
+    <requirement>
+        <req_spec_title>ER-14 Soph.ia - Criar questionário</req_spec_title>
+        <doc_id>REQ-14-001</doc_id>
+        <version>1</version>
+        <title>Gerar questionários com base no conteúdo</title>
+    </requirement>
+    <requirement>
+        <req_spec_title>ER-15 Soph.ia - Questionários</req_spec_title>
+        <doc_id>REQ-15-001</doc_id>
+        <version>2</version>
+        <title>Validar tipos de questões</title>
+    </requirement>
+</requirements>

@@ -13,7 +13,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify login page layout",
@@ -29,7 +30,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify login page components username input",
@@ -45,7 +47,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify login page components password input",
@@ -61,7 +64,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify login page components login button",
@@ -70,7 +74,8 @@
     "importance": 1,
     "execution_type": 1,
     "steps": [],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify login page translation - en",
@@ -79,7 +84,8 @@
     "importance": 1,
     "execution_type": 1,
     "steps": [],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify login page translation - cn",
@@ -88,7 +94,8 @@
     "importance": 2,
     "execution_type": 1,
     "steps": [],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify login page action = valid name +  valid password",
@@ -110,7 +117,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify login page action = valid name + bad password",
@@ -119,7 +127,8 @@
     "importance": 1,
     "execution_type": 1,
     "steps": [],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify login page action = bad name + bad password",
@@ -128,7 +137,8 @@
     "importance": 2,
     "execution_type": 1,
     "steps": [],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify home page",
@@ -137,7 +147,8 @@
     "importance": 2,
     "execution_type": 1,
     "steps": [],
-    "suite": "ui check"
+    "suite": "ui check",
+    "doc_id": null
   },
   {
     "name": "verify users table schema",
@@ -146,7 +157,8 @@
     "importance": 2,
     "execution_type": 1,
     "steps": [],
-    "suite": "db check"
+    "suite": "db check",
+    "doc_id": null
   },
   {
     "name": "verify users table functions",
@@ -155,7 +167,8 @@
     "importance": 2,
     "execution_type": 1,
     "steps": [],
-    "suite": "db check"
+    "suite": "db check",
+    "doc_id": null
   },
   {
     "name": "[Image] topics after image topic is okay",
@@ -164,6 +177,7 @@
     "importance": 2,
     "execution_type": 1,
     "steps": [],
-    "suite": "db check"
+    "suite": "db check",
+    "doc_id": null
   }
 ]

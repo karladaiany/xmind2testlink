@@ -19,7 +19,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "demo suite"
+    "suite": "demo suite",
+    "doc_id": null
   },
   {
     "name": "test case 2",
@@ -41,7 +42,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "demo suite"
+    "suite": "demo suite",
+    "doc_id": null
   },
   {
     "name": "test case 3",
@@ -69,7 +71,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "demo suite"
+    "suite": "demo suite",
+    "doc_id": null
   },
   {
     "name": "test case title for apple 1",
@@ -97,7 +100,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "apple suite"
+    "suite": "apple suite",
+    "doc_id": null
   },
   {
     "name": "test case title for apple 2",
@@ -106,7 +110,8 @@
     "importance": 2,
     "execution_type": 1,
     "steps": [],
-    "suite": "apple suite"
+    "suite": "apple suite",
+    "doc_id": null
   },
   {
     "name": "my test case 1",
@@ -134,7 +139,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "banana suite"
+    "suite": "banana suite",
+    "doc_id": null
   },
   {
     "name": "my test case 2",
@@ -143,7 +149,8 @@
     "importance": 1,
     "execution_type": 1,
     "steps": [],
-    "suite": "banana suite"
+    "suite": "banana suite",
+    "doc_id": null
   },
   {
     "name": "my test case 1",
@@ -159,7 +166,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "orange suite"
+    "suite": "orange suite",
+    "doc_id": null
   },
   {
     "name": "my test case 2",
@@ -175,7 +183,8 @@
         "execution_type": 1
       }
     ],
-    "suite": "orange suite"
+    "suite": "orange suite",
+    "doc_id": null
   },
   {
     "name": "test 3 without steps",
@@ -184,6 +193,7 @@
     "importance": 2,
     "execution_type": 1,
     "steps": [],
-    "suite": "orange suite"
+    "suite": "orange suite",
+    "doc_id": null
   }
 ]

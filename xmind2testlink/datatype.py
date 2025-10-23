@@ -28,6 +28,7 @@ class TestCase():
     importance = 2
     execution_type = 1
     steps = None
+    doc_id = None
 
     def to_dict(self):
         me = {'name': self.name,
@@ -35,7 +36,8 @@ class TestCase():
               'preconditions': self.preconditions,
               'importance': self.importance or 2,
               'execution_type': self.execution_type,
-              'steps': []}
+              'steps': [],
+              'doc_id': self.doc_id}
 
         if self.steps:
             for s in self.steps:
