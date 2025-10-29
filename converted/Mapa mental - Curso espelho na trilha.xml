@@ -1,0 +1,823 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Compartilhamentos">
+		<testcase name="Adicionar curso espelho recebido de provedor interno em uma trilha para inscritos">
+			<summary>
+				
+Verificar que é possível adicionar um curso espelho recebido de um provedor interno, em uma trilha com visualização para inscritos				
+			</summary>
+			<preconditions>Estar logado como administrador
+Ter recebido e aceitado o compartilhamento de um curso espelho de um provedor interno
+Ter uma trilha com visualização para inscritos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de atividades da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar o curso espelho recebido de provedor interno						
+					</actions>
+					<expectedresults>
+						
+Deve ser possível adicionar o curso normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Operação deve ser salva com suceso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar curso espelho recebido de provedor interno em uma trilha para usuários">
+			<summary>
+				
+Verificar que é possível adicionar um curso espelho recebido de um provedor interno, em uma trilha com visualização para usuários				
+			</summary>
+			<preconditions>Estar logado como administrador
+Ter recebido e aceitado o compartilhamento de um curso espelho de um provedor interno
+Ter uma trilha com visualização para usuários</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de atividades da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar o curso espelho recebido de provedor interno						
+					</actions>
+					<expectedresults>
+						
+Deve ser possível adicionar o curso normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Operação deve ser salva com suceso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar curso espelho recebido de provedor interno em uma trilha para colaboradores">
+			<summary>
+				
+Verificar que é possível adicionar um curso espelho recebido de um provedor interno, em uma trilha com visualização para colaboradores				
+			</summary>
+			<preconditions>Estar logado como administrador
+Ter recebido e aceitado o compartilhamento de um curso espelho de um provedor interno
+Ter uma trilha com visualização para colaboradores</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de atividades da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar o curso espelho recebido de provedor interno						
+					</actions>
+					<expectedresults>
+						
+Deve ser possível adicionar o curso normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Operação deve ser salva com suceso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Não permitir adicionar curso espelho recebido de provedor interno em uma trilha pública">
+			<summary>
+				
+Verificar que não deve ser possível adicionar um curso espelho recebido de um provedor interno em uma trilha com visualização pública				
+			</summary>
+			<preconditions>Estar logado como administrador
+Ter recebido e aceitado o compartilhamento de um curso espelho de um provedor interno
+Ter uma trilha com visualização pública</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de atividades da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar o curso espelho recebido de provedor interno						
+					</actions>
+					<expectedresults>
+						
+Não deve exibir curso para associação com a trilha&lt;br /&gt;
+E deve exibir mensagem no tooltip da busca						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar curso espelho recebido de provedor externo em uma trilha para inscritos">
+			<summary>
+				
+Verificar que é possível adicionar um curso espelho recebido de um provedor externo, em uma trilha com visualização para inscritos				
+			</summary>
+			<preconditions>Estar logado como administrador
+Ter recebido e aceitado o compartilhamento de um curso espelho de um provedor externo
+Ter uma trilha com visualização para inscritos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de atividades da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar o curso espelho recebido de provedor externo						
+					</actions>
+					<expectedresults>
+						
+Deve ser possível adicionar o curso normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Operação deve ser salva com suceso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar curso espelho recebido de provedor externo em uma trilha para usuários">
+			<summary>
+				
+Verificar que é possível adicionar um curso espelho recebido de um provedor externo, em uma trilha com visualização para usuários				
+			</summary>
+			<preconditions>Estar logado como administrador
+Ter recebido e aceitado o compartilhamento de um curso espelho de um provedor externo
+Ter uma trilha com visualização para usuários</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de atividades da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar o curso espelho recebido de provedor externo						
+					</actions>
+					<expectedresults>
+						
+Deve ser possível adicionar o curso normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Operação deve ser salva com suceso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar curso espelho recebido de provedor externo em uma trilha para colaboradores">
+			<summary>
+				
+Verificar que é possível adicionar um curso espelho recebido de um provedor externo, em uma trilha com visualização para colaboradores				
+			</summary>
+			<preconditions>Estar logado como administrador
+Ter recebido e aceitado o compartilhamento de um curso espelho de um provedor externo
+Ter uma trilha com visualização para colaboradores</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de atividades da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar o curso espelho recebido de provedor externo						
+					</actions>
+					<expectedresults>
+						
+Deve ser possível adicionar o curso normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Operação deve ser salva com suceso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Não permitir adicionar curso espelho recebido de provedor externo em uma trilha pública">
+			<summary>
+				
+Verificar que não deve ser possível adicionar um curso espelho recebido de um provedor externo em uma trilha com visualização pública				
+			</summary>
+			<preconditions>Estar logado como administrador
+Ter recebido e aceitado o compartilhamento de um curso espelho de um provedor externo
+Ter uma trilha com visualização pública</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de atividades da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar o curso espelho recebido de provedor externo						
+					</actions>
+					<expectedresults>
+						
+Não deve exibir curso para associação com a trilha&lt;br /&gt;
+E deve exibir mensagem no tooltip da busca						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Não permitir adicionar curso espelho em trilha já compartilhada externamente">
+			<summary>
+				
+Confirmar que curso espelho não é retornado na busca de conteúdos de uma trilha que já esteja compartilhada externamente.				
+			</summary>
+			<preconditions>Ter uma trilha compartilhada externamente
+Compartilhamento deve ter sido aceito</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de atividades da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pesquisar pelo curso espelho						
+					</actions>
+					<expectedresults>
+						
+Não deve exibir curso para associação com a trilha&lt;br /&gt;
+E deve exibir mensagem no tooltip da busca						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar exibição do curso espelhado na lista de atividades da trilha - Play logado">
+			<summary>
+				
+Verificar que curso espelho relacionado em trilha é exibido nas atividades da trilha no card do Play logado				
+			</summary>
+			<preconditions>Ambiente estar com visualização privada
+Receber cursos espelhados de provedores interno e externo
+Vincular os cursos espelhados em uma trilha com situação liberada e com visualização para usuários
+Realizar acesso com um usuário aluno</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o play logado						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o card detalhado da trilha - Aba "Detalhes"						
+					</actions>
+					<expectedresults>
+						
+A quantidade exibida de cursos deve estar considerando os cursos espelhados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a aba "Atividades" do card detalhado da trilha						
+					</actions>
+					<expectedresults>
+						
+Cursos espelhados devem ser listados corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar exibição do curso espelhado na lista de atividades da trilha - Minhas trilhas">
+			<summary>
+				
+Verificar que curso espelho relacionado em trilha é exibido nas atividades da trilha no card do Play logado				
+			</summary>
+			<preconditions>Ambiente estar com visualização privada
+Receber cursos espelhados de provedores interno e externo
+Vincular os cursos espelhados em uma trilha com situação liberada e com visualização para usuários
+Inscrever um aluno na trilha
+Realizar o acesso com o aluno inscrito na trilha</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar minhas trilhas						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o card detalhado da trilha - Aba "Detalhes"						
+					</actions>
+					<expectedresults>
+						
+A quantidade exibida de cursos deve estar considerando os cursos espelhados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a aba "Atividades" do card detalhado da trilha						
+					</actions>
+					<expectedresults>
+						
+Cursos espelhados devem ser listados corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Confirmar que cursos espelhados adicionados em trilha podem ser desvinculados">
+			<summary>
+				
+Verificar que é possível remover/excluir curso espelho (recebido) nas atividades da trilha				
+			</summary>
+			<preconditions>Ter uma trilha com 2 cursos espelho vinculados, recebido por provedor interno e externo
+Cursos não devem ter progresso</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de atividades da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Remover curso espelho recebido de compartilhamento interno						
+					</actions>
+					<expectedresults>
+						
+Curso deve ser removido normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Remover curso espelho recebido de compartilhamento externo						
+					</actions>
+					<expectedresults>
+						
+Curso deve ser removido normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Operação deve ser salva com suceso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Confirmar que cursos espelhados adicionados em trilha podem ser excluídos">
+			<summary>
+				
+Verificar que é possível excluir curso espelho (recebido) da lista de conteúdos				
+			</summary>
+			<preconditions>Ter uma trilha com 2 cursos espelho vinculados, recebido por provedor interno e externo
+Cursos não devem ter progresso</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a lista de conteúdos						
+					</actions>
+					<expectedresults>
+						
+Listagem deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Excluir curso espelho recebido de compartilhamento interno						
+					</actions>
+					<expectedresults>
+						
+Curso deve ser excluído com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Excluir curso espelho recebido de compartilhamento externo						
+					</actions>
+					<expectedresults>
+						
+Curso deve ser excluído com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Não permitir alterar para visualização pública uma trilha com curso espelhado">
+			<summary>
+				
+Confirmar que não deve ser possível alterar a visualização de uma trilha, que contenha curso espelhado, para pública.				
+			</summary>
+			<preconditions>Ter uma trilha com visualização diferente de pública com curso espelho vinculado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a edição da trilha						
+					</actions>
+					<expectedresults>
+						
+Tela de edição deve ser carregada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar a visualização para pública						
+					</actions>
+					<expectedresults>
+						
+Deve permitir a seleção normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir salvar&lt;br /&gt;
+E deve exibir mensagem informando que a trilha possui curso espelhado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Permitir compartilhar trilha com curso espelhado para ambiente interno">
+			<summary>
+				
+Confirmar que seja possível compartilhar uma trilha que contenha atividade curso espelhado apenas com ambiente interno.				
+			</summary>
+			<preconditions>Ter uma trilha com curso espelho vinculado, recebido por provedor interno e outro curso espelho vinculado na trilha, recebido por provedor externo
+Ter ao menos 2 ambientes adicionais internos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar compartilhamento da trilha com ambiente adicional 1						
+					</actions>
+					<expectedresults>
+						
+Compartilhamento deve ser realizado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aceitar compartilhamento no ambiente adicional 1						
+					</actions>
+					<expectedresults>
+						
+Conteúdo deve ser exibido no ambiente com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inscrever um aluno na trilha e realizar acesso à trilha compartilhada						
+					</actions>
+					<expectedresults>
+						
+Acesso deve ser realizado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar compartilhamento da trilha com ambiente adicional 2						
+					</actions>
+					<expectedresults>
+						
+Compartilhamento deve ser realizado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aceitar compartilhamento no ambiente adicional 2						
+					</actions>
+					<expectedresults>
+						
+Conteúdo deve ser exibido no ambiente com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inscrever um aluno na trilha e realizar acesso à trilha compartilhada						
+					</actions>
+					<expectedresults>
+						
+Acesso deve ser realizado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Não permitir compartilhar trilha com curso espelhado para ambiente externo">
+			<summary>
+				
+Verificar que não permite compartilhar uma trilha que contenha atividade curso espelhado com um ambiente externo.				
+			</summary>
+			<preconditions>Ter uma trilha com curso espelho vinculado, recebido por provedor interno e outro curso espelho vinculado na trilha, recebido por provedor externo
+Ter ao menos 1 token de ambiente externo para compartilhamento</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tentar compartilhar a trilha com ambiente externo						
+					</actions>
+					<expectedresults>
+						
+Opção de ambiente externo deve estar bloqueada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="PUT /api/v2/contents - Não permitir alterar para visualização pública uma trilha com curso espelhado">
+			<summary>
+				
+Via API, confirmar que não deve ser possível alterar a visualização de uma trilha, que contenha curso espelhado, para pública.				
+			</summary>
+			<preconditions>Ter uma trilha com visualização diferente de pública com curso espelho vinculado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar request com event_id da trilha e com parâmetro inscription_access: 3						
+					</actions>
+					<expectedresults>
+						
+Deve gerar erro e exibir mensagem informando que a trilha possui curso espelhado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Trilha com curso espelho não deve ser exibida em busca de conteúdos de um pacote">
+			<summary>
+				
+Verificar que trilha que contenha um curso espelho não será exibida na pesquisa de conteúdos de um pacote.				
+			</summary>
+			<preconditions>Ter uma trilha com curso espelho</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Pesquisar pelo nome da trilha, na lista de conteúdos de um pacote						
+					</actions>
+					<expectedresults>
+						
+Trilha não deve ser exibida na busca						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
