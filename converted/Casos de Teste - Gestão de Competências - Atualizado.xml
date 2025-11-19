@@ -1,0 +1,4630 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Visualização do Menu &quot;Competências&quot;">
+		<testcase name="Verificar a visibilidade do menu &quot;Competências&quot; com funcionalidade &quot;Skills&quot; habilitada">
+			<summary>
+				
+Assegurar que o usuário administrador com a funcionalidade "Skills" ativada consiga visualizar o novo menu "Competências" na visualização padrão com os sub-menus: Organograma, Funções e Competências				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" deve estar habilitada no contrato do ambiente para o usuário administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a plataforma com um usuário administrador.						
+					</actions>
+					<expectedresults>
+						
+O menu "Competências" deve estar visível na navegação principal, abaixo do menu "Compartilhamentos", com o ícone "psychology".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no menu "Competências".						
+					</actions>
+					<expectedresults>
+						
+Os sub-menus "Organograma", "Funções" e "Competências" devem ser exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar a visibilidade do menu &quot;Competências&quot; com funcionalidade &quot;Organograma&quot; habilitado">
+			<summary>
+				
+Assegurar que o usuário administrador com a funcionalidade "Organograma" ativada consiga visualizar o novo menu "Competências" na visualização padrão com os sub-menus: Organograma, Funções e Competências				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Organograma" deve estar habilitada no contrato do ambiente para o usuário administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a plataforma com um usuário administrador.						
+					</actions>
+					<expectedresults>
+						
+O menu "Competências" deve estar visível na navegação principal, abaixo do menu "Compartilhamentos", com o ícone "psychology".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no menu "Competências".						
+					</actions>
+					<expectedresults>
+						
+Os sub-menus "Organograma", "Funções" e "Competências" devem ser exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar acesso negado a sub-menus para funcionalidade &quot;Skills&quot; desabilitada">
+			<summary>
+				
+Validar que usuários sem as funcionalidades "Skills" recebam uma mensagem de acesso negado ao acessar o sub-menu ou tentar acessar diretamente via URL.				
+			</summary>
+			<preconditions>* O usuário deve estar logado.
+* A funcionalidade "Skills" NÃO deve estar habilitada no contrato do ambiente.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no menu "Competências".						
+					</actions>
+					<expectedresults>
+						
+Os sub-menus "Organograma", "Funções" e "Competências" devem ser exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar cada um dos sub-menus						
+					</actions>
+					<expectedresults>
+						
+Para os 3 sub-menus deve ser exibida tela com mensagem de acesso negado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar acessar a URL direta dos sub-menus "Organograma", "Funções", "Competências".						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "acesso negado" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar acesso negado a sub-menus para funcionalidade &quot;Organograma&quot; desabilitada">
+			<summary>
+				
+Validar que usuários sem a funcionalidade "Organograma" recebam uma mensagem de acesso negado ao acessar o sub-menu ou tentar acessar diretamente via URL.				
+			</summary>
+			<preconditions>* O usuário deve estar logado.
+* A funcionalidade "Organograma" NÃO deve estar habilitada no contrato do ambiente.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no menu "Competências".						
+					</actions>
+					<expectedresults>
+						
+Os sub-menus "Organograma", "Funções" e "Competências" devem ser exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar cada um dos sub-menus						
+					</actions>
+					<expectedresults>
+						
+O sub-menu "Organograma" deve acessar normalmente&lt;br /&gt;
+Para os outros 2 sub-menus deve ser exibida tela com mensagem de acesso negado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar acessar a URL direta dos sub-menus "Organograma", "Funções", "Competências".						
+					</actions>
+					<expectedresults>
+						
+O sub-menu "Organograma" deve acessar normalmente&lt;br /&gt;
+Para os outros 2 sub-menus deve ser exibida tela com mensagem de acesso negado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Acesso ao Sub-menu &quot;Organograma&quot;">
+		<testcase name="Verificar a primeira visualização do sub-menu &quot;Organograma&quot;">
+			<summary>
+				
+Assegurar que, ao acessar o sub-menu "Organograma" pela primeira vez, o usuário administrador visualize as 3 opções de criação.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* O organograma não deve ter sido criado anteriormente.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu "Competências" e, em seguida, o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+As três opções de criação devem ser exibidas: "Novo", "A partir de pessoas" e "A partir de arquivo".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o breadcrumb.						
+					</actions>
+					<expectedresults>
+						
+O breadcrumb deve ser "Skills &amp;gt; Organograma".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a descrição de cada opção.						
+					</actions>
+					<expectedresults>
+						
+"Novo": "Crie seu organograma manualmente, adicionando áreas e funções do início".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar visualização do organograma existente em acessos subsequentes">
+			<summary>
+				
+Validar que em acessos subsequentes ao sub-menu "Organograma", o usuário visualize o organograma no seu último estado.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Um organograma deve ter sido criado e salvo anteriormente.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu "Competências" e, em seguida, o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+O organograma previamente criado e salvo deve ser exibido, e a tela de opções de criação NÃO deve aparecer.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Criação de Organograma Manualmente">
+		<testcase name="Criar um novo organograma manualmente">
+			<summary>
+				
+Assegurar que o usuário administrador consiga criar um organograma manualmente, com cards de exemplo.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* O organograma não deve ter sido criado anteriormente, ou a opção de criação manual deve estar disponível.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+A tela de opções de criação deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "Novo".						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser direcionado para a tela inicial do organograma, com 3 cards de exemplo:						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Excluir organograma">
+		<testcase name="Validar exclusão do organograma e possível exibição das opções novamente">
+			<summary />
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+		</testcase>
+	</testsuite>
+	<testsuite name="Criação de Organograma a Partir de Pessoas">
+		<testcase name="Criar um organograma a partir de pessoas com sucesso">
+			<summary>
+				
+Verificar a criação bem-sucedida de um organograma a partir de pessoas cadastradas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Existem usuários cadastrados com "Área", "Líder de Equipe" e "Responsável" preenchidos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+A tela de opções de criação deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "A partir de pessoas".						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "Carregando" deve ser exibida com o texto: "Criando organograma. Isso pode levar algum tempo, mas não se preocupe: você pode continuar usando seu ambiente normalmente. Assim que tudo estiver pronto, você receberá uma notificação."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a conclusão do processo.						
+					</actions>
+					<expectedresults>
+						
+Se o usuário permaneceu na tela: Direcionamento automático para a visão dos cards do organograma.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na notificação (se o usuário saiu da tela).						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser direcionado automaticamente para a tela do organograma com os cards aparecendo.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a estrutura do organograma gerado.						
+					</actions>
+					<expectedresults>
+						
+O organograma deve refletir a hierarquia baseada nos campos "Área", "Líder de Equipe" e "Responsável" dos usuários.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o toast de sucesso após a geração.						
+					</actions>
+					<expectedresults>
+						
+Um toast verde deve aparecer com a mensagem: "Seu organograma está pronto! A estrutura foi criada com base nas informações disponíveis do cadastro de usuários. Edite e adapte conforme as suas necessidades."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar organograma a partir de pessoas com erro inesperado (frontend)">
+			<summary>
+				
+Validar o tratamento de erro inesperado durante a geração do organograma a partir de pessoas (erro no frontend).				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Simular um erro inesperado no frontend durante o processo de geração.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+A tela de opções de criação deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "A partir de pessoas".						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "Carregando" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Simular a ocorrência de um erro inesperado.						
+					</actions>
+					<expectedresults>
+						
+Uma mensagem de erro deve ser exibida: "Tivemos uma falha inesperada ao gerar o organograma. Nosso time de suporte está disponível no chat para resolver isso com você." (sem botão de tentar novamente).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar organograma a partir de pessoas com erro no microsserviço">
+			<summary>
+				
+Validar o tratamento de erro no microsserviço durante a geração do organograma a partir de pessoas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Simular um erro no microsserviço durante o processo de geração.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+A tela de opções de criação deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "A partir de pessoas".						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "Carregando" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Simular a ocorrência de um erro no microsserviço.						
+					</actions>
+					<expectedresults>
+						
+Uma mensagem de erro deve ser exibida: "Ocorreu um erro na geração do seu organograma. Nosso time de suporte está disponível no chat para resolver isso com você."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o log de erros.						
+					</actions>
+					<expectedresults>
+						
+O erro deve ser salvo na tabela de log de erros no banco de logs.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar duplicação de área com múltiplos líderes de equipe">
+			<summary>
+				
+Assegurar que o organograma gerado a partir de pessoas duplique áreas com mais de um líder de equipe.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Existem usuários cadastrados onde uma mesma "Área" possui mais de um usuário marcado como "Líder de Equipe".</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+A tela de opções de criação deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "A partir de pessoas".						
+					</actions>
+					<expectedresults>
+						
+A tela de "Carregando" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Após a geração, verificar a estrutura do organograma.						
+					</actions>
+					<expectedresults>
+						
+A área com múltiplos líderes de equipe deve ser duplicada no organograma, refletindo a lógica de hierarquia dos usuários.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Criação de Organograma a Partir de Arquivos">
+		<testcase name="Criar um organograma a partir de arquivos com sucesso">
+			<summary>
+				
+Verificar a criação bem-sucedida de um organograma a partir de arquivos de imagem.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Possuir arquivos .jpg ou .png válidos para upload (até 3 arquivos, máximo 10MB cada).</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+A tela de opções de criação deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "A partir de arquivo".						
+					</actions>
+					<expectedresults>
+						
+Um formulário de upload deve ser exibido, permitindo upload de até 3 arquivos .jpg ou .png, com tamanho máximo de 10MB cada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Fazer o upload de arquivos válidos.						
+					</actions>
+					<expectedresults>
+						
+Os arquivos devem ser aceitos pelo formulário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Gerar".						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "Carregando" deve ser exibida com a mensagem: "Processando os arquivos enviados. Isso pode levar algum tempo, mas não se preocupe: você pode continuar usando seu ambiente normalmente. Assim que tudo estiver pronto, você receberá uma notificação."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a conclusão do processo.						
+					</actions>
+					<expectedresults>
+						
+Se o usuário permaneceu na tela: Direcionamento automático para a visão dos cards do organograma.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na notificação (se o usuário saiu da tela).						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser direcionado automaticamente para a tela do organograma com os cards aparecendo.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a estrutura do organograma gerado.						
+					</actions>
+					<expectedresults>
+						
+O organograma deve ser gerado com base na análise dos arquivos pela IA, contendo apenas a estrutura do organograma (sem funções e competências).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Tentar criar organograma a partir de arquivos com formato inválido">
+			<summary>
+				
+Validar que o sistema rejeite arquivos com formatos diferentes de .jpg ou .png.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Possuir um arquivo com formato inválido (ex: .pdf, .doc).</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+A tela de opções de criação deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "A partir de arquivo".						
+					</actions>
+					<expectedresults>
+						
+Um formulário de upload deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar fazer o upload de um arquivo com formato inválido.						
+					</actions>
+					<expectedresults>
+						
+Uma mensagem de erro deve ser exibida informando que o formato do arquivo não é suportado. O upload não deve ser concluído.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Tentar criar organograma a partir de arquivos com tamanho excedente">
+			<summary>
+				
+Validar que o sistema rejeite arquivos com tamanho superior a 10MB.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Possuir um arquivo .jpg ou .png com tamanho superior a 10MB.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+A tela de opções de criação deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "A partir de arquivo".						
+					</actions>
+					<expectedresults>
+						
+Um formulário de upload deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar fazer o upload de um arquivo com tamanho excedente.						
+					</actions>
+					<expectedresults>
+						
+Uma mensagem de erro deve ser exibida informando que o tamanho do arquivo excede o limite permitido. O upload não deve ser concluído.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar organograma a partir de arquivos com erro inesperado (com retry)">
+			<summary>
+				
+Validar o tratamento de erro com opção de "tentar novamente" durante a geração do organograma a partir de arquivos.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Simular um erro inesperado durante o processo de geração a partir de arquivos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma", clicar em "A partir de arquivo", fazer upload e clicar em "Gerar".						
+					</actions>
+					<expectedresults>
+						
+A tela de "Carregando" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Simular a ocorrência de um erro inesperado.						
+					</actions>
+					<expectedresults>
+						
+Uma mensagem de erro deve ser exibida: "Tivemos uma falha inesperada ao gerar o organograma. Tente novamente em alguns instantes. Se o erro continuar, entre em contato com o suporte pelo chat." com um botão "Tentar novamente".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Tentar novamente" por duas vezes.						
+					</actions>
+					<expectedresults>
+						
+O sistema deve tentar novamente a geração.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Simular o erro novamente na terceira tentativa.						
+					</actions>
+					<expectedresults>
+						
+Após 3 tentativas falhas, a mensagem de erro deve mudar para: "Não foi possível gerar o organograma. Nosso time de suporte está disponível no chat para resolver isso com você."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o log de erros.						
+					</actions>
+					<expectedresults>
+						
+O erro deve ser salvo na tabela de log de erros no banco de logs.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Gerenciamento do Organograma Gerado">
+		<testcase name="Verificar informações exibidas nos cards do organograma">
+			<summary>
+				
+Assegurar que os cards do organograma exibam as informações corretas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido gerado e estar visível na tela.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Observar os cards do organograma.						
+					</actions>
+					<expectedresults>
+						
+Cada card deve exibir as seguintes informações:						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar comportamento de texto longo nos cards">
+			<summary>
+				
+Validar o truncamento de texto e a exibição de tooltip para informações longas nos cards.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido gerado e estar visível na tela, com alguma informação (ex: nome da área) que exceda o limite de tamanho do card.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Observar um card com texto longo.						
+					</actions>
+					<expectedresults>
+						
+O texto longo deve ser truncado com reticências (...).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o texto truncado.						
+					</actions>
+					<expectedresults>
+						
+Um tooltip deve ser exibido com o título completo da informação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Salvar alterações no organograma">
+			<summary>
+				
+Assegurar que as alterações realizadas no organograma sejam efetivadas somente após clicar no botão "Salvar organograma".				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido gerado e estar visível na tela.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar uma alteração no organograma (ex: criar um novo item, editar nome de área).						
+					</actions>
+					<expectedresults>
+						
+Um botão "Salvar organograma" deve aparecer no canto inferior direito da tela.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Salvar organograma".						
+					</actions>
+					<expectedresults>
+						
+As alterações devem ser efetivadas no organograma.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Recarregar a página ou sair e voltar para o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+As alterações salvas devem persistir.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Alterar preferência de cores do card">
+			<summary>
+				
+Validar a funcionalidade de alternar entre estilos de cores (preenchido/outline) para os cards.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o botão de preferência de cores na parte direita da tela (ícone "bedtime").						
+					</actions>
+					<expectedresults>
+						
+O ícone deve ser "bedtime" e o estilo padrão deve ser preenchido com a cor de fundo da organização.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de preferência de cores.						
+					</actions>
+					<expectedresults>
+						
+O estilo dos cards deve mudar para "outline" e o ícone do botão deve mudar para "wb_sunny".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Sair e voltar para o sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+A preferência de cor (outline) deve ser salva por usuário e o organograma deve ser exibido com o último estilo selecionado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Utilizar controle de zoom e fullscreen">
+			<summary>
+				
+Verificar a funcionalidade de zoom e fullscreen na visualização do organograma.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar a barra de zoom no canto inferior da tela.						
+					</actions>
+					<expectedresults>
+						
+A barra de zoom deve estar visível e fixa.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ajustar o zoom utilizando a barra.						
+					</actions>
+					<expectedresults>
+						
+O organograma deve aumentar/diminuir de tamanho de acordo com o ajuste do zoom.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "fullscreen".						
+					</actions>
+					<expectedresults>
+						
+O organograma deve ser exibido em tela cheia.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Sair do modo "fullscreen".						
+					</actions>
+					<expectedresults>
+						
+O organograma deve retornar ao modo de visualização anterior.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "zoom to fit".						
+					</actions>
+					<expectedresults>
+						
+O organograma deve ser ajustado para caber na tela.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar responsividade do organograma">
+			<summary>
+				
+Assegurar que o organograma seja responsivo e permita navegação horizontal em telas menores.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela.
+* Utilizar um dispositivo ou simular uma tela com largura menor.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Visualizar o organograma em uma tela menor.						
+					</actions>
+					<expectedresults>
+						
+O usuário deve conseguir navegar horizontalmente pelo organograma utilizando o scroll. O drag and drop pode ser desativado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Visualizar o organograma em uma tela maior.						
+					</actions>
+					<expectedresults>
+						
+O usuário deve conseguir navegar horizontalmente pelo organograma utilizando o scroll. O drag and drop pode ser desativado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Alternar entre visualização de cards e lista">
+			<summary>
+				
+Validar a alternância entre os modos de visualização (cards e lista) do organograma.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar o modo de visualização padrão.						
+					</actions>
+					<expectedresults>
+						
+O modo de visualização padrão deve ser "cards".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alternar para o modo de visualização "lista".						
+					</actions>
+					<expectedresults>
+						
+O organograma deve ser exibido como uma tabela padrão do sistema.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a presença do botão "Adicionar" na visualização de lista.						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão na coluna de funções.						
+					</actions>
+					<expectedresults>
+						
+Um drawer deve ser aberto com a listagem das funções.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar as colunas de "competências" e "pessoas" na visualização de lista.						
+					</actions>
+					<expectedresults>
+						
+As colunas devem exibir ícone e quantidade de funções/pessoas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão na coluna de pessoas.						
+					</actions>
+					<expectedresults>
+						
+Um drawer deve ser aberto com a listagem das pessoas (sem o tipo de vínculo).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Utilizar filtros padrão na visualização de lista">
+			<summary>
+				
+Validar a aplicação dos filtros padrão "Áreas sem usuários" e "Áreas sem funções" na visualização de lista.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido gerado e estar na visualização de lista.
+* Existem áreas sem usuários e/ou sem funções cadastradas.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a visualização de lista do organograma.						
+					</actions>
+					<expectedresults>
+						
+A tabela de lista deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aplicar o filtro "Áreas sem usuários".						
+					</actions>
+					<expectedresults>
+						
+A lista deve exibir apenas as áreas que não possuem usuários vinculados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aplicar o filtro "Áreas sem funções".						
+					</actions>
+					<expectedresults>
+						
+A lista deve exibir apenas as áreas que não possuem funções vinculadas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Utilizar opções de filtros na visualização de lista">
+			<summary>
+				
+Validar a aplicação dos filtros "Nome", "Nível", "Responde à" e "Responsável" na visualização de lista.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido gerado e estar na visualização de lista.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a visualização de lista do organograma.						
+					</actions>
+					<expectedresults>
+						
+A tabela de lista deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aplicar o filtro por "Nome" (ex: buscar por "Engenharia").						
+					</actions>
+					<expectedresults>
+						
+A lista deve exibir apenas as áreas cujo nome contém "Engenharia".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aplicar o filtro por "Nível" (ex: selecionar "Nível 1").						
+					</actions>
+					<expectedresults>
+						
+A lista deve exibir apenas as áreas do "Nível 1".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aplicar o filtro por "Responde à" (ex: selecionar "Presidência").						
+					</actions>
+					<expectedresults>
+						
+A lista deve exibir apenas as áreas que respondem à "Presidência".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aplicar o filtro por "Responsável" (ex: selecionar "João Silva").						
+					</actions>
+					<expectedresults>
+						
+A lista deve exibir apenas as áreas cujo responsável é "João Silva".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exportar organograma no formato PNG (visualização de card)">
+			<summary>
+				
+Verificar a exportação do organograma em PNG transparente, com opção de visualização atual ou completo.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, no modo de visualização de cards.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no botão "Extrair dados".						
+					</actions>
+					<expectedresults>
+						
+Um modal de opções de exportação deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar "Formato: PNG transparente".						
+					</actions>
+					<expectedresults>
+						
+A opção deve ser selecionada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar "Dados: Visualização atual".						
+					</actions>
+					<expectedresults>
+						
+A opção deve ser selecionada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Exportar".						
+					</actions>
+					<expectedresults>
+						
+Um arquivo PNG transparente deve ser baixado, contendo a imagem dos cards exatamente como exibidos na tela (incluindo estado de contração/expansão), sem ícones de menu, expandir e drag and drop.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar "Dados: Completo".						
+					</actions>
+					<expectedresults>
+						
+A opção deve ser selecionada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Exportar".						
+					</actions>
+					<expectedresults>
+						
+Um arquivo PNG transparente deve ser baixado, contendo a imagem completa do organograma.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exportar organograma no formato PDF/CSV (visualização de lista)">
+			<summary>
+				
+Verificar a exportação do organograma em PDF ou CSV, com opções de filtro atual ou todos, e colunas filtradas ou todas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, no modo de visualização de lista.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Alternar para a visualização de lista.						
+					</actions>
+					<expectedresults>
+						
+O organograma deve ser exibido como uma tabela.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Extrair dados".						
+					</actions>
+					<expectedresults>
+						
+Um modal de opções de exportação deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Exportar".						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar "Formato: PDF".						
+					</actions>
+					<expectedresults>
+						
+A opção deve ser selecionada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar "Dados (linhas): Filtro atual" e "Colunas: Filtro atual".						
+					</actions>
+					<expectedresults>
+						
+As opções devem ser selecionadas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar "Formato: CSV".						
+					</actions>
+					<expectedresults>
+						
+A opção deve ser selecionada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar "Dados (linhas): Todos" e "Colunas: Todas".						
+					</actions>
+					<expectedresults>
+						
+As opções devem ser selecionadas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Exportar".						
+					</actions>
+					<expectedresults>
+						
+Um arquivo CSV deve ser baixado, contendo a listagem completa das áreas, incluindo lista de competências e pessoas vinculadas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Destacar/remover destaque de um item do organograma">
+			<summary>
+				
+Validar a funcionalidade de destacar um item e seus descendentes no organograma.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, com vários níveis e descendentes.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Selecionar um card no organograma.						
+					</actions>
+					<expectedresults>
+						
+O card deve ser selecionado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "Destacar item" (ou equivalente no menu de contexto).						
+					</actions>
+					<expectedresults>
+						
+O item selecionado e todos os seus descendentes devem ser fixados na tela. O ícone e a cor de fundo do botão de destaque devem mudar.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na opção "Remover destaque" (ou equivalente no menu de contexto).						
+					</actions>
+					<expectedresults>
+						
+O destaque do item e seus descendentes deve ser removido, e o ícone/cor do botão devem retornar ao estado original.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Realizar Drag and Drop de um card (exceto primeiro nível)">
+			<summary>
+				
+Assegurar que seja possível alterar a posição de um card no organograma usando drag and drop, exceto para o card de primeiro nível.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, com pelo menos dois níveis.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tentar arrastar um card do primeiro nível.						
+					</actions>
+					<expectedresults>
+						
+A ação de drag and drop não deve ser permitida para o card do primeiro nível.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar um card de um nível inferior (ex: Nível 2).						
+					</actions>
+					<expectedresults>
+						
+O card deve ser selecionável.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Arrastar o card para outra posição ou nível.						
+					</actions>
+					<expectedresults>
+						
+O card deve ser movido para a nova posição/nível, alterando a hierarquia do organograma.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar nome da área e nível">
+			<summary>
+				
+Validar a edição do nome da área e do nível diretamente nos cards.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no nome de uma área em um card.						
+					</actions>
+					<expectedresults>
+						
+Uma caixa de texto editável deve ser exibida para permitir a alteração do nome da área.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir um novo nome para a área e confirmar a alteração.						
+					</actions>
+					<expectedresults>
+						
+O nome da área no card deve ser atualizado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no nome do nível em um card.						
+					</actions>
+					<expectedresults>
+						
+Uma caixa de texto editável deve ser exibida para permitir a alteração do nome do nível.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir um novo nome para o nível e confirmar a alteração.						
+					</actions>
+					<expectedresults>
+						
+O nome do nível no card deve ser atualizado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Visualizar e interagir com funções através do ícone no card">
+			<summary>
+				
+Assegurar a visualização das funções cadastradas e a navegação para edição através do ícone de funções no card.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, com cards que possuem funções vinculadas.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no ícone de funções (ícone "trip") em um card.						
+					</actions>
+					<expectedresults>
+						
+Um popover deve ser aberto, listando as funções cadastradas, com a quantidade de pessoas atribuídas por função.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre uma função na lista do popover.						
+					</actions>
+					<expectedresults>
+						
+Um ícone de editar deve aparecer.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no ícone de editar.						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser direcionado para a aba de "Pessoas alocadas" na edição da área.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Visualizar e interagir com pessoas através do ícone no card">
+			<summary>
+				
+Assegurar a visualização das pessoas alocadas e a navegação para edição através do ícone de pessoas no card.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, com cards que possuem pessoas alocadas.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no ícone de pessoas (ícone "group") em um card.						
+					</actions>
+					<expectedresults>
+						
+Um popover deve ser aberto, listando apenas as pessoas ativas alocadas na área. Se uma pessoa tiver mais de 1 linha de funções, deve exibir um "ver mais".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no ícone de editar no popover.						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser direcionado para a aba de "Pessoas alocadas" na edição da área.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Utilizar menu de &quot;mais opções&quot; do card">
+			<summary>
+				
+Validar as opções disponíveis no menu de "mais opções" de um card.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, com cards que permitem manipulação.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no ícone de "mais opções" (ícone "more_vert") em um card.						
+					</actions>
+					<expectedresults>
+						
+Um menu deve ser aberto com as seguintes opções: "+ Adicionar item", "Editar", "Expandir todos desde nível", "Contrair todos deste nível", "Excluir".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar item através do menu de &quot;mais opções&quot;">
+			<summary>
+				
+Assegurar a adição de um novo card em um nível abaixo do card selecionado.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no ícone de "mais opções" em um card (ex: "Presidência").						
+					</actions>
+					<expectedresults>
+						
+O menu de opções deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "+ Adicionar item".						
+					</actions>
+					<expectedresults>
+						
+Um novo card deve ser criado em um nível abaixo do card "Presidência", localizado por último entre os irmãos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar item através do menu de &quot;mais opções&quot;">
+			<summary>
+				
+Assegurar a edição de um card através do menu de "mais opções".				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, com cards que podem ser excluídos (não sendo o card raiz).</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no ícone de "mais opções" em um card.						
+					</actions>
+					<expectedresults>
+						
+O menu de opções deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Editar".						
+					</actions>
+					<expectedresults>
+						
+O card selecionado deve permitir a edição.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Expandir/Contrair todos os itens de um nível">
+			<summary>
+				
+Validar a funcionalidade de expandir e contrair todos os itens a partir de um nível.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, com cards que podem ser expandidos/contraídos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no ícone de "mais opções" em um card.						
+					</actions>
+					<expectedresults>
+						
+O menu de opções deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Expandir todos desde nível".						
+					</actions>
+					<expectedresults>
+						
+Todos os cards descendentes a partir do nível selecionado devem ser expandidos. A opção "Expandir todos desde nível" no menu deve ficar desabilitada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no ícone de "mais opções" novamente.						
+					</actions>
+					<expectedresults>
+						
+O menu de opções deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Contrair todos deste nível".						
+					</actions>
+					<expectedresults>
+						
+Todos os cards descendentes a partir do nível selecionado devem ser contraídos. A opção "Contrair todos deste nível" no menu deve ficar desabilitada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Excluir item através do menu de &quot;mais opções&quot;">
+			<summary>
+				
+Assegurar a exclusão de um card através do menu de "mais opções".				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, com cards que podem ser excluídos (não sendo o card raiz).</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no ícone de "mais opções" em um card.						
+					</actions>
+					<expectedresults>
+						
+O menu de opções deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Excluir".						
+					</actions>
+					<expectedresults>
+						
+O card selecionado deve ser removido do organograma. Um modal de confirmação pode ser exibido antes da exclusão.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Sincronização do Organograma">
+		<testcase name="Resetar organograma antes da primeira sincronização">
+			<summary>
+				
+Assegurar que o botão "Resetar Organograma" funcione corretamente antes da primeira sincronização.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido criado, mas AINDA NÃO sincronizado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o botão "Resetar Organograma".						
+					</actions>
+					<expectedresults>
+						
+O botão deve estar visível.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Resetar Organograma".						
+					</actions>
+					<expectedresults>
+						
+As áreas, funções e competências do organograma devem ser apagadas. Os dados cadastrados no usuário (área, cargo e responsável) devem ser mantidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ativar sincronização do organograma com sucesso">
+			<summary>
+				
+Validar a ativação da sincronização do organograma com o cadastro de usuários.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido criado.
+* Existem usuários com áreas no cadastro diferentes das áreas no organograma.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o switch "Sincronizar" ao lado do botão "Extrair dados".						
+					</actions>
+					<expectedresults>
+						
+O switch deve estar visível.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no switch para ativar a sincronização.						
+					</actions>
+					<expectedresults>
+						
+Um modal de configuração da sincronização deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip "Somente colaboradores"						
+					</actions>
+					<expectedresults>
+						
+“Sincroniza apenas usuários com perfil de colaborador. Para alterar o perfil de um &lt;br /&gt;
+usuário, acesse: Usuários → Editar usuário → Perfil de usuário e marque como &lt;br /&gt;
+colaborador.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Dica						
+					</actions>
+					<expectedresults>
+						
+ “Caso não queira ajustar um por um, você pode ajustar em massa pelo cadastro de &lt;br /&gt;
+usuários ou pela ação em massa. Você também pode editar o nome da área diretamente no &lt;br /&gt;
+organograma se estiver diferente do cadastro.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No modal, selecionar o "Tipo de usuário" (ex: "Somente colaboradores" ou "Todos").						
+					</actions>
+					<expectedresults>
+						
+O filtro deve ser aplicado na tabela de usuários com conflito.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Confirmar" no modal.						
+					</actions>
+					<expectedresults>
+						
+Um novo modal de confirmação deve ser exibido com a mensagem: "Confirmação de sincronização. A sincronização do organograma com o cadastro de usuários será ativada e: [X] usuário(s) terá(ão) sua(s) área(s) atualizada(s) permanentemente. As alterações no organograma serão automaticamente sincronizadas com o cadastro de usuários. Tem certeza que deseja continuar?"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Para cada usuário com conflito, selecionar a "área correta" no organograma.						
+					</actions>
+					<expectedresults>
+						
+Todas as áreas devem ser selecionadas. (Se não selecionar, um toast de erro deve aparecer: "Existem usuários sem área selecionada.")						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Confirmar" neste segundo modal.						
+					</actions>
+					<expectedresults>
+						
+Um toast deve ser exibido com a mensagem: "A sincronização do organograma foi iniciada. Você será notificado assim que o processo for concluído."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a notificação de conclusão.						
+					</actions>
+					<expectedresults>
+						
+Uma notificação deve ser recebida com a mensagem: "Organograma sincronizado com sucesso. Os dados dos usuários foram atualizados conforme a nova estrutura organizacional."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o cadastro dos usuários.						
+					</actions>
+					<expectedresults>
+						
+As áreas dos usuários devem ter sido atualizadas de acordo com as seleções no modal de sincronização.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o campo de área no cadastro de usuários após a sincronização.						
+					</actions>
+					<expectedresults>
+						
+O campo de área deve estar bloqueado e permitir selecionar apenas áreas do organograma. O campo de responsável também deve ser restrito aos responsáveis cadastrados no organograma.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Desativar funcionalidade &quot;Skills&quot; ou &quot;Organograma&quot; após sincronização">
+			<summary>
+				
+Validar o comportamento da sincronização e consistência dos usuários ao desativar as funcionalidades.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* O organograma deve ter sido sincronizado pelo menos uma vez.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Desativar a funcionalidade "Skills" ou "Organograma" no contrato do ambiente.						
+					</actions>
+					<expectedresults>
+						
+A sincronização do organograma deve ser desativada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar editar um usuário onde a consistência de área/responsável seria obrigatória.						
+					</actions>
+					<expectedresults>
+						
+As obrigatoriedades de escolher uma área do organograma e um responsável do organograma devem ser desativadas na edição do usuário, importação de usuários e ativação de usuários.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Não permitir resetar organograma após sincronização">
+			<summary>
+				
+Assegurar que o botão "Resetar Organograma" esteja desabilitado após sincronização				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido criado, e JÁ sincronizado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o botão "Resetar Organograma".						
+					</actions>
+					<expectedresults>
+						
+O botão deve desabilitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar se campos ficarão habilitados/bloqueados também no SuperAdmin">
+			<summary />
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+		</testcase>
+	</testsuite>
+	<testsuite name="Edição de Área">
+		<testcase name="Acessar tela de edição de área e verificar abas">
+			<summary>
+				
+Validar o acesso à tela de edição de área e a exibição correta das abas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido criado e estar visível na tela.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no botão "Editar" em um item do organograma.						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser direcionado para a tela de edição da área.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o breadcrumb da tela.						
+					</actions>
+					<expectedresults>
+						
+O breadcrumb deve ser "Competências &amp;gt; Organograma &amp;gt; Editar área".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o Page Header.						
+					</actions>
+					<expectedresults>
+						
+O Page Header deve conter o nome da área que está sendo editada (ex: "Engenharia de Software").						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a presença das 4 abas.						
+					</actions>
+					<expectedresults>
+						
+As abas "Identificação", "Pessoas alocadas", "Documentos" e "Funções" devem estar visíveis.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar campos da aba &quot;Identificação&quot;">
+			<summary>
+				
+Assegurar a edição dos campos "Nome da área", "Nível hierárquico" e "Responsável pela área" na aba "Identificação".				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Identificação" da tela de edição de área.
+* Existem usuários ativos para serem selecionados como responsáveis.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar o campo "Nome da área".						
+					</actions>
+					<expectedresults>
+						
+O campo deve aceitar até 250 caracteres e ser obrigatório. A alteração deve ser salva.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Editar o campo "Nível hierárquico".						
+					</actions>
+					<expectedresults>
+						
+O campo deve aceitar até 250 caracteres e ser obrigatório. A alteração deve ser salva. O tooltip "Será representado graficamente como um rótulo no diagrama do organograma, e poderá ser utilizado como seleção em alguns pontos da plataforma." deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar o "Responsável pela área".						
+					</actions>
+					<expectedresults>
+						
+O campo deve ser um select obrigatório com uma lista de todos os usuários ativos e ser buscável.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar a alteração no modal.						
+					</actions>
+					<expectedresults>
+						
+O novo responsável deve ser atribuído à área. O usuário selecionado deve ser automaticamente atualizado para "Líder de equipe" em seu cadastro. Todos os usuários da área devem ter o novo responsável atribuído a eles.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar um novo responsável.						
+					</actions>
+					<expectedresults>
+						
+Um modal de confirmação deve ser exibido com a mensagem: "Confirmação de alteração de responsável. A alteração de responsável será aplicada para [X] usuários na área. Tem certeza que deseja alterar?".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar campo &quot;Responde à área&quot; na aba &quot;Identificação&quot;">
+			<summary>
+				
+Validar a edição do campo "Responde à área" na aba "Identificação".				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Identificação" da tela de edição de área.
+* Existem outras áreas cadastradas no organograma.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar o campo "Responde à área".						
+					</actions>
+					<expectedresults>
+						
+O campo deve ser um select obrigatório com uma lista de todas as áreas cadastradas no organograma. A opção "primeiro nível" pode ser removida se presente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar uma área superior.						
+					</actions>
+					<expectedresults>
+						
+A alteração deve ser salva. O tooltip "Área imediatamente superior a qual essa área responde" deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar pessoas alocadas na aba &quot;Pessoas alocadas&quot;">
+			<summary>
+				
+Assegurar a listagem, busca, adição e edição de pessoas na aba "Pessoas alocadas".				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Pessoas alocadas" da tela de edição de área.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a listagem de pessoas.						
+					</actions>
+					<expectedresults>
+						
+Uma listagem padrão deve ser exibida com colunas: "Nome", "E-mail", "Cargo" e "Ações". Os dados devem vir do cadastro do usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar o campo de busca.						
+					</actions>
+					<expectedresults>
+						
+A busca deve funcionar por nome, e-mail ou cargo do usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Adicionar".						
+					</actions>
+					<expectedresults>
+						
+Um drawer deve ser aberto para seleção de usuários.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No drawer, selecionar mais de uma área para filtragem (se aplicável).						
+					</actions>
+					<expectedresults>
+						
+A filtragem por múltiplas áreas deve funcionar. A área que está sendo editada deve vir selecionada por padrão.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No drawer, tentar adicionar um usuário já vinculado a outra área.						
+					</actions>
+					<expectedresults>
+						
+Um modal de confirmação deve ser exibido com a mensagem: "Tem certeza que vai transferir ou alterar essas pessoas para a área Y, isso será alterado no cadastro dos usuários."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar a adição no drawer.						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser adicionado à área e seu vínculo anterior deve ser atualizado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Editar" na listagem de pessoas.						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser direcionado para a tela de edição do usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar documentos na aba &quot;Documentos&quot;">
+			<summary>
+				
+Assegurar a listagem, adição e gerenciamento de documentos na aba "Documentos".				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Documentos" da tela de edição de área.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a listagem de documentos.						
+					</actions>
+					<expectedresults>
+						
+Uma listagem padrão deve ser exibida com colunas: "Nome", "Tipo", "Tamanho", "Data do Upload", "Resumo", "Situação" e "Ações".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar o "Tipo" de um documento na listagem.						
+					</actions>
+					<expectedresults>
+						
+A alteração do tipo deve ser efetivada no onChange.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Adicionar".						
+					</actions>
+					<expectedresults>
+						
+Um formulário de upload deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No formulário, fazer upload de arquivos válidos.						
+					</actions>
+					<expectedresults>
+						
+Formatos aceitos: .docx, .pptx, .pdf, .xlsx, .csv, .jpg, .png, .mp4 e .mp3.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher o campo "Tipo de documento" (opcional, creatable).						
+					</actions>
+					<expectedresults>
+						
+O campo deve aceitar novos tipos e não ter opções default. O placeholder deve conter sugestões.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Salvar".						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser direcionado para a tela de listagem com um toast: "Documentos enviados com sucesso, aguarde a indexação pela IA".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o status dos documentos em indexação.						
+					</actions>
+					<expectedresults>
+						
+A "Situação" deve ser "Indexando com IA" e o "Resumo" deve ser "Aguardando indexação...".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Simular a conclusão da indexação.						
+					</actions>
+					<expectedresults>
+						
+A "Situação" deve mudar para "Indexado" e o "Resumo" deve ser atualizado com o resumo gerado pela IA (mostrando 2 linhas por padrão e o completo ao passar o mouse).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar excluir um documento que está sendo sincronizado.						
+					</actions>
+					<expectedresults>
+						
+A exclusão não deve ser permitida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Simular um erro na indexação.						
+					</actions>
+					<expectedresults>
+						
+A "Situação" deve ser "Erro na indexação".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar funções na aba &quot;Funções&quot;">
+			<summary>
+				
+Assegurar a listagem, adição e gerenciamento de funções na aba "Funções".				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Funções" da tela de edição de área.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a listagem de funções.						
+					</actions>
+					<expectedresults>
+						
+Uma listagem padrão deve ser exibida com colunas: "Função", "Descrição", "Competências", "Pessoas" e "Ações".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de competências na listagem.						
+					</actions>
+					<expectedresults>
+						
+Um botão com ícone "license" e o número de competências deve ser exibido. Ao clicar, um drawer com a listagem de competências deve ser aberto.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de pessoas na listagem.						
+					</actions>
+					<expectedresults>
+						
+Um botão com ícone "group" e o número de pessoas deve ser exibido. Ao clicar, um drawer com a listagem de pessoas deve ser aberto (ignorando o tipo de vínculo).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o breadcrumb da tela de adição de função.						
+					</actions>
+					<expectedresults>
+						
+O breadcrumb deve ser "Competências &amp;gt; Organograma &amp;gt; Área &amp;gt; Adicionar função".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Adicionar".						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser direcionado para uma tela de formulário com as abas "Identificação", "Pessoas atribuídas", "Documentos" e "Competências".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar/Editar função - Aba &quot;Identificação&quot;">
+			<summary>
+				
+Validar a adição/edição de campos na aba "Identificação" da função.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Identificação" da tela de adição/edição de função.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Preencher o campo "Nome da função".						
+					</actions>
+					<expectedresults>
+						
+O campo deve ser obrigatório e aceitar no máximo 250 caracteres. O tooltip "Digite o nome que identifica esta função (ex: Desenvolvedor Frontend, Analista de Vendas)" deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher o campo "Descrição".						
+					</actions>
+					<expectedresults>
+						
+O campo deve ser um rich text opcional (PlateJS). O tooltip "Descreva as responsabilidades, atividades e objetivos principais desta função." deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Gerar com IA" abaixo do campo de descrição.						
+					</actions>
+					<expectedresults>
+						
+Uma descrição deve ser gerada pela IA, utilizando o nome da função, nome da área, documentos anexados na área e descrição do ambiente como base.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar/Editar função - Aba &quot;Pessoas atribuídas&quot;">
+			<summary>
+				
+Validar a atribuição de pessoas e seus tipos de interesse na aba "Pessoas atribuídas" da função.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Pessoas atribuídas" da tela de adição/edição de função.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar pessoas.						
+					</actions>
+					<expectedresults>
+						
+As mesmas regras da RN 32 devem ser aplicadas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a presença da coluna "tipo de interesse" e "área".						
+					</actions>
+					<expectedresults>
+						
+Ambas as colunas devem estar presentes.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar o "tipo de interesse" de uma pessoa.						
+					</actions>
+					<expectedresults>
+						
+O campo deve ser um select editável na própria linha com opções "Executor", "Sucessor" ou "Interessado". O tooltip "Define como o usuário se relaciona com a função: Executor executa atividades, Sucessor está preparado para assumir, e Interessado acompanha a função." deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Após a alteração, verificar o toast.						
+					</actions>
+					<expectedresults>
+						
+Um toast deve ser exibido: "Tipo de interesse alterado com sucesso".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar/Editar função - Aba &quot;Documentos&quot;">
+			<summary>
+				
+Validar a adição e gerenciamento de documentos na aba "Documentos" da função.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Documentos" da tela de adição/edição de função.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar documentos.						
+					</actions>
+					<expectedresults>
+						
+As mesmas regras da RN 33 devem ser aplicadas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar/Editar função - Aba &quot;Competências&quot; (Adicionar)">
+			<summary>
+				
+Validar a adição de competências pré-existentes na aba "Competências" da função.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Competências" da tela de adição/edição de função.
+* Existem competências cadastradas no ambiente.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a listagem de competências.						
+					</actions>
+					<expectedresults>
+						
+Uma listagem padrão deve ser exibida com colunas: "Nome", "Tipo", "Classificação", "Categoria", "Nível de Importância", "Conteúdos" e "Ações".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o tooltip do "Nível de Importância".						
+					</actions>
+					<expectedresults>
+						
+O tooltip "Define o nível de importância da competência, sendo 1 menos importante e 5 mais importante." deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar o "Nível de Importância" usando o slider.						
+					</actions>
+					<expectedresults>
+						
+Um toast deve ser exibido: "Nível de importância da competência atualizado para [nível aqui]".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de "Conteúdos".						
+					</actions>
+					<expectedresults>
+						
+Deve abrir um Drawer onde deve permitir adicionar um novo conteúdo ou vincular com IA.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "+ Adicionar" dentro de "Conteúdos"						
+					</actions>
+					<expectedresults>
+						
+Permite adicionar novos conteúdos manualmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Excluir" conteúdo						
+					</actions>
+					<expectedresults>
+						
+Deve remover um conteúdo da lista						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Adicionar" (para competências).						
+					</actions>
+					<expectedresults>
+						
+Um drawer deve ser aberto com a listagem de competências já cadastradas no ambiente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar os filtros por "tipo", "categoria" ou busca por "nome/descrição" no drawer.						
+					</actions>
+					<expectedresults>
+						
+A filtragem deve funcionar corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar competências e clicar em "Adicionar".						
+					</actions>
+					<expectedresults>
+						
+As competências selecionadas devem ser adicionadas à função.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+"Excluir" competência						
+					</actions>
+					<expectedresults>
+						
+Deve remover apenas o vínculo e não o registro da competência						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Salvar competências".						
+					</actions>
+					<expectedresults>
+						
+As competências devem ser salvas. A exclusão de uma competência aqui deve remover apenas o vínculo, não a competência da base de dados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar/Editar função - Aba &quot;Competências&quot; (Gerar com IA)">
+			<summary>
+				
+Validar a geração de competências por IA na aba "Competências" da função.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Competências" da tela de adição/edição de função.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no botão "Gerar com IA".						
+					</actions>
+					<expectedresults>
+						
+Um formulário de geração com IA deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Simular documentos da função ou área ainda em indexação.						
+					</actions>
+					<expectedresults>
+						
+Um toast de alerta deve ser exibido: "É necessário aguardar a indexação dos documentos para poder prosseguir com a geração com IA". A geração não deve ser permitida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher/verificar o campo "Descrição do ambiente".						
+					</actions>
+					<expectedresults>
+						
+O campo deve ser informativo, com tooltip "Contexto da sua organização que será usado pela IA para gerar competências mais adequadas. Esta descrição vem do menu Configurações → Aba Dados → Campo Descrição.".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o alerta adicional.						
+					</actions>
+					<expectedresults>
+						
+O alerta "A IA também utilizará os documentos cadastrados na área e na função para gerar as competências" deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Configurar "Quantidade de competências por tipo".						
+					</actions>
+					<expectedresults>
+						
+O comportamento deve seguir o protótipo, permitindo criar novos tipos. O tooltip "Configure quantas competências de cada tipo você deseja gerar. Deixe os valores zerados para não gerar competências daquele tipo. Se todos os tipos estiverem com valor 0, a IA gerará uma quantidade que achar pertinente." deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Fazer upload de "Documentos adicionais".						
+					</actions>
+					<expectedresults>
+						
+As regras da RN 29.2.1 devem ser seguidas. O tooltip "Faça upload de documentos extras que a IA deve analisar para gerar competências mais específicas e contextualizadas" deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher "Informações adicionais".						
+					</actions>
+					<expectedresults>
+						
+O campo deve ser um rich text opcional (PlateJS). O tooltip "Adicione contexto extra que a IA deve considerar ao gerar as competências" deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Gerar".						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "Gerando competências" deve ser exibida com a mensagem: "Gerando competências. Isso pode levar algum tempo, mas não se preocupe: você pode continuar usando seu ambiente normalmente. Assim que tudo estiver pronto, você receberá uma notificação."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a conclusão da geração.						
+					</actions>
+					<expectedresults>
+						
+Se o usuário permaneceu na tela: Direcionamento automático para a tela de resultados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Na tela de resultados, verificar os cards editáveis.						
+					</actions>
+					<expectedresults>
+						
+Os cards devem exibir: "Nome", "Tipo", "Categoria", "Descrição" e "Nível de importância".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar as opções "Regerar competência", "Remover competência" e "Editar competência".						
+					</actions>
+					<expectedresults>
+						
+As opções devem funcionar conforme esperado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Salvar".						
+					</actions>
+					<expectedresults>
+						
+Todas as competências não excluídas devem ser vinculadas à função. Um toast de sucesso deve ser exibido: "Competências salvas com sucesso". As competências já cadastradas não devem ser geradas repetidamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Geração de Funções por IA (na área)">
+		<testcase name="Gerar funções por IA para uma área">
+			<summary>
+				
+Validar a geração de funções por IA para uma área, a partir da aba "Funções" da edição de área.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Funções" da tela de edição de área.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no botão "Gerar com IA" (na aba Funções da edição da área).						
+					</actions>
+					<expectedresults>
+						
+Um formulário de geração com IA deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Simular documentos da área ainda em indexação.						
+					</actions>
+					<expectedresults>
+						
+Um toast de alerta deve ser exibido: "É necessário aguardar a indexação dos documentos para poder prosseguir com a geração com IA". A geração não deve ser permitida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher/verificar o campo "Descrição do ambiente".						
+					</actions>
+					<expectedresults>
+						
+O campo deve ser informativo, com tooltip "Contexto da sua organização que será usado pela IA para gerar funções mais adequadas. Esta descrição vem do menu Configurações → Aba Dados → Campo Descrição.". Deve mostrar um pedaço da descrição e um "ver mais".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o alerta adicional.						
+					</actions>
+					<expectedresults>
+						
+O alerta "A IA também utilizará os documentos já cadastrados na área como base para a geração." deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Configurar "Número de funções".						
+					</actions>
+					<expectedresults>
+						
+O campo deve aceitar a quantidade de funções a serem geradas (máximo 20). O tooltip "Quantas funções você deseja que a IA gere para esta área (máximo 20)" deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Fazer upload de "Documentos adicionais".						
+					</actions>
+					<expectedresults>
+						
+As regras da RN 29.2.1 devem ser seguidas. O tooltip "Faça upload de documentos extras que a IA deve analisar para gerar competências mais específicas e contextualizadas" deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher "Informações adicionais".						
+					</actions>
+					<expectedresults>
+						
+O campo deve ser um rich text opcional (PlateJS). O tooltip "Adicione contexto relevante sobre a área para funções mais precisas: ferramentas, metodologias, especialidades ou características específicas da atuação" deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Gerar".						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "Gerando funções" deve ser exibida com a mensagem: "Gerando funções. Isso pode levar algum tempo, mas não se preocupe: você pode continuar usando seu ambiente normalmente. Assim que tudo estiver pronto, você receberá uma notificação."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a conclusão da geração.						
+					</actions>
+					<expectedresults>
+						
+Se o usuário permaneceu na tela: Direcionamento automático para a tela de resultados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Na tela de resultados, verificar os cards editáveis.						
+					</actions>
+					<expectedresults>
+						
+Os cards devem exibir: "Nome" e "Descrição".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar as opções "Regerar função", "Remover função" e "Editar função".						
+					</actions>
+					<expectedresults>
+						
+As opções devem funcionar conforme esperado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Salvar".						
+					</actions>
+					<expectedresults>
+						
+Todas as funções não excluídas devem ser vinculadas à área. Um toast de sucesso deve ser exibido: "Funções salvas com sucesso". As funções já cadastradas não devem ser geradas repetidamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Acesso ao Sub-menu &quot;Funções&quot;">
+		<testcase name="Acessar o sub-menu &quot;Funções&quot; e visualizar listagem">
+			<summary>
+				
+Assegurar o acesso ao sub-menu "Funções" e a exibição da listagem de todas as funções cadastradas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" deve estar habilitada no contrato do ambiente.
+* Existem funções cadastradas no ambiente.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu "Competências" e, em seguida, o sub-menu "Funções".						
+					</actions>
+					<expectedresults>
+						
+Uma listagem de todas as funções cadastradas no ambiente deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o breadcrumb da tela.						
+					</actions>
+					<expectedresults>
+						
+O breadcrumb deve ser "Competências &amp;gt; Funções".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o comportamento das colunas "competências" e "pessoas".						
+					</actions>
+					<expectedresults>
+						
+O comportamento deve ser o mesmo da listagem de funções vinculadas de uma área (RN 22.2 e RN 22.3).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a presença do botão "Adicionar".						
+					</actions>
+					<expectedresults>
+						
+O botão "Adicionar" NÃO deve estar presente, pois as funções só podem ser adicionadas em uma área.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Acesso ao Sub-menu &quot;Competências&quot;">
+		<testcase name="Acessar o sub-menu &quot;Competências&quot; e visualizar listagem">
+			<summary>
+				
+Assegurar o acesso ao sub-menu "Competências" e a exibição da listagem de todas as competências cadastradas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" deve estar habilitada no contrato do ambiente.
+* Existem competências cadastradas no ambiente.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu "Competências" e, em seguida, o sub-menu "Competências".						
+					</actions>
+					<expectedresults>
+						
+Uma listagem de todas as competências cadastradas no ambiente deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o breadcrumb da tela.						
+					</actions>
+					<expectedresults>
+						
+O breadcrumb deve ser "Competências &amp;gt; Gerenciar competências".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o comportamento da coluna "funções".						
+					</actions>
+					<expectedresults>
+						
+O botão "funções" deve abrir um drawer com uma lista de funções.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção de edição de competência.						
+					</actions>
+					<expectedresults>
+						
+Deve haver uma opção para editar uma competência, o que não existe no cadastro de competência em uma função.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o comportamento do botão de "conteúdos".						
+					</actions>
+					<expectedresults>
+						
+O botão de "conteúdos" deve abrir um drawer para cadastrar os conteúdos de uma competência.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Cadastro de Funções em Usuários">
+		<testcase name="Cadastrar funções em usuários (após sincronização)">
+			<summary>
+				
+Assegurar o cadastro de funções em usuários após a sincronização do organograma, com os campos de área e responsável restritos.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* O organograma deve ter sido sincronizado pelo menos uma vez.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de cadastro/edição de um usuário.						
+					</actions>
+					<expectedresults>
+						
+O campo "Área" deve ser um select com opções fixas sendo as áreas do organograma. O campo "Responsável" deve ser o responsável pela área no organograma.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o tooltip do campo "Área".						
+					</actions>
+					<expectedresults>
+						
+O tooltip "Define a área ao qual o usuário pertence no organograma" deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar o novo campo "Funções" (multi-select).						
+					</actions>
+					<expectedresults>
+						
+O campo "Funções" deve estar presente com o tooltip "Nesse campo você irá definir a função ou as funções que o usuário desempenha no dia a dia".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar funções desejadas no drawer e clicar em "adicionar".						
+					</actions>
+					<expectedresults>
+						
+O drawer deve fechar e as funções selecionadas devem aparecer no campo multi-select.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no campo "Funções".						
+					</actions>
+					<expectedresults>
+						
+Um drawer deve ser aberto, permitindo selecionar funções cadastradas na base de dados. As funções devem vir filtradas pela área do usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Consistência de Usuários (Importação e Cadastro)">
+		<testcase name="Importar usuários com campos &quot;colaborador&quot; e &quot;função&quot; (sincronização ativa)">
+			<summary>
+				
+Validar a importação de usuários com os novos campos e a consistência com o organograma.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A sincronização do organograma deve estar ativa.
+* Possuir um arquivo de importação de usuários com os campos "colaborador" e "função".</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a funcionalidade de importação de usuários.						
+					</actions>
+					<expectedresults>
+						
+O modelo de importação deve incluir os campos "colaborador" e "função".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar a importação de usuários com dados válidos para "área" e "responsável" (válidos no organograma).						
+					</actions>
+					<expectedresults>
+						
+Os usuários devem ser importados com sucesso, e os campos "área" e "responsável" devem ser consistentes com o organograma.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar a importação de usuários com dados INVÁLIDOS para "área" ou "responsável".						
+					</actions>
+					<expectedresults>
+						
+A importação deve falhar ou alertar sobre a inconsistência, exigindo dados válidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Cadastrar usuário via API com consistência de organograma">
+			<summary>
+				
+Assegurar que o cadastro de usuário via API respeite a consistência com o organograma quando a sincronização está ativa.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador (ou ter permissão de API).
+* A sincronização do organograma deve estar ativa.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tentar cadastrar um usuário via API com uma "área" ou "responsável" que não seja válido no organograma.						
+					</actions>
+					<expectedresults>
+						
+A API deve retornar um erro ou rejeitar o cadastro devido à inconsistência.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Cadastrar um usuário via API com uma "área" e "responsável" válidos no organograma.						
+					</actions>
+					<expectedresults>
+						
+O usuário deve ser cadastrado com sucesso.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ativar usuário sem área válida no organograma">
+			<summary>
+				
+Validar o alerta ao tentar ativar um usuário sem uma área válida no organograma, com sincronização ativa.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A sincronização do organograma deve estar ativa.
+* Existe um usuário inativo sem uma "área" válida no organograma.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de usuários e tentar ativar o usuário sem área válida.						
+					</actions>
+					<expectedresults>
+						
+Um alerta deve ser exibido com a mensagem: "Para ativar este usuário, é necessário que ele esteja vinculado a uma área válida do organograma. Para criar uma nova área, acesse o menu Competências, vá até o sub-menu Organograma, localize a área responsável e clique em “Adicionar item”." A ativação não deve ser permitida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Cadastro de Competências no Conteúdo">
+		<testcase name="Cadastrar competências relacionadas em um conteúdo">
+			<summary>
+				
+Assegurar o cadastro de competências relacionadas em um conteúdo através de um novo campo multi-select.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Existe um conteúdo para edição.
+* Existem competências cadastradas na base de dados.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de edição de um conteúdo.						
+					</actions>
+					<expectedresults>
+						
+Um novo campo multi-select chamado "competências relacionadas" deve estar presente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o tooltip do campo.						
+					</actions>
+					<expectedresults>
+						
+O tooltip "Selecione as competências que serão desenvolvidas com este conteúdo" deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no campo "competências relacionadas".						
+					</actions>
+					<expectedresults>
+						
+Um drawer deve ser aberto com a listagem de todas as competências cadastradas na base de dados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar as competências desejadas e clicar em "adicionar".						
+					</actions>
+					<expectedresults>
+						
+O drawer deve fechar e as competências selecionadas devem aparecer no campo multi-select.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar os filtros por "tipo" e "categoria" no drawer.						
+					</actions>
+					<expectedresults>
+						
+A filtragem deve funcionar corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos Recomendados no Play">
+		<testcase name="Visualizar categoria &quot;Conteúdos recomendados para a sua função&quot; no Play">
+			<summary>
+				
+Assegurar a exibição da nova categoria de conteúdos recomendados no Play para o aluno.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como aluno.
+* O aluno possui funções atribuídas com competências vinculadas a conteúdos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a página do Play.						
+					</actions>
+					<expectedresults>
+						
+Uma nova categoria "Conteúdos recomendados para a sua função" deve ser exibida, logo abaixo da categoria de conteúdos em andamento.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar os conteúdos dentro da categoria.						
+					</actions>
+					<expectedresults>
+						
+A categoria deve conter todos os conteúdos que possuem uma competência exibida por alguma das funções do aluno logado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar tags de recomendação nos cards de conteúdo (Fase 2)">
+			<summary>
+				
+Validar a exibição das tags de recomendação nos cards de conteúdo.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como aluno.
+* O aluno possui funções atribuídas com competências vinculadas a conteúdos.
+* Os conteúdos têm diferentes níveis de importância e tipos de vínculo.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a página do Play e visualizar os cards de conteúdo recomendados.						
+					</actions>
+					<expectedresults>
+						
+No topo esquerdo de cada card, deve aparecer uma tag de recomendação:						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar as tags de competências no canto inferior esquerdo.						
+					</actions>
+					<expectedresults>
+						
+Devem ser exibidas até 2 tags de competências. Se houver mais, um "+X" deve ser exibido, e as competências adicionais devem ser visíveis no modal do conteúdo.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar conteúdos recomendados por competência no &quot;ver mais&quot;">
+			<summary>
+				
+Assegurar a filtragem de conteúdos recomendados por competência na página de "ver mais".				
+			</summary>
+			<preconditions>* O usuário deve estar logado como aluno.
+* O aluno possui funções atribuídas com competências vinculadas a conteúdos.
+* Existem vários conteúdos recomendados.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no botão "Ver mais" da categoria "Conteúdos recomendados para a sua função".						
+					</actions>
+					<expectedresults>
+						
+Uma nova página deve ser aberta com todos os conteúdos da categoria.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a seção de filtro.						
+					</actions>
+					<expectedresults>
+						
+Uma seção de filtro deve ser exibida, composta pelas competências dos conteúdos, ordenadas da alta para a baixa importância.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em uma tag (competência) no filtro.						
+					</actions>
+					<expectedresults>
+						
+Os conteúdos exibidos devem ser filtrados para mostrar apenas aqueles relacionados à competência clicada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Integridade de Dados e Validações Críticas">
+		<testcase name="Tentar excluir área com pessoas ou funções vinculadas">
+			<summary>
+				
+Validar que o sistema impeça ou alerte sobre a exclusão de uma área que possui pessoas ou funções vinculadas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela.
+* Existe uma área com pelo menos uma pessoa ou função vinculada.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no ícone de "mais opções" em uma área que possui pessoas ou funções vinculadas.						
+					</actions>
+					<expectedresults>
+						
+O menu de opções deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Excluir".						
+					</actions>
+					<expectedresults>
+						
+Um modal de confirmação deve ser exibido alertando sobre as dependências (pessoas e/ou funções vinculadas) e solicitando confirmação. O modal deve informar quantas pessoas e funções serão afetadas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar a exclusão.						
+					</actions>
+					<expectedresults>
+						
+Se a área tiver pessoas ou funções vinculadas, a exclusão deve ser bloqueada ou as pessoas/funções devem ser realocadas/removidas conforme a política do sistema. Um toast de erro deve ser exibido caso a exclusão não seja permitida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Tentar excluir função com pessoas atribuídas">
+			<summary>
+				
+Assegurar que o sistema valide a exclusão de funções que possuem pessoas atribuídas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Funções" da tela de edição de área.
+* Existe uma função com pelo menos uma pessoa atribuída.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar uma função com pessoas atribuídas na listagem.						
+					</actions>
+					<expectedresults>
+						
+A função deve estar visível na listagem.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar excluir a função.						
+					</actions>
+					<expectedresults>
+						
+Um modal de confirmação deve ser exibido informando quantas pessoas estão atribuídas à função e alertando sobre o impacto da exclusão.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar a exclusão.						
+					</actions>
+					<expectedresults>
+						
+A exclusão deve ser bloqueada ou as pessoas devem ser desvinculadas conforme a política do sistema. Um toast deve informar sobre a ação realizada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar prevenção de hierarquia circular no organograma">
+			<summary>
+				
+Assegurar que o sistema impeça a criação de dependências circulares na hierarquia do organograma.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, com pelo menos 3 níveis hierárquicos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar o campo "Responde à área" de uma área superior para uma área inferior (que é sua descendente).						
+					</actions>
+					<expectedresults>
+						
+O sistema deve impedir a seleção de áreas descendentes como área superior. Um toast de erro deve ser exibido: "Não é possível selecionar uma área descendente como área superior. Isso criaria uma dependência circular."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar mover uma área (via drag and drop) para uma posição que criaria uma hierarquia circular.						
+					</actions>
+					<expectedresults>
+						
+A ação de drag and drop deve ser bloqueada e um feedback visual deve indicar que a operação não é permitida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar limites de caracteres em campos obrigatórios">
+			<summary>
+				
+Verificar que o sistema valide corretamente os limites de caracteres e campos obrigatórios.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na tela de edição de área ou função.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tentar salvar uma área sem preencher o campo "Nome da área" (obrigatório).						
+					</actions>
+					<expectedresults>
+						
+O sistema deve impedir o salvamento e exibir uma mensagem de erro indicando que o campo é obrigatório.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar inserir mais de 250 caracteres no campo "Nome da área".						
+					</actions>
+					<expectedresults>
+						
+O sistema deve limitar a entrada a 250 caracteres ou exibir um erro ao tentar salvar.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar inserir mais de 250 caracteres no campo "Nível hierárquico".						
+					</actions>
+					<expectedresults>
+						
+O sistema deve limitar a entrada a 250 caracteres ou exibir um erro ao tentar salvar.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar comportamento ao tentar salvar organograma sem alterações">
+			<summary>
+				
+Assegurar que o botão "Salvar organograma" não apareça quando não há alterações pendentes.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma" sem realizar nenhuma alteração.						
+					</actions>
+					<expectedresults>
+						
+O botão "Salvar organograma" NÃO deve estar visível.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar uma alteração (ex: editar nome de área).						
+					</actions>
+					<expectedresults>
+						
+O botão "Salvar organograma" deve aparecer.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desfazer a alteração (ex: reverter o nome da área para o valor original).						
+					</actions>
+					<expectedresults>
+						
+O botão "Salvar organograma" deve desaparecer, indicando que não há alterações pendentes.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Concorrência e Sincronização">
+		<testcase name="Editar organograma enquanto sincronização está em andamento">
+			<summary>
+				
+Validar o comportamento do sistema quando há tentativa de edição durante uma sincronização ativa.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido criado.
+* Uma sincronização deve estar em andamento (processo assíncrono).</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Iniciar uma sincronização do organograma.						
+					</actions>
+					<expectedresults>
+						
+O processo de sincronização deve ser iniciado e uma notificação deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar editar o organograma enquanto a sincronização está em andamento.						
+					</actions>
+					<expectedresults>
+						
+O sistema deve bloquear edições ou exibir um alerta informando que a sincronização está em andamento e que as alterações podem ser perdidas. Um toast deve ser exibido: "Não é possível editar o organograma enquanto a sincronização está em andamento. Aguarde a conclusão do processo."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Múltiplos usuários editando o mesmo organograma simultaneamente">
+			<summary>
+				
+Validar o comportamento quando múltiplos administradores tentam editar o mesmo organograma ao mesmo tempo.				
+			</summary>
+			<preconditions>* Dois ou mais usuários administradores devem estar logados em sessões diferentes.
+* Um organograma deve estar visível na tela para ambos os usuários.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Usuário A realiza uma alteração no organograma (ex: edita nome de área).						
+					</actions>
+					<expectedresults>
+						
+A alteração deve ser registrada localmente para o Usuário A.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Usuário B realiza uma alteração diferente no mesmo organograma (ex: adiciona um novo item).						
+					</actions>
+					<expectedresults>
+						
+A alteração deve ser registrada localmente para o Usuário B.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Usuário A salva suas alterações primeiro.						
+					</actions>
+					<expectedresults>
+						
+As alterações do Usuário A devem ser salvas com sucesso.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Usuário B tenta salvar suas alterações.						
+					</actions>
+					<expectedresults>
+						
+O sistema deve detectar conflito e exibir um modal informando que o organograma foi alterado por outro usuário. O modal deve oferecer opções: "Atualizar e aplicar minhas alterações" ou "Descartar minhas alterações e recarregar".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Validações de Upload e Arquivos">
+		<testcase name="Tentar fazer upload de mais de 3 arquivos na criação de organograma">
+			<summary>
+				
+Validar que o sistema limite o upload a 3 arquivos na criação de organograma a partir de arquivos.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Possuir mais de 3 arquivos .jpg ou .png válidos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma" e clicar em "A partir de arquivo".						
+					</actions>
+					<expectedresults>
+						
+Um formulário de upload deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Fazer upload de 3 arquivos válidos.						
+					</actions>
+					<expectedresults>
+						
+Os 3 arquivos devem ser aceitos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar fazer upload de um 4º arquivo.						
+					</actions>
+					<expectedresults>
+						
+O sistema deve impedir o upload e exibir uma mensagem de erro: "É permitido fazer upload de no máximo 3 arquivos."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar timeout durante geração de organograma por IA">
+			<summary>
+				
+Verificar o tratamento de timeout durante a geração de organograma a partir de arquivos ou pessoas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* A funcionalidade "Skills" ou "Organograma" deve estar habilitada no contrato do ambiente.
+* Simular um timeout durante o processo de geração.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Iniciar a geração de organograma a partir de arquivos ou pessoas.						
+					</actions>
+					<expectedresults>
+						
+A tela de "Carregando" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Simular um timeout no processo (ex: tempo de processamento muito longo).						
+					</actions>
+					<expectedresults>
+						
+O sistema deve detectar o timeout e exibir uma mensagem de erro apropriada: "O processo de geração está demorando mais que o esperado. Tente novamente ou entre em contato com o suporte." Um botão "Tentar novamente" deve estar disponível.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar perda de conexão durante geração por IA">
+			<summary>
+				
+Assegurar que o sistema trate adequadamente a perda de conexão durante processos assíncronos.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na tela de geração de competências ou funções por IA.
+* Simular perda de conexão durante o processo.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Iniciar a geração de competências ou funções por IA.						
+					</actions>
+					<expectedresults>
+						
+A tela de "Gerando" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Simular perda de conexão de internet.						
+					</actions>
+					<expectedresults>
+						
+O sistema deve detectar a perda de conexão e exibir uma mensagem: "Conexão perdida. O processo continuará em segundo plano. Você será notificado quando estiver concluído." A notificação deve ser enviada quando a conexão for restabelecida e o processo concluído.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Edge Cases e Cenários Limite">
+		<testcase name="Acessar organograma vazio após reset">
+			<summary>
+				
+Validar o comportamento do sistema quando o organograma é resetado e fica vazio.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido criado e resetado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Resetar o organograma.						
+					</actions>
+					<expectedresults>
+						
+O organograma deve ser apagado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o sub-menu "Organograma" após o reset.						
+					</actions>
+					<expectedresults>
+						
+A tela de opções de criação deve ser exibida novamente (as mesmas 3 opções: "Novo", "A partir de pessoas" e "A partir de arquivo").						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Tentar editar área sem responsável atribuído">
+			<summary>
+				
+Validar o comportamento ao tentar salvar uma área sem responsável quando o campo é obrigatório.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Identificação" da tela de edição de área.
+* A área não possui responsável atribuído.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Remover o responsável da área (se houver) ou deixar o campo vazio.						
+					</actions>
+					<expectedresults>
+						
+O campo "Responsável pela área" deve estar vazio.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar salvar a área.						
+					</actions>
+					<expectedresults>
+						
+O sistema deve impedir o salvamento e exibir uma mensagem de erro: "O campo 'Responsável pela área' é obrigatório."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar comportamento com função sem competências">
+			<summary>
+				
+Verificar que o sistema permita criar e salvar uma função sem competências vinculadas.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na aba "Competências" da tela de adição/edição de função.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar uma nova função sem adicionar competências.						
+					</actions>
+					<expectedresults>
+						
+A função deve poder ser criada sem competências.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar a função.						
+					</actions>
+					<expectedresults>
+						
+A função deve ser salva com sucesso, mesmo sem competências vinculadas. Um toast de sucesso deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar comportamento ao tentar vincular usuário sem função">
+			<summary>
+				
+Verificar o comportamento quando um usuário não possui função atribuída após sincronização.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* O organograma deve ter sido sincronizado.
+* Existe um usuário sem função atribuída.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de edição de um usuário sem função atribuída.						
+					</actions>
+					<expectedresults>
+						
+O campo "Funções" deve estar vazio ou permitir seleção.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar salvar o usuário sem função atribuída.						
+					</actions>
+					<expectedresults>
+						
+O sistema deve permitir salvar (se não for obrigatório) ou exibir um alerta informando que é recomendado atribuir uma função ao usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Segurança e Acesso">
+		<testcase name="Tentar acessar URLs diretas sem permissão (todos os sub-menus)">
+			<summary>
+				
+Validar que todos os sub-menus bloqueiem acesso direto via URL quando o usuário não possui permissão.				
+			</summary>
+			<preconditions>* O usuário deve estar logado (não necessariamente administrador).
+* As funcionalidades "Skills" e "Organograma" NÃO devem estar habilitadas no contrato do ambiente.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tentar acessar diretamente a URL do sub-menu "Organograma".						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "acesso negado" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar acessar diretamente a URL do sub-menu "Funções".						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "acesso negado" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar acessar diretamente a URL do sub-menu "Competências".						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "acesso negado" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar acessar diretamente a URL de edição de área (ex: /skills/organograma/area/123/edit).						
+					</actions>
+					<expectedresults>
+						
+Uma tela de "acesso negado" deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar sanitização de dados em campos de texto">
+			<summary>
+				
+Assegurar que o sistema sanitize adequadamente dados inseridos em campos de texto para prevenir XSS.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Estar na tela de edição de área ou função.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tentar inserir código JavaScript malicioso no campo "Nome da área" (ex: `&amp;lt;script&amp;gt;alert('XSS')&amp;lt;/script&amp;gt;`).						
+					</actions>
+					<expectedresults>
+						
+O sistema deve sanitizar o input e não executar o código. O texto deve ser tratado como texto puro.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar inserir HTML malicioso no campo "Descrição" da função.						
+					</actions>
+					<expectedresults>
+						
+O sistema deve sanitizar ou permitir apenas tags HTML seguras (se for rich text). Código malicioso não deve ser executado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Validações de Exportação">
+		<testcase name="Exportar organograma vazio ou sem dados">
+			<summary>
+				
+Validar o comportamento ao tentar exportar um organograma sem dados suficientes.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar visível na tela, mas com poucos ou nenhum dado (ex: apenas estrutura sem pessoas/funções).</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no botão "Extrair dados" em um organograma com estrutura mínima.						
+					</actions>
+					<expectedresults>
+						
+O modal de opções de exportação deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar formato e tentar exportar.						
+					</actions>
+					<expectedresults>
+						
+O arquivo deve ser gerado mesmo com dados mínimos, contendo a estrutura disponível. Um toast deve informar: "Exportação concluída. O arquivo contém os dados disponíveis no organograma."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar exportação com filtros aplicados na visualização de lista">
+			<summary>
+				
+Verificar que a exportação respeite os filtros aplicados na visualização de lista.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve estar na visualização de lista com filtros aplicados.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Aplicar filtros na visualização de lista (ex: "Áreas sem usuários", filtro por nome).						
+					</actions>
+					<expectedresults>
+						
+A lista deve ser filtrada corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Extrair dados" e selecionar "Dados (linhas): Filtro atual".						
+					</actions>
+					<expectedresults>
+						
+A opção deve ser selecionada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Exportar em PDF ou CSV.						
+					</actions>
+					<expectedresults>
+						
+O arquivo exportado deve conter apenas os dados que correspondem aos filtros aplicados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Validações de Sincronização">
+		<testcase name="Tentar sincronizar organograma sem usuários com conflito">
+			<summary>
+				
+Validar o comportamento ao tentar sincronizar quando não há usuários com conflito de área.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Um organograma deve ter sido criado.
+* Todos os usuários já possuem áreas consistentes com o organograma (sem conflitos).</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no switch "Sincronizar" para ativar a sincronização.						
+					</actions>
+					<expectedresults>
+						
+O modal de configuração da sincronização deve ser exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a tabela de usuários com conflito.						
+					</actions>
+					<expectedresults>
+						
+A tabela deve estar vazia ou exibir a mensagem: "Não há usuários com conflito de área."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Confirmar".						
+					</actions>
+					<expectedresults>
+						
+A sincronização deve ser ativada sem necessidade de seleção de áreas, e um toast deve ser exibido: "Sincronização ativada com sucesso. Todos os usuários já estão consistentes com o organograma."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar cancelamento de sincronização em andamento">
+			<summary>
+				
+Verificar se é possível cancelar uma sincronização que está em andamento.				
+			</summary>
+			<preconditions>* O usuário deve estar logado como administrador.
+* Uma sincronização do organograma deve estar em andamento.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Iniciar uma sincronização do organograma.						
+					</actions>
+					<expectedresults>
+						
+O processo deve ser iniciado e uma notificação deve ser exibida.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se existe opção de cancelamento.						
+					</actions>
+					<expectedresults>
+						
+Se houver opção de cancelamento, ao clicar, um modal de confirmação deve ser exibido: "Tem certeza que deseja cancelar a sincronização? O processo será interrompido e as alterações já realizadas serão mantidas."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar o cancelamento.						
+					</actions>
+					<expectedresults>
+						
+A sincronização deve ser interrompida e uma notificação deve ser exibida: "Sincronização cancelada. As alterações realizadas até o momento foram mantidas."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
