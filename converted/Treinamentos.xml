@@ -1,0 +1,6070 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Registro de conteúdo externo">
+		<testcase name="Acessar formulário de criação de registro de conteúdo externo">
+			<summary>
+				
+Verificar se o administrador consegue acessar o formulário de registro de conteúdo externo				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu "Aprendizagem"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a opção "Registros"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "+ Adicionar"						
+					</actions>
+					<expectedresults>
+						
+O formulário "Novo conteúdo externo" é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo Website">
+			<summary>
+				
+Verificar tipo, tooltip, placeholder do campo Website				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Link do site onde o conteúdo externo foi realizado. Ex: https://www.udemy.com/course/design-thinking/&lt;br /&gt;
+https://medium.com/artigo-sobre-liderança&lt;br /&gt;
+https://youtu.be/abc123xyz&lt;br /&gt;
+https://www.amazon.com.br/liderança-estratégica						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+https://exemplo.com/treinamento						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tipo						
+					</actions>
+					<expectedresults>
+						
+Input						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Caracteres						
+					</actions>
+					<expectedresults>
+						
+Alfanuméricos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo Website com URL inválida">
+			<summary>
+				
+Verificar se o campo "Website" valida a inserção de uma URL inválida				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir uma string inválida (ex: "isto não é uma url") no campo "Website"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar salvar o formulário ou acionar o preenchimento por IA						
+					</actions>
+					<expectedresults>
+						
+Uma mensagem de erro de validação é exibida, impedindo a submissão com URL inválida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo Evidência da aprendizagem">
+			<summary>
+				
+Verificar tipo, tooltip, mensagens do componente de upload de arquivos				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Envie arquivos que comprovem a participação ou conclusão do treinamento. Ex: Certificado de conclusão (PDF ou imagem); Comprovante de inscrição ou presença; Imagem do vídeo no Youtube.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+Arraste o arquivo ou clique para selecionar						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Formatos aceitos						
+					</actions>
+					<expectedresults>
+						
+.pdf, .png, .jpg, .jpeg, .docx .xlsx .csv						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tamanho máximo por arquivo						
+					</actions>
+					<expectedresults>
+						
+10MB						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Quantidade máxima de arquivos						
+					</actions>
+					<expectedresults>
+						
+5						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Dica						
+					</actions>
+					<expectedresults>
+						
+Dica: envie certificados, listas de presença ou outros comprovantes para que a IA reconheça e preencha os dados automaticamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Upload de arquivo com formato não permitido">
+			<summary>
+				
+Verificar se o campo "Evidência da aprendizagem" impede o upload de arquivos com formatos não aceitos				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar fazer o upload de arquivo com formato não listado como aceito (ex: zip)						
+					</actions>
+					<expectedresults>
+						
+O sistema impede o upload e exibe uma mensagem informando os formatos aceitos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Upload de arquivo excedendo o tamanho máximo">
+			<summary>
+				
+Verificar se o campo "Evidência da aprendizagem" impede o upload de arquivos que excedam o tamanho máximo permitido				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Conter arquivos maiores que 10MB</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar fazer o upload de arquivo com mais de 10MB						
+					</actions>
+					<expectedresults>
+						
+O sistema impede o upload e exibe uma mensagem informando o tamanho máximo permitido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Upload de arquivo excedendo a quantidade máxima">
+			<summary>
+				
+Verificar se o campo "Evidência da aprendizagem" impede o upload de arquivos que excedam a quantidade máxima				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Deve ter ao menos 6 arquivos para upload</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o upload de apenas 1 arquivo						
+					</actions>
+					<expectedresults>
+						
+Arquivo é carregado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o upload de +1 arquivo (total = 2)						
+					</actions>
+					<expectedresults>
+						
+Arquivo é carregado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o upload de +1 arquivo (total = 3)						
+					</actions>
+					<expectedresults>
+						
+Arquivo é carregado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o upload de +1 arquivo (total = 4)						
+					</actions>
+					<expectedresults>
+						
+Arquivo é carregado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o upload de +1 arquivo (total = 5)						
+					</actions>
+					<expectedresults>
+						
+Arquivo é carregado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar realizar o upload de +1 arquivo (total = 6)						
+					</actions>
+					<expectedresults>
+						
+O sistema impede o upload e exibe uma mensagem informativa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Excluir todos os arquivos carregados anteriormente (5)						
+					</actions>
+					<expectedresults>
+						
+Arquivos devem ser excluídos com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar realizar o upload selecionando 6 arquivos de uma só vez						
+					</actions>
+					<expectedresults>
+						
+O sistema impede o upload e exibe uma mensagem informativa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação da mensagem para preencher com IA">
+			<summary>
+				
+Validar mensagem da opção de preencher com IA				
+			</summary>
+			<preconditions>Ter acesso administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mensagem						
+					</actions>
+					<expectedresults>
+						
+Facilite seu trabalho com nossa IA&lt;br /&gt;
+&lt;br /&gt;
+Com base nas informações fornecidas como a Website da atividade e evidências de aprendizagem, nossa IA poderá preencher os campos abaixo. Quer uma ajuda?&lt;br /&gt;
+A IA pode cometer erros, verifique as informações						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Seleção de Pessoas no campo [Pessoas]">
+			<summary>
+				
+Verificar a funcionalidade de seleção de pessoas no campo "Pessoas"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem pessoas ativas e inativas cadastrados no sistema
+Com cadastros com nome, CPF, e-mail, área e função (atual campo "Cargo" no cadastro de usuários)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Pessoas que realizaram o treinamento externo. Você pode buscar pelo nome, CPF, e-mail, área e função. Pessoa é o usuário no sistema.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+Clique para selecionar as pessoas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no campo "Pessoas"						
+					</actions>
+					<expectedresults>
+						
+Abre drawer com filtros/pesquisa para seleção de pessoas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No drawer, pesquisar pelo nome do usuário inativo						
+					</actions>
+					<expectedresults>
+						
+Pessoas com cadastro inativo não devem ser retornadas na pesquisa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No drawer, pesquisar pelo CPF do usuário inativo						
+					</actions>
+					<expectedresults>
+						
+Pessoas com cadastro inativo não devem ser retornadas na pesquisa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No drawer, pesquisar pelo e-mail do usuário inativo						
+					</actions>
+					<expectedresults>
+						
+Pessoas com cadastro inativo não devem ser retornadas na pesquisa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pesquisar por nome, da pessoa ativa						
+					</actions>
+					<expectedresults>
+						
+Pessoa é retornada com sucesso&lt;br /&gt;
+Deve ser possível selecioná-la						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pesquisar por CPF, da pessoa ativa						
+					</actions>
+					<expectedresults>
+						
+Pessoa é retornada com sucesso&lt;br /&gt;
+Deve ser possível selecioná-la						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pesquisar por e-mail, da pessoa ativa						
+					</actions>
+					<expectedresults>
+						
+Pessoa é retornada com sucesso&lt;br /&gt;
+Deve ser possível selecioná-la						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Filtrar por "Área" (selecionando múltiplos valores)						
+					</actions>
+					<expectedresults>
+						
+Pessoas relacionadas à Área são retornadas&lt;br /&gt;
+Deve permitir selecioná-las						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Filtrar por "Função" (selecionando múltiplos valores)&lt;br /&gt;
+(obs: atual campo "Cargo" no cadastro de usuários)						
+					</actions>
+					<expectedresults>
+						
+Pessoas relacionadas à Função são retornadas&lt;br /&gt;
+Deve permitir selecioná-las						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pesquisar mais pessoas e analisar dados retornados no card						
+					</actions>
+					<expectedresults>
+						
+Deve exibir Nome / CPF / E-mail&lt;br /&gt;
+Badge com nome da Área&lt;br /&gt;
+LIsta com as funções (pode ser uma ou mais)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>13</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar mais pessoas e Adicionar						
+					</actions>
+					<expectedresults>
+						
+As pessoas selecionados são adicionados ao campo "Pessoas" do formulário						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>14</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo Conteúdo">
+			<summary>
+				
+Verificar campo, tooltip, placeholder e pesquisa do campo de seleção de conteúdos				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tipo						
+					</actions>
+					<expectedresults>
+						
+Select / Pesquisa - apenas uma opção						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Nome do treinamento, curso, vídeo, artigo, livro, mentoria, coaching, workshop ou evento.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+Ex.: Curso de oratória						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Conteúdo", digitar nome de conteúdo que não existe no sistema (ex: "Novo Curso de Astrofísica")						
+					</actions>
+					<expectedresults>
+						
+Não há dados para exibir						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Cadastro de novo Conteúdo via formulário">
+			<summary>
+				
+Verificar se novo conteúdo é cadastrado automaticamente ao salvar registro de conteúdo externo se o conteúdo não existir previamente				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Conteúdo", digitar nome de conteúdo que não existe no sistema (ex: "Novo Curso de Astrofísica")						
+					</actions>
+					<expectedresults>
+						
+Não há dados para exibir						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar inclusão do texto digitado com ENTER						
+					</actions>
+					<expectedresults>
+						
+Conteúdo deve ser adicionado ao campo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios e "Salvar"						
+					</actions>
+					<expectedresults>
+						
+O registro de conteúdo externo é salvo com sucesso &lt;br /&gt;
+O "Novo Curso de Astrofísica" é adicionado à lista de conteúdos externos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Selecionar Conteúdo já cadastrado">
+			<summary>
+				
+Verificar se conteúdo é adicionado corretamente quando já existe no sistema				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter cadastro de conteúdo externo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Conteúdo", digitar nome de conteúdo já cadastrado na plataforma						
+					</actions>
+					<expectedresults>
+						
+Deve exibir o conteúdo e permitir selecionar						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o conteúdo exibido na pesquisa						
+					</actions>
+					<expectedresults>
+						
+Conteúdo deve ser adicionado ao campo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios e "Salvar"						
+					</actions>
+					<expectedresults>
+						
+O registro de conteúdo externo é salvo com sucesso &lt;br /&gt;
+O conteúdo selecionado (já cadastrado) não deve ter seu registro duplicado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo Provedor">
+			<summary>
+				
+Verificar campo, tooltip, placeholder e pesquisa do campo de seleção de provedor				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tipo						
+					</actions>
+					<expectedresults>
+						
+Select / Pesquisa - apenas uma opção						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Nome da instituição, plataforma ou empresa que ofereceu a atividade externa.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+Ex: Udemy, Coursera, Google						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Provedor", digitar nome que não existe no sistema (ex: "Academia Espacial")						
+					</actions>
+					<expectedresults>
+						
+Não há dados para exibir						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Cadastro de novo Provedor via formulário">
+			<summary>
+				
+Verificar se novo provedor é cadastrado automaticamente ao salvar registro de conteúdo externo se o provedor não existir previamente				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Provedor", digitar nome que não existe no sistema (ex: "Academia de Astrofísica")						
+					</actions>
+					<expectedresults>
+						
+Não há dados para exibir						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar inclusão do texto digitado com ENTER						
+					</actions>
+					<expectedresults>
+						
+Conteúdo deve ser adicionado ao campo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios e "Salvar"						
+					</actions>
+					<expectedresults>
+						
+O registro de conteúdo externo é salvo com sucesso &lt;br /&gt;
+O provedor "Academia de Astrofísica" é adicionado à lista de provedores						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Selecionar Provedor já cadastrado">
+			<summary>
+				
+Confirmar que é possível selecionar provedor já cadastrado				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter provedores cadastrados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Provedor", pesquisar por provedor já cadastrado						
+					</actions>
+					<expectedresults>
+						
+Provedores relacionados devem ser retornados para seleção						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar provedor e "Salvar"						
+					</actions>
+					<expectedresults>
+						
+Registro de conteúdo externo é salvo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar que não é possível selecionar provedores inativos">
+			<summary>
+				
+Verificar que os provedores inativos não são exibidos como opção de seleção no formulário de conteúdo externo				
+			</summary>
+			<preconditions>Ter acesso administrador
+Ter provedores inativos no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário de conteúdo externo						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Provedor", digitar o nome de um provedor inativo						
+					</actions>
+					<expectedresults>
+						
+Provedor não deve ser listado como opção						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo da Carga horária">
+			<summary>
+				
+Verificar se o campo "Carga horária" aceita apenas o formato de horas				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Duração total do treinamento no formato hhh:mm (ex: 08:00). Se o conteúdo foi enviado por Website ou arquivo, a IA poderá sugerir a carga horária estimada automaticamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+100						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Carga horária", tentar inserir:&lt;br /&gt;
+Apenas letras (ex: "abc")						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Carga horária", tentar inserir:&lt;br /&gt;
+Números com mais de dois dígitos após o ":" (ex: "01:123")						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Carga horária", tentar inserir horas e minutos (ex: "08:00", "10:30")						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir números inteiros de 1 a 999						
+					</actions>
+					<expectedresults>
+						
+O input deve aceitar apenas dígitos numéricos no formato de horas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo Nota">
+			<summary>
+				
+Verificar se o campo "Nota" aceita apenas valores entre 0 e 100				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Nota ou conceito final recebido pelo colaborador (ex: 85). Se o website ou arquivos foram enviados, a IA poderá identificar e preencher automaticamente este campo.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placholder						
+					</actions>
+					<expectedresults>
+						
+0-100						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Nota", tentar inserir:&lt;br /&gt;
+valor menor que 0 (ex: "-10")						
+					</actions>
+					<expectedresults>
+						
+O campo deve rejeitar valores fora do intervalo 0-100						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Nota", tentar inserir:&lt;br /&gt;
+valor maior que 100 (ex: "101")						
+					</actions>
+					<expectedresults>
+						
+O campo deve rejeitar valores fora do intervalo 0-100						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Nota", tentar inserir:&lt;br /&gt;
+valor dentro do intervalo (ex: 0, 75, 100)						
+					</actions>
+					<expectedresults>
+						
+Valores dentro do intervalo são aceitos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo Descrição">
+			<summary>
+				
+Verificar informações do campo "Descrição" e se exibe a contagem de caracteres em tempo real				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tipo						
+					</actions>
+					<expectedresults>
+						
+PlateJS						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Descreva brevemente o conteúdo ou os principais tópicos abordados no treinamento. Este campo pode ser preenchido automaticamente pela IA se você enviou um Website ou arquivo(s).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+Adicione informações complementares sobre o treinamento						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Digitar texto no campo "Descrição"						
+					</actions>
+					<expectedresults>
+						
+Contador de caracteres é exibido e atualizado em tempo real conforme o texto é digitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar "colar" / "digitar" descrição maior que o limite de caracteres						
+					</actions>
+					<expectedresults>
+						
+Deve exibir mensagem e não deve permitir inserir mais caracteres do que o permitido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo Categorias">
+			<summary>
+				
+Verificar que é possível selecionar / criar categorias para serem vinculadas ao conteúdo externo				
+			</summary>
+			<preconditions>Ter acesso administrados
+Cadastros de categorias na plataforma (em cursos, trilhas, pacotes)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Categorias relacionadas ao conteúdo. Use ponto e vírgula (;) para separar diferentes categorias e vírgula (,) para inseri-las.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+Escreva os nomes das categorias separadas por vírgula						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pesquisar e selecionar categorias já existentes						
+					</actions>
+					<expectedresults>
+						
+Categorias devem ser adicionadas com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar categorias não cadastradas						
+					</actions>
+					<expectedresults>
+						
+Categorias devem ser adicionadas com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios e salvar						
+					</actions>
+					<expectedresults>
+						
+Registro deve ser criado com sucesso assim como o cadastro da nova categoria						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo Experiência de aprendizagem">
+			<summary>
+				
+Validar tipo, tooltip, placeholder do campo de Experiência da aprendizagem				
+			</summary>
+			<preconditions>Ter acesso administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tipo						
+					</actions>
+					<expectedresults>
+						
+Select / Pesquisa - apenas uma opção						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Tipo de atividade realizada. Você pode registrar o que precisar, como Treinamento, Livro, Artigo, Vídeo, Mentoria, Coaching entre outros. 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+Ex: Treinamento, Livro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Experiência de aprendizagem", digitar nome que não existe no sistema						
+					</actions>
+					<expectedresults>
+						
+Não há dados para exibir						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Cadastro de nova Experiência de aprendizagem via formulário">
+			<summary>
+				
+Verificar se nova experiência de aprendizagem é cadastrada automaticamente ao salvar registro de conteúdo externo se a experiência não existir				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Experiência de aprendizagem", digitar nome que não existe no sistema						
+					</actions>
+					<expectedresults>
+						
+Não há dados para exibir						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar inclusão do texto digitado com ENTER						
+					</actions>
+					<expectedresults>
+						
+Conteúdo deve ser adicionado ao campo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios e "Salvar"						
+					</actions>
+					<expectedresults>
+						
+O registro de conteúdo externo é salvo com sucesso &lt;br /&gt;
+Nova experiência de aprendizagem é cadastrada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Selecionar Experiência de aprendizagem já cadastrada">
+			<summary>
+				
+Verificar se experiência de aprendizagem é adicionada corretamente quando já existe no sistema				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter cadastro de experiência de aprendizagem</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No campo "Experiência de aprendizagem", digitar nome já cadastrado na plataforma						
+					</actions>
+					<expectedresults>
+						
+Deve exibir o conteúdo e permitir selecionar						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o conteúdo exibido na pesquisa						
+					</actions>
+					<expectedresults>
+						
+Conteúdo deve ser adicionado ao campo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios e "Salvar"						
+					</actions>
+					<expectedresults>
+						
+O registro de conteúdo externo é salvo com sucesso &lt;br /&gt;
+A experiência de aprendizagem selecionada (já cadastrada) não deve ser duplicada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Seleção de Competências no campo [Competências]">
+			<summary>
+				
+Verificar a funcionalidade de seleção de competências no campo "Competências"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Funcionalidade de Competências habilitada e cadastros realizados
+Existem pessoas ativas e inativas cadastrados no sistema
+Com cadastros com área e função (atual campo "Cargo" no cadastro de usuários)
+Ter usuários inativos em áreas / funções específicas/exclusivas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Competência desenvolvida pelo colaborador ao realizar este treinamento (ex: Liderança, Vendas, Excel). Se o website ou arquivos forem enviados, a IA poderá sugerir automaticamente as competências relacionadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+Clique para selecionar as competências						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no campo "Competências"						
+					</actions>
+					<expectedresults>
+						
+Abre drawer com filtros/pesquisa para seleção de competências						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No drawer, aplicar filtro de "Área" da pessoa inativa						
+					</actions>
+					<expectedresults>
+						
+Pessoas com cadastro inativo não devem ser retornadas no filtro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+No drawer, aplicar filtro de "Função" da pessoa inativa						
+					</actions>
+					<expectedresults>
+						
+Pessoas com cadastro inativo não devem ser retornadas no filtro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Filtrar por "Área" (selecionando múltiplos valores)						
+					</actions>
+					<expectedresults>
+						
+Pessoas relacionadas à Área são retornadas&lt;br /&gt;
+Deve permitir selecioná-las						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Filtrar por "Função" (selecionando múltiplos valores)&lt;br /&gt;
+(obs: atual campo "Cargo" no cadastro de usuários)						
+					</actions>
+					<expectedresults>
+						
+Pessoas relacionadas à Função são retornadas&lt;br /&gt;
+Deve permitir selecioná-las						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar mais pessoas e Adicionar						
+					</actions>
+					<expectedresults>
+						
+As pessoas selecionados são adicionados ao campo "Pessoas" do formulário						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar não exibição do campo &quot;Competências&quot;">
+			<summary>
+				
+Confirmar que quando funcionalidade não habilitada para o ambiente, campo não será exibido no formulário de registro de conteúdo externo.				
+			</summary>
+			<preconditions>Ter acesso administrador
+Funcionalidade de Competências desabiltada para o ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Validar campos do formulário						
+					</actions>
+					<expectedresults>
+						
+Campo de "Competências" não deve ser exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios e "Salvar"						
+					</actions>
+					<expectedresults>
+						
+Registro deve ser salvo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação do campo Valor do Conteúdo">
+			<summary>
+				
+Validar tipo, tooltip, placehoder, caracteres, máscara do campo de valor				
+			</summary>
+			<preconditions>Ter acesso administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tipo						
+					</actions>
+					<expectedresults>
+						
+Monetário (R$)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Máscara						
+					</actions>
+					<expectedresults>
+						
+R$						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Placeholder						
+					</actions>
+					<expectedresults>
+						
+R$ 500,00						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Informe o valor pago pelo conteúdo ou curso externo, se aplicável. Caso seja gratuito, deixe em branco ou insira '0'.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Limites						
+					</actions>
+					<expectedresults>
+						
+0 - 99999,99						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir valores fora dos limites						
+					</actions>
+					<expectedresults>
+						
+Valor não deve persistir no campo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir valores dentro do limite (0; 149,90; 1399,90; 10500,00; 99999,99)						
+					</actions>
+					<expectedresults>
+						
+Valores devem ser aceitos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação das Datas de Início e Término">
+			<summary>
+				
+Verificar as validações entre as datas de início e término				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir/selecionar "Data de início" posterior à "Data de término"						
+					</actions>
+					<expectedresults>
+						
+O sistema impede a inserção de "Data de início" maior que "Data de término"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir/selecionar "Data de término" anterior à "Data de início"						
+					</actions>
+					<expectedresults>
+						
+O sistema impede a inserção de "Data de término" menor que "Data de início"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir/selecionar "Data de início" e "Data de término" futuras						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir selecionar datas futuras para "Data de início" e "Data de término"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir/selecionar mesmas datas (menor que a data atual) para início e término						
+					</actions>
+					<expectedresults>
+						
+Deve permitir mesmas datas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir/selecionar mesmas datas (igual a data atual) para início e término						
+					</actions>
+					<expectedresults>
+						
+Deve permitir mesmas datas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir/selecionar data de início anterior a data atual e término igual a data atual						
+					</actions>
+					<expectedresults>
+						
+Deve permitir a seleção das datas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir/selecionar data de início anterior (+2 dias) a data atual e término menor que a data atual						
+					</actions>
+					<expectedresults>
+						
+Deve permitir a seleção das datas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de Datas futuras (Aprovação, Certificado)">
+			<summary>
+				
+Verificar se os campos "Data da aprovação" e "Data do certificado" não permitem datas futuras				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar selecionar uma data futura para "Data da aprovação"						
+					</actions>
+					<expectedresults>
+						
+O sistema impede a seleção de datas futuras						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar data anterior a data atual						
+					</actions>
+					<expectedresults>
+						
+Data deve ser selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar data atual						
+					</actions>
+					<expectedresults>
+						
+Data deve ser selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar selecionar uma data futura para "Data do certificado"						
+					</actions>
+					<expectedresults>
+						
+O sistema impede a seleção de datas futuras						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar data anterior a data atual						
+					</actions>
+					<expectedresults>
+						
+Data deve ser selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar data atual						
+					</actions>
+					<expectedresults>
+						
+Data deve ser selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de Data de Expiração">
+			<summary>
+				
+Verificar se o campo "Data de expiração" permite qualquer data (anterior, atual, futura)				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar selecionar uma data futura para "Data de expiração"						
+					</actions>
+					<expectedresults>
+						
+O sistema permite a seleção de datas futuras						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar data anterior a data atual						
+					</actions>
+					<expectedresults>
+						
+Data é selecionada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar data atual						
+					</actions>
+					<expectedresults>
+						
+Data é selecionada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar obrigatoriedade de campos">
+			<summary>
+				
+Validar a obrigatoriedade dos campos ao salvar o formulário				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+"+ Adicionar" registro						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão para salvar						
+					</actions>
+					<expectedresults>
+						
+Deve exibir mensagem inline nos campos:&lt;br /&gt;
+Pessoas, Conteúdo, Provedor, Carga horária, Experiência de aprendizagem, Data de término&lt;br /&gt;
+E não deve permitir salvar						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher apenas os campos obrigatórios e "Salvar"						
+					</actions>
+					<expectedresults>
+						
+Exibe mensagem de sucesso&lt;br /&gt;
+Redireciona para a listagem de provedores						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Salvar registro manual de conteúdo externo">
+			<summary>
+				
+Verificar o salvamento bem-sucedido de registro de conteúdo externo				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Todos os campos obrigatórios do formulário devem estar preenchidos corretamente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios com dados válidos e "Salvar"						
+					</actions>
+					<expectedresults>
+						
+Uma toast message "conteúdo externo criado com sucesso" é exibida e registro é exibido na listagem 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Cancelar registro de conteúdo externo">
+			<summary>
+				
+Verificar o comportamento do botão "Cancelar"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher alguns campos, mas não todos e "Cancelar"						
+					</actions>
+					<expectedresults>
+						
+Uma mensagem de confirmação do navegador é exibida 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Cancelar mensagem de confirmação do navegador						
+					</actions>
+					<expectedresults>
+						
+Nenhuma ação é realizada e permanece na tela de novo conteúdo externo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+"Cancelar" novamente o registro e confirmar mensagem do navegador						
+					</actions>
+					<expectedresults>
+						
+Registro é abortado e usuário é redirecionado para a listagem de registros						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="&quot;Voltar&quot; da tela de registro de conteúdo externo">
+			<summary>
+				
+Verificar o comportamento do botão "Voltar"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher alguns campos, mas não todos e "Voltar"						
+					</actions>
+					<expectedresults>
+						
+Uma mensagem de confirmação do navegador é exibida 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Cancelar mensagem de confirmação do navegador						
+					</actions>
+					<expectedresults>
+						
+Nenhuma ação é realizada e permanece na tela de novo conteúdo externo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+"Voltar" novamente e agora confirmar mensagem do navegador						
+					</actions>
+					<expectedresults>
+						
+Registro é abortado e usuário é redirecionado para a listagem de registros						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Preenchimento automático de campos com IA via Website">
+			<summary>
+				
+Verificar o preenchimento automático dos campos do formulário utilizando IA a partir de Website				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Opção para utilizar preenchimento por IA habilitada no contrato 
+O ambiente deve ter créditos de IA disponíveis
+Ter ao menos 2 URL's válidas
+
+Obs.: Campos passíveis de preenchimento automático: 
+Pessoas, Conteúdo, Provedor, Carga horária, Descrição, Categorias, Experiência de aprendizagem, Competências</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir uma URL pública válida (ex: "https://wwwudemycom/course/design-thinking/") no campo "Website"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Preencher com IA"						
+					</actions>
+					<expectedresults>
+						
+A IA analisa o Website e preenche os campos disponíveis, automaticamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Editar o Website inserindo outra URL válida e clicar novamente em "Preencher com IA"						
+					</actions>
+					<expectedresults>
+						
+IA deve preencher campos disponíveis, automaticamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher campos obrigatórios não preenchidos e "Salvar" 						
+					</actions>
+					<expectedresults>
+						
+Registro é salvo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Preenchimento automático de campos com IA via arquivo">
+			<summary>
+				
+Verificar o preenchimento automático dos campos do formulário utilizando IA a partir do upload de arquivos (pdf, csv, imagem)				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Opção para utilizar preenchimento por IA habilitada no contrato 
+O ambiente deve ter créditos de IA disponíveis
+Ter ao menos 2 arquivos de cada tipo (pdf, csv, imagem)
+
+Obs.: Campos passíveis de preenchimento automático: 
+Pessoas, Conteúdo, Provedor, Carga horária, Descrição, Categorias, Experiência de aprendizagem, Competências</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o formulário "Novo conteúdo externo"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o upload de arquivo de evidência (ex: PDF de certificado) no campo "Evidência da aprendizagem"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Preencher com IA"						
+					</actions>
+					<expectedresults>
+						
+A IA analisa o arquivo e preenche os campos  automaticamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o upload de outro arquivo (csv) e "Preencher com IA"						
+					</actions>
+					<expectedresults>
+						
+A IA analisa o arquivo e preenche os campos  automaticamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o upload de outro arquivo (imagem) e "Preencher com IA"						
+					</actions>
+					<expectedresults>
+						
+A IA analisa o arquivo e preenche os campos  automaticamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher campos obrigatórios não preenchidos e "Salvar" 						
+					</actions>
+					<expectedresults>
+						
+Registro é salvo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Registros">
+		<testcase name="Acessar listagem de registros de conteúdo externo">
+			<summary>
+				
+Verificar se o administrador consegue visualizar a listagem de registros (externos e internos)				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem registros de conteúdo externos e internos cadastrados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu "Aprendizagem"						
+					</actions>
+					<expectedresults>
+						
+Deve exibir as opções do menu contendo o submenu "Registros" com a tag de "BETA" exibida ao lado do menu 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a opção "Registros"						
+					</actions>
+					<expectedresults>
+						
+A listagem padrão da plataforma é exibida, contendo registros externos e internos&lt;br /&gt;
+Com as colunas: Usuário, Conteúdo, Origem, Experiência, Provedor, Website, Evidências, Carga horária, Situação, Ações						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Funcionalidades da listagem de registros (Botões)">
+			<summary>
+				
+Verificar a presença e funcionalidade dos botões na tela de listagem de registros				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de registros de conteúdo externo						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a presença dos botões: "+ Adicionar", "Extrair dados", "Pesquisa", "blocos", "lista" e "Filtro"						
+					</actions>
+					<expectedresults>
+						
+Todos os botões são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ordenação das colunas na listagem de registros">
+			<summary>
+				
+Verificar a ordenação crescente/decrescente das colunas da tabela				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+A listagem de registros contém múltiplos itens, incluindo registros internos e externos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Pessoa						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Conteúdo						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Origem						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Experiência de aprendizagem						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Provedor						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Website						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Evidências						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>13</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>14</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Carga horária						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>15</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>16</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Situação						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>17</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>18</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Visualização e clique da coluna Website">
+			<summary>
+				
+Verificar a exibição do ícone e o comportamento de clique na coluna "Website"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem registros com website preenchido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de registros						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar registro com website na coluna "Website"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a presença do ícone "🔗" seguido da URL						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no ícone ou na URL						
+					</actions>
+					<expectedresults>
+						
+O link abre em uma nova aba do navegador						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Visualização e download de Evidências">
+			<summary>
+				
+Verificar a exibição dos ícones de evidência e o download dos arquivos				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem registros com arquivos de evidência de diferentes tipos (CSV, PDF, Imagem)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar registros com evidências na coluna "Evidência"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a exibição dos ícones correspondentes ao tipo de arquivo (ex: ícone de PDF para pdf)						
+					</actions>
+					<expectedresults>
+						
+Os ícones corretos são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o ícone e verificar o tooltip						
+					</actions>
+					<expectedresults>
+						
+O tooltip mostra o nome do tipo de arquivo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no ícone						
+					</actions>
+					<expectedresults>
+						
+ Ao clicar, o download da evidência é iniciado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Formatação da Carga horária na listagem">
+			<summary>
+				
+Verificar a formatação da carga horária na coluna "Carga horária"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem registros com diferentes formatos de carga horária 
+(apenas horas, apenas minutos, horas e minutos)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a coluna "Carga horária" para registros com: 30:00 (apenas horas)						
+					</actions>
+					<expectedresults>
+						
+A carga horária é exibida como "30h"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a coluna "Carga horária" para registros com: 00:15 (apenas minutos)						
+					</actions>
+					<expectedresults>
+						
+A carga horária é exibida como "15min"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a coluna "Carga horária" para registros com: 30:15 (horas e minutos)						
+					</actions>
+					<expectedresults>
+						
+A carga horária é exibida como "30h15min"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição da Situação na listagem">
+			<summary>
+				
+Verificar a exibição das badges de "Situação" na listagem				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem registros com diferentes situações 
+(Aprovado, Pendente, Recusado)
+
+Obs.: Neste primeiro momento, o registro criado sempre exibirá como "Aprovado". Verificar possibilidade de manipulação das situações via banco para validar na lista.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a coluna "Situação" para registros com "Aprovado", "Pendente" e "Recusado"						
+					</actions>
+					<expectedresults>
+						
+As badges correspondentes são exibidas corretamente (Nota: Para este primeiro momento, o status deve iniciar como "Aprovado")						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coluna Origem na listagem de registros">
+			<summary>
+				
+Verificar a exibição e o tooltip da coluna "Origem"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem registros com diferentes origens
+(interno, externo, Compartilhado)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Deve exibir a mensagem:&lt;br /&gt;
+Define de onde vem o registro de aprendizagem:&lt;br /&gt;
+- Interno: criado e concluído dentro da plataforma&lt;br /&gt;
+- Externo: realizado fora da plataforma&lt;br /&gt;
+- Compartilhado: importado ou integrado de outro ambiente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a coluna "Origem" para registros "interno", "externo" e "compartilhado"						
+					</actions>
+					<expectedresults>
+						
+Os valores "interno", "externo" e "compartilhado" são exibidos corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coluna Provedor na listagem de registros">
+			<summary>
+				
+Verificar a exibição e o tooltip da coluna "Provedor"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem registros com provedores cadastrados (conteúdos externos e conteúdos recebidos por compartilhamentos espelho)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Nome da instituição, plataforma ou empresa que ofereceu o conteúdo.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a coluna "Provedor"						
+					</actions>
+					<expectedresults>
+						
+O nome do provedor é exibido conforme seleção no registro de conteúdo externo ou nome do ambiente que compartilhou o conteúdo com o ambiente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coluna Experiência de aprendizagem na listagem de registros">
+			<summary>
+				
+Verificar a exibição e o tooltip da coluna "Experiência de aprendizagem"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Existem registros com diferentes experiências de aprendizagem</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tooltip						
+					</actions>
+					<expectedresults>
+						
+Tipo de atividade realizada. Você pode registrar o que precisar, como Treinamento, Livro, Artigo, Vídeo, Mentoria, Coaching entre outros.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a coluna "Experiência de aprendizagem"						
+					</actions>
+					<expectedresults>
+						
+O tipo de atividade (ex: conteúdo externo, Livro) é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Excluir registro de conteúdo externo">
+			<summary>
+				
+Verificar a exclusão de registro de conteúdo externo				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existe registro de conteúdo externo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a lista de registros						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Na coluna "Ações" de registro externo, clicar na opção "Excluir"						
+					</actions>
+					<expectedresults>
+						
+Modal de confirmação é exibido com "Usuário: ...&lt;br /&gt;
+Atividade: ...&lt;br /&gt;
+Tem certeza que deseja excluir?"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Cancelar" 						
+					</actions>
+					<expectedresults>
+						
+Nenhuma ação deve ser realizada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar a exclusão no modal						
+					</actions>
+					<expectedresults>
+						
+Exibe toast message "Registro de conteúdo externo excluído com sucesso" e o registro é removido da listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar registro de conteúdo externo">
+			<summary>
+				
+Verificar a edição de registro de conteúdo externo				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existe registro de conteúdo externo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Na coluna "Ações" de registro externo, clicar na opção "Editar"						
+					</actions>
+					<expectedresults>
+						
+O formulário de edição é exibido preenchido com os dados do registro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar campo (ex: "Carga horária") e salvar						
+					</actions>
+					<expectedresults>
+						
+ As alterações são refletidas na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Validar a alteração/persistência dos dados de todos os campos que podem ser editados						
+					</actions>
+					<expectedresults>
+						
+ As alterações são refletidas na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Tentativa de exclusão/edição de registro interno">
+			<summary>
+				
+Verificar se registros internos não podem ser excluídos ou editados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existe registro de conteúdo interno (curso, trilha, compartilhamento)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Na coluna "Ações" de registro interno, verificar as opções de "Excluir" e "Editar"						
+					</actions>
+					<expectedresults>
+						
+As opções de "Excluir" e "Editar" estão desabilitadas e exibe mensagem de que registros internos não podem ser editados/excluídos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtros padrão">
+			<summary>
+				
+Verificar a funcionalidade do filtros padrões na lista de registros				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+usuário possui registros de diferentes tipos 
+(Curso, Trilha, externo)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de registros						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir o drawer de filtros						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o filtro padrão para "interno"						
+					</actions>
+					<expectedresults>
+						
+A tabela exibe apenas os registros de conteúdo externo do tipo "interno"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o filtro padrão para "externo"						
+					</actions>
+					<expectedresults>
+						
+A tabela exibe apenas os registros de conteúdo externo do tipo "externo"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o filtro padrão para "compartilhado"						
+					</actions>
+					<expectedresults>
+						
+A tabela exibe apenas os registros de conteúdo externo do tipo "compartilhados"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtros personalizados">
+			<summary>
+				
+Verificar a funcionalidade do filtros padrões na lista de registros				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+usuário possui registros de diferentes tipos 
+(Curso, Trilha, externo)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a lista de registros						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir o drawer de filtros						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Validar a seleção de outras opções de filtro						
+					</actions>
+					<expectedresults>
+						
+A tabela exibe apenas os registros de conteúdo externo conforme filtros aplicados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Extração de dados na lista de registros">
+			<summary>
+				
+Verificar a funcionalidade de extrair dados na lista de registros				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Devem existir registros de conteúdos internos, externos e compartilhados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a aba "Registros"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar a opção de exportar "todos os filtrados"&lt;br /&gt;
+(obs: validar todos os tipos de exportação disponíveis - pdf/csv)						
+					</actions>
+					<expectedresults>
+						
+Todos os valores da tabela são exportados conforme o tipo selecionado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar a opção de exportar "apenas selecionados"&lt;br /&gt;
+(obs: validar todos os tipos de exportação disponíveis - pdf/csv)						
+					</actions>
+					<expectedresults>
+						
+Apenas os registros selecionados são exportados conforme o tipo selecionado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Pesquisar registros">
+			<summary>
+				
+Validar pesquisa de registros				
+			</summary>
+			<preconditions>Acesso administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a lista de registros						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pesquisar por nome de pessoa						
+					</actions>
+					<expectedresults>
+						
+Pesquisa deve retornar resultados válidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pesquisar por nome de conteúdo						
+					</actions>
+					<expectedresults>
+						
+Pesquisa deve retornar resultados válidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pesquisar por provedor						
+					</actions>
+					<expectedresults>
+						
+Pesquisa deve retornar resultados válidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pesquisar por texto inexistente						
+					</actions>
+					<expectedresults>
+						
+Deve retornar mensagem padrão de nenhum resultado encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Visualização em &quot;Blocos&quot; ou &quot;Lista&quot;">
+			<summary>
+				
+Validar as opções de visualização de dados em blocos ou lista				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Devem existir registros de conteúdos internos, externos e compartilhados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de registros						
+					</actions>
+					<expectedresults>
+						
+Visualização padrão deve ser "lista"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar visualização para "Blocos"						
+					</actions>
+					<expectedresults>
+						
+Visualização deve ser aplicada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar ações de visualizar (clique no card), editar e excluir						
+					</actions>
+					<expectedresults>
+						
+Deve ser possível realizar todas as ações e visualizar todas as informações do registro no drawer						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar visualizar para "Lista" novamente						
+					</actions>
+					<expectedresults>
+						
+Visualização deve ser aplicada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Paginação na listagem de registros">
+			<summary>
+				
+Verificar a funcionalidade da paginação				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+A listagem de registros contém mais itens do que o limite por página, considerando também as quantidades de itens exibidos por página (25, 50 e 100)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Utilizar os controles de paginação (próxima página, página anterior, selecionar número da página)						
+					</actions>
+					<expectedresults>
+						
+A paginação funciona corretamente, exibindo os itens da página selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Provedores">
+		<testcase name="Acessar listagem de provedores">
+			<summary>
+				
+Verificar se o administrador consegue acessar a listagem de provedores e se a tabela exibe as colunas padrão corretamente				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu "Aprendizagem"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a opção "Registros"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na aba "Provedores"						
+					</actions>
+					<expectedresults>
+						
+A listagem padrão da plataforma é exibida, contendo provedores com as colunas: Provedor, Descrição, Website, Situação, Ações						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Funcionalidades da listagem de provedores (Botões)">
+			<summary>
+				
+Verificar a presença e funcionalidade dos botões na tela de listagem de provedores				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a presença dos botões: "+ Adicionar", "Extrair dados", "Ações em massa", "Pesquisa" e "Filtro"						
+					</actions>
+					<expectedresults>
+						
+Todos os botões são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar novo provedor">
+			<summary>
+				
+Verificar o processo de adição de novo provedor				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "+ Adicionar"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "Voltar"						
+					</actions>
+					<expectedresults>
+						
+Deve redirecionar para a listagem de provedores&lt;br /&gt;
+Obs.: URL com a rota da aba de provedores deve ser exclusiva						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher os campos "Nome", "Website" e "Descrição"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão para salvar						
+					</actions>
+					<expectedresults>
+						
+Exibe mensagem de sucesso&lt;br /&gt;
+Redireciona para a listagem de provedores						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar obrigatoriedade de campos">
+			<summary>
+				
+Validar a obrigatoriedade dos campos ao salvar o formulário				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+"+ Adicionar" provedor						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão para salvar						
+					</actions>
+					<expectedresults>
+						
+Deve exibir mensagem inline no campo "Nome" indicando que o campo é obrigatório e não deve permitir salvar						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir um nome para o provedor&lt;br /&gt;
+Não preencher "Website" nem "Descrição"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão para salvar						
+					</actions>
+					<expectedresults>
+						
+Exibe mensagem de sucesso&lt;br /&gt;
+Redireciona para a listagem de provedores						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar novo provedor e preencher apenas "Nome" e "Website"						
+					</actions>
+					<expectedresults>
+						
+Exibe mensagem de sucesso&lt;br /&gt;
+Redireciona para a listagem de provedores						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar novo provedor e preencher apenas "Nome" e "Descrição"						
+					</actions>
+					<expectedresults>
+						
+Exibe mensagem de sucesso&lt;br /&gt;
+Redireciona para a listagem de provedores						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ordenação das colunas na listagem de provedores">
+			<summary>
+				
+Verificar a ordenação crescente/decrescente das colunas da tabela de provedores				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+A listagem de provedores contém múltiplos itens</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Provedor						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Descrição						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Website						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna Situação						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma crescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente no mesmo cabeçalho						
+					</actions>
+					<expectedresults>
+						
+A listagem é ordenada de forma decrescente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ativar/Inativar provedor via toggle">
+			<summary>
+				
+Verificar a funcionalidade do toggle na coluna "Situação"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter provedores cadastrados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Na coluna "Ativo", clicar no toggle de provedor ativo para inativá-lo						
+					</actions>
+					<expectedresults>
+						
+O toggle muda a situação do provedor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no toggle de provedor inativo para ativá-lo						
+					</actions>
+					<expectedresults>
+						
+O toggle muda a situação do provedor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar provedor">
+			<summary>
+				
+Verificar a edição de provedor existente				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existe provedor cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Na coluna "Ações" de provedor, clicar na opção "Editar"						
+					</actions>
+					<expectedresults>
+						
+O formulário de edição é exibido preenchido com os dados do provedor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar campo "Nome" e salvar						
+					</actions>
+					<expectedresults>
+						
+Após salvar, as alterações são refletidas na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Editar registro e alterar campo "Descrição" e salvar						
+					</actions>
+					<expectedresults>
+						
+Após salvar, as alterações são refletidas na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Editar registro e alterar campo "Website" e salvar						
+					</actions>
+					<expectedresults>
+						
+Após salvar, as alterações são refletidas na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Excluir provedor sem vínculo">
+			<summary>
+				
+Verificar a exclusão de provedor que não possui nenhum vínculo com conteúdo externo				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existe provedor sem vinculo com conteúdo externo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Na coluna "Ações" de provedor sem vínculo, clicar na opção "Excluir"						
+					</actions>
+					<expectedresults>
+						
+Exibe modal de confirmação de exclusão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Cancelar"						
+					</actions>
+					<expectedresults>
+						
+Nenhuma ação deve ser executada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar ação novamente, confirmando a exclusão						
+					</actions>
+					<expectedresults>
+						
+O provedor é removido da listagem após a confirmação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Tentativa de excluir provedor com vínculo">
+			<summary>
+				
+Verificar se provedor com vínculo de conteúdo externo não pode ser excluído				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existe provedor vinculado em apenas um registro de conteúdo externo
+Existir provedor vinculado a mais de um registro de conteúdo externo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Na coluna "Ações" de provedor com apenas um vínculo, verificar o ícone de exclusão						
+					</actions>
+					<expectedresults>
+						
+O ícone de exclusão estará desabilitado e ao passar o mouse, deve exibir "Provedor vinculado a conteúdo externo"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Na coluna "Ações" de provedor com mais de um vínculo, verificar o ícone de exclusão						
+					</actions>
+					<expectedresults>
+						
+O ícone de exclusão estará desabilitado e ao passar o mouse, deve exibir "Provedor vinculado a conteúdo externo"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Paginação na listagem de provedores">
+			<summary>
+				
+Verificar a funcionalidade da paginação na listagem de provedores				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+A listagem de provedores contém mais itens do que o limite por página, considerando também a quantidade de itens por página (25, 50 e 100)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar os controles de paginação						
+					</actions>
+					<expectedresults>
+						
+A paginação funciona corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ação em massa - Excluir itens (sem vínculo)">
+			<summary>
+				
+Verificar a exclusão em massa de provedores sem vínculos				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem múltiplos provedores sem vínculos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar múltiplos provedores sem vínculos usando os checkboxes						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Ações em massa", selecionar "Excluir itens" e confirmar						
+					</actions>
+					<expectedresults>
+						
+modal de confirmação é exibido com "x dos itens selecionados serão excluídos Deseja prosseguir com a ação?" Após a confirmação, os provedores selecionados são excluídos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Cancelar"						
+					</actions>
+					<expectedresults>
+						
+Nenhuma ação deve ser executada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar a exclusão						
+					</actions>
+					<expectedresults>
+						
+Exibe mensagem de sucesso e provedores são removidos corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ação em massa - Excluir itens (com vínculo)">
+			<summary>
+				
+Verificar a exclusão em massa de provedores, incluindo aqueles com vínculos				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem múltiplos provedores selecionados, onde alguns contenham vínculo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar múltiplos provedores (alguns com vínculo, outros sem)						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Ações em massa", selecionar "Excluir itens" e confirmar						
+					</actions>
+					<expectedresults>
+						
+modal de confirmação é exibido com "x dos itens selecionados não podem ser excluídos porque possuem registros vinculados a eles Deseja prosseguir com a ação? Se sim, os itens não permitidos serão inativados" Após a confirmação, os provedores sem vínculo são excluídos e os com vínculo são inativados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Cancelar"						
+					</actions>
+					<expectedresults>
+						
+Nenhuma ação deve ser executada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar a ação						
+					</actions>
+					<expectedresults>
+						
+Exibe mensagem de sucesso&lt;br /&gt;
+Provedores sem vínculo são removidos corretamente&lt;br /&gt;
+Provedores com vínculo são inativados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ação em massa - Inativar itens">
+			<summary>
+				
+Verificar a inativação em massa de provedores				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem múltiplos provedores ativos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar múltiplos provedores ativos						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Ações em massa", selecionar "Inativar itens" e confirmar						
+					</actions>
+					<expectedresults>
+						
+Modal de confirmação é exibido com "x itens selecionados serão inativados Deseja prosseguir com a ação?" Após a confirmação, os provedores selecionados são inativados (o toggle "Ativo" muda de estado)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Cancelar						
+					</actions>
+					<expectedresults>
+						
+Nenhuma ação é executada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar a ação						
+					</actions>
+					<expectedresults>
+						
+Mensagem de sucesso é exibida e inativação é realizada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ação em massa - Mesclar itens">
+			<summary>
+				
+Verificar a funcionalidade de mesclagem em massa de provedores				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+Existem múltiplos provedores selecionados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de provedores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar múltiplos provedores (ativos ou inativos)						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em "Ações em massa" e selecionar "Mesclar itens"						
+					</actions>
+					<expectedresults>
+						
+O drawer exibe a opção para escolher o item a ser mantido modal de confirmação é exibido com "Deseja realmente mesclar os provedores em &amp;lt;item_para_manter&amp;gt;? as pessoas cadastrados nos provedores externos &amp;lt;item_selecionado_1&amp;gt; e &amp;lt;item_selecionado_2&amp;gt;, que serão excluídos, terão seus registros de conteúdo externos externos atualizados" Após a confirmação, os provedores são mesclados, e os registros de conteúdo externos são atualizados para o provedor mantido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Escolher item para manter no drawer, e "Confirmar"						
+					</actions>
+					<expectedresults>
+						
+Provedor mantido deve ter sido relacionado aos registros de conteúdo externos dos provedores excluídos&lt;br /&gt;
+Provedores mesclados devem ter sido excluídos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos">
+		<testcase name="Conteúdo externo não visível na tabela de conteúdos do usuário">
+			<summary>
+				
+Verificar que o conteúdo externo não é exibido na tabela de conteúdos				
+			</summary>
+			<preconditions>Ter conteúdos externos cadastrados
+Usuário administrador logado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a lista de conteúdos						
+					</actions>
+					<expectedresults>
+						
+O conteúdo externo cadastrado não é exibido na lista de conteúdos para o usuário						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Conteúdo externo não visível nas pesquisas e filtros">
+			<summary>
+				
+Verificar que o conteúdo externo não é exibido na tabela de conteúdos				
+			</summary>
+			<preconditions>Ter conteúdos externos cadastrados com categorias
+Usuário administrador logado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a lista de conteúdos						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar pesquisa pelo nome do conteúdo externo						
+					</actions>
+					<expectedresults>
+						
+Deve retornar mensagem padrão de que não há resultados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ações em massa na lista de pessoas						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar pesquisa pelo nome do conteúdo externo (tanto em curso quanto em trilha)						
+					</actions>
+					<expectedresults>
+						
+Deve retornar mensagem padrão de que não há resultados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar catálogo de conteúdos (logado e não logado)						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar pesquisa pelo nome do conteúdo externo						
+					</actions>
+					<expectedresults>
+						
+Deve retornar mensagem padrão de que não há resultados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar catálogo de conteúdos						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar pesquisa por categorias do conteúdo externo						
+					</actions>
+					<expectedresults>
+						
+Deve retornar mensagem padrão de que não há resultados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Acesso bloqueado a conteúdo externo via URL direta">
+			<summary>
+				
+Verificar se o acesso direto a conteúdo externo via URL é bloqueado para o usuário				
+			</summary>
+			<preconditions>Existe conteúdo externo cadastrado 
+Administrador logado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Obter a URL direta de conteúdo externo (se possível, simulado)						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar acessar a URL direta						
+					</actions>
+					<expectedresults>
+						
+A mensagem padrão "Desculpe, a página que você está tentando acessar não existe" é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Persistência de pessoas vinculados em event_participants">
+			<summary>
+				
+Verificar se as pessoas selecionados em registro de conteúdo externo são persistidos na tabela event_participants				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Registrar conteúdo externo, selecionando múltiplas pessoas no campo "Pessoas"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o banco de dados (simulado ou com acesso à estrutura) ou logs de sistema						
+					</actions>
+					<expectedresults>
+						
+as pessoas selecionados são registrados na tabela event_participants associada ao conteúdo externo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Consumo de créditos">
+		<testcase name="Contabilização de créditos de IA">
+			<summary>
+				
+Verificar se a geração de dados pela IA contabiliza nos créditos do ambiente				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+A funcionalidade "Permitir uso de IA" está habilitada no contrato</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Registrar o consumo de créditos de IA antes de usar a funcionalidade						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar a função "Preencher com IA" no formulário de conteúdo externo						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Registrar o consumo de créditos de IA novamente						
+					</actions>
+					<expectedresults>
+						
+O consumo de créditos após a utilização da IA é maior do que antes, indicando a contabilização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Mensagem de limite de créditos de IA atingido">
+			<summary>
+				
+Verificar a exibição da mensagem de limite de créditos de IA atingido				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+O ambiente não possui créditos de IA disponíveis (simulado)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tentar utilizar a função "Preencher com IA" no formulário de conteúdo externo						
+					</actions>
+					<expectedresults>
+						
+Uma popup no canto inferior direito da tela é exibida com a mensagem "Limite de créditos de IA atingido Função temporariamente indisponível Consulte o administrador da plataforma para mais informações Por enquanto, você pode preencher todos os campos manualmente"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="API (v2)">
+		<testcase name="Listar conteúdos na API v2">
+			<summary>
+				
+Verificar se as informações dos conteúdo externos externos são geradas na API				
+			</summary>
+			<preconditions>Funcionalidade de APi e Relatórios avançados habilitada
+Chave API v2 ativa
+Registros de conteúdo externos externos listados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Executar o método GET de Listar conteúdos						
+					</actions>
+					<expectedresults>
+						
+As informações do conteúdo externo estão disponíveis na API para consumo pelo BI						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar conteúdos na API v2">
+			<summary>
+				
+Verificar que não é permitido criar conteúdos externos via API				
+			</summary>
+			<preconditions>Funcionalidade de API e Relatórios avançados habilitada
+Chave API v2 ativa
+Registros de conteúdo externos externos listados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Executar o método POST de Criar conteúdos para tentar criar registro de conteúdo externo						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir criar registros de conteúdo externos externos via API						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Atualizar conteúdos na API v2">
+			<summary>
+				
+Verificar que não é permitido atualizar conteúdos externos via API				
+			</summary>
+			<preconditions>Funcionalidade de API e Relatórios avançados habilitada
+Chave API v2 ativa
+Registros de conteúdo externos externos listados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Executar o método PUT de Atualizar conteúdos para tentar atualizar registro de conteúdo externo existente						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir atualizar registros de conteúdo externos externos via API						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="SuperAdmin &gt; Contrato">
+		<testcase name="Habilitar funcionalidade de &quot;Conteúdos externos&quot; via contrato">
+			<summary>
+				
+Verificar se a funcionalidade de "Registros" é habilitada ao ativar a opção de "Conteúdos externos" no contrato do SuperAdmin				
+			</summary>
+			<preconditions>Usuário logado como SuperAdmin
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar as configurações de contrato						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar a funcionalidade "Conteúdos externos"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como administrador normal e acessar o menu "Aprendizagem"						
+					</actions>
+					<expectedresults>
+						
+A opção "Registros" aparece no menu "Aprendizagem" para o administrador						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar opção &quot;Permitir uso de IA&quot; via contrato">
+			<summary>
+				
+Verificar se o uso de IA é habilitado ao ativar o checkbox "Permitir uso de IA" no contrato do SuperAdmin				
+			</summary>
+			<preconditions>Usuário logado como SuperAdmin 
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar as configurações de contrato						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar a funcionalidade de "Conteúdos externos"						
+					</actions>
+					<expectedresults>
+						
+A opção de "Permitir uso de IA" deve estar disponível e deve permitir a seleção						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Habilitar uso de IA via contrato">
+			<summary>
+				
+Verificar se o uso de IA é habilitado ao ativar o checkbox "Permitir uso de IA" no contrato do SuperAdmin				
+			</summary>
+			<preconditions>Usuário logado como SuperAdmin 
+Feature flag habilitada
+A funcionalidade "Conteúdos externos" está habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar as configurações de contrato						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar o checkbox "Permitir uso de IA"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como administrador e tentar usar a função "Preencher com IA"						
+					</actions>
+					<expectedresults>
+						
+A função "Preencher com IA" está disponível e funciona corretamente, contabilizando créditos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar opção de &quot;Conteúdos externos&quot; apenas quando feature flag habilitada">
+			<summary>
+				
+Verificar se o uso de IA é habilitado ao ativar o checkbox "Permitir uso de IA" no contrato do SuperAdmin				
+			</summary>
+			<preconditions>Usuário logado como SuperAdmin 
+Feature flag desabilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar as configurações de "funcionalidades" do contrato						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade "Conteúdos externos" não deve ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="SuperAdmin &gt; Tabela de preço">
+		<testcase name="Habilitar funcionalidade de &quot;Conteúdos externos&quot; via tabela de preço para plano &quot;Trial&quot;">
+			<summary>
+				
+Verificar se a funcionalidade de "Registros" é habilitada para novos trials ao ativar a opção de "Conteúdos externos" via tabela de preço do SuperAdmin				
+			</summary>
+			<preconditions>Usuário logado como SuperAdmin
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar as configurações de tabela de preço						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar a funcionalidade "Conteúdos externos" para o plano do trial						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Cria um novo trial						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como administrador normal e acessar o menu "Aprendizagem"						
+					</actions>
+					<expectedresults>
+						
+A opção "Registros" aparece no menu "Aprendizagem" para o administrador						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Habilitar funcionalidade de &quot;Conteúdos externos&quot; via tabela de preço para plano diferente de &quot;Trial&quot;">
+			<summary>
+				
+Verificar se a funcionalidade de "Registros" é habilitada para novos ambientes vinculados ao plano quando ativada a opção de "Conteúdos externos" via tabela de preço do SuperAdmin				
+			</summary>
+			<preconditions>Usuário logado como SuperAdmin
+Feature flag habilitada
+Ter um ambiente ativo vinculado em outro contrato que não contenha a funcionalidade de "Conteúdos externos"</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar as configurações de tabela de preço						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar a funcionalidade "Conteúdos externos" para um novo plano						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar este plano como vigente para o ambiente						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como administrador normal e acessar o menu "Aprendizagem"						
+					</actions>
+					<expectedresults>
+						
+A opção "Registros" aparece no menu "Aprendizagem" para o administrador						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar opção default de &quot;Permitir uso de IA&quot; via tabela de preço">
+			<summary>
+				
+Verificar a situação padrão do chekbox "Permitir uso de IA" no contrato do SuperAdmin para planos com funcionalidade de "Conteúdos externos" habilitados				
+			</summary>
+			<preconditions>Usuário logado como SuperAdmin 
+Feature flag habilitada
+Ter plano com funcionalidade de "Conteúdos externos" habilitada
+Ter um ambiente com o plano acima vigente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar as configurações de contrato do ambiente						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a situação default do checkbox "Permitir uso de IA"						
+					</actions>
+					<expectedresults>
+						
+A opção de "Permitir uso de IA" deve estar disponível porém desabilitada por default						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Logs">
+		<testcase name="Registro de logs de cadastro de conteúdo externo">
+			<summary>
+				
+Verificar se o cadastro de conteúdo externo log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar o cadastro de novo conteúdo externo						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando a criação do conteúdo externo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro de logs de edição de conteúdo externo">
+			<summary>
+				
+Verificar se a edição de conteúdo externo log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar a edição de registro de conteúdo externo						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando a edição do conteúdo externo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro de logs de exclusão de conteúdo externo">
+			<summary>
+				
+Verificar se a exclusão de conteúdo externo log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Excluir registro de conteúdo externo						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando a exclusão do conteúdo externo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro de logs de cadastro de provedor">
+			<summary>
+				
+Verificar se o cadastro de provedor log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar novo provedor						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando a criação do provedor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro de logs de edição de provedor">
+			<summary>
+				
+Verificar se a edição de cadastro de provedor log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar provedor existente						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando a edição do provedor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro de logs de exclusão de provedor">
+			<summary>
+				
+Verificar se a exclusão de provedor log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter cadastro de provedor sem vínculo com registro de conteúdo externo
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Excluir registro de provedor						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando a exclusão do provedor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro de logs de mesclagem de provedores">
+			<summary>
+				
+Verificar se a mesclagem de provedores gera log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Deve conter vários cadastros de provedores para realizar a mesclagem
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar a mesclagem de provedores via ação em massa						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando a mesclagem dos provedores						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro de logs ao inativar provedores">
+			<summary>
+				
+Verificar se a inativação de provedores gera log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter registros ativos de provedores
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Inativar provedores via ação em massa						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando que os provedores foram inativados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro de logs ao ativar provedores">
+			<summary>
+				
+Verificar que ao ativar provedores gera um log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter registros inativos de provedores 
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Ativar provedores via ação em massa						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando que os provedores foram ativados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro de logs de criação de atividades">
+			<summary>
+				
+Verificar se o cadastro de atividades gera um log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Deve realizar registros de conteúdo externos com atividades variadas
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar novos registros de conteúdo externos externos utilizando atividades diferentes						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando a mesclagem dos provedores						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro de logs de experiência de aprendizagem">
+			<summary>
+				
+Verificar se o cadastro de experiência de aprendizagem gera um log no banco de dados				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Deve realizar registros de conteúdo externos com experiências de aprendizagem variadas
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar novos registros de conteúdo externos externos utilizando experiência de aprendizagem diferentes						
+					</actions>
+					<expectedresults>
+						
+registro de log é encontrado, indicando a criação do conteúdo externo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Restrições de acesso">
+		<testcase name="Controle de visualização do módulo de registros externos via feature flag">
+			<summary>
+				
+Verificar se a feature flag controla a visibilidade da funcionalidade de registros externos quando configuração já aplicada em contrato				
+			</summary>
+			<preconditions>Acesso administrador
+Feature flag habilitada 
+Ambiente ativo com contrato vigente e funcionalidade já habilitada em contrato
+Registrar as URL's de acesso aos menus e formulários de "Registros" e "Provedores"</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Desativar a feature flag						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como administrador e verificar o menu "Aprendizagem"						
+					</actions>
+					<expectedresults>
+						
+O módulo "Registros" e os registros na "Visão detalhada do usuário" não devem estar visíveis quando a feature flag está desativada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar URL's de "Registros" e "Provedores"						
+					</actions>
+					<expectedresults>
+						
+Deve exibir mensagem de que usuário não tem permissão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ativar a feature flag						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como administrador e verificar o menu "Aprendizagem"						
+					</actions>
+					<expectedresults>
+						
+O módulo "Registros" e os registros na "Visão detalhada do usuário" se tornam visíveis quando ativada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Migração de menus">
+		<testcase name="Estrutura do novo menu &quot;Aprendizagem&quot;">
+			<summary>
+				
+Verificar a nova estrutura e submenus do menu "Aprendizagem"				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu principal						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a presença do menu "Aprendizagem"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Expandir o menu "Aprendizagem" e verificar os submenus						
+					</actions>
+					<expectedresults>
+						
+O menu "Aprendizagem" é exibido &lt;br /&gt;
+Os submenus são "Conteúdos", "Compartilhamentos", "Registros" e "Certificados" &lt;br /&gt;
+"Certificados" aparece como item do submenu de aprendizagem, e os submenus agora são abas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Visão detalhada de pessoas">
+		<testcase name="Visualização de conteúdo externo na visão detalhada do usuário">
+			<summary>
+				
+Verificar se a tabela de conteúdos na visão detalhada de usuário exibe conteúdos do tipo externo				
+			</summary>
+			<preconditions>usuário possui registro de conteúdo externo 
+O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a visão detalhada de usuário que concluiu conteúdo externo						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a tabela de conteúdos do usuário						
+					</actions>
+					<expectedresults>
+						
+O conteúdo do tipo externo é exibido na tabela de conteúdos do usuário						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Novas colunas na tabela de visão detalhada do usuário">
+			<summary>
+				
+Verificar a adição das novas colunas "Experiência de aprendizagem" e "Evidências" na tabela de visão detalhada do usuário				
+			</summary>
+			<preconditions>usuário possui registro de conteúdo externo com evidências 
+O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a visão detalhada de usuário						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a presença das colunas "Experiência de aprendizagem" e "Evidências"						
+					</actions>
+					<expectedresults>
+						
+As colunas "Experiência de aprendizagem" e "Evidências" são exibidas &lt;br /&gt;
+A coluna "Evidências" está vazia para linhas que não são do tipo externo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Download das &quot;Evidências&quot;">
+			<summary>
+				
+Verificar a possibilidade de download dos arquivos contidos na coluna de  "Evidências" na tabela de visão detalhada do usuário				
+			</summary>
+			<preconditions>usuário possui registro de conteúdo externo com evidências 
+O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a visão detalhada de usuário						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar download dos arquivos disponíveis na coluna de "Evidências"						
+					</actions>
+					<expectedresults>
+						
+Arquivos devem estar disponíveis e permitir o download corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Extração de dados na visão detalhada do usuário">
+			<summary>
+				
+Verificar a funcionalidade de extrair dados na tabela de visão detalhada do usuário				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a visão detalhada de usuário						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar a opção de exportar "todos os filtrados"&lt;br /&gt;
+(obs: validar todos os tipos de exportação disponíveis - pdf/csv)						
+					</actions>
+					<expectedresults>
+						
+Todos os valores da tabela são exportados conforme o tipo selecionado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Utilizar a opção de exportar "apenas selecionados"&lt;br /&gt;
+(obs: validar todos os tipos de exportação disponíveis - pdf/csv)						
+					</actions>
+					<expectedresults>
+						
+Apenas os registros selecionados são exportados conforme o tipo selecionado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtros padrão">
+			<summary>
+				
+Verificar a funcionalidade do filtro "externo" na visão detalhada do usuário				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+usuário possui registros de diferentes tipos 
+(Curso, Trilha, externo)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a visão detalhada de usuário						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir o drawer de filtros						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o filtro padrão para "curso"						
+					</actions>
+					<expectedresults>
+						
+A tabela exibe apenas os registros de conteúdo externo do tipo "externo"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o filtro padrão para "trilha"						
+					</actions>
+					<expectedresults>
+						
+A tabela exibe apenas os registros de conteúdo externo do tipo "internos"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o filtro padrão para "externo"						
+					</actions>
+					<expectedresults>
+						
+A tabela exibe apenas os registros de conteúdo externo do tipo "compartilhados"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtros personalizados">
+			<summary>
+				
+Verificar a funcionalidade do filtro "externo" na visão detalhada do usuário				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+usuário possui registros de diferentes tipos 
+(Curso, Trilha, externo)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a visão detalhada de usuário						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir o drawer de filtros						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Validar a seleção de outras opções de filtro						
+					</actions>
+					<expectedresults>
+						
+A tabela exibe apenas os registros de conteúdo externo conforme filtros aplicados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Comportamento das colunas existentes para tipo externo">
+			<summary>
+				
+Verificar o comportamento das colunas "Tipo de conteúdo", "Certificado" e "Aprovado" para registros do tipo externo				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador 
+usuário possui registros do tipo externo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a visão detalhada de usuário						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Observar as colunas "Tipo de conteúdo", "Certificado" e "Aprovado" para registro do tipo externo						
+					</actions>
+					<expectedresults>
+						
+"Tipo de conteúdo" exibe "externo" &lt;br /&gt;
+"Certificado" deve estar vazia &lt;br /&gt;
+"Aprovado" é sempre verdadeiro e desabilitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Banco histórico">
+		<testcase name="Inclusão de novas tabelas na exclusão do banco histórico">
+			<summary>
+				
+Verificar se as novas tabelas (relacionadas a registros externos e provedores) são incluídas no processo de exclusão do banco histórico				
+			</summary>
+			<preconditions>O processo de exclusão do banco histórico é executado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Simular a execução do processo de exclusão do banco histórico						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se as tabelas relacionadas a registros de conteúdo externos externos (e seus provedores, atividades e experiências) são consideradas para exclusão						
+					</actions>
+					<expectedresults>
+						
+As novas tabelas são incluídas no escopo do processo de exclusão do banco histórico						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Menu de apoio Sophia (trial)">
+		<testcase name="Exclusão de registros de conteúdo externos externos em trial via Sophia">
+			<summary>
+				
+Verificar se a exclusão de todos os dados em Trial via menu de apoio da Sophia também exclui registros de conteúdo externos externos				
+			</summary>
+			<preconditions>ambiente Trial com registros de conteúdo externos externos (e seus provedores, atividades e experiências) cadastrados 
+O usuário tem acesso ao menu de apoio da Sophia</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+No menu de apoio da Sophia, selecionar a opção para excluir todos os dados de Trial						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar a exclusão						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os registros de conteúdo externos externos, provedores, atividades e experiências foram excluídos do Trial						
+					</actions>
+					<expectedresults>
+						
+Todos os dados, incluindo registros de conteúdo externos externos e seus componentes relacionados, são excluídos do ambiente Trial						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Validações gerais">
+		<testcase name="Layout">
+			<summary>
+				
+Realizar validações de layout				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Disposição dos campos						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Espaçamentos						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Cores						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Responsividade desktop/mobile">
+			<summary>
+				
+Realizar validações de responsividade em dispositivos desktop e mobile				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Desktop - 1366x768 - sem zoom						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desktop - 1366x768 - zoom até 125% + escala 100%						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desktop - 1366x768 - zoom até 125% + escala 125%						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desktop - 1920x1080 - sem zoom						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desktop - 1920x1080 - zoom até 125% + escala 100%						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desktop - 1920x1080 - zoom até 125% + escala 125%						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desktop - 1536x864 - sem zoom						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desktop - 1536x864 - zoom até 125% + escala 100%						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desktop - 1536x864 - zoom até 125% + escala 125%						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mobile - DevTools navegador - 412x915						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mobile - DevTools navegador - 393x873						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mobile - DevTools navegador - 414x896						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mobile - Dispositivo real - Navegador Chrome Vertical						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>13</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mobile - Dispositivo real - Navegador Chrome Horizontal						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>14</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mobile - Dispositivo real - EmuladorApp Vertical						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>15</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mobile - Dispositivo real - EmuladorApp Horizontal						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>16</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Usabilidade">
+			<summary>
+				
+Realizar validações de usabilidade como atalhos e seleções via teclado				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+TAB						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+SHIFT+TAB						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+ENTER						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+ESPAÇO						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+ESC						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Setas do teclado para selecionar opções						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Idiomas">
+			<summary>
+				
+Realizar validações das traduções				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Português						
+					</actions>
+					<expectedresults>
+						
+Deve apresentar ortografia e gramática corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inglês 						
+					</actions>
+					<expectedresults>
+						
+Deve apresentar tradução para idioma inglês						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Espanhol						
+					</actions>
+					<expectedresults>
+						
+Deve apresentar tradução para idioma espanhol						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Performance">
+		<testcase name="Registrar conteúdo externo manualmente com muitas pessoas">
+			<summary>
+				
+Analisar tempo de processamento para criação de registro de conteúdo externo com muitas pessoas (+10.000)&lt;br /&gt;
+&lt;br /&gt;
+Obs.: Analisar com time de arquitetura/desenvolvimento o tempo recomendado				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar registro de conteúdo externo com muitas pessoas de forma "manual"						
+					</actions>
+					<expectedresults>
+						
+Tempo de cadastro deve ser compatível com operação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registrar conteúdo externo carregando todos os tipos de arquivos e &quot;Preencher com IA&quot;">
+			<summary>
+				
+Analisar tempo de processamento para criação de registro de conteúdo externo com muitas pessoas (+10.000) utilizando o carregamento de arquivos (pdf, csv, imagem) e preenchimento com IA.&lt;br /&gt;
+&lt;br /&gt;
+Obs.: Analisar com time de arquitetura/desenvolvimento o tempo recomendado				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar registro de conteúdo externo com muitas pessoas, carregando todos os tipos possíveis de arquivos e "Preenchar com IA"						
+					</actions>
+					<expectedresults>
+						
+Tempo de cadastro deve ser compatível com operação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Runner">
+		<testcase name="Runner para migrar/atualizar ambientes &quot;provedores&quot; / &quot;não provedores&quot;">
+			<summary>
+				
+Validar a execução do runner que vai migrar/atualizar os ambientes que sejam provedores de conteúdos espelho. Confirmar também que, quando conteúdo espelho for excluído do último ambiente consumidor, ambiente deve ser migrado/atualizado como "não provedor".				
+			</summary>
+			<preconditions>Ter acesso administrador
+Ter conteúdos espelhos recebidos de ambientes internos e externos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Executar runner						
+					</actions>
+					<expectedresults>
+						
+Registros devem ter sido migrados/atualizados com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Excluir todos os compartilhamentos espelho do ambiente consumidor						
+					</actions>
+					<expectedresults>
+						
+Ambientes provedores não devem compor nova tabela/classificação de "provedor"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
