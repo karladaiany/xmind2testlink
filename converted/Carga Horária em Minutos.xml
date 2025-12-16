@@ -1,0 +1,2763 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Conteúdos - Adicionar/Editar">
+		<testcase name="Adicionar - Preenchimento de carga horária em horas, minutos e segundos">
+			<summary>
+				
+Verificar se o campo de carga horária permite a inserção de valores no formato HHH:MM:SS.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar um conteúdo&lt;br /&gt;
+Inserir um valor no formato HHH:MM:SS &lt;br /&gt;
+(ex: 001:30:45)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir inserir e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar - Preenchimento de carga horária em horas, minutos e segundos">
+			<summary>
+				
+Verificar se o campo de carga horária permite a inserção de valores no formato HHH:MM:SS.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter conteúdos cadastrados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar um conteúdo&lt;br /&gt;
+Inserir um valor no formato HHH:MM:SS &lt;br /&gt;
+(ex: 010:50:09)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir editar e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar - Preenchimento de carga horária apenas em horas">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em horas.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar um conteúdo&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 002:00:00)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir inserir e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar - Preenchimento de carga horária apenas em horas">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em horas.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter conteúdos cadastrados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar um conteúdo&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 200:00:00)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir editar e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar - Preenchimento de carga horária apenas em minutos">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em minutos.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar um conteúdo&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 00:45:00)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir inserir e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar - Preenchimento de carga horária apenas em minutos">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em minutos.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter conteúdos cadastrados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar um conteúdo&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 000:05:00)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir editar e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar - Preenchimento de carga horária apenas em segundos">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em segundos.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar um conteúdo&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 00:00:35)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir inserir e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar - Preenchimento de carga horária apenas em segundos">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em segundos.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter conteúdos cadastrados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar um conteúdo&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 000:00:05)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir editar e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de entrada inválida (formato incorreto)">
+			<summary>
+				
+Verificar se o sistema impede a inserção de carga horária em formato inválido.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um conteúdo&lt;br /&gt;
+Inserir valores em texto						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir inserir texto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar/editar um conteúdo&lt;br /&gt;
+Inserir caracteres especiais						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir inserir caracteres especiais						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de entrada inválida (valores negativos)">
+			<summary>
+				
+Verificar se o sistema impede a inserção de carga horária com valores negativos				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um conteúdo&lt;br /&gt;
+Inserir valores negativos						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir valores negativos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de entrada inválida (minutos &gt; 59)">
+			<summary>
+				
+Verificar se o sistema impede a inserção de carga horária com minutos acima de 59.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um conteúdo&lt;br /&gt;
+Inserir valor para minutos acima de 59 (exemplos: 000:60:00 - 000:99:00)						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir valores maiores que 59						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de entrada inválida (segundos &gt; 59)">
+			<summary>
+				
+Verificar se o sistema impede a inserção de carga horária com segundos acima de 59.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um conteúdo&lt;br /&gt;
+Inserir valor para segundos acima de 59 (exemplos: 000:00:60 - 000:00:99)						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir valores maiores que 59						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de valor máximo">
+			<summary>
+				
+Verificar se o sistema aplica o máximo de caracteres / valores corretamente 999:59:59				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um conteúdo&lt;br /&gt;
+Inserir valores máximos para HHH:MM:SS (999:59:59)						
+					</actions>
+					<expectedresults>
+						
+Deve salvar corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de valor mínimo">
+			<summary>
+				
+Verificar se o sistema aplica o máximo de caracteres / valores corretamente 999:59:59				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um conteúdo&lt;br /&gt;
+Inserir valor mínimo para HHH:MM:SS (000:00:01)						
+					</actions>
+					<expectedresults>
+						
+Deve salvar corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de carga horária &quot;zero&quot;">
+			<summary>
+				
+Verificar se o sistema permite salvar com todos os valores zerados 000:00:00				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um conteúdo&lt;br /&gt;
+Inserir valor zero para HHH:MM:SS (000:00:00)						
+					</actions>
+					<expectedresults>
+						
+Deve salvar corretamente&lt;br /&gt;
+&lt;br /&gt;
+Obs.: Em banco deve salvar "em branco"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de não obrigatoriedade">
+			<summary>
+				
+Verificar que o sistema salva corretamente a criação/edição de conteúdos sem preencher o campo de carga horária				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um conteúdo&lt;br /&gt;
+Não preencher o campo de carga horária&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve salvar corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos - Listagem">
+		<testcase name="Coluna de carga horária em horas">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de conteúdos no formato "1h".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas (ex: 001:00:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de conteúdos&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h / 10h / 100h						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coluna de carga horária em minutos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de conteúdos no formato "30m".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em minutos (ex: 000:30:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de conteúdos&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 3m / 59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coluna de carga horária em horas e minutos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de conteúdos no formato "1h30m".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas e minutos (ex: 001:30:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de conteúdos&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h5m / 10h15m / 100h59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coluna de carga horária em segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de conteúdos no formato "40s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em segundos (ex: 000:00:40).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de conteúdos&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 5s / 59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coluna de carga horária em horas, minutos e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de conteúdos no formato "10h20m15s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser em horas, minutos e segundos (ex: 10:20:15).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de conteúdos&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h20m15s / 10h2m15s / 100h2m5s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coluna de carga horária em minutos e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de conteúdos no formato "20m15s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em minutos e segundos (ex: 000:20:15).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de conteúdos&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 2m5s / 20m15s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coluna de carga horária em horas e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de conteúdos no formato "1h10s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas e segundos (ex: 001:00:10).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de conteúdos&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h10s / 10h10s / 100h10s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coluna de carga horária com máximo de dígitos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de conteúdos no formato "1h10m10s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve conter o máximo de caracteres (999:59:59)
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de conteúdos&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 999h59m59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos - Filtro">
+		<testcase name="Filtrar por carga horária &quot;de - até&quot; (horas)">
+			<summary>
+				
+Verificar se o filtro de carga horária funciona corretamente para um intervalo em horas.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias (ex: 1h, 2h, 3h).
+O usuário deve estar logado e ter acesso ao filtro de conteúdos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de listagem de conteúdos&lt;br /&gt;
+Acessar e adicionar filtro de 'Carga horária'&lt;br /&gt;
+Inserir valores com 'horas' para os campos "de - ate" de modo a filtrar conforme dados do ambiente&lt;br /&gt;
+Aplicar filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os conteúdos com carga horária dentro do intervalo especificado são exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar por carga horária &quot;de - até&quot; (minutos)">
+			<summary>
+				
+Verificar se o filtro de carga horária funciona corretamente para um intervalo em minutos.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias (ex: 5m, 45m, 59m).
+O usuário deve estar logado e ter acesso ao filtro de conteúdos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de listagem de conteúdos&lt;br /&gt;
+Acessar e adicionar filtro de 'Carga horária'&lt;br /&gt;
+Inserir valores com 'minutos' para os campos "de - ate" de modo a filtrar conforme dados do ambiente&lt;br /&gt;
+Aplicar filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os conteúdos com carga horária dentro do intervalo especificado são exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar por carga horária &quot;de - até&quot; (segundos)">
+			<summary>
+				
+Verificar se o filtro de carga horária funciona corretamente para um intervalo em segundos.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias (ex: 5s, 40s, 59s).
+O usuário deve estar logado e ter acesso ao filtro de conteúdos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de listagem de conteúdos&lt;br /&gt;
+Acessar e adicionar filtro de 'Carga horária'&lt;br /&gt;
+Inserir valores com 'segundos' para os campos "de - ate" de modo a filtrar conforme dados do ambiente&lt;br /&gt;
+Aplicar filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os conteúdos com carga horária dentro do intervalo especificado são exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar por carga horária &quot;de - até&quot; (horas, minutos e segundos)">
+			<summary>
+				
+Verificar se o filtro de carga horária funciona corretamente para um intervalo em horas, minutos e segundos.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias.
+O usuário deve estar logado e ter acesso ao filtro de conteúdos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de listagem de conteúdos&lt;br /&gt;
+Acessar e adicionar filtro de 'Carga horária'&lt;br /&gt;
+Inserir valores com 'hh:mm:ss' para os campos "de - ate" de modo a filtrar conforme dados do ambiente&lt;br /&gt;
+Aplicar filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os conteúdos com carga horária dentro do intervalo especificado são exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos - Extrair dados">
+		<testcase name="Listagem - Exportação de CSV com carga horária">
+			<summary>
+				
+Verificar se na exportação da lista de conteúdos a carga horária é exportada no arquivo CSV na coluna 'Carga horária' no formato HHH:MM:SS.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias: apenas horas, apenas minutos, apenas segundos, horas e minutos, horas e segundos, minutos e segundos, horas e minutos e segundos. 
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de conteúdos&lt;br /&gt;
+Selecionar a opção de exportar dados (CSV)						
+					</actions>
+					<expectedresults>
+						
+Verificar se os valores da carga horária estão no formato HHH:MM:SS &lt;br /&gt;
+(ex: 100:50:10, 00:50:00, 01:00:00, 00:00:10, etc.).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Listagem - Exportação de PDF com carga horária">
+			<summary>
+				
+Verificar se na exportação da lista de conteúdos a carga horária é exportada no arquivo PDF na coluna 'Carga horária' no formato 10h10m10s.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias: apenas horas, apenas minutos, apenas segundos, horas e minutos, horas e segundos, minutos e segundos, horas e minutos e segundos. 
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de conteúdos&lt;br /&gt;
+Selecionar a opção de exportar dados (PDF)						
+					</actions>
+					<expectedresults>
+						
+Verificar se os valores da carga horária estão no formato 10h, 10h10s, 3h30m, 30m, 45s, etc 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Inscrições - Exportação de CSV com carga horária">
+			<summary>
+				
+Verificar se na exportação da lista de inscrições a carga horária é exportada no arquivo CSV na coluna 'Carga horária' no formato HHH:MM:SS.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias: apenas horas, apenas minutos, apenas segundos, horas e minutos, horas e segundos, minutos e segundos, horas e minutos e segundos. 
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar inscrições do conteúdo&lt;br /&gt;
+Selecionar a opção de exportar dados (CSV)						
+					</actions>
+					<expectedresults>
+						
+Verificar se os valores da carga horária estão no formato HHH:MM:SS &lt;br /&gt;
+(ex: 100:50:10, 00:50:00, 01:00:00, 00:00:10, etc.).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Inscrições - Exportação de PDF com carga horária">
+			<summary>
+				
+Verificar se na exportação da lista de inscrições a carga horária é exportada no arquivo PDF na coluna 'Carga horária'no formato 10h10m10s.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias: apenas horas, apenas minutos, apenas segundos, horas e minutos, horas e segundos, minutos e segundos, horas e minutos e segundos. 
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a inscrição de conteúdos&lt;br /&gt;
+Selecionar a opção de exportar dados (PDF)						
+					</actions>
+					<expectedresults>
+						
+Verificar se os valores da carga horária estão no formato 10h, 10h10s, 3h30m, 30m, 45s, etc 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Dashboard - Administrador">
+		<testcase name="Exibição de carga horária em horas">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard do administrador no formato "1h".				
+			</summary>
+			<preconditions>Soma das cargas horárias deve ser apenas em horas (ex: 001:00:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do administrador&lt;br /&gt;
+Verificar exibição do card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h / 10h / 100h						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição de carga horária em minutos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard do administrador no formato "30m".				
+			</summary>
+			<preconditions>Soma das cargas horárias deve ser apenas em minutos (ex: 000:30:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do administrador&lt;br /&gt;
+Verificar exibição do card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 3m / 59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição de carga horária em horas e minutos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard do administrador no formato "1h30m".				
+			</summary>
+			<preconditions>Soma das cargas horárias deve ser em horas e minutos (ex: 001:30:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do administrador&lt;br /&gt;
+Verificar exibição do card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h5m / 10h15m / 100h59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição de carga horária em segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard do administrador no formato "40s".				
+			</summary>
+			<preconditions>Soma das cargas horárias deve ser apenas em segundos (ex: 000:00:40).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do administrador&lt;br /&gt;
+Verificar exibição do card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 5s / 59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição de carga horária em horas, minutos e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard do administrador no formato "10h20m15s".				
+			</summary>
+			<preconditions>Soma das cargas horárias deve ser em horas, minutos e segundos (ex: 10:20:15).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do administrador&lt;br /&gt;
+Verificar exibição do card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h20m15s / 10h2m15s / 100h2m5s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição de carga horária em minutos e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard do administrador no formato "20m15s".				
+			</summary>
+			<preconditions>Soma das cargas horárias deve ser apenas em minutos e segundos (ex: 000:20:15).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do administrador&lt;br /&gt;
+Verificar exibição do card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 2m5s / 20m15s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição de carga horária em horas e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard do administrador no formato "1h10s".				
+			</summary>
+			<preconditions>Soma das cargas horárias deve ser apenas em horas e segundos (ex: 001:00:10).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do administrador&lt;br /&gt;
+Verificar exibição do card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h10s / 10h10s / 100h10s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição de carga horária com muitos dígitos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard do administrador no formato "1h10m10s".				
+			</summary>
+			<preconditions>Soma das cargas horárias deve ser maior que 5 dígitos para hora (99999:59:59)
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do administrador&lt;br /&gt;
+Verificar exibição do card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 99999h59m59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Dashboards - Conteúdos">
+		<testcase name="Card de carga horária em horas">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard de conteúdos no formato "1h".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas (ex: 001:00:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do conteúdo&lt;br /&gt;
+Verificar exibição no card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h / 10h / 100h						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Card de carga horária em minutos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard de conteúdos no formato "30m".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em minutos (ex: 000:30:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do conteúdo&lt;br /&gt;
+Verificar exibição no card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 3m / 59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Card de carga horária em horas e minutos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard de conteúdos no formato "1h30m".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas e minutos (ex: 001:30:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do conteúdo&lt;br /&gt;
+Verificar exibição no card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h5m / 10h15m / 100h59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Card de carga horária em segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard de conteúdos no formato "40s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em segundos (ex: 000:00:40).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do conteúdo&lt;br /&gt;
+Verificar exibição no card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 5s / 59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Card de carga horária em horas, minutos e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard de conteúdos no formato "10h20m15s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser em horas, minutos e segundos (ex: 10:20:15).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do conteúdo&lt;br /&gt;
+Verificar exibição no card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h20m15s / 10h2m15s / 100h2m5s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Card de carga horária em minutos e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard de conteúdos no formato "20m15s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em minutos e segundos (ex: 000:20:15).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do conteúdo&lt;br /&gt;
+Verificar exibição no card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 2m5s / 20m15s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Card de carga horária em horas e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard de conteúdos no formato "1h10s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas e segundos (ex: 001:00:10).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do conteúdo&lt;br /&gt;
+Verificar exibição no card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h10s / 10h10s / 100h10s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Card de carga horária com máximo de dígitos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no dashboard de conteúdos no formato "1h10m10s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve conter o máximo de caracteres (999:59:59)
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o dashboard do conteúdo&lt;br /&gt;
+Verificar exibição no card de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 999h59m59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Certificados">
+		<testcase name="Pré-visualização do certificado com carga horária formatada">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na pré-visualização do modelo de certificado no formato "40h30m10s".				
+			</summary>
+			<preconditions>Ter um modelo de certificado configurado com campo dinâmico de carga horária. 
+Usuário administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a pré-visualização do modelo de certificado						
+					</actions>
+					<expectedresults>
+						
+Carga horária é exibida: 40h30m10s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar certificado com carga horária em horas">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na emissão do certificado no formato "1h".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas (ex: 001:00:00).
+Modelo de certificado do conteúdo deve estar com carga horária configurada.
+Aluno deve ter sido aprovado para gerar certificado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar certificado emitido&lt;br /&gt;
+Verificar informação de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h / 10h / 100h						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar certificado com carga horária em minutos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na emissão do certificado no formato "30m".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em minutos (ex: 000:30:00).
+Modelo de certificado do conteúdo deve estar com carga horária configurada.
+Aluno deve ter sido aprovado para gerar certificado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar certificado emitido&lt;br /&gt;
+Verificar informação de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 3m / 59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar certificado com carga horária em horas e minutos">
+			<summary>
+				
+Verificar se a carga horária é exibida na emissão do certificado no formato "1h30m".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas e minutos (ex: 001:30:00).
+Modelo de certificado do conteúdo deve estar com carga horária configurada.
+Aluno deve ter sido aprovado para gerar certificado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar certificado emitido&lt;br /&gt;
+Verificar informação de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h5m / 10h15m / 100h59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar certificado com carga horária em segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida na emissão do certificado no formato "40s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em segundos (ex: 000:00:40).
+Modelo de certificado do conteúdo deve estar com carga horária configurada.
+Aluno deve ter sido aprovado para gerar certificado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar certificado emitido&lt;br /&gt;
+Verificar informação de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 5s / 59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar certificado com carga horária em horas, minutos e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibidana emissão do certificado no formato "10h20m15s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser em horas, minutos e segundos (ex: 10:20:15).
+Modelo de certificado do conteúdo deve estar com carga horária configurada.
+Aluno deve ter sido aprovado para gerar certificado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar certificado emitido&lt;br /&gt;
+Verificar informação de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h20m15s / 10h2m15s / 100h2m5s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar certificado com carga horária em minutos e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida na emissão do certificado no formato "20m15s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em minutos e segundos (ex: 000:20:15).
+Modelo de certificado do conteúdo deve estar com carga horária configurada.
+Aluno deve ter sido aprovado para gerar certificado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar certificado emitido&lt;br /&gt;
+Verificar informação de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 2m5s / 20m15s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar certificado com carga horária em horas e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida na emissão do certificado formato "1h10s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas e segundos (ex: 001:00:10).
+Modelo de certificado do conteúdo deve estar com carga horária configurada.
+Aluno deve ter sido aprovado para gerar certificado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar certificado emitido&lt;br /&gt;
+Verificar informação de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h10s / 10h10s / 100h10s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar certificado com carga horária com máximo de dígitos">
+			<summary>
+				
+Verificar se a carga horária é exibida na emissão do certificado no formato "1h10m10s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve conter o máximo de caracteres (999:59:59)
+Modelo de certificado do conteúdo deve estar com carga horária configurada.
+Aluno deve ter sido aprovado para gerar certificado.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar certificado emitido&lt;br /&gt;
+Verificar informação de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 999h59m59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="API V1">
+		<testcase name="POST - Criar curso Enviar uma requisição POST para o endpoint &quot;Criar curso&quot; da API V1 com uma carga horária (ex: 1:30:00). Resposta da API deve exibir o campo de carga horária no formato decimal (ex: 1.5 ou 1,5, dependendo da regionalização).">
+			<summary>
+				
+Verificar se a carga horária é retornada no formato decimal (ex: 1:30 -&amp;gt; 1,5) ao criar um curso via API V1.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+		</testcase>
+		<testcase name="PUT - Atualizar curso Enviar uma requisição PUT para o endpoint &quot;Atualizar curso&quot; da API V1 com uma carga horária (ex: 1:30:00). Resposta da API deve exibir o campo de carga horária no formato decimal (ex: 1.5 ou 1,5, dependendo da regionalização).">
+			<summary>
+				
+Verificar se a carga horária é retornada no formato decimal (ex: 1:30 -&amp;gt; 1,5) ao criar um curso via API V1.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+		</testcase>
+		<testcase name="GET - Listar curso Enviar uma requisição GET para o endpoint &quot;Listar cursos&quot; da API V1. Resposta da API deve exibir o campo de carga horária no formato decimal (ex: 1.5 ou 1,5, dependendo da regionalização).">
+			<summary>
+				
+Verificar se a carga horária é retornada no formato decimal (ex: 1:30 -&amp;gt; 1,5) ao criar um curso via API V1.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+		</testcase>
+	</testsuite>
+	<testsuite name="API V2">
+		<testcase name="POST - Criar conteúdos Enviar uma requisição POST para o endpoint &quot;Criar conteúdos&quot; da API V2 com uma carga horária (ex: 1:30:00). Resposta da API deve exibir o campo de carga horária no formato decimal (ex: 1.5 ou 1,5, dependendo da regionalização).">
+			<summary>
+				
+Verificar se a carga horária é retornada no formato decimal (ex: 1:30 -&amp;gt; 1,5) ao criar um curso via API V1.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+		</testcase>
+		<testcase name="PUT - Atualizar conteúdos Enviar uma requisição PUT para o endpoint &quot;Atualizar conteúdos&quot; da API V2 com uma carga horária (ex: 1:30:00). Resposta da API deve exibir o campo de carga horária no formato decimal (ex: 1.5 ou 1,5, dependendo da regionalização).">
+			<summary>
+				
+Verificar se a carga horária é retornada no formato decimal (ex: 1:30 -&amp;gt; 1,5) ao criar um curso via API V1.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+		</testcase>
+		<testcase name="GET - Listar conteúdos Enviar uma requisição GET para o endpoint &quot;Listar conteúdos&quot; da API V2. Resposta da API deve exibir o campo de carga horária no formato decimal (ex: 1.5 ou 1,5, dependendo da regionalização).">
+			<summary>
+				
+Verificar se a carga horária é retornada no formato decimal (ex: 1:30 -&amp;gt; 1,5) ao criar um curso via API V1.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+		</testcase>
+	</testsuite>
+	<testsuite name="Catálogo de Conteúdos (Play)">
+		<testcase name="Carga horária (horas) no card detalhado">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no card detalhado do conteúdo (catálogo de conteúdos - Play), no formato "1h".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas (ex: 001:00:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar catálogo de conteúdos - Play&lt;br /&gt;
+Visualizar card detalhado do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h / 10h / 100h						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Carga horária (minutos) no card detalhado">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no card detalhado do conteúdo (catálogo de conteúdos - Play), no formato  "30m".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em minutos (ex: 000:30:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar catálogo de conteúdos - Play&lt;br /&gt;
+Visualizar card detalhado do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 3m / 59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Carga horária (horas e minutos) no card detalhado">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no card detalhado do conteúdo (catálogo de conteúdos - Play), no formato  "1h30m".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas e minutos (ex: 001:30:00).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar catálogo de conteúdos - Play&lt;br /&gt;
+Visualizar card detalhado do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h5m / 10h15m / 100h59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Carga horária (segundos) no card detalhado">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no card detalhado do conteúdo (catálogo de conteúdos - Play), no formato  "40s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em segundos (ex: 000:00:40).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar catálogo de conteúdos - Play&lt;br /&gt;
+Visualizar card detalhado do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 5s / 59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Carga horária (horas, minutos e segundos) no card detalhado">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no card detalhado do conteúdo (catálogo de conteúdos - Play), no formato  "10h20m15s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser em horas, minutos e segundos (ex: 10:20:15).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar catálogo de conteúdos - Play&lt;br /&gt;
+Visualizar card detalhado do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h20m15s / 10h2m15s / 100h2m5s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Carga horária (minutos e segundos) no card detalhado">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no card detalhado do conteúdo (catálogo de conteúdos - Play), no formato  "20m15s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em minutos e segundos (ex: 000:20:15).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar catálogo de conteúdos - Play&lt;br /&gt;
+Visualizar card detalhado do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 2m5s / 20m15s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Carga horária (horas e segundos) no card detalhado">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no card detalhado do conteúdo (catálogo de conteúdos - Play), no formato  "1h10s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas e segundos (ex: 001:00:10).
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar catálogo de conteúdos - Play&lt;br /&gt;
+Visualizar card detalhado do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h10s / 10h10s / 100h10s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Carga horária (máximo de caracteres) no card detalhado">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente no card detalhado do conteúdo (catálogo de conteúdos - Play), no formato  "1h10m10s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve conter o máximo de caracteres (999:59:59)
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar catálogo de conteúdos - Play&lt;br /&gt;
+Visualizar card detalhado do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 999h59m59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Registros - Adicionar/Editar">
+		<testcase name="Adicionar - Registro externo com carga horária em horas, minutos e segundos">
+			<summary>
+				
+Verificar se o campo de carga horária permite a inserção de valores no formato HHH:MM:SS.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar um registro&lt;br /&gt;
+Inserir um valor no formato HHH:MM:SS &lt;br /&gt;
+(ex: 001:30:45)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir inserir e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar - Registro externo com carga horária em horas, minutos e segundos">
+			<summary>
+				
+Verificar se o campo de carga horária permite a inserção de valores no formato HHH:MM:SS.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter registros externos cadastrados
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar um registro&lt;br /&gt;
+Inserir um valor no formato HHH:MM:SS &lt;br /&gt;
+(ex: 010:50:09)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir editar e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar - Registro externo com carga horária apenas em horas">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em horas.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar um registro&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 002:00:00)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir inserir e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar - Registro externo com carga horária apenas em horas">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em horas.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter registros externos cadastrados
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar um registro&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 200:00:00)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir editar e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar - Registro externo com carga horária apenas em minutos">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em minutos.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar um registro&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 00:45:00)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir inserir e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar - Registro externo com carga horária apenas em minutos">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em minutos.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter registros externos cadastrados
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar um registro&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 000:05:00)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir editar e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Adicionar - Registro externo com carga horária apenas em segundos">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em segundos.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar um registro&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 00:00:35)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir inserir e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar - Registro externo com carga horária apenas em segundos">
+			<summary>
+				
+Verificar se o campo de carga horária aceita a inserção de valores apenas em segundos.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Ter registros externos cadastrados
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar um registro&lt;br /&gt;
+Inserir um valor apenas em horas&lt;br /&gt;
+(ex: 000:00:05)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve permitir editar e salvar o registro com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o valor da carga horária foi&lt;br /&gt;
+salvo corretamente no formato HHH:MM:SS.						
+					</actions>
+					<expectedresults>
+						
+Deve ter salvo e exibir o valor corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro - Validação de entrada inválida (formato incorreto)">
+			<summary>
+				
+Verificar se o sistema impede a inserção de carga horária em formato inválido.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um registro&lt;br /&gt;
+Inserir valores em texto						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir inserir texto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Adicionar/editar um registro&lt;br /&gt;
+Inserir caracteres especiais						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir inserir caracteres especiais						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro - Validação de entrada inválida (valores negativos)">
+			<summary>
+				
+Verificar se o sistema impede a inserção de carga horária com valores negativos				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um registro&lt;br /&gt;
+Inserir valores negativos						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir valores negativos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro - Validação de entrada inválida (minutos &gt; 59)">
+			<summary>
+				
+Verificar se o sistema impede a inserção de carga horária com minutos acima de 59.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um registro&lt;br /&gt;
+Inserir valor para minutos acima de 59 (exemplos: 000:60:00 - 000:99:00)						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir valores maiores que 59						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro - Validação de entrada inválida (segundos &gt; 59)">
+			<summary>
+				
+Verificar se o sistema impede a inserção de carga horária com segundos acima de 59.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um registro&lt;br /&gt;
+Inserir valor para segundos acima de 59 (exemplos: 000:00:60 - 000:00:99)						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir valores maiores que 59						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro - Validação de valor máximo">
+			<summary>
+				
+Verificar se o sistema aplica o máximo de caracteres / valores corretamente 999:59:59				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um registro&lt;br /&gt;
+Inserir valores máximos para HHH:MM:SS (999:59:59)						
+					</actions>
+					<expectedresults>
+						
+Deve salvar corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro - Validação de valor mínimo">
+			<summary>
+				
+Verificar se o sistema aplica o máximo de caracteres / valores corretamente 999:59:59				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um registro&lt;br /&gt;
+Inserir valor mínimo para HHH:MM:SS (000:00:01)						
+					</actions>
+					<expectedresults>
+						
+Deve salvar corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro - Validação de carga horária &quot;zero&quot;">
+			<summary>
+				
+Validar que não permite salvar registro de treinamento externo com carga horária = 000:00:00				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um registro&lt;br /&gt;
+Inserir valor zero para HHH:MM:SS (000:00:00)						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir salvar pois campos é obrigatório e deve ser maior que "0"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registro - Validação de obrigatoriedade">
+			<summary>
+				
+Verificar que o sistema valida corretamente a obrigatoriedade do campo de carga  horária para o registro de treinamento externo, impedindo que o registro seja salvo.				
+			</summary>
+			<preconditions>O usuário deve estar logado como administrador
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Adicionar/editar um conteúdo&lt;br /&gt;
+Não preencher o campo de carga horária&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve exibir mensagem de erro inline no campo &lt;br /&gt;
+E não deve salvar o registro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Registros - Listagem">
+		<testcase name="Registros - Coluna de carga horária em horas">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de registros no formato "1h".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas (ex: 001:00:00).
+O usuário deve estar logado como administrador.
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de registros&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h / 10h / 100h						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Coluna de carga horária em minutos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de registros no formato "30m".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em minutos (ex: 000:30:00).
+O usuário deve estar logado como administrador.
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de registros&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 3m / 59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Coluna de carga horária em horas e minutos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de registros no formato "1h30m".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas e minutos (ex: 001:30:00).
+O usuário deve estar logado como administrador.
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de registros&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h5m / 10h15m / 100h59m						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Coluna de carga horária em segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de registros no formato "40s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em segundos (ex: 000:00:40).
+O usuário deve estar logado como administrador.
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de registros&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 5s / 59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Coluna de carga horária em horas, minutos e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de registros no formato "10h20m15s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser em horas, minutos e segundos (ex: 10:20:15).
+O usuário deve estar logado como administrador.
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de registros&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h20m15s / 10h2m15s / 100h2m5s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Coluna de carga horária em minutos e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de registros no formato "20m15s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em minutos e segundos (ex: 000:20:15).
+O usuário deve estar logado como administrador.
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de registros&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 2m5s / 20m15s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Coluna de carga horária em horas e segundos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de registros no formato "1h10s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve ser apenas em horas e segundos (ex: 001:00:10).
+O usuário deve estar logado como administrador.
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de registros&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 1h10s / 10h10s / 100h10s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Coluna de carga horária com máximo de dígitos">
+			<summary>
+				
+Verificar se a carga horária é exibida corretamente na lista de registros no formato "1h10m10s".				
+			</summary>
+			<preconditions>Carga horária do conteúdo deve conter o máximo de caracteres (999:59:59)
+O usuário deve estar logado como administrador.
+Estar com a feature e funcionalidade de registros habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar lista de registros&lt;br /&gt;
+Verificar valores na coluna de carga horária						
+					</actions>
+					<expectedresults>
+						
+Deve exibir valor no formato: 999h59m59s						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Registros - Filtro">
+		<testcase name="Registros - Filtrar por carga horária &quot;de - até&quot; (horas)">
+			<summary>
+				
+Verificar se o filtro de carga horária funciona corretamente para um intervalo em horas.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias (ex: 1h, 2h, 3h).
+Estar com a feature e funcionalidade de registros habilitada.
+O usuário deve estar logado e ter acesso ao filtro de conteúdos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de listagem de registros&lt;br /&gt;
+Acessar e adicionar filtro de 'Carga horária'&lt;br /&gt;
+Inserir valores com 'horas' para os campos "de - ate" de modo a filtrar conforme dados do ambiente&lt;br /&gt;
+Aplicar filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os registros com carga horária dentro do intervalo especificado são exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Filtrar por carga horária &quot;de - até&quot; (minutos)">
+			<summary>
+				
+Verificar se o filtro de carga horária funciona corretamente para um intervalo em minutos.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias (ex: 5m, 45m, 59m).
+Estar com a feature e funcionalidade de registros habilitada.
+O usuário deve estar logado e ter acesso ao filtro de conteúdos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de listagem de registros&lt;br /&gt;
+Acessar e adicionar filtro de 'Carga horária'&lt;br /&gt;
+Inserir valores com 'minutos' para os campos "de - ate" de modo a filtrar conforme dados do ambiente&lt;br /&gt;
+Aplicar filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os registros com carga horária dentro do intervalo especificado são exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Filtrar por carga horária &quot;de - até&quot; (segundos)">
+			<summary>
+				
+Verificar se o filtro de carga horária funciona corretamente para um intervalo em segundos.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias (ex: 5s, 40s, 59s).
+Estar com a feature e funcionalidade de registros habilitada.
+O usuário deve estar logado e ter acesso ao filtro de conteúdos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de listagem de registros&lt;br /&gt;
+Acessar e adicionar filtro de 'Carga horária'&lt;br /&gt;
+Inserir valores com 'segundos' para os campos "de - ate" de modo a filtrar conforme dados do ambiente&lt;br /&gt;
+Aplicar filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os registros com carga horária dentro do intervalo especificado são exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Filtrar por carga horária &quot;de - até&quot; (horas, minutos e segundos)">
+			<summary>
+				
+Verificar se o filtro de carga horária funciona corretamente para um intervalo em horas, minutos e segundos.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias.
+Estar com a feature e funcionalidade de registros habilitada.
+O usuário deve estar logado e ter acesso ao filtro de conteúdos.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de listagem de registros&lt;br /&gt;
+Acessar e adicionar filtro de 'Carga horária'&lt;br /&gt;
+Inserir valores com 'hh:mm:ss' para os campos "de - ate" de modo a filtrar conforme dados do ambiente&lt;br /&gt;
+Aplicar filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os registros com carga horária dentro do intervalo especificado são exibidos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Registros - Extrair dados">
+		<testcase name="Registros - Exportação de CSV com carga horária">
+			<summary>
+				
+Verificar se na exportação da lista de registros a carga horária é exportada no arquivo CSV na coluna 'Carga horária' no formato HHH:MM:SS.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias: apenas horas, apenas minutos, apenas segundos, horas e minutos, horas e segundos, minutos e segundos, horas e minutos e segundos. 
+Estar com a feature e funcionalidade de registros habilitada.
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de registros&lt;br /&gt;
+Selecionar a opção de exportar dados (CSV)						
+					</actions>
+					<expectedresults>
+						
+Verificar se os valores da carga horária estão no formato HHH:MM:SS &lt;br /&gt;
+(ex: 100:50:10, 00:50:00, 01:00:00, 00:00:10, etc.).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Registros - Exportação de PDF com carga horária">
+			<summary>
+				
+Verificar se na exportação da lista de registros a carga horária é exportada no arquivo PDF na coluna 'Carga horária' no formato 10h10m10s.				
+			</summary>
+			<preconditions>Existem conteúdos com diferentes cargas horárias: apenas horas, apenas minutos, apenas segundos, horas e minutos, horas e segundos, minutos e segundos, horas e minutos e segundos. 
+Estar com a feature e funcionalidade de registros habilitada.
+O usuário deve estar logado como administrador.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a listagem de registros&lt;br /&gt;
+Selecionar a opção de exportar dados (PDF)						
+					</actions>
+					<expectedresults>
+						
+Verificar se os valores da carga horária estão no formato 10h, 10h10s, 3h30m, 30m, 45s, etc 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
