@@ -1,0 +1,2394 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="SuperAdmin">
+		<testcase name="Verificar situação default do parâmetro &quot;Habilitar campos extras na edição do conteúdo&quot; e suas opções">
+			<summary>
+				
+Verificar que o parâmetro principal e seus campos filhos sejam criados desabilitados por padrão				
+			</summary>
+			<preconditions>Acesso SuperAdmin</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Super Admin &amp;gt; Outros &amp;gt; Ativar ou desativar configurações na organização						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar campo "Habilitar campos extras na edição do conteúdo"						
+					</actions>
+					<expectedresults>
+						
+Deve estar desabilitado por padrão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os campos filhos "Tipo", "Sincronismo", "Canal", "Website" e "Hashtag" estão desabilitados por padrão						
+					</actions>
+					<expectedresults>
+						
+Todas as opções devem estar desabilitadas por padrão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Habilitar/desabilitar o parâmetro &quot;Habilitar campos extras na edição do conteúdo&quot;">
+			<summary>
+				
+Validar exibição ou não dos campos ao habilitar/desabilitar no SuperAdmin				
+			</summary>
+			<preconditions>Acesso SuperAdmin
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Super Admin &amp;gt; Outros &amp;gt; Ativar ou desativar configurações na organização						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar o campo "Habilitar campos extras na edição do conteúdo"						
+					</actions>
+					<expectedresults>
+						
+Todas as opções devem ser marcadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar as alterações						
+					</actions>
+					<expectedresults>
+						
+Opções devem permanecer marcadas &lt;br /&gt;
+E na tela de gerenciar conteúdos opções devem estar disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o campo "Habilitar campos extras na edição do conteúdo"						
+					</actions>
+					<expectedresults>
+						
+Todas as opções devem ser desmarcadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar as alterações						
+					</actions>
+					<expectedresults>
+						
+Opções devem permanecer desmarcadas &lt;br /&gt;
+E na tela de gerenciar conteúdos opções não devem estar disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Habilitar/desabilitar opções individuais do parâmetro &quot;Habilitar campos extras na edição do conteúdo&quot;">
+			<summary>
+				
+Validar exibição ou não dos campos ao habilitar/desabilitar (individualmente) no SuperAdmin				
+			</summary>
+			<preconditions>Acesso SuperAdmin
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Super Admin &amp;gt; Outros &amp;gt; Ativar ou desativar configurações na organização						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar individualmente o campo "Tipo"&lt;br /&gt;
+Salvar alteração						
+					</actions>
+					<expectedresults>
+						
+Opção deve permanecer marcada&lt;br /&gt;
+E na tela de gerenciar conteúdos opção deve estar disponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o campo "Tipo" e habilitar o campo "Canal"						
+					</actions>
+					<expectedresults>
+						
+Opções devem permanecer conforme marcado/desmarcado&lt;br /&gt;
+E na tela de gerenciar conteúdos opção "Canal" deve estar disponível e "Tipo" indisponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o campo "Canal" e habilitar o campo "Sincronismo"						
+					</actions>
+					<expectedresults>
+						
+Opções devem permanecer conforme marcado/desmarcado&lt;br /&gt;
+E na tela de gerenciar conteúdos opção "Sincronismo" deve estar disponível e "Canal" indisponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o campo "Sincronismo" e habilitar o campo "Website"						
+					</actions>
+					<expectedresults>
+						
+Opções devem permanecer conforme marcado/desmarcado&lt;br /&gt;
+E na tela de gerenciar conteúdos opção "Website" deve estar disponível e "Sincronismo" indisponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o campo "Website" e habilitar o campo "Hashtag"						
+					</actions>
+					<expectedresults>
+						
+Opções devem permanecer conforme marcado/desmarcado&lt;br /&gt;
+E na tela de gerenciar conteúdos opção "Hashtag" deve estar disponível e "Website" indisponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos - Gerenciar">
+		<testcase name="Conteúdos - Gerenciar - Abas exibidas">
+			<summary>
+				
+Garantir que todas as abas especificadas sejam exibidas ao clicar em "Gerenciar"				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Ter conteúdos criados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Aprendizagem &amp;gt; Conteúdos &amp;gt; menu suspenso de um conteúdo &amp;gt; Gerenciar						
+					</actions>
+					<expectedresults>
+						
+Abas "Identificação", "Acesso", "Banner", "Aprovação", "Cobrança", "Localização", "Dashboard" e "Compartilhar" são exibidas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Conteúdos - Gerenciar - Novo campo &quot;Tipo de experiência&quot; preenchimento default">
+			<summary>
+				
+Garantir que o campo "Tipo de Experiência" seja preenchido automaticamente com o tipo de conteúdo selecionado na criação				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação de um CURSO &amp;gt; aba 'Identificação'						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Tipo de Experiência" está preenchido por default com "Curso"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a tela de criação de uma TRILHA &amp;gt; aba 'Identificação'						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Tipo de Experiência" está preenchido por default com "Trilha"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a tela de criação de um PACOTE &amp;gt; aba 'Identificação'						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Tipo de Experiência" está preenchido por default com "Pacote"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Conteúdos - Gerenciar - Novo campo &quot;Tipo de experiência&quot; propriedades do campo">
+			<summary>
+				
+Verificar a correta implementação do campo "Tipo de Experiência" e suas propriedades (tipo, obrigatoriedade, limite de caracteres e tooltip)				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de conteúdo (Gerenciar &amp;gt; Identificação)&lt;br /&gt;
+Campo "Tipo de Experiência" está presente						
+					</actions>
+					<expectedresults>
+						
+Campo é do tipo texto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Obrigatoriedade						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo é de preenchimento obrigatório (ex: asterisco ou validação ao tentar salvar vazio)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar inserir um texto com mais de 30 caracteres						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo impede a inserção de mais de 30 caracteres						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o ícone de tooltip do campo						
+					</actions>
+					<expectedresults>
+						
+Verificar que o tooltip exibe o texto: "Escolha o rótulo que melhor representa este conteúdo para seus usuários. Ele serve para personalizar a forma como seus usuários verão e reconhecerão o conteúdo, funcionando como um identificador do tipo de experiência. Exemplos: Curso, Transmissão, Materiais."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Conteúdos - Gerenciar - Novo campo &quot;Classificação&quot; propriedades do campo">
+			<summary>
+				
+Verificar a correta implementação do campo "Classificação" e suas propriedades (tipo, opcionalidade, limite de caracteres e tooltip)				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de conteúdo (Gerenciar &amp;gt; Identificação)&lt;br /&gt;
+Campo "Classificação" está presente						
+					</actions>
+					<expectedresults>
+						
+Campo é do tipo texto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Obrigatoriedade						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo é de preenchimento opcional (ex: não há asterisco de obrigatoriedade)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar inserir um texto com mais de 30 caracteres						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo impede a inserção de mais de 30 caracteres						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o ícone de tooltip do campo						
+					</actions>
+					<expectedresults>
+						
+Verificar que o tooltip exibe o texto: "Defina uma classificação que complemente a identificação deste conteúdo. Ela poderá ser utilizada como filtro e ajudará os usuários a encontrarem itens com características semelhantes. Exemplos: Básico, Avançado, Evento ao vivo."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba “Identificação” - Campos e estados padrão">
+			<summary>
+				
+Validar a presença e o estado inicial dos campos na aba "Identificação"				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Campos adicionais desabilitados no SuperAdmin</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação de conteúdo (Conteúdos &amp;gt; Adicionar)&lt;br /&gt;
+Verificar os campos exibidos						
+					</actions>
+					<expectedresults>
+						
+Verificar que os campos "Código", "Nome", "Tipo de experiência", "Classificação", "Situação", "Restringir período de acesso" (toggle), "Quem pode ver (visualização)", "Carga horária", "Descrição", "Categorias", "Enviar informação ao concluir a primeira atividade" e "Habilitar chat no conteúdo" são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar estado padrão do toggle "Restringir período de acesso"						
+					</actions>
+					<expectedresults>
+						
+Deve estar desabilitado por padrão (para novos conteúdos)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a não exibição da seção "Informações complementares"						
+					</actions>
+					<expectedresults>
+						
+Não deve ser exibida inicialmente (pois nenhum de seus campos estará habilitado no SuperAdmin)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba “Identificação” - Campos &quot;Início de acesso&quot; e &quot;Término de acesso&quot;">
+			<summary>
+				
+Validar a exibição condicional e os tooltips dos campos de período de acesso				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de conteúdo aba "Identificação"&lt;br /&gt;
+Habilitar o toggle "Restringir período de acesso"						
+					</actions>
+					<expectedresults>
+						
+Verificar que os campos "Início de acesso" e "Término de acesso (suspensão automática)" são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o toggle "Restringir período de acesso"						
+					</actions>
+					<expectedresults>
+						
+Verificar que os campos "Início de acesso" e "Término de acesso (suspensão automática)" são ocultados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o tooltip de "Início de acesso" e verificar o texto						
+					</actions>
+					<expectedresults>
+						
+Define quando o acesso ao conteúdo será liberado para os usuários. Antes desse horário, a inscrição ainda pode ser realizada, mas o conteúdo permanece indisponível para visualização.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o tooltip de "Término de acesso (suspensão automática)" e verificar o texto						
+					</actions>
+					<expectedresults>
+						
+Define até quando o conteúdo ficará acessível para os usuários. Após essa data e horário, a situação do conteúdo é automaticamente alterada para Suspenso.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba “Identificação” - Campo &quot;Notificar usuários sobre a liberação deste conteúdo&quot;">
+			<summary>
+				
+Validar a exibição condicional e o tooltip do campo "Notificar usuários sobre a liberação deste conteúdo"				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de conteúdo aba "Identificação" opção de "Visualização"&lt;br /&gt;
+Selecionar "Inscritos", "Colaborador" ou "Usuários"						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Notificar usuários sobre a liberação deste conteúdo" NÃO é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar "Público" na opção "Quem pode ver (visualização)"						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Notificar usuários sobre a liberação deste conteúdo" É exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o tooltip do campo e verificar o texto						
+					</actions>
+					<expectedresults>
+						
+Um e-mail será enviado para todos os usuários ativos do seu ambiente informando sobre a liberação deste conteúdo.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba “Identificação” - Campos obrigatórios e salvar/editar formulário">
+			<summary>
+				
+Verificar que a validação de campos obrigatórios e persistência de dados ao criar/editar um conteúdo está ocorrendo com sucesso.&lt;br /&gt;
+As mensagens devem ser:&lt;br /&gt;
+Criação: "Conteúdo salvo com sucesso"&lt;br /&gt;
+Edição: "Alterações salvas com sucesso"				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Acesso SuperAdmin</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de conteúdo aba "Identificação"&lt;br /&gt;
+Salvar formulário sem preencher nenhum campo						
+					</actions>
+					<expectedresults>
+						
+Não deve salvar e exibe mensagem inline (vermelha) nos campos obrigatórios						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher apenas alguns dos campos obrigatórios&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Não deve salvar e exibe mensagem inline (vermelha) nos campos obrigatórios não preenchidos&lt;br /&gt;
+Nos campos obrigatórios preenchidos devem estar ok						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher apenas os campos obrigatórios&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve exibir a mensagem conforme ação (criar/editar)&lt;br /&gt;
+Informações devem ser persistidas corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Criar novo conteúdo preenchendo todos os campos (com informações complementares desabilitada)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve exibir a mensagem conforme ação (criar/editar)&lt;br /&gt;
+Informações devem ser persistidas corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar campos complementares (SuperAdmin)&lt;br /&gt;
+Criar/editar conteúdo sem preencher os novos campos&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve exibir a mensagem conforme ação (criar/editar)&lt;br /&gt;
+Informações devem ser persistidas corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Criar/editar conteúdo preenchendo todos os campos (inclusive complementares)&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Deve exibir a mensagem conforme ação (criar/editar)&lt;br /&gt;
+Informações devem ser persistidas corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba “Acesso” - Campos e estados padrão">
+			<summary>
+				
+Validar a presença dos campos na aba "Acesso" e o preenchimento padrão do e-mail de contato				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar/Editar conteúdo &amp;gt; Aba "Acesso"&lt;br /&gt;
+						
+					</actions>
+					<expectedresults>
+						
+Verificar que as seções "Contato", "Inscrição" e "Anexos" estão presentes&lt;br /&gt;
+E que o campo "E-mail de contato" está presente e preenchido por padrão com o e-mail do usuário logado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o tooltip de "E-mail de contato" e verificar o texto						
+					</actions>
+					<expectedresults>
+						
+TEXTO DO TOOLTIP AQUI						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar campos existentes no formulário						
+					</actions>
+					<expectedresults>
+						
+Campos "Exigir confirmação de inscrição", "Permitir registro de grupo de inscrições", "Permitir registro de inscrição por", "Dias de acesso individual (vigência)", "Atualizar dias de acesso individual dos inscritos atuais", "Substituir os dias de acesso dos cursos pelos definidos na trilha", "Habilitar o envio de anexos na inscrição" e "Mensagem de solicitação de anexos" estão presentes						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba “Acesso” - Seleção de &quot;Permitir registro de inscrição por&quot;">
+			<summary>
+				
+Validar a obrigatoriedade de selecionar ao menos uma opção em "Permitir registro de inscrição por" e o tooltip do campo				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de conteúdo (Gerenciar &amp;gt; Acesso)&lt;br /&gt;
+Na seção "Permitir registro de inscrição por", desmarcar as opções "Pessoa física" e "Pessoa jurídica"&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Sistema impede o salvamento e exibe uma mensagem de erro indicando que ao menos uma opção deve ser marcada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar apenas "Pessoa física"						
+					</actions>
+					<expectedresults>
+						
+Salvar o conteúdo e verificar sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar apenas "Pessoa jurídica"						
+					</actions>
+					<expectedresults>
+						
+Salvar o conteúdo e verificar sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar ambas "Pessoa física" e "Pessoa jurídica"						
+					</actions>
+					<expectedresults>
+						
+Salvar o conteúdo e verificar sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o tooltip de "Permitir registro de inscrição por" e verificar o texto						
+					</actions>
+					<expectedresults>
+						
+TEXTO DO TOOLTIP AQUI						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba “Acesso” - Opção de &quot;Substituir os dias de acesso dos cursos pelos definidos na trilha&quot;">
+			<summary>
+				
+Validar a exibição condicional do campo apenas para conteúdos do tipo "Trilha"				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de um CURSO (Gerenciar &amp;gt; Acesso)						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Substituir os dias de acesso dos cursos pelos definidos na trilha" NÃO é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de uma TRILHA (Gerenciar &amp;gt; Acesso)						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Substituir os dias de acesso dos cursos pelos definidos na trilha" É exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o tooltip do campo e verificar o texto						
+					</actions>
+					<expectedresults>
+						
+TEXTO DO TOOLTIP AQUI						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba “Cobrança” - Campos e estados padrão">
+			<summary>
+				
+Validar a presença e a exibição condicional dos campos na aba "Cobrança", incluindo tooltips e a estrutura da tabela de parcelas				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Cobrança de inscrição habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de conteúdo (Gerenciar &amp;gt; Cobrança)						
+					</actions>
+					<expectedresults>
+						
+Verificar que as seções "Pagamento" e "Período de arrependimento" estão presentes&lt;br /&gt;
+E que o campo "Habilitar pagamento" está presente porém desabilitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar "Habilitar pagamento"						
+					</actions>
+					<expectedresults>
+						
+Verificar que os campos "Valor", "Número de parcelas" e "Acréscimo" SÃO exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar colunas da "Tabela com as parcelas"						
+					</actions>
+					<expectedresults>
+						
+Tabela é exibida com as colunas "Parcela", "Valor da parcela", "Valor total" e "Informações adicionais"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar "Habilitar pagamento"						
+					</actions>
+					<expectedresults>
+						
+Verificar que os campos "Valor", "Número de parcelas" e "Acréscimo" NÃO são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre os tooltips de "Número de parcelas" e "Acréscimo" e verificar os textos						
+					</actions>
+					<expectedresults>
+						
+TEXTO DO TOOLTIP AQUI						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba “Cobrança” - Campo &quot;Quantidade de dias&quot; do período de arrependimento">
+			<summary>
+				
+Validar a exibição condicional e o tooltip do campo "Quantidade de dias" na seção "Período de arrependimento"				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de conteúdo (Gerenciar &amp;gt; Cobrança)&lt;br /&gt;
+Seção "Período de arrependimento"&lt;br /&gt;
+Campo "Habilitar período de arrependimento"						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Quantidade de dias" está desabilitado para edição quando "Habilitar período de arrependimento" está desabilitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar "Habilitar período de arrependimento"						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Quantidade de dias" é habilitado para edição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar "Habilitar período de arrependimento"						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Quantidade de dias" não é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o tooltip de "Habilitar período de arrependimento" e verificar o texto						
+					</actions>
+					<expectedresults>
+						
+TEXTO DO TOOLTIP AQUI						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba “Localização” - Campos e estados padrão">
+			<summary>
+				
+Validar a presença e a exibição condicional dos campos na aba "Localização", e a ausência do campo "Número"				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de conteúdo (Gerenciar &amp;gt; Localização)						
+					</actions>
+					<expectedresults>
+						
+Verificar que a seção "Local de realização presencial" está presente&lt;br /&gt;
+E o campo "Informar endereço físico para a realização do conteúdo" está presente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar "Informar endereço físico para a realização do conteúdo"						
+					</actions>
+					<expectedresults>
+						
+Verificar que os campos "Local", "CEP", "Endereço", "Complemento", "Bairro", "Cidade", "Estado" e "País" NÃO são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar "Informar endereço físico para a realização do conteúdo"						
+					</actions>
+					<expectedresults>
+						
+Verificar que os campos "Local", "CEP", "Endereço", "Complemento", "Bairro", "Cidade", "Estado" e "País" SÃO exibidos&lt;br /&gt;
+&lt;br /&gt;
+(Obs.: Campo "Número" NÃO é exibido)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerenciar - Aba &quot;Aprovação&quot; -  Nova opção &quot;Notificar os responsáveis de novos alunos certificados”">
+			<summary>
+				
+Validar a adição e o tooltip do novo campo "Notificar os responsáveis de novos alunos certificados" na aba "Aprovação"				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tela de criação/edição de conteúdo (Gerenciar &amp;gt; Aprovação)						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo "Notificar os responsáveis de novos alunos certificados" está presente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre o tooltip do campo						
+					</actions>
+					<expectedresults>
+						
+Verificar que o tooltip exibe o texto: "Quando habilitado, será enviado um e-mail para o contato cadastrado na aba Acesso e para o líder de equipe do usuário."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos - Criar/Editar">
+		<testcase name="Criar/Editar Curso">
+			<summary>
+				
+Validar que a criação "completa" preenchendo todos os campos de todas as abas, de um conteúdo tipo 'Curso' é realizada com sucesso				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar a criação de um curso preenchendo todos os campos de todas as abas						
+					</actions>
+					<expectedresults>
+						
+Curso deve ser criado com sucesso e todas as configurações aplicadas devem ter sido persistidas corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar a edição de um curso alterando todos os campos de todas as abas						
+					</actions>
+					<expectedresults>
+						
+Curso deve ter sido atualizado com sucesso e todas as configurações editadas devem ter sido persistidas corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar/Editar Trilha">
+			<summary>
+				
+Validar que a criação "completa" preenchendo todos os campos de todas as abas, de um conteúdo tipo 'Trilha' é realizada com sucesso				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar a criação de uma trilha preenchendo todos os campos de todas as abas						
+					</actions>
+					<expectedresults>
+						
+Trilha deve ser criada com sucesso e todas as configurações aplicadas devem ter sido persistidas corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar a edição de uma trilha alterando todos os campos de todas as abas						
+					</actions>
+					<expectedresults>
+						
+Trilha deve ter sido atualizada com sucesso e todas as configurações editadas devem ter sido persistidas corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos - Listagem">
+		<testcase name="Opções do menu suspenso para administrador">
+			<summary>
+				
+Validar opções exibidas no menu suspenso para perfil de administrador.				
+			</summary>
+			<preconditions>Usuário administrador.
+Ao menos um conteúdo de cada tipo (curso, trilha, pacote)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu suspenso de um conteúdo						
+					</actions>
+					<expectedresults>
+						
+Deve exibir as opções "Gerenciar", "Duplicar", "Página", "Atividades", "Aprendizagem", "Inscrição", "Gestor de turma", "Instrutor", "Divulgar", "Abrir em nova aba" e "Excluir" são exibidas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Opções do menu suspenso para não-administrador">
+			<summary>
+				
+Validar opções exibidas no menu suspenso para perfil diferente de administrador (instrutor e gestor).				
+			</summary>
+			<preconditions>Usuário instrutor e gestor.
+Ao menos um conteúdo de cada tipo (curso, trilha, pacote) vinculados aos usuários instrutor e gestor.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu suspenso de um conteúdo						
+					</actions>
+					<expectedresults>
+						
+Verificar que a opção "Gerenciar" NÃO é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibir coluna &quot;Tipo de Experiência&quot; na listagem padrão">
+			<summary>
+				
+Validar a exibição padrão da nova coluna 'Tipo de experiência' na listagem de conteúdos, substituindo coluna atual 'Tipo'				
+			</summary>
+			<preconditions>Acesso administrador
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a lista de conteúdos						
+					</actions>
+					<expectedresults>
+						
+Verificar que a coluna "Tipo de Experiência" é exibida na visão 'Default' da lista						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Acessar &quot;Página&quot; pelo menu suspenso">
+			<summary>
+				
+Validar redirecionamento correto para a página pública do conteúdo a partir da opção 'Página' migrada para o menu suspenso do conteúdo.				
+			</summary>
+			<preconditions>Acesso administrador
+Feature flag habilitada
+Conteúdos criados (curso, trilha e pacote)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a lista de conteúdos&lt;br /&gt;
+Clicar nos três pontinhos (menu suspenso) de um conteúdo&lt;br /&gt;
+Selecionar a opção "Página"						
+					</actions>
+					<expectedresults>
+						
+Deve carregar a rota de acesso atual da página de conteúdo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos - Filtros">
+		<testcase name="Exibir/Filtrar coluna &quot;Classificação&quot; como opção de filtro customizado">
+			<summary>
+				
+Validar que a nova coluna 'Classificação' não é exibida por padrão na listagem de conteúdos mas é exibida como opção no filtro.				
+			</summary>
+			<preconditions>Acesso administrador
+Feature flag habilitada
+Conteúdos com 'Classificação' preenchida</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a lista de conteúdos						
+					</actions>
+					<expectedresults>
+						
+Verificar que a coluna "Classificação" NÃO é exibida por padrão na visão 'Default'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Criar um novo filtro customizado ou editar um existente&lt;br /&gt;
+Adicionar a coluna "Classificação" às colunas a serem exibidas no filtro&lt;br /&gt;
+Salvar e aplicar o filtro						
+					</actions>
+					<expectedresults>
+						
+Verificar que a coluna "Classificação" é exibida na listagem com as informações corretas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Remover a exibição da coluna "Classificação" do filtro customizado&lt;br /&gt;
+Salvar e aplicar o filtro						
+					</actions>
+					<expectedresults>
+						
+Verificar que a coluna "Classificação" NÃO é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aplicar filtro em 'Colunas para filtrar' selecionando dados para coluna 'Classificação'						
+					</actions>
+					<expectedresults>
+						
+Dados exibidos devem corresponder com os dados aplicados no filtro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar por &quot;Tipo de experiência&quot; na lista de conteúdos">
+			<summary>
+				
+Validar que filtro "Tipo de experiência" é aplicado corretamente na lista de conteúdos				
+			</summary>
+			<preconditions>Usuário com perfil administrador
+Feature flag habilitada
+Conteúdos com vários tipos de experiência</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar 'Filtros' da lista de conteúdos&lt;br /&gt;
+Selecionar múltiplos "Tipos de experiência" e aplicar o filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os conteúdos correspondentes aos tipos selecionados devem ser exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no cabeçalho da coluna "Tipo de experiência"						
+					</actions>
+					<expectedresults>
+						
+Dados da tabela são reordenados com base nesta coluna						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição de filtros com base nos campos configurados no SuperAdmin">
+			<summary>
+				
+Validar exibição ou não dos campos nos filtros de conteúdos ao habilitar/desabilitar no SuperAdmin				
+			</summary>
+			<preconditions>Acesso SuperAdmin
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Super Admin &amp;gt; Outros &amp;gt; Ativar ou desativar configurações na organização&lt;br /&gt;
+Desabilitar todos os campos da opção "Habilitar campos extras na edição do conteúdo"&lt;br /&gt;
+Acessar "Filtros" da tela de conteúdos						
+					</actions>
+					<expectedresults>
+						
+Opções não devem ser exibidas em "Colunas para filtrar" e "Colunas para exibir"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar individualmente o campo "Tipo"&lt;br /&gt;
+Salvar alteração						
+					</actions>
+					<expectedresults>
+						
+Deve ser exibido como opção de filtro e de exibição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o campo "Tipo" e habilitar o campo "Canal"						
+					</actions>
+					<expectedresults>
+						
+Deve ser exibido como opção de filtro e de exibição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o campo "Canal" e habilitar o campo "Sincronismo"						
+					</actions>
+					<expectedresults>
+						
+Deve ser exibido como opção de filtro e de exibição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o campo "Sincronismo" e habilitar o campo "Website"						
+					</actions>
+					<expectedresults>
+						
+Deve ser exibido como opção de filtro e de exibição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o campo "Website" e habilitar o campo "Hashtag"						
+					</actions>
+					<expectedresults>
+						
+Deve ser exibido como opção de filtro e de exibição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar todas as opções novamente						
+					</actions>
+					<expectedresults>
+						
+Devem ser exibidos como opções de filtro e de exibição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos - Dashboard">
+		<testcase name="Atualização do dashboard ao aplicar filtro por &quot;Tipo de experiência&quot;">
+			<summary>
+				
+Validar que o dashboard de conteúdos atualiza corretamente à aplicação do filtro "Tipo de experiência".				
+			</summary>
+			<preconditions>Usuário com perfil administrador
+Feature flag habilitada
+Conteúdos com vários tipos de experiência, inscritos confirmados, em situações liberado, em desenvolvimento e suspenso.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Aprendizagem &amp;gt; Conteúdos&lt;br /&gt;
+Aplicar um filtro por "Tipo de experiência" (selecionando um ou mais tipos)						
+					</actions>
+					<expectedresults>
+						
+Gráficos e métricas do dashboard devem ser atualizados para refletir apenas os conteúdos dos tipos selecionados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Atualização do dashboard ao aplicar filtro por &quot;Classificação&quot;">
+			<summary>
+				
+Validar que o dashboard de conteúdos atualiza corretamente à aplicação do filtro "Classificação".				
+			</summary>
+			<preconditions>Usuário com perfil administrador
+Feature flag habilitada
+Conteúdos com vários tipos de experiência, inscritos confirmados, em situações liberado, em desenvolvimento e suspenso.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Aprendizagem &amp;gt; Conteúdos&lt;br /&gt;
+Aplicar um filtro por "Classificação" (selecionando uma ou mais classificações)						
+					</actions>
+					<expectedresults>
+						
+Gráficos e métricas do dashboard devem ser atualizados para refletir apenas os conteúdos dos tipos selecionados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos - Extrair dados">
+		<testcase name="Extrair dados .csv e .pdf com novos campos">
+			<summary>
+				
+Validar que ao realizar a extração de dados (tanto em CSV quanto PDF) os novos campos são extraídos com informações corretas				
+			</summary>
+			<preconditions>Usuário administrador
+Conteúdos com dados para "Tipo de experiência" e "Capacitação"</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a lista de conteúdos&lt;br /&gt;
+Realizar uma exportação de dados CSV						
+					</actions>
+					<expectedresults>
+						
+Campo "Tipo de Experiência" e "Classificação" estão presentes e com os valores corretos para cada campo e conteúdo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a lista de conteúdos&lt;br /&gt;
+Realizar uma exportação de dados PDF						
+					</actions>
+					<expectedresults>
+						
+Campo "Tipo de Experiência" e "Classificação" estão presentes e com os valores corretos para cada campo e conteúdo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos - Gerenciar - Suspensão automática de conteúdo">
+		<testcase name="Suspensão automática de conteúdo ao atingir data de término">
+			<summary>
+				
+Validar a suspensão automática de um conteúdo quando sua data de término é atingida.				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Conteúdo com data de término configurada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um novo conteúdo ou editar um existente						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar a opção "Restringir período de acesso" na aba "Identificação"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Definir uma "Data de término" para o conteúdo com um horário no futuro próximo (ex: 5 minutos a partir do momento atual)						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar o conteúdo						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar até que a data e hora de término seja atingida						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a lista de conteúdos e verificar a situação do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Verificar que a situação do conteúdo foi alterada automaticamente para "Suspenso"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Modificar situação de conteúdo suspenso manualmente para &quot;Liberado&quot; (data de término futura)">
+			<summary>
+				
+Verificar que é possível liberar manualmente um conteúdo suspenso, desde que sua data de término ainda não tenha sido atingida.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um conteúdo com "Restringir período de acesso" habilitado e uma "Data de término" no futuro						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Suspender o conteúdo manualmente (alterar situação para "Suspenso")						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar alterar a situação do conteúdo de "Suspenso" para "Liberado"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar a alteração						
+					</actions>
+					<expectedresults>
+						
+Verificar que a situação do conteúdo foi alterada para "Liberado" com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Tentar liberar conteúdo com data de término expirada">
+			<summary>
+				
+Validar a condição que impede a liberação de um conteúdo cuja data de término já expirou.				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Conteúdo com data de término no passado
+Conteúdo em situação "Suspenso"</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um conteúdo com "Restringir período de acesso" habilitado						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Definir uma "Data de término" no passado (ex: ontem)						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar o conteúdo (ele deve ser automaticamente suspenso ou já estar suspenso se a data for no passado)						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar alterar a situação do conteúdo de "Suspenso" para "Liberado"						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em salvar						
+					</actions>
+					<expectedresults>
+						
+Verificar que a mensagem de erro "Término de acesso expirado Não é possível liberar o conteúdo com uma data de término anterior à data/hora atual." é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a situação do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Situação permanece como "Suspenso"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Atualizar data de término de conteúdo suspenso e observar suspensão">
+			<summary>
+				
+Garantir que a atualização da data de término de um conteúdo suspenso atualize o agendamento de suspensão				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Conteúdo com data de término configurada
+Conteúdo em situação "Suspenso"</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um conteúdo com "Restringir período de acesso" habilitado e uma "Data de término" futura						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar o conteúdo						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Suspender o conteúdo manualmente (alterar situação para "Suspenso")						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Editar o conteúdo e alterar a "Data de término" para uma nova data futura (ex: 10 minutos a partir do momento atual)						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar o conteúdo						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a nova data de término ser atingida						
+					</actions>
+					<expectedresults>
+						
+Verificar que o conteúdo é suspenso novamente na nova data de término						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Remover data de término de conteúdo suspenso">
+			<summary>
+				
+Garantir que a remoção da data de término de um conteúdo suspenso não cause suspensão indevida ou liberação automática.				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Conteúdo com data de término configurada
+Conteúdo em situação "Suspenso"</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um conteúdo com "Restringir período de acesso" habilitado e uma "Data de término" futura						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar o conteúdo						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Suspender o conteúdo manualmente (alterar situação para "Suspenso")						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Editar o conteúdo e desabilitar a opção "Restringir período de acesso" (removendo a data de término)						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar o conteúdo						
+					</actions>
+					<expectedresults>
+						
+Verificar que o conteúdo permanece em situação "Suspenso" (não é liberado automaticamente)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar liberar o conteúdo manualmente						
+					</actions>
+					<expectedresults>
+						
+Verificar que o conteúdo pode ser liberado manualmente sem a restrição de data de término						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Catálogo de conteúdos">
+		<testcase name="Exibição do &quot;Tipo de experiência&quot; no card resumido do Play">
+			<summary>
+				
+Validar que as informações de "Tipo de experiência" são exibidas corretamente no card resumido do "Play" (Catálogo de conteúdos)				
+			</summary>
+			<preconditions>Usuário administrador
+Conteúdos (curso, trilha e pacote) com dados para "Tipo de experiência"</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o Play (catálogo de conteúdos)&lt;br /&gt;
+Visualizar os cards resumidos dos conteúdos						
+					</actions>
+					<expectedresults>
+						
+O "Tipo de experiência" é exibido no card resumido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição de &quot;Tipo de experiência&quot; e &quot;Classificação&quot; no card detalhado do Play">
+			<summary>
+				
+Validar que as informações de "Tipo de experiência" e "Capacitação" são exibidas corretamente no card detalhado do "Play" (Catálogo de conteúdos)				
+			</summary>
+			<preconditions>Usuário administrador
+Conteúdos (curso, trilha e pacote) com dados para "Tipo de experiência" e "Capacitação"</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o Play (catálogo de conteúdos)&lt;br /&gt;
+Clicar em um card resumido para abrir o card detalhado do conteúdo						
+					</actions>
+					<expectedresults>
+						
+Verificar que o "Tipo de experiência" é exibido na badge cinza (onde antes era o tipo de conteúdo) e que a "Classificação" é exibida na badge amarela, caso esteja preenchida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em um card de conteúdo que não contenha "Classificação"						
+					</actions>
+					<expectedresults>
+						
+Verificar que a badge amarela não é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtros de &quot;Tipo de experiência&quot; e &quot;Classificação&quot; no Play">
+			<summary>
+				
+Validar que as opções de "Tipo de experiência" e "Capacitação" são exibidas e aplicadas corretamente no filtro do "Play" (Catálogo de conteúdos)				
+			</summary>
+			<preconditions>Usuário administrador
+Conteúdos (curso, trilha e pacote) com dados para "Tipo de experiência" e "Capacitação"</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar os filtros do Play (catálogo de conteúdos)						
+					</actions>
+					<expectedresults>
+						
+Opções de "Tipo de experiência" e "Classificação" estão disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar múltiplos "Tipos de experiência" e aplicar o filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os conteúdos correspondentes aos tipos selecionados são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar múltiplas "Classificações" e aplicar o filtro						
+					</actions>
+					<expectedresults>
+						
+Apenas os conteúdos correspondentes às classificações selecionadas são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Combinar filtros de "Tipo de experiência", "Classificação" e "Categoria"						
+					</actions>
+					<expectedresults>
+						
+Filtragem combinada deve funcionar corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Conteúdos com pagamento">
+			<summary>
+				
+Validar que conteúdos (curso e trilha) configurados com pagamento exibem estas informações e permitem a compra normalmente				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Cobrança habilitada e configurada
+Conteúdos (curso e trilha) com pagamentos configurados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar a inscrição e pagamento em um curso						
+					</actions>
+					<expectedresults>
+						
+Inscrição e pagamento devem ser realizados com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar a inscrição e pagamento em uma trilha						
+					</actions>
+					<expectedresults>
+						
+Inscrição e pagamento devem ser realizados com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Certificados">
+		<testcase name="Campo dinâmico &quot;Tipo de experiência&quot;">
+			<summary>
+				
+Verificar que a opção de "Tipo de experiência" é exibida nos campos dinâmicos do certificado e que a emissão é realizada com sucesso.				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Conteúdos com vários tipos de experiência</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar ou editar um modelo de certificado&lt;br /&gt;
+Adicionar o campo dinâmico "Tipo de experiência" ao modelo&lt;br /&gt;
+Salvar modelo						
+					</actions>
+					<expectedresults>
+						
+Deve permitir salvar o modelo corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a pré-visualização do modelo 						
+					</actions>
+					<expectedresults>
+						
+Modelo deve exibir informação do tipo de experiência.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Gerar um certificado para o conteúdo (curso e trilha)						
+					</actions>
+					<expectedresults>
+						
+Informação do "Tipo de experiência" do conteúdo deve ser exibido corretamente no certificado gerado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Campo dinâmico &quot;Classificação&quot;">
+			<summary>
+				
+Verificar que a opção de "Tipo de experiência" é exibida nos campos dinâmicos do certificado e que a emissão é realizada com sucesso.				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Conteúdos com vários tipos de classificação</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar ou editar um modelo de certificado&lt;br /&gt;
+Adicionar o campo dinâmico "Classificação" ao modelo&lt;br /&gt;
+Salvar modelo						
+					</actions>
+					<expectedresults>
+						
+Deve permitir salvar o modelo corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a pré-visualização do modelo 						
+					</actions>
+					<expectedresults>
+						
+Modelo deve exibir informação da classificação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Gerar um certificado para um conteúdo (curso e trilha) que possui "Classificação" preenchido						
+					</actions>
+					<expectedresults>
+						
+Informação de "Classificação" do conteúdo deve ser exibido corretamente no certificado gerado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Gerar um certificado para um conteúdo que não contenha "Classificação" mas que o campo dinâmico esteja configurado no modelo do certificado utilizado						
+					</actions>
+					<expectedresults>
+						
+Certificado deve ser emitido e nenhuma informação deve ser preenchida para o campo dinâmico de "Classificação"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="API V2">
+		<testcase name="Novos campos em &quot;Criar conteúdo&quot;">
+			<summary>
+				
+Validar que os endpoints de criação de conteúdos da API V2 aceitam e persistem dados nos novos campos				
+			</summary>
+			<preconditions>Usuário administrador
+Acesso API v2
+Ferramenta para testes de API
+Documentação API v2</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar uma requisição POST para o endpoint de criação de conteúdos da API V2, incluindo os campos "Tipo de experiência" e "Classificação" no payload						
+					</actions>
+					<expectedresults>
+						
+Conteúdo é criado com sucesso e os valores dos campos "Tipo de experiência" e "Classificação" são persistidos corretamente (verificando via UI ou outra requisição GET)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar criar um conteúdo sem o campo "Tipo de experiência"						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir salvar e deve apresentar mensagem informando sobre campo obrigatório						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar criar um conteúdo sem preencher o campo "Classificação"						
+					</actions>
+					<expectedresults>
+						
+Conteúdo é criado e persistido com sucesso 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Novos campos em &quot;Atualizar conteúdo&quot;">
+			<summary>
+				
+Validar que os endpoints de atualização de conteúdos da API V2 aceitam e persistem dados nos novos campos				
+			</summary>
+			<preconditions>Usuário administrador
+Acesso API v2
+Ferramenta para testes de API
+Documentação API v2
+Conteúdos criados (curso, trilha, pacote)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar uma requisição PUT para o endpoint de atualização de conteúdos da API V2, modificando os campos "Tipo de experiência" e "Classificação"						
+					</actions>
+					<expectedresults>
+						
+Verificar que o conteúdo é atualizado com sucesso e que os novos valores dos campos "Tipo de experiência" e "Classificação" são persistidos corretamente (verificando via UI ou outra requisição GET)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar atualizar um conteúdo enviando o campo de "Tipo de experiência" como "vazio"						
+					</actions>
+					<expectedresults>
+						
+Não deve permitir salvar e deve apresentar mensagem informando sobre campo obrigatório						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar atualizar um conteúdo enviando o campo de "Classificação" como "vazio"						
+					</actions>
+					<expectedresults>
+						
+Conteúdo é atualizado com sucesso 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Novos campos em &quot;Listar conteúdos&quot;">
+			<summary>
+				
+Validar que o endpoint de listar conteúdos da API V2 retorna os dados dos novos campos				
+			</summary>
+			<preconditions>Usuário administrador
+Acesso API v2
+Ferramenta para testes de API
+Documentação API v2
+Conteúdos (curso, trilha, pacote) com dados de "Tipo de experiência" e "Classificação"</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar uma requisição GET para o endpoint de listagem de conteúdos da API V2						
+					</actions>
+					<expectedresults>
+						
+Resposta JSON inclui os campos "Tipo de experiência" e "Classificação" para cada conteúdo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Cupons e vouchers">
+		<testcase name="Badge &quot;Tipo de experiência&quot; no modal de vínculo de conteúdos - Cupons e vouchers">
+			<summary>
+				
+Validar a atualização da badge para exibir o "Tipo de experiência" no modal de vínculo com cupons e vouchers (Cobrança &amp;gt; Cupons e Vouchers)				
+			</summary>
+			<preconditions>Usuário administrador
+Conteúdos criados 
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Configurações &amp;gt; Organização &amp;gt; Cobrança de inscrição &amp;gt; Cupons e vouchers&lt;br /&gt;
+Criar ou editar um cupom/voucher e acessar o modal de vínculo de conteúdos						
+					</actions>
+					<expectedresults>
+						
+Verificar que a badge do conteúdo exibe o "Tipo de experiência" corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Competências">
+		<testcase name="Badge &quot;Tipo de experiência&quot; no modal de vínculo de conteúdos - Competências">
+			<summary>
+				
+Validar a atualização da badge para exibir o "Tipo de experiência" no modal de vínculo com competências (Skills &amp;gt; Competências &amp;gt; Conteúdos)				
+			</summary>
+			<preconditions>Usuário administrador
+Conteúdos criados 
+Feature flag habilitada (competências + facelift conteúdo)
+Competências</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Skills &amp;gt; Competências&lt;br /&gt;
+Clicar no ícone da coluna de 'Conteúdos' e '+Adicionar' para acessar o modal de vínculo com conteúdos						
+					</actions>
+					<expectedresults>
+						
+Verificar que a badge do conteúdo exibe o "Tipo de experiência" corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Pacotes - Conteúdos">
+		<testcase name="Badge &quot;Tipo de experiência&quot; no modal de vínculo de conteúdos - Pacote">
+			<summary>
+				
+Validar a atualização da badge para exibir o "Tipo de experiência" no modal de vínculo com pacotes (Conteúdos &amp;gt; Pacote &amp;gt; Conteúdos)				
+			</summary>
+			<preconditions>Usuário administrador
+Conteúdos criados (cursos e trilhas)
+Feature flag habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar ou editar um pacote&lt;br /&gt;
+Na aba de 'Conteúdos' selecionar 'Adicionar'						
+					</actions>
+					<expectedresults>
+						
+Verificar que a badge do conteúdo exibe o "Tipo de experiência" corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Trilha - Atividades">
+		<testcase name="Coluna &quot;Tipo de experiência&quot; na tabela de atividades de uma trilha">
+			<summary>
+				
+Validar a adição da coluna "Tipo de experiência" na tabela de atividades de uma trilha, mantendo a coluna "Tipo" com a badge cinza e exibindo a badge azul para o tipo de experiência.				
+			</summary>
+			<preconditions>Usuário administrador
+Feature flag habilitada
+Trilhas criadas
+Cursos com vários tipos de experiências</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar um conteúdo do tipo "Trilha" (Conteúdos &amp;gt; Trilha &amp;gt; Atividades)&lt;br /&gt;
+Adicionar cursos						
+					</actions>
+					<expectedresults>
+						
+Verificar que a coluna "Tipo de experiência" é exibida na tabela de atividades com badge azul e que a coluna "Tipo" ainda indica o tipo (curso) com badge cinza junto do ícone 						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
