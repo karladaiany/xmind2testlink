@@ -1,0 +1,419 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Super Admin - Tabela de Preços">
+		<testcase name="Opção de &quot;Cupons e Vouchers&quot; na funcionalidade da Tabela de Preços">
+			<summary>
+				
+Verificar se a opção "Cupons e Vouchers" existe e se ela pode ser habilitada/desabilitada no campo "Funcionalidade" da tabela de preços.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar tabela de preços &lt;br /&gt;
+Verificar o campo "Funcionalidade"						
+					</actions>
+					<expectedresults>
+						
+A opção "Cupons e Vouchers" deve ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar a opção "Cupons e Vouchers" e Salvar 						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir a seleção e a opção deve permanecer habilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar a opção "Cupons e Vouchers" e Salvar 						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir desmarcar a seleção e a opção deve permanecer desabilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Super Admin - Manutenção de Assinaturas - Contrato">
+		<testcase name="Contrato - &quot;Cupons e Vouchers&quot; habilitado na tabela de preço">
+			<summary>
+				
+Verificar se a opção "Cupons e Vouchers" existe e se ela pode ser habilitada/desabilitada no campo "Funcionalidade" do contrato conforme situação na tabela de preços.				
+			</summary>
+			<preconditions>Usuário com acessos:
+SuperAdmin &gt; Manutenção de tabela de preços
+    - Habilitar "Cupons e Vouchers" para um plano na tabela de preços
+SuperAdmin &gt; Manutenção de assinaturas
+    - Configurar o plano como vigente no ambiente de teste</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar o contrato do ambiente e verificar a funcionalidade "Cupons e Vouchers"						
+					</actions>
+					<expectedresults>
+						
+Opção deve estar habilitada por padrão e não deve permitir desabilitar (pois está habilitada por padrão, na tabela de preço)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Contrato - &quot;Cupons e Vouchers&quot; desabilitado na tabela de preço">
+			<summary>
+				
+Verificar se a opção "Cupons e Vouchers" existe e se ela pode ser habilitada/desabilitada no campo "Funcionalidade" do contrato conforme situação na tabela de preços.				
+			</summary>
+			<preconditions>Usuário com acessos:
+SuperAdmin &gt; Manutenção de tabela de preços
+    - Desabilitar "Cupons e Vouchers" para um plano na tabela de preços
+SuperAdmin &gt; Manutenção de assinaturas
+    - Configurar o plano como vigente no ambiente de teste</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar o contrato do ambiente e verificar a funcionalidade "Cupons e Vouchers"						
+					</actions>
+					<expectedresults>
+						
+Opção deve estar desabilitada e desbloqueada, permitindo a seleção para habilitar/desabilitar (pois não está habilitada por padrão na tabela de preço)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar funcionalidade no contrato&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir a seleção e a opção deve permanecer habilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar funcionalidade no contrato&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir desmarcar a seleção e a opção deve permanecer desabilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="&quot;Cupons e Vouchers&quot; Marcado em Contrato">
+		<testcase name="Menu &quot;Cobranças de Inscrição&quot; &gt; Aba &quot;Cupons e Vouchers&quot;">
+			<summary>
+				
+Validar que os Cupons e Vouchers continuam funcionando.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Cupons e Vouchers" habilitada no contrato vigente
+Estar com a opção de "Cupons e Vouchers" desabilitada no contrato vigente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Cobranças de Inscrição" &amp;gt; Aba "Cupons e Vouchers"						
+					</actions>
+					<expectedresults>
+						
+Será mostrado a listagem dos "Cupons e Vouchers", os botões de "Adicionar", editar, excluir, filtros, modo de visão em lista e cards.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Cobranças de Inscrição" &amp;gt; Aba "Cupons e Vouchers" &amp;gt; botão "Adicionar" &amp;gt; preencher todos os campos e SALVAR						
+					</actions>
+					<expectedresults>
+						
+Será criado um novo cupom ou voucher (dependendo da escolha) e será mostrado na listagem da aba "Cupons e Vouchers"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Cobranças de Inscrição" &amp;gt; Aba "Cupons e Vouchers" &amp;gt; editar e/ou excluir um cupom ou voucher						
+					</actions>
+					<expectedresults>
+						
+A ação de edição será realizada&lt;br /&gt;
+E a ação de exclusão também, removendo o item da aba de "Cupons e Vouchers"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Inscrição no Conteúdo com &quot;Cobrança de Inscrição&quot;">
+			<summary>
+				
+Validar que os Cupons e Vouchers continuam funcionando.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Cupons e Vouchers" habilitada no contrato vigente
+Estar com a opção de "Cupons e Vouchers" desabilitada no contrato vigente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu de "Cobrança de Inscrição" &amp;gt; Configurar uma ferramenta de pagamento &amp;gt; Criar um conteúdo &amp;gt; Editar/Gerenciar &amp;gt; aba de "Cobrança" &amp;gt; "Habilitar pagamento" e realizar a inscrição no conteúdo aplicando o código do cupom/voucher VÁLIDO						
+					</actions>
+					<expectedresults>
+						
+O cupom/voucher será aplicado, o valor TOTAL do conteúdo será atualizado e demais operações de pagamento continuaram habilitadas para a conclusão do pagamento e inscrição no curso.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu de "Cobrança de Inscrição" &amp;gt; Configurar uma ferramenta de pagamento &amp;gt; Criar um conteúdo &amp;gt; Editar/Gerenciar &amp;gt; aba de "Cobrança" &amp;gt; "Habilitar pagamento" e realizar a inscrição no conteúdo aplicando o código do cupom/voucher INVÁLIDO						
+					</actions>
+					<expectedresults>
+						
+O cupom/voucher NÃO será aplicado, será apresentado uma toast message vermelha com o texto: "Código inválido", o valor TOTAL do conteúdo NÃO será atualizado e demais operações de pagamento continuaram habilitadas para a conclusão do pagamento e inscrição no curso.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="&quot;Cupons e Vouchers&quot; Desmarcado em Contrato">
+		<testcase name="Menu &quot;Cobranças de Inscrição&quot; &gt; Aba &quot;Cupons e Vouchers&quot;">
+			<summary>
+				
+Validar que os Cupons e Vouchers continuam funcionando.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Cupons e Vouchers" habilitada no contrato vigente
+Estar com a opção de "Cupons e Vouchers" desabilitada no contrato vigente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Cobranças de Inscrição" &amp;gt; Aba "Cupons e Vouchers"						
+					</actions>
+					<expectedresults>
+						
+Não será exibido nenhum botão de iteração e nem a listagem dos cupons/voucher e será mostrado o texto:&lt;br /&gt;
+&lt;br /&gt;
+Ops! Essa opção não está disponível no seu plano&lt;br /&gt;
+&lt;br /&gt;
+Mude suas opções de assinatura entrando em contato com a nossa equipe!&lt;br /&gt;
+&lt;br /&gt;
+Botão de "Contato"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Inscrição no Conteúdo com &quot;Cobrança de Inscrição&quot;">
+			<summary>
+				
+Validar que os Cupons e Vouchers continuam funcionando.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Cupons e Vouchers" habilitada no contrato vigente
+Estar com a opção de "Cupons e Vouchers" desabilitada no contrato vigente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu de "Cobrança de Inscrição" &amp;gt; Configurar uma ferramenta de pagamento &amp;gt; Criar um conteúdo &amp;gt; Editar/Gerenciar &amp;gt; aba de "Cobrança" &amp;gt; "Habilitar pagamento" e realizar a inscrição no conteúdo aplicando o código do cupom/voucher VÁLIDO						
+					</actions>
+					<expectedresults>
+						
+O cupom/voucher NÃO será aplicado, será apresentado uma toast message vermelha com o texto: "Código inválido", o valor TOTAL do conteúdo NÃO será atualizado e demais operações de pagamento continuaram habilitadas para a conclusão do pagamento e inscrição no curso.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu de "Cobrança de Inscrição" &amp;gt; Configurar uma ferramenta de pagamento &amp;gt; Criar um conteúdo &amp;gt; Editar/Gerenciar &amp;gt; aba de "Cobrança" &amp;gt; "Habilitar pagamento" e realizar a inscrição no conteúdo aplicando o código do cupom/voucher INVÁLIDO						
+					</actions>
+					<expectedresults>
+						
+O cupom/voucher NÃO será aplicado, será apresentado uma toast message vermelha com o texto: "Código inválido", o valor TOTAL do conteúdo NÃO será atualizado e demais operações de pagamento continuaram habilitadas para a conclusão do pagamento e inscrição no curso.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Adicionar a funcionalidade na View (Banco de Dados)">
+		<testcase name="Validar quando habilitada/desabilitada a funcionalidade do &quot;Cupons e Vouchers&quot;">
+			<summary>
+				
+Validar que os Cupons e Vouchers são apresentados ou não na view do banco de dados				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Cupons e Vouchers" habilitada no contrato vigente
+Estar com a opção de "Cupons e Vouchers" desabilitada no contrato vigente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Habilitar funcionalidade no contrato &amp;gt; Consultar a view_twygo_admin_organization_contracts						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade "coupons_vouchers" deve ser exibida na coluna de funcionalidades						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar funcionalidade no contrato &amp;gt; Consultar a view_twygo_admin_organization_contracts						
+					</actions>
+					<expectedresults>
+						
+Não deve exibir a funcionalidade desabilitada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar a funcionalidade na tabela de preços&lt;br /&gt;
+Vincular plano ao ambiente&lt;br /&gt;
+Consultar a view						
+					</actions>
+					<expectedresults>
+						
+Funcionalidade deve ser exibida na coluna de funcionalidades						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Troca de Contratos">
+		<testcase name="Troca de Contrato: Vigente x Expirados">
+			<summary>
+				
+Validar a troca de contratos onde pode haver alterações nas funcionalidades habilitadas.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Cupons e Vouchers" habilitada no contrato vigente
+Estar com a opção de "Cupons e Vouchers" desabilitada no contrato vigente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Ter um contrato vigente com a funcionalidade de "Cupons e Vouchers" habilitada com data de término para hoje.&lt;br /&gt;
+Ter um novo contrato para iniciar amanhã com a funcionalidade de "Cupons e Vouchers" desabilitada						
+					</actions>
+					<expectedresults>
+						
+No dia de hoje a funcionalidade vai continuar funcionando mas amanhã não.&lt;br /&gt;
+E a funcionalidade vai ficar desabilitada&lt;br /&gt;
+E os cupons/voucher serão invalidados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ter um contrato vigente com a funcionalidade de "Cupons e Vouchers" desabilitada com data de término para hoje.&lt;br /&gt;
+Ter um novo contrato para iniciar amanhã com a funcionalidade de "Cupons e Vouchers" habilitada						
+					</actions>
+					<expectedresults>
+						
+No dia de hoje a funcionalidade vai continuar bloqueada mas amanhã não.&lt;br /&gt;
+E a funcionalidade vai ficar habilitada&lt;br /&gt;
+E os cupons/voucher serão validados para uso novamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Runner para Contratos">
+		<testcase name="Execução do runner para contratos novos e antigos">
+			<summary>
+				
+Validar a execução do Runner para contratos novos e antigos				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Cupons e Vouchers" habilitada no contrato vigente
+Estar com a opção de "Cupons e Vouchers" desabilitada no contrato vigente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar os contratos novos e antigos quando a funciondalidade "Cupons e Vouchers" estar habilitada ou desabilitada						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade "coupons_vouchers" deve ser exibida na coluna de funcionalidades						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
