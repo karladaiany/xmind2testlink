@@ -1,0 +1,1773 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Super Admin &gt; Tabela de Preços">
+		<testcase name="Verificar exibição da funcionalidade 'Clientes empresariais' na Tabela de Preços">
+			<summary>
+				
+Verificar se a opção 'Clientes empresariais' é exibida corretamente no campo 'Funcionalidade' da tabela de preços.				
+			</summary>
+			<preconditions>Usuário logado como Super Admin
+Acesso ao menu Super Admin &gt; Assinaturas &gt; Tabela de preços</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Super Admin &amp;gt; Assinaturas &amp;gt; Tabela de preços						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a tela de Tabela de preços com listagem de planos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar o campo 'Funcionalidade' na tabela de preços						
+					</actions>
+					<expectedresults>
+						
+Campo 'Funcionalidade' é exibido com as opções disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a opção 'Clientes empresariais' está presente						
+					</actions>
+					<expectedresults>
+						
+Opção 'Clientes empresariais' é exibida na lista de funcionalidades disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Habilitar funcionalidade 'Clientes empresariais' em um plano">
+			<summary>
+				
+Verificar se é possível habilitar a funcionalidade 'Clientes empresariais' em um plano da tabela de preços.				
+			</summary>
+			<preconditions>Usuário logado como Super Admin
+Acesso ao menu Super Admin &gt; Assinaturas &gt; Tabela de preços</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Super Admin &amp;gt; Assinaturas &amp;gt; Tabela de preços						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a tela de Tabela de preços						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar um plano para edição						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário de edição do plano						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'Clientes empresariais' no campo Funcionalidade						
+					</actions>
+					<expectedresults>
+						
+Checkbox da funcionalidade 'Clientes empresariais' é marcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar as alterações						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe toast message de sucesso: 'Alterações salvas com sucesso'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a funcionalidade foi salva corretamente						
+					</actions>
+					<expectedresults>
+						
+Funcionalidade 'Clientes empresariais' permanece marcada após recarregar a página						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Desabilitar funcionalidade 'Clientes empresariais' em um plano">
+			<summary>
+				
+Verificar se é possível desabilitar a funcionalidade 'Clientes empresariais' em um plano.				
+			</summary>
+			<preconditions>Usuário logado como Super Admin
+Funcionalidade 'Clientes empresariais' habilitada em um plano</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Super Admin &amp;gt; Assinaturas &amp;gt; Tabela de preços						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a tela de Tabela de preços						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o plano com a funcionalidade habilitada						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário de edição do plano						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desmarcar a opção 'Clientes empresariais'						
+					</actions>
+					<expectedresults>
+						
+Checkbox da funcionalidade 'Clientes empresariais' é desmarcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar as alterações						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe toast message de sucesso: 'Alterações salvas com sucesso'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Super Admin &gt; Contrato">
+		<testcase name="Verificar exibição da funcionalidade 'Clientes empresariais' no Contrato">
+			<summary>
+				
+Verificar se a funcionalidade 'Clientes empresariais' é exibida na listagem de funcionalidades do contrato.				
+			</summary>
+			<preconditions>Usuário logado como Super Admin
+Acesso ao menu Super Admin &gt; Assinaturas &gt; Manutenção de assinaturas &gt; Contrato</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Super Admin &amp;gt; Assinaturas &amp;gt; Manutenção de assinaturas						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a tela de Manutenção de assinaturas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar um ambiente e acessar a aba Contrato						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe os detalhes do contrato do ambiente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar a seção de funcionalidades do contrato						
+					</actions>
+					<expectedresults>
+						
+Seção de funcionalidades é exibida com as opções disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a opção 'Clientes empresariais' está presente						
+					</actions>
+					<expectedresults>
+						
+Opção 'Clientes empresariais' é exibida na lista de funcionalidades do contrato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar herança de funcionalidade do plano para o contrato">
+			<summary>
+				
+Verificar se contratos baseados em planos que possuem 'Clientes empresariais' marcado na tabela de preços herdam essa configuração.				
+			</summary>
+			<preconditions>Usuário logado como Super Admin
+Plano com funcionalidade 'Clientes empresariais' habilitada na tabela de preços</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Super Admin &amp;gt; Assinaturas &amp;gt; Manutenção de assinaturas						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a tela de Manutenção de assinaturas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar um ambiente com contrato baseado no plano configurado						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe os detalhes do contrato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a funcionalidade 'Clientes empresariais' está marcada						
+					</actions>
+					<expectedresults>
+						
+Funcionalidade 'Clientes empresariais' está marcada e herdada do plano						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar desmarcar a funcionalidade 'Clientes empresariais'						
+					</actions>
+					<expectedresults>
+						
+Sistema não permite desmarcar a opção - campo desabilitado ou exibe mensagem informativa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Habilitar funcionalidade diretamente no contrato (quando não vem do plano)">
+			<summary>
+				
+Verificar se é possível habilitar a funcionalidade 'Clientes empresariais' diretamente no contrato quando não vem marcada por default do plano.				
+			</summary>
+			<preconditions>Usuário logado como Super Admin
+Contrato baseado em plano SEM a funcionalidade 'Clientes empresariais'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Super Admin &amp;gt; Assinaturas &amp;gt; Manutenção de assinaturas						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a tela de Manutenção de assinaturas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar um ambiente com contrato sem a funcionalidade						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe os detalhes do contrato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'Clientes empresariais' no contrato						
+					</actions>
+					<expectedresults>
+						
+Checkbox da funcionalidade é marcado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar as alterações do contrato						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe toast message de sucesso: 'Contrato atualizado com sucesso'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar persistência da configuração						
+					</actions>
+					<expectedresults>
+						
+Funcionalidade permanece marcada após recarregar a página						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar tolerância do fim da vigência do contrato">
+			<summary>
+				
+Verificar se o sistema respeita o campo 'Tolerância do fim da vigência do contrato (dias)' para contratos expirados.				
+			</summary>
+			<preconditions>Usuário logado como Super Admin
+Contrato com data de vigência expirada
+Campo de tolerância configurado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ambiente com contrato expirado mas dentro do período de tolerância						
+					</actions>
+					<expectedresults>
+						
+Sistema permite acesso ao ambiente normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se as funcionalidades do contrato permanecem disponíveis						
+					</actions>
+					<expectedresults>
+						
+Todas as funcionalidades configuradas no contrato permanecem ativas durante o período de tolerância						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar comportamento após término do período de tolerância						
+					</actions>
+					<expectedresults>
+						
+Sistema aplica as restrições conforme configuração após término da tolerância						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Menu Empresas">
+		<testcase name="Validar bloqueio ao acessar menu Empresas sem permissão">
+			<summary>
+				
+Verificar se o sistema exibe modal de bloqueio ao acessar o menu 'Empresas' quando a funcionalidade não está disponível no contrato.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente SEM funcionalidade 'Clientes empresariais' no contrato</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu 'Empresas' no sistema						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe modal de bloqueio						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar título do modal						
+					</actions>
+					<expectedresults>
+						
+Modal exibe o título: 'Ops! Essa opção não está disponível no seu plano'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar mensagem do corpo do modal						
+					</actions>
+					<expectedresults>
+						
+Modal exibe a mensagem: 'Mude suas opções de assinatura entrando em contato com a nossa equipe!'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar presença do botão [Contato]						
+					</actions>
+					<expectedresults>
+						
+Botão [Contato] é exibido no modal						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão [Contato]						
+					</actions>
+					<expectedresults>
+						
+Sistema abre o chat com suporte para contato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar bloqueio ao clicar em Adicionar empresa sem permissão">
+			<summary>
+				
+Verificar se o sistema exibe modal de bloqueio ao tentar adicionar uma empresa quando a funcionalidade não está disponível.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente SEM funcionalidade 'Clientes empresariais' no contrato</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu 'Empresas' (se permitido visualizar)						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a tela de listagem de empresas ou modal de bloqueio						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Adicionar' empresa						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe modal de bloqueio						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar título do modal						
+					</actions>
+					<expectedresults>
+						
+Modal exibe o título: 'Ops! Essa opção não está disponível no seu plano'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar mensagem do corpo do modal						
+					</actions>
+					<expectedresults>
+						
+Modal exibe a mensagem: 'Mude suas opções de assinatura entrando em contato com a nossa equipe!'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão [Contato]						
+					</actions>
+					<expectedresults>
+						
+Sistema abre o chat com suporte para contato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar ocultação de empresas após downgrade de plano">
+			<summary>
+				
+Verificar se as empresas cadastradas ficam ocultas na tabela após migração para um plano sem acesso à funcionalidade.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente que TINHA funcionalidade 'Clientes empresariais'
+Empresas previamente cadastradas
+Migração para plano SEM a funcionalidade</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar downgrade do plano (remover funcionalidade 'Clientes empresariais')						
+					</actions>
+					<expectedresults>
+						
+Plano é alterado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu 'Empresas' após o downgrade						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe modal de bloqueio ou tela vazia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se as empresas cadastradas anteriormente estão visíveis						
+					</actions>
+					<expectedresults>
+						
+Empresas cadastradas NÃO são exibidas na tabela - dados ficam ocultos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Reativar a funcionalidade no contrato						
+					</actions>
+					<expectedresults>
+						
+Funcionalidade é reativada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se as empresas voltam a ser exibidas						
+					</actions>
+					<expectedresults>
+						
+Empresas cadastradas anteriormente voltam a ser exibidas na tabela						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar acesso ao menu Empresas com permissão">
+			<summary>
+				
+Verificar se o sistema permite acesso normal ao menu 'Empresas' quando a funcionalidade está disponível no contrato.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente COM funcionalidade 'Clientes empresariais' no contrato</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu 'Empresas' no sistema						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a tela de listagem de empresas normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o botão 'Adicionar' está disponível						
+					</actions>
+					<expectedresults>
+						
+Botão 'Adicionar' é exibido e está habilitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Adicionar'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário de cadastro de nova empresa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher os dados da empresa e salvar						
+					</actions>
+					<expectedresults>
+						
+Empresa é cadastrada com sucesso e exibida na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar fechamento do modal de bloqueio">
+			<summary>
+				
+Verificar se é possível fechar o modal de bloqueio sem acionar o contato.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente SEM funcionalidade 'Clientes empresariais' no contrato</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu 'Empresas' para exibir o modal de bloqueio						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe modal de bloqueio						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se há botão de fechar (X) no modal						
+					</actions>
+					<expectedresults>
+						
+Botão de fechar (X) é exibido no canto superior direito do modal						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de fechar (X)						
+					</actions>
+					<expectedresults>
+						
+Modal é fechado e usuário permanece na tela anterior						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Pressionar tecla ESC com modal aberto						
+					</actions>
+					<expectedresults>
+						
+Modal é fechado ao pressionar ESC						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos &gt; Edição &gt; Dados">
+		<testcase name="Validar bloqueio ao marcar 'Pessoa jurídica (empresa com CNPJ)' sem permissão">
+			<summary>
+				
+Verificar se o sistema exibe modal de bloqueio ao tentar marcar a opção 'Pessoa jurídica' no campo 'Permitir registro de inscrição por'.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente SEM funcionalidade 'Clientes empresariais' no contrato
+Conteúdo existente para edição</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Conteúdos &amp;gt; Gerenciar						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a listagem de conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar um conteúdo e acessar a aba 'Dados'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário de edição de dados do conteúdo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar o campo 'Permitir registro de inscrição por'						
+					</actions>
+					<expectedresults>
+						
+Campo é exibido com as opções disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar marcar a opção 'Pessoa jurídica (empresa com CNPJ)'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe modal de bloqueio						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar título do modal						
+					</actions>
+					<expectedresults>
+						
+Modal exibe o título: 'Ops! Essa opção não está disponível no seu plano'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar mensagem do corpo do modal						
+					</actions>
+					<expectedresults>
+						
+Modal exibe a mensagem: 'Mude suas opções de assinatura entrando em contato com a nossa equipe!'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão [Contato]						
+					</actions>
+					<expectedresults>
+						
+Sistema abre o chat com suporte para contato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar comportamento após downgrade - campo 'Permitir registro de inscrição por'">
+			<summary>
+				
+Verificar se o sistema deixa marcada apenas a opção 'Pessoa física' após downgrade de plano.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente que TINHA funcionalidade 'Clientes empresariais'
+Conteúdo com opção 'Pessoa jurídica' previamente marcada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar configuração atual do conteúdo antes do downgrade						
+					</actions>
+					<expectedresults>
+						
+Opção 'Pessoa jurídica (empresa com CNPJ)' está marcada no campo 'Permitir registro de inscrição por'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar downgrade do plano (remover funcionalidade 'Clientes empresariais')						
+					</actions>
+					<expectedresults>
+						
+Plano é alterado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o conteúdo e verificar a aba 'Dados'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário de edição de dados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o campo 'Permitir registro de inscrição por'						
+					</actions>
+					<expectedresults>
+						
+Apenas a opção 'Pessoa física' está marcada - opção 'Pessoa jurídica' foi desmarcada automaticamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar marcação de 'Pessoa jurídica' com permissão">
+			<summary>
+				
+Verificar se é possível marcar a opção 'Pessoa jurídica' quando a funcionalidade está disponível.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente COM funcionalidade 'Clientes empresariais' no contrato</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Conteúdos &amp;gt; Gerenciar						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a listagem de conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar um conteúdo e acessar a aba 'Dados'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário de edição de dados do conteúdo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'Pessoa jurídica (empresa com CNPJ)'						
+					</actions>
+					<expectedresults>
+						
+Opção é marcada com sucesso sem exibir modal de bloqueio						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar as alterações						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe toast message de sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar persistência da configuração						
+					</actions>
+					<expectedresults>
+						
+Opção 'Pessoa jurídica' permanece marcada após recarregar a página						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Conteúdos &gt; Edição &gt; Aprovação">
+		<testcase name="Validar bloqueio ao marcar 'Usar modelo de certificado por empresa' sem permissão">
+			<summary>
+				
+Verificar se o sistema exibe modal de bloqueio ao tentar marcar a opção 'Usar modelo de certificado por empresa'.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente SEM funcionalidade 'Clientes empresariais' no contrato
+Conteúdo existente para edição</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Conteúdos &amp;gt; Gerenciar						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a listagem de conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar um conteúdo e acessar a aba 'Aprovação'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário de configuração de aprovação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar a opção 'Usar modelo de certificado por empresa'						
+					</actions>
+					<expectedresults>
+						
+Opção é exibida no formulário						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar marcar a opção 'Usar modelo de certificado por empresa'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe modal de bloqueio						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar título do modal						
+					</actions>
+					<expectedresults>
+						
+Modal exibe o título: 'Ops! Essa opção não está disponível no seu plano'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar mensagem do corpo do modal						
+					</actions>
+					<expectedresults>
+						
+Modal exibe a mensagem: 'Mude suas opções de assinatura entrando em contato com a nossa equipe!'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão [Contato]						
+					</actions>
+					<expectedresults>
+						
+Sistema abre o chat com suporte para contato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar comportamento após downgrade - 'Usar modelo de certificado por empresa'">
+			<summary>
+				
+Verificar se o parâmetro é desmarcado automaticamente após downgrade de plano.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente que TINHA funcionalidade 'Clientes empresariais'
+Conteúdo com opção 'Usar modelo de certificado por empresa' previamente marcada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar configuração atual do conteúdo antes do downgrade						
+					</actions>
+					<expectedresults>
+						
+Opção 'Usar modelo de certificado por empresa' está marcada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar downgrade do plano (remover funcionalidade 'Clientes empresariais')						
+					</actions>
+					<expectedresults>
+						
+Plano é alterado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o conteúdo e verificar a aba 'Aprovação'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário de configuração de aprovação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'Usar modelo de certificado por empresa'						
+					</actions>
+					<expectedresults>
+						
+Opção está DESMARCADA - foi removida automaticamente pelo sistema						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar marcação de 'Usar modelo de certificado por empresa' com permissão">
+			<summary>
+				
+Verificar se é possível marcar a opção quando a funcionalidade está disponível.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente COM funcionalidade 'Clientes empresariais' no contrato</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Conteúdos &amp;gt; Gerenciar						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a listagem de conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar um conteúdo e acessar a aba 'Aprovação'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário de configuração de aprovação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'Usar modelo de certificado por empresa'						
+					</actions>
+					<expectedresults>
+						
+Opção é marcada com sucesso sem exibir modal de bloqueio						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar as alterações						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe toast message de sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar persistência da configuração						
+					</actions>
+					<expectedresults>
+						
+Opção permanece marcada após recarregar a página						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar emissão de certificados com modelo por empresa habilitado">
+			<summary>
+				
+Verificar se os certificados são emitidos corretamente usando o modelo configurado por empresa.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente COM funcionalidade 'Clientes empresariais'
+Conteúdo com 'Usar modelo de certificado por empresa' habilitado
+Modelo de certificado configurado para a empresa</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Configurar modelo de certificado específico para uma empresa						
+					</actions>
+					<expectedresults>
+						
+Modelo de certificado é configurado com sucesso para a empresa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar conclusão de conteúdo por usuário vinculado à empresa						
+					</actions>
+					<expectedresults>
+						
+Usuário conclui o conteúdo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar emissão do certificado						
+					</actions>
+					<expectedresults>
+						
+Certificado é emitido utilizando o modelo configurado para a empresa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar dados do certificado emitido						
+					</actions>
+					<expectedresults>
+						
+Certificado contém as informações corretas da empresa e do usuário						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar emissão de certificado default após desabilitar funcionalidade">
+			<summary>
+				
+Verificar se certificados são emitidos com modelo default após desabilitar a funcionalidade por empresa.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente COM funcionalidade 'Clientes empresariais' previamente habilitada
+Modelo de certificado por empresa configurado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Desabilitar a funcionalidade 'Clientes empresariais' no contrato						
+					</actions>
+					<expectedresults>
+						
+Funcionalidade é desabilitada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar conclusão de conteúdo por usuário						
+					</actions>
+					<expectedresults>
+						
+Usuário conclui o conteúdo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar emissão do certificado						
+					</actions>
+					<expectedresults>
+						
+Certificado é emitido utilizando o modelo DEFAULT do sistema						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o modelo específico da empresa não foi utilizado						
+					</actions>
+					<expectedresults>
+						
+Certificado não contém customizações específicas da empresa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Validação com e sem Facelift">
+		<testcase name="Validar bloqueio do menu Empresas COM Facelift habilitado">
+			<summary>
+				
+Verificar se o modal de bloqueio é exibido corretamente na interface com Facelift.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente SEM funcionalidade 'Clientes empresariais'
+Facelift HABILITADO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar se o Facelift está habilitado no ambiente						
+					</actions>
+					<expectedresults>
+						
+Interface exibe o novo layout (Facelift)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu 'Empresas'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe modal de bloqueio com o novo design						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar estilização do modal no Facelift						
+					</actions>
+					<expectedresults>
+						
+Modal segue o padrão visual do Facelift (cores, fontes, botões)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar funcionalidade do botão [Contato]						
+					</actions>
+					<expectedresults>
+						
+Botão abre o chat com suporte corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar bloqueio do menu Empresas SEM Facelift">
+			<summary>
+				
+Verificar se o modal de bloqueio é exibido corretamente na interface sem Facelift.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente SEM funcionalidade 'Clientes empresariais'
+Facelift DESABILITADO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar se o Facelift está desabilitado no ambiente						
+					</actions>
+					<expectedresults>
+						
+Interface exibe o layout antigo (sem Facelift)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu 'Empresas'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe modal de bloqueio com o design antigo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar estilização do modal sem Facelift						
+					</actions>
+					<expectedresults>
+						
+Modal segue o padrão visual antigo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar funcionalidade do botão [Contato]						
+					</actions>
+					<expectedresults>
+						
+Botão abre o chat com suporte corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar bloqueio em Conteúdos &gt; Dados COM Facelift">
+			<summary>
+				
+Verificar se o modal de bloqueio é exibido corretamente ao tentar marcar 'Pessoa jurídica' com Facelift.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente SEM funcionalidade 'Clientes empresariais'
+Facelift HABILITADO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Conteúdos &amp;gt; Gerenciar &amp;gt; Dados com Facelift habilitado						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário com o novo layout						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar marcar 'Pessoa jurídica (empresa com CNPJ)'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe modal de bloqueio com design do Facelift						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar consistência visual do modal						
+					</actions>
+					<expectedresults>
+						
+Modal está alinhado com o design system do Facelift						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar bloqueio em Conteúdos &gt; Aprovação COM Facelift">
+			<summary>
+				
+Verificar se o modal de bloqueio é exibido corretamente ao tentar marcar 'Usar modelo de certificado por empresa' com Facelift.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente SEM funcionalidade 'Clientes empresariais'
+Facelift HABILITADO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar Conteúdos &amp;gt; Gerenciar &amp;gt; Aprovação com Facelift habilitado						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário com o novo layout						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar marcar 'Usar modelo de certificado por empresa'						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe modal de bloqueio com design do Facelift						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar consistência visual do modal						
+					</actions>
+					<expectedresults>
+						
+Modal está alinhado com o design system do Facelift						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Criação de Empresa via Cadastro de Usuário">
+		<testcase name="Validar criação automática de empresa ao preencher campo 'Empresa' no cadastro de usuário">
+			<summary>
+				
+Verificar se o processo de criar empresa quando campo 'Empresa' for preenchido no cadastro de usuário continua funcionando.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente COM funcionalidade 'Clientes empresariais' ativa</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o cadastro de novo usuário						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe o formulário de cadastro de usuário						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher o campo 'Empresa' com nome de uma empresa inexistente						
+					</actions>
+					<expectedresults>
+						
+Campo aceita o valor digitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher os demais campos obrigatórios do usuário						
+					</actions>
+					<expectedresults>
+						
+Campos são preenchidos corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar o cadastro do usuário						
+					</actions>
+					<expectedresults>
+						
+Usuário é cadastrado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a empresa foi criada automaticamente						
+					</actions>
+					<expectedresults>
+						
+Empresa aparece na listagem do menu 'Empresas'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar vínculo do usuário com a empresa						
+					</actions>
+					<expectedresults>
+						
+Usuário está vinculado à empresa criada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar que não é necessário executar runner para criação de empresa via cadastro">
+			<summary>
+				
+Confirmar que a criação de empresa via cadastro de usuário não requer execução de runner quando funcionalidade está ativa.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Ambiente COM funcionalidade 'Clientes empresariais' ativa</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar usuário com campo 'Empresa' preenchido						
+					</actions>
+					<expectedresults>
+						
+Usuário é cadastrado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar imediatamente a listagem de empresas						
+					</actions>
+					<expectedresults>
+						
+Empresa aparece na listagem sem necessidade de aguardar processamento						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que não há jobs pendentes de processamento						
+					</actions>
+					<expectedresults>
+						
+Sistema não requer execução de runner para completar a operação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="view_twygo_admin_organization_contracts">
+		<testcase name="Validar exibição da funcionalidade na view de contratos">
+			<summary>
+				
+Verificar se a funcionalidade 'Clientes empresariais' é exibida corretamente na view de administração de contratos.				
+			</summary>
+			<preconditions>Usuário com acesso à view_twygo_admin_organization_contracts
+Ambiente com contrato configurado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a view_twygo_admin_organization_contracts						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a view de contratos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar o ambiente/contrato desejado						
+					</actions>
+					<expectedresults>
+						
+Contrato é exibido na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a funcionalidade 'Clientes empresariais' é exibida						
+					</actions>
+					<expectedresults>
+						
+Funcionalidade aparece com seu status (habilitada/desabilitada)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar consistência com a configuração do contrato						
+					</actions>
+					<expectedresults>
+						
+Status exibido na view corresponde à configuração real do contrato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
