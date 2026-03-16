@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Exibir mensagem de funcionalidade não liberada nos botões/funcionalidade">
+		<testcase name="Mensagem de funcionalidade não liberada">
+			<summary>
+				
+Validar as mensagens de bloqueio de acordo com as configurações bloqueadas em "Configurações" da funcionalidade de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Ferramenta para criação de conteúdos interativos, no tipo página ou em vídeo com inteligência artificial." &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteúdos" &amp;gt; clicar no botão "Criar curso com IA"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Gera questionários baseados em novos arquivos ou atividades já existentes." &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteúdos &amp;gt; Atividades &amp;gt; Sophia &amp;gt; Criar questionários." &amp;gt; clicar no botão "Criar questionário"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Criador de estrutura de atividades para auxiliar na construção de um conteúdo." &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteudos &amp;gt; Atividades &amp;gt; Sophia &amp;gt; Criar atividades" &amp;gt; clicar no botão "Criar atividades"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Gere resumos para suas atividades" &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteudos &amp;gt; Atividades &amp;gt; Sophia &amp;gt; Gerar resumo de atividade." &amp;gt; clicar no botão "Criar resumo de atividade"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Edição de conteúdos do tipo página com recursos de IA." &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteudos &amp;gt; Atividades &amp;gt; Selecionar edição de uma atividade &amp;gt; Clicar no botão Editar página" &amp;gt; clicar no botão "Editar página"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Edição de conteúdos do tipo aula com recursos de IA." &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteudos &amp;gt; Atividades &amp;gt; Selecionar edição de uma atividade &amp;gt; Clicar no botão Editar aula" &amp;gt; clicar no botão "Editar aula"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Parecer da nossa inteligência artificial dos questionários aplicados aos respondentes." &amp;gt; Acessar "Menu questionários &amp;gt; Criar ou editar questionário." &amp;gt; clicar no botão "Toggle Análise por IA (ao habilitar exibe a mensagem)."						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Permite fazer a importação de arquivos ou textos para a criação de questionários de forma automatizada." &amp;gt; Acessar "Menu questionários &amp;gt; Clicar no botão importação inteligente" &amp;gt; clicar no botão "Importação inteligente"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função." &amp;gt; Acessar "Menu Skills" &amp;gt; clicar no botão "Botões que usam IA no menu skills."						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Utilize a IA para ler arquivos e autopreencher os registros de treinamentos externos realizados" &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Registros &amp;gt; Adicionar" &amp;gt; clicar no botão "Preencher com IA"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
