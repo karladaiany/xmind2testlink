@@ -1,0 +1,5257 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="[Integração Keycloak] QA - Configuração do Ambiente de Testes (Stage)">
+		<testcase name="Validar criação e configuração do REALM no KeyCloak de Stage">
+			<summary>
+				
+Verificar se o REALM está criado e configurado corretamente no KeyCloak do ambiente de Stage.				
+			</summary>
+			<preconditions>Acesso ao painel administrativo do KeyCloak de Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o painel administrativo do KeyCloak de Stage						
+					</actions>
+					<expectedresults>
+						
+Painel do KeyCloak é exibido com tela de login						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar login com credenciais de administrador						
+					</actions>
+					<expectedresults>
+						
+Login realizado com sucesso, dashboard do KeyCloak exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Navegar até a seção de Realms						
+					</actions>
+					<expectedresults>
+						
+Lista de Realms é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o Realm da Twygo está criado						
+					</actions>
+					<expectedresults>
+						
+Realm da Twygo existe na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar as configurações do Realm						
+					</actions>
+					<expectedresults>
+						
+Configurações do Realm são exibidas corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se as configurações gerais estão corretas (nome, endpoints)						
+					</actions>
+					<expectedresults>
+						
+Configurações estão de acordo com o esperado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar criação e configuração do Client SSO SAML">
+			<summary>
+				
+Verificar se o Client SSO SAML está criado corretamente com os atributos mapeados (email, first_name, last_name).				
+			</summary>
+			<preconditions>Acesso ao painel administrativo do KeyCloak de Stage
+Realm da Twygo criado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o Realm da Twygo no KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Realm é carregado corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Navegar até a aba 'Clients'						
+					</actions>
+					<expectedresults>
+						
+Lista de Clients é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o Client SSO SAML está criado						
+					</actions>
+					<expectedresults>
+						
+Client SSO SAML existe na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar as configurações do Client SSO SAML						
+					</actions>
+					<expectedresults>
+						
+Configurações do Client são exibidas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o entity_id está configurado corretamente						
+					</actions>
+					<expectedresults>
+						
+Entity ID corresponde ao domínio do ambiente Stage						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar na aba 'Keys' se a exigência de certificado está desabilitada						
+					</actions>
+					<expectedresults>
+						
+Client Signature Required está desabilitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a aba 'Client Scopes' do Client						
+					</actions>
+					<expectedresults>
+						
+Scopes são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os mappers estão configurados: email						
+					</actions>
+					<expectedresults>
+						
+Mapper 'email' existe com SAML Attribute Name correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os mappers estão configurados: first_name						
+					</actions>
+					<expectedresults>
+						
+Mapper 'first_name' existe com SAML Attribute Name correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os mappers estão configurados: last_name						
+					</actions>
+					<expectedresults>
+						
+Mapper 'last_name' existe com SAML Attribute Name correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o SAML Attribute NameFormat dos mappers						
+					</actions>
+					<expectedresults>
+						
+NameFormat está configurado corretamente para cada mapper						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar configuração de SSO na Twygo">
+			<summary>
+				
+Verificar se a configuração de SSO está realizada corretamente na Twygo (Integrações &amp;gt; Autenticação SSO via SAML).				
+			</summary>
+			<preconditions>Usuário logado como Administrador na Twygo de Stage
+Client SSO SAML configurado no KeyCloak</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu Integrações &amp;gt; Autenticação SSO via SAML na Twygo						
+					</actions>
+					<expectedresults>
+						
+Tela de configuração SSO é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o campo 'Entity ID' está preenchido corretamente						
+					</actions>
+					<expectedresults>
+						
+Entity ID corresponde ao configurado no KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o campo 'SSO Target URL' está preenchido com a URL do KeyCloak						
+					</actions>
+					<expectedresults>
+						
+URL aponta para o endpoint SAML do Realm correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o campo 'SLO Target URL' está preenchido (se aplicável)						
+					</actions>
+					<expectedresults>
+						
+URL de logout está configurada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o certificado IDP (RS256) está configurado						
+					</actions>
+					<expectedresults>
+						
+Certificado está presente e corresponde ao certificado do Realm no KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar a configuração						
+					</actions>
+					<expectedresults>
+						
+Configuração é salva com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar e validar usuários de teste no KeyCloak">
+			<summary>
+				
+Criar usuários de teste no KeyCloak com diferentes perfis para utilização nos testes subsequentes.				
+			</summary>
+			<preconditions>Acesso ao painel administrativo do KeyCloak de Stage
+Realm da Twygo configurado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o Realm da Twygo &amp;gt; Users						
+					</actions>
+					<expectedresults>
+						
+Tela de gerenciamento de usuários é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Criar usuário de teste com perfil 'admin' (nome, email, senha)						
+					</actions>
+					<expectedresults>
+						
+Usuário admin é criado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Criar usuário de teste com perfil 'gestor' (nome, email, senha)						
+					</actions>
+					<expectedresults>
+						
+Usuário gestor é criado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Criar usuário de teste com perfil 'aluno' (nome, email, senha)						
+					</actions>
+					<expectedresults>
+						
+Usuário aluno é criado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Criar Groups no KeyCloak: 'admin', 'gestor', 'instrutor'						
+					</actions>
+					<expectedresults>
+						
+Groups são criados com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Associar cada usuário ao Group correspondente ao seu perfil						
+					</actions>
+					<expectedresults>
+						
+Usuários são associados aos Groups corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que cada usuário consegue autenticar no KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Login de cada usuário é bem-sucedido no KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar configuração do Client para requisições de API (OpenID)">
+			<summary>
+				
+Verificar se o Client OpenID para requisições de API (sincronização) está configurado corretamente.				
+			</summary>
+			<preconditions>Acesso ao painel administrativo do KeyCloak de Stage
+Realm da Twygo configurado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Navegar até a aba 'Clients' no Realm da Twygo						
+					</actions>
+					<expectedresults>
+						
+Lista de Clients é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o Client OpenID para API está criado						
+					</actions>
+					<expectedresults>
+						
+Client OpenID existe na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se 'Client Authentication' está ativado (confidential)						
+					</actions>
+					<expectedresults>
+						
+Client Authentication está habilitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se 'Service accounts roles' está marcado						
+					</actions>
+					<expectedresults>
+						
+Service accounts roles está habilitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a aba 'Service Account Roles'						
+					</actions>
+					<expectedresults>
+						
+Roles são exibidas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se as permissões estão atribuídas: manage-users, view-users, query-groups, query-users, view-groups						
+					</actions>
+					<expectedresults>
+						
+Todas as permissões necessárias estão atribuídas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a aba 'Credentials' e verificar o client_secret						
+					</actions>
+					<expectedresults>
+						
+Client secret está disponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[Integração Keycloak] QA 1.1 - Redirecionamento automático para login SSO">
+		<testcase name="Redirecionamento com parâmetro 'Esconder tela de login' habilitado">
+			<summary>
+				
+Verificar se o acesso à rota /users/login redireciona automaticamente para o login do KeyCloak quando o parâmetro está habilitado.				
+			</summary>
+			<preconditions>Ambiente Stage configurado com integração KeyCloak
+Parâmetro 'Esconder tela de login' HABILITADO na configuração SSO SAML</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Habilitar o parâmetro 'Esconder tela de login' em Integrações &amp;gt; Autenticação SSO via SAML						
+					</actions>
+					<expectedresults>
+						
+Parâmetro é habilitado e salvo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir uma nova janela/aba do navegador (sem sessão ativa)						
+					</actions>
+					<expectedresults>
+						
+Navegador abre sem sessão de login						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a URL /users/login do ambiente						
+					</actions>
+					<expectedresults>
+						
+Sistema redireciona automaticamente para a tela de login do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a URL no navegador corresponde ao endpoint do KeyCloak						
+					</actions>
+					<expectedresults>
+						
+URL contém o domínio do KeyCloak e o Realm configurado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a tela de login da Twygo NÃO é exibida em nenhum momento						
+					</actions>
+					<expectedresults>
+						
+Tela de login da Twygo não é exibida, redirecionamento é direto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Redirecionamento ao acessar página protegida sem estar logado (parâmetro habilitado)">
+			<summary>
+				
+Verificar se ao acessar qualquer página da plataforma sem estar logado, o sistema redireciona para o login do KeyCloak.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Parâmetro 'Esconder tela de login' HABILITADO
+Usuário não está logado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar uma URL protegida da plataforma (ex: /dashboard ou /conteudos)						
+					</actions>
+					<expectedresults>
+						
+Sistema detecta que o usuário não está logado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o comportamento de redirecionamento						
+					</actions>
+					<expectedresults>
+						
+Sistema redireciona automaticamente para a tela de login do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a tela de login da Twygo NÃO é exibida						
+					</actions>
+					<expectedresults>
+						
+Redirecionamento é direto para o KeyCloak, sem passar pela tela de login da Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a URL /aprender sem estar logado						
+					</actions>
+					<expectedresults>
+						
+Sistema redireciona para o login do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Tela de login padrão com parâmetro 'Esconder tela de login' desabilitado">
+			<summary>
+				
+Verificar se a tela de login padrão da Twygo é exibida com o botão 'Continuar com SSO' quando o parâmetro está desabilitado.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Parâmetro 'Esconder tela de login' DESABILITADO
+SSO SAML configurado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Desabilitar o parâmetro 'Esconder tela de login' em Integrações &amp;gt; Autenticação SSO via SAML						
+					</actions>
+					<expectedresults>
+						
+Parâmetro é desabilitado e salvo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir uma nova janela/aba do navegador (sem sessão ativa)						
+					</actions>
+					<expectedresults>
+						
+Navegador abre sem sessão de login						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a URL /users/login do ambiente						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe a tela de login padrão da Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o botão 'Continuar com SSO' está visível na tela de login						
+					</actions>
+					<expectedresults>
+						
+Botão 'Continuar com SSO' é exibido na tela de login						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os campos de login padrão (e-mail e senha) estão visíveis						
+					</actions>
+					<expectedresults>
+						
+Campos de e-mail e senha são exibidos normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Clicar em 'Continuar com SSO' redireciona para KeyCloak">
+			<summary>
+				
+Verificar se ao clicar no botão 'Continuar com SSO' o usuário é redirecionado para o login do KeyCloak.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Parâmetro 'Esconder tela de login' DESABILITADO
+Tela de login da Twygo exibida</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Na tela de login da Twygo, clicar no botão 'Continuar com SSO'						
+					</actions>
+					<expectedresults>
+						
+Sistema redireciona para a tela de login do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a URL no navegador corresponde ao endpoint SAML do KeyCloak						
+					</actions>
+					<expectedresults>
+						
+URL contém /realms/{realm}/protocol/saml						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a tela de login do KeyCloak é exibida corretamente						
+					</actions>
+					<expectedresults>
+						
+Formulário de login do KeyCloak é exibido com campos de usuário e senha						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar login com credenciais válidas no KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Login é bem-sucedido e usuário é redirecionado de volta para a Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Logout e novo acesso com parâmetro habilitado">
+			<summary>
+				
+Verificar se após realizar logout, ao tentar acessar novamente, o sistema redireciona para o login do KeyCloak.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Parâmetro 'Esconder tela de login' HABILITADO
+Usuário logado na plataforma via SSO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar logout da plataforma Twygo						
+					</actions>
+					<expectedresults>
+						
+Sessão é encerrada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar acessar a URL /users/login						
+					</actions>
+					<expectedresults>
+						
+Sistema redireciona automaticamente para o login do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar acessar qualquer página protegida da plataforma						
+					</actions>
+					<expectedresults>
+						
+Sistema redireciona automaticamente para o login do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a sessão anterior foi completamente encerrada						
+					</actions>
+					<expectedresults>
+						
+Nenhum dado da sessão anterior é mantido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar persistência do parâmetro 'Esconder tela de login' no banco de dados">
+			<summary>
+				
+Verificar se o parâmetro 'hide_login_page' é persistido corretamente na tabela organization_saml_configurations.				
+			</summary>
+			<preconditions>Acesso ao banco de dados do ambiente Stage
+Configuração SSO SAML realizada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Habilitar o parâmetro 'Esconder tela de login' na interface						
+					</actions>
+					<expectedresults>
+						
+Parâmetro é salvo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela organization_saml_configurations no banco de dados						
+					</actions>
+					<expectedresults>
+						
+Campo 'hide_login_page' está com valor TRUE						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar o parâmetro 'Esconder tela de login' na interface						
+					</actions>
+					<expectedresults>
+						
+Parâmetro é salvo com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar novamente a tabela organization_saml_configurations						
+					</actions>
+					<expectedresults>
+						
+Campo 'hide_login_page' está com valor FALSE						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar comportamento com SSO não configurado e parâmetro habilitado">
+			<summary>
+				
+Verificar o comportamento do sistema quando o parâmetro está habilitado mas a configuração SSO está incompleta ou ausente.				
+			</summary>
+			<preconditions>Ambiente sem configuração SSO SAML completa
+Parâmetro 'Esconder tela de login' HABILITADO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Remover ou invalidar a configuração SSO SAML						
+					</actions>
+					<expectedresults>
+						
+Configuração SSO está incompleta/ausente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a URL /users/login						
+					</actions>
+					<expectedresults>
+						
+Sistema deve exibir a tela de login padrão ou mensagem de erro apropriada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o sistema não entra em loop de redirecionamento						
+					</actions>
+					<expectedresults>
+						
+Não há loop infinito de redirecionamento						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se há mensagem de erro informativa						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe mensagem indicando problema na configuração SSO						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Login padrão (e-mail e senha) com integração SSO ativa">
+			<summary>
+				
+Verificar que o fluxo de login padrão da Twygo (e-mail e senha) continua funcionando normalmente quando a integração SSO está ativa e o parâmetro 'Esconder tela de login' está desabilitado.				
+			</summary>
+			<preconditions>Ambiente com integração KeyCloak configurada
+Parâmetro 'Esconder tela de login' DESABILITADO
+Usuário com cadastro padrão (não SSO) existente na Twygo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a URL /users/login						
+					</actions>
+					<expectedresults>
+						
+Tela de login padrão da Twygo é exibida com campos de e-mail/senha e botão 'Continuar com SSO'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher o campo de e-mail com um usuário cadastrado manualmente (não SSO)						
+					</actions>
+					<expectedresults>
+						
+Campo aceita o e-mail						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher o campo de senha com a senha correta						
+					</actions>
+					<expectedresults>
+						
+Campo aceita a senha						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de login						
+					</actions>
+					<expectedresults>
+						
+Login é processado com sucesso via método padrão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário é redirecionado para o dashboard/página inicial						
+					</actions>
+					<expectedresults>
+						
+Usuário acessa a plataforma normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o perfil do usuário está correto e íntegro						
+					</actions>
+					<expectedresults>
+						
+Dados do perfil estão corretos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar login com e-mail válido e senha incorreta						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe mensagem de erro de credenciais inválidas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar login com e-mail inexistente						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe mensagem de erro apropriada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[Integração Keycloak] QA 1.2 - Criação automática de usuário no primeiro login SSO">
+		<testcase name="Criar usuário automaticamente no primeiro login SSO">
+			<summary>
+				
+Verificar se ao realizar login SSO com um usuário existente no KeyCloak mas inexistente na Twygo, o usuário é criado automaticamente.				
+			</summary>
+			<preconditions>Ambiente Stage configurado com integração KeyCloak
+SSO SAML configurado e funcional
+Usuário de teste criado no KeyCloak e AUSENTE na Twygo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um usuário no KeyCloak com nome e e-mail (ex: 'Teste SSO', 'teste.sso@email.com')						
+					</actions>
+					<expectedresults>
+						
+Usuário é criado no KeyCloak com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário NÃO existe na Twygo (buscar por e-mail)						
+					</actions>
+					<expectedresults>
+						
+Usuário não é encontrado na base da Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar login via SSO com as credenciais do usuário criado no KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Login SSO é processado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o usuário foi redirecionado para a plataforma Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário acessa a plataforma Twygo após login						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar no painel de administração da Twygo se o usuário foi criado						
+					</actions>
+					<expectedresults>
+						
+Usuário aparece na listagem de usuários da Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o campo 'nome' foi preenchido corretamente com o valor do KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Nome do usuário corresponde ao configurado no KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o campo 'e-mail' foi preenchido corretamente com o valor do KeyCloak						
+					</actions>
+					<expectedresults>
+						
+E-mail do usuário corresponde ao configurado no KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar que usuário criado via SSO possui 'validate: false'">
+			<summary>
+				
+Verificar que o usuário criado automaticamente via SSO possui o campo validate como false, indicando campos obrigatórios incompletos.				
+			</summary>
+			<preconditions>Usuário criado automaticamente via primeiro login SSO
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar o registro do usuário criado via SSO no banco de dados						
+					</actions>
+					<expectedresults>
+						
+Registro do usuário é encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o valor do campo 'validate' do usuário						
+					</actions>
+					<expectedresults>
+						
+Campo 'validate' está com valor FALSE						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar quais campos obrigatórios estão em branco						
+					</actions>
+					<expectedresults>
+						
+Campos além de nome e e-mail estão em branco ou com valores padrão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Login SSO com usuário já existente na Twygo">
+			<summary>
+				
+Verificar se ao realizar login SSO com um usuário que já existe na Twygo, o sistema realiza o login normalmente sem criar duplicata.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuário existente tanto no KeyCloak quanto na Twygo (mesmo e-mail)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que o usuário existe na Twygo (buscar por e-mail)						
+					</actions>
+					<expectedresults>
+						
+Usuário é encontrado na base da Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Anotar o ID do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+ID do usuário é registrado para comparação posterior						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar login via SSO com as credenciais do usuário						
+					</actions>
+					<expectedresults>
+						
+Login SSO é processado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário foi logado normalmente na plataforma						
+					</actions>
+					<expectedresults>
+						
+Usuário acessa a plataforma com seu perfil existente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NÃO foi criado um novo registro de usuário (sem duplicata)						
+					</actions>
+					<expectedresults>
+						
+Quantidade de registros com o mesmo e-mail permanece 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o ID do usuário é o mesmo de antes do login						
+					</actions>
+					<expectedresults>
+						
+ID do usuário não mudou						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar mapeamento de atributos do KeyCloak para a Twygo">
+			<summary>
+				
+Verificar se os atributos mapeados no Client SAML (email, first_name, last_name) são corretamente recebidos e armazenados.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Mappers configurados no Client SAML do KeyCloak</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar usuário no KeyCloak com first_name='João', last_name='Silva', email='joao.silva@teste.com'						
+					</actions>
+					<expectedresults>
+						
+Usuário é criado no KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar primeiro login SSO com esse usuário						
+					</actions>
+					<expectedresults>
+						
+Login é processado e usuário é criado na Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o nome completo do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Nome exibido corresponde a 'João Silva' (ou conforme regra de mapeamento)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o e-mail do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+E-mail exibido é 'joao.silva@teste.com'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Criar outro usuário no KeyCloak com caracteres especiais no nome (acentos, ç)						
+					</actions>
+					<expectedresults>
+						
+Usuário é criado no KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar primeiro login SSO com esse usuário						
+					</actions>
+					<expectedresults>
+						
+Login é processado e caracteres especiais são preservados no nome						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar registro no banco de dados após criação via SSO">
+			<summary>
+				
+Verificar a integridade do registro do usuário criado via SSO no banco de dados.				
+			</summary>
+			<preconditions>Usuário criado via primeiro login SSO
+Acesso ao banco de dados MySQL</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar a tabela 'users' filtrando pelo e-mail do usuário criado via SSO						
+					</actions>
+					<expectedresults>
+						
+Registro é encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'email' está preenchido corretamente						
+					</actions>
+					<expectedresults>
+						
+E-mail corresponde ao do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'name' ou 'first_name'/'last_name' está preenchido						
+					</actions>
+					<expectedresults>
+						
+Nome corresponde ao do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'validate' está como FALSE						
+					</actions>
+					<expectedresults>
+						
+Campo validate é FALSE						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'last_synced_idp_at' foi preenchido						
+					</actions>
+					<expectedresults>
+						
+Campo contém data/hora da criação via SSO						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'organization_id' corresponde ao ambiente correto						
+					</actions>
+					<expectedresults>
+						
+Organization ID está correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coexistência: criação manual de usuário com integração SSO ativa">
+			<summary>
+				
+Verificar que a criação manual de usuários pelo administrador continua funcionando normalmente com a integração SSO ativa.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Integração KeyCloak configurada e ativa</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar menu de gestão de usuários						
+					</actions>
+					<expectedresults>
+						
+Tela de listagem de usuários é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de adicionar novo usuário						
+					</actions>
+					<expectedresults>
+						
+Formulário de cadastro é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios (nome, e-mail, senha, etc.)						
+					</actions>
+					<expectedresults>
+						
+Campos são preenchidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar o cadastro						
+					</actions>
+					<expectedresults>
+						
+Usuário é criado com sucesso, toast message de confirmação é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o novo usuário aparece na listagem						
+					</actions>
+					<expectedresults>
+						
+Usuário está na listagem com dados corretos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o novo usuário consegue fazer login com as credenciais criadas (login padrão)						
+					</actions>
+					<expectedresults>
+						
+Login via e-mail/senha é bem-sucedido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário criado manualmente NÃO possui campo 'last_synced_idp_at' preenchido						
+					</actions>
+					<expectedresults>
+						
+Campo está NULL no banco de dados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coexistência: edição manual de usuário com integração SSO ativa">
+			<summary>
+				
+Verificar que a edição manual de dados de usuários continua funcionando normalmente com a integração SSO ativa.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Integração KeyCloak configurada e ativa
+Usuários existentes na plataforma</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o perfil de um usuário existente para edição						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição é exibido com dados atuais						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar o nome do usuário						
+					</actions>
+					<expectedresults>
+						
+Campo aceita a alteração						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar as alterações						
+					</actions>
+					<expectedresults>
+						
+Alterações são salvas com sucesso, toast message de confirmação é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o nome foi atualizado na listagem						
+					</actions>
+					<expectedresults>
+						
+Nome atualizado é exibido corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Editar um usuário criado via SSO e alterar dados adicionais						
+					</actions>
+					<expectedresults>
+						
+Dados adicionais são salvos corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Coexistência: inativação manual de usuário com integração SSO ativa">
+			<summary>
+				
+Verificar que a inativação manual de usuários pelo administrador continua funcionando normalmente com a integração SSO ativa.				
+			</summary>
+			<preconditions>Usuário logado como Administrador
+Integração KeyCloak configurada e ativa
+Usuário ativo na plataforma</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o perfil de um usuário ativo						
+					</actions>
+					<expectedresults>
+						
+Perfil é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inativar o usuário manualmente						
+					</actions>
+					<expectedresults>
+						
+Usuário é inativado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário aparece como inativo na listagem						
+					</actions>
+					<expectedresults>
+						
+Status inativo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário inativado não consegue fazer login (padrão ou SSO)						
+					</actions>
+					<expectedresults>
+						
+Login é bloqueado em ambos os métodos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[Integração Keycloak] QA 1.3 - Formulário de dados adicionais após primeiro login">
+		<testcase name="Exibição do formulário após primeiro login SSO">
+			<summary>
+				
+Verificar se após o primeiro login SSO com usuário novo, o sistema exibe um formulário/modal para preenchimento dos dados obrigatórios faltantes.				
+			</summary>
+			<preconditions>Ambiente Stage configurado com integração KeyCloak
+Formulário de dados adicionais habilitado
+Usuário de teste criado no KeyCloak e AUSENTE na Twygo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar primeiro login SSO com usuário novo (inexistente na Twygo)						
+					</actions>
+					<expectedresults>
+						
+Login é processado e usuário é criado na Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se um formulário/modal de dados adicionais é exibido automaticamente						
+					</actions>
+					<expectedresults>
+						
+Formulário/modal é exibido solicitando preenchimento de dados obrigatórios						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar quais campos são exibidos no formulário						
+					</actions>
+					<expectedresults>
+						
+Campos obrigatórios faltantes são exibidos (ex: CPF, telefone, cargo, etc.)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os campos já preenchidos via SSO (nome, e-mail) NÃO são solicitados novamente						
+					</actions>
+					<expectedresults>
+						
+Nome e e-mail não aparecem no formulário ou aparecem preenchidos e desabilitados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o título e mensagens do formulário/modal						
+					</actions>
+					<expectedresults>
+						
+Formulário possui título e instruções claras para o usuário						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Preenchimento correto dos campos obrigatórios">
+			<summary>
+				
+Verificar se ao preencher todos os campos obrigatórios corretamente e submeter, os dados são salvos no perfil do usuário.				
+			</summary>
+			<preconditions>Formulário de dados adicionais exibido após primeiro login SSO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Preencher todos os campos obrigatórios com dados válidos						
+					</actions>
+					<expectedresults>
+						
+Campos aceitam os valores inseridos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de submeter/salvar						
+					</actions>
+					<expectedresults>
+						
+Formulário é submetido com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se uma mensagem de sucesso é exibida						
+					</actions>
+					<expectedresults>
+						
+Toast message ou mensagem de confirmação é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o usuário é redirecionado para a plataforma normalmente						
+					</actions>
+					<expectedresults>
+						
+Usuário acessa a plataforma sem impedimentos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o perfil do usuário e verificar os dados salvos						
+					</actions>
+					<expectedresults>
+						
+Todos os campos preenchidos estão salvos corretamente no perfil						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar no banco de dados que o campo 'validate' mudou para TRUE						
+					</actions>
+					<expectedresults>
+						
+Campo 'validate' está com valor TRUE						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Submeter formulário com campos obrigatórios em branco">
+			<summary>
+				
+Verificar se o sistema exibe mensagens de validação ao tentar submeter o formulário com campos obrigatórios vazios.				
+			</summary>
+			<preconditions>Formulário de dados adicionais exibido após primeiro login SSO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Deixar todos os campos obrigatórios em branco						
+					</actions>
+					<expectedresults>
+						
+Campos estão vazios						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de submeter/salvar						
+					</actions>
+					<expectedresults>
+						
+Sistema não permite a submissão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se mensagens de validação são exibidas para cada campo obrigatório						
+					</actions>
+					<expectedresults>
+						
+Mensagens de erro/validação são exibidas indicando campos obrigatórios						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os campos obrigatórios são destacados visualmente (borda vermelha, asterisco)						
+					</actions>
+					<expectedresults>
+						
+Campos obrigatórios são destacados visualmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher apenas um campo obrigatório e tentar submeter novamente						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe validação para os campos ainda em branco						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Submeter formulário com dados inválidos">
+			<summary>
+				
+Verificar se o sistema exibe mensagens de erro ao submeter dados inválidos nos campos.				
+			</summary>
+			<preconditions>Formulário de dados adicionais exibido após primeiro login SSO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Preencher campo de e-mail com formato inválido (se editável)						
+					</actions>
+					<expectedresults>
+						
+Campo aceita a digitação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher campos numéricos com letras (ex: CPF com letras)						
+					</actions>
+					<expectedresults>
+						
+Sistema deve rejeitar ou mascarar a entrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher campos com caracteres especiais não permitidos						
+					</actions>
+					<expectedresults>
+						
+Sistema valida e rejeita caracteres inválidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de submeter/salvar						
+					</actions>
+					<expectedresults>
+						
+Sistema exibe mensagens de erro para os campos com dados inválidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os dados inválidos NÃO foram salvos no perfil						
+					</actions>
+					<expectedresults>
+						
+Perfil do usuário não foi atualizado com dados inválidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Formulário não é exibido em logins subsequentes após preenchimento">
+			<summary>
+				
+Verificar que após o preenchimento completo dos dados, o formulário não é exibido novamente em logins futuros.				
+			</summary>
+			<preconditions>Usuário que já preencheu o formulário de dados adicionais
+Campo 'validate' = TRUE</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar logout da plataforma						
+					</actions>
+					<expectedresults>
+						
+Sessão é encerrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar login via SSO novamente com o mesmo usuário						
+					</actions>
+					<expectedresults>
+						
+Login é processado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o formulário de dados adicionais NÃO é exibido						
+					</actions>
+					<expectedresults>
+						
+Formulário não é exibido, usuário acessa a plataforma diretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar logout e login mais uma vez para confirmar						
+					</actions>
+					<expectedresults>
+						
+Formulário continua não sendo exibido em logins subsequentes						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Comportamento ao fechar/ignorar o formulário">
+			<summary>
+				
+Verificar o comportamento do sistema quando o usuário tenta fechar ou ignorar o formulário de dados adicionais.				
+			</summary>
+			<preconditions>Formulário de dados adicionais exibido após primeiro login SSO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tentar fechar o modal/formulário clicando no botão X (se existir)						
+					</actions>
+					<expectedresults>
+						
+Verificar se o modal pode ser fechado ou se é obrigatório						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar pressionar ESC para fechar o modal						
+					</actions>
+					<expectedresults>
+						
+Verificar comportamento ao pressionar ESC						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar navegar para outra página da plataforma sem preencher						
+					</actions>
+					<expectedresults>
+						
+Sistema deve impedir navegação ou redirecionar de volta ao formulário						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o formulário é exibido novamente no próximo login caso não tenha sido preenchido						
+					</actions>
+					<expectedresults>
+						
+Formulário é exibido novamente até que os dados sejam preenchidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validação de limites de caracteres nos campos do formulário">
+			<summary>
+				
+Verificar se os campos do formulário respeitam os limites de caracteres definidos.				
+			</summary>
+			<preconditions>Formulário de dados adicionais exibido após primeiro login SSO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Inserir texto com quantidade máxima de caracteres permitida em cada campo						
+					</actions>
+					<expectedresults>
+						
+Campos aceitam o texto até o limite						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar inserir texto acima do limite máximo de caracteres						
+					</actions>
+					<expectedresults>
+						
+Campo não permite inserção além do limite ou exibe mensagem de validação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Testar copiar e colar (Ctrl+C / Ctrl+V) texto longo em um campo						
+					</actions>
+					<expectedresults>
+						
+Campo aceita o texto colado até o limite de caracteres						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Submeter o formulário com campos no limite máximo						
+					</actions>
+					<expectedresults>
+						
+Formulário é submetido com sucesso e dados são salvos corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[Integração Keycloak] QA 1.3b - Atribuição de Modo de Uso e Permissões via Groups">
+		<testcase name="Atribuir perfil Admin via Group do KeyCloak">
+			<summary>
+				
+Verificar se um usuário associado ao Group 'admin' no KeyCloak recebe as permissões de administrador na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado com integração KeyCloak
+Groups criados no KeyCloak (admin, gestor, instrutor)
+Mapeamento de Groups para Modos de Uso configurado na Twygo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um usuário no KeyCloak e associá-lo ao Group 'admin'						
+					</actions>
+					<expectedresults>
+						
+Usuário é criado e associado ao Group						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar login SSO com esse usuário						
+					</actions>
+					<expectedresults>
+						
+Login é processado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o perfil/permissão do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário possui permissões de Administrador						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os menus administrativos estão acessíveis						
+					</actions>
+					<expectedresults>
+						
+Menus de admin são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar no banco de dados o modo de uso atribuído						
+					</actions>
+					<expectedresults>
+						
+Modo de uso corresponde a 'admin'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Atribuir perfil Gestor via Group do KeyCloak">
+			<summary>
+				
+Verificar se um usuário associado ao Group 'gestor' no KeyCloak recebe as permissões de gestor na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Group 'gestor' criado no KeyCloak</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um usuário no KeyCloak e associá-lo ao Group 'gestor'						
+					</actions>
+					<expectedresults>
+						
+Usuário é criado e associado ao Group						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar login SSO com esse usuário						
+					</actions>
+					<expectedresults>
+						
+Login é processado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o perfil/permissão do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário possui permissões de Gestor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os menus de gestão estão acessíveis e os de admin restritos						
+					</actions>
+					<expectedresults>
+						
+Menus corretos são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Atribuir perfil Instrutor via Group do KeyCloak">
+			<summary>
+				
+Verificar se um usuário associado ao Group 'instrutor' no KeyCloak recebe as permissões de instrutor na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Group 'instrutor' criado no KeyCloak</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um usuário no KeyCloak e associá-lo ao Group 'instrutor'						
+					</actions>
+					<expectedresults>
+						
+Usuário é criado e associado ao Group						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar login SSO com esse usuário						
+					</actions>
+					<expectedresults>
+						
+Login é processado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o perfil/permissão do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário possui permissões de Instrutor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Usuário sem Group atribuído - perfil padrão (Aluno)">
+			<summary>
+				
+Verificar se um usuário sem Group no KeyCloak recebe o perfil padrão de aluno na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuário no KeyCloak SEM associação a nenhum Group</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um usuário no KeyCloak SEM associá-lo a nenhum Group						
+					</actions>
+					<expectedresults>
+						
+Usuário é criado sem Group						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar login SSO com esse usuário						
+					</actions>
+					<expectedresults>
+						
+Login é processado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o perfil/permissão do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário possui perfil padrão de Aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que menus administrativos e de gestão NÃO estão acessíveis						
+					</actions>
+					<expectedresults>
+						
+Apenas funcionalidades de aluno estão disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Alteração de Group no KeyCloak reflete na Twygo após sincronização">
+			<summary>
+				
+Verificar se ao alterar o Group de um usuário no KeyCloak, as permissões são atualizadas na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuário existente com perfil de Aluno na Twygo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que o usuário possui perfil de Aluno na Twygo						
+					</actions>
+					<expectedresults>
+						
+Perfil é Aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Associar o usuário ao Group 'gestor' no KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Usuário é associado ao Group						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o perfil do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Perfil foi atualizado para Gestor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os menus de gestão estão agora acessíveis						
+					</actions>
+					<expectedresults>
+						
+Menus de gestão são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar funcionalidades core por perfil atribuído via SSO">
+			<summary>
+				
+Verificar que funcionalidades da plataforma que dependem do perfil do usuário funcionam corretamente para usuários autenticados via SSO com perfis atribuídos via Groups do KeyCloak.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuários com diferentes perfis atribuídos via Groups do KeyCloak
+Usuários logados via SSO</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Logar via SSO com usuário do Group 'admin'						
+					</actions>
+					<expectedresults>
+						
+Login bem-sucedido com perfil Admin						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar acesso a dashboard administrativo						
+					</actions>
+					<expectedresults>
+						
+Dashboard administrativo é exibido corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar acesso a relatórios administrativos						
+					</actions>
+					<expectedresults>
+						
+Relatórios são exibidos conforme permissão de Admin						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar gestão de usuários (listagem, busca)						
+					</actions>
+					<expectedresults>
+						
+Funcionalidades de gestão de usuários estão acessíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar matrícula de um usuário em um curso						
+					</actions>
+					<expectedresults>
+						
+Matrícula é realizada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário matriculado tem acesso ao curso no Aprender						
+					</actions>
+					<expectedresults>
+						
+Usuário consegue acessar o conteúdo do curso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar matrícula de um usuário em uma trilha						
+					</actions>
+					<expectedresults>
+						
+Matrícula é realizada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar via SSO com usuário do Group 'gestor'						
+					</actions>
+					<expectedresults>
+						
+Login bem-sucedido com perfil Gestor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que menus administrativos estão restritos e menus de gestão acessíveis						
+					</actions>
+					<expectedresults>
+						
+Restrições de acesso estão corretas para Gestor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar via SSO com usuário sem Group (Aluno)						
+					</actions>
+					<expectedresults>
+						
+Login bem-sucedido com perfil Aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar acesso ao Aprender e cursos matriculados						
+					</actions>
+					<expectedresults>
+						
+Aluno acessa cursos e trilhas normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que menus administrativos e de gestão NÃO estão acessíveis para Aluno						
+					</actions>
+					<expectedresults>
+						
+Apenas funcionalidades de aluno estão disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[Integração Keycloak] QA 1.4 - Sincronização de usuários via Worker (criação)">
+		<testcase name="Criar usuário no KeyCloak e sincronizar via Worker">
+			<summary>
+				
+Verificar se o worker de sincronização cria na Twygo os usuários que existem no KeyCloak mas não na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado com integração KeyCloak
+Worker de sincronização configurado e funcional
+Tabelas external_sync_settings, keycloak_sync_settings e external_sync_actions configuradas
+Client OpenID com permissões de API configuradas no KeyCloak</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um novo usuário no KeyCloak (nome: 'Worker Teste 1', email: 'worker.teste1@email.com')						
+					</actions>
+					<expectedresults>
+						
+Usuário é criado no KeyCloak com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário NÃO existe na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário não é encontrado na base da Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar/forçar a execução do worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o usuário foi criado na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário 'Worker Teste 1' aparece na listagem de usuários da Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o nome foi sincronizado corretamente						
+					</actions>
+					<expectedresults>
+						
+Nome do usuário na Twygo corresponde ao do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o e-mail foi sincronizado corretamente						
+					</actions>
+					<expectedresults>
+						
+E-mail do usuário na Twygo corresponde ao do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar no banco de dados que o campo 'last_synced_idp_at' foi preenchido						
+					</actions>
+					<expectedresults>
+						
+Campo contém data/hora da sincronização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Sincronização em massa - múltiplos usuários">
+			<summary>
+				
+Verificar se o worker sincroniza corretamente múltiplos usuários criados no KeyCloak.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Worker de sincronização configurado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar 5 novos usuários no KeyCloak com nomes e e-mails distintos						
+					</actions>
+					<expectedresults>
+						
+Usuários são criados com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que nenhum dos 5 usuários existe na Twygo						
+					</actions>
+					<expectedresults>
+						
+Nenhum dos usuários é encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se todos os 5 usuários foram criados na Twygo						
+					</actions>
+					<expectedresults>
+						
+Todos os 5 usuários aparecem na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os dados de cada usuário estão corretos						
+					</actions>
+					<expectedresults>
+						
+Nome e e-mail de cada usuário correspondem aos do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'last_synced_idp_at' foi atualizado para todos						
+					</actions>
+					<expectedresults>
+						
+Todos os registros possuem data/hora de sincronização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Worker não cria duplicatas de usuários já existentes">
+			<summary>
+				
+Verificar se o worker não cria duplicatas ao sincronizar usuários que já existem na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuários existentes em ambas as plataformas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a quantidade de usuários na Twygo antes da sincronização						
+					</actions>
+					<expectedresults>
+						
+Quantidade é registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a quantidade de usuários na Twygo após a sincronização						
+					</actions>
+					<expectedresults>
+						
+Quantidade não aumentou para usuários já existentes						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que não há registros duplicados (mesmo e-mail)						
+					</actions>
+					<expectedresults>
+						
+Cada e-mail aparece apenas uma vez na base						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar paginação do worker na busca de usuários do KeyCloak">
+			<summary>
+				
+Verificar se o worker realiza a busca de usuários no KeyCloak com paginação correta.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Grande quantidade de usuários no KeyCloak (mais que o tamanho de uma página)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a quantidade total de usuários no KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Quantidade é registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar nos logs do worker se a paginação foi realizada						
+					</actions>
+					<expectedresults>
+						
+Logs indicam múltiplas páginas processadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se todos os usuários foram sincronizados (incluindo os de páginas subsequentes)						
+					</actions>
+					<expectedresults>
+						
+Todos os usuários do KeyCloak estão presentes na Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar configuração de sincronização nas tabelas do banco de dados">
+			<summary>
+				
+Verificar se as tabelas de configuração de sincronização estão preenchidas corretamente.				
+			</summary>
+			<preconditions>Acesso ao banco de dados
+Configuração de sincronização realizada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar a tabela 'external_sync_settings'						
+					</actions>
+					<expectedresults>
+						
+Registro existe com organization_id correto e resource_type = 'Keycloak'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'keycloak_sync_settings'						
+					</actions>
+					<expectedresults>
+						
+Registro existe com server_url, client_id, client_realm_name, username e password preenchidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'external_sync_actions'						
+					</actions>
+					<expectedresults>
+						
+Registro existe com action_type para 'users_sync', enabled = true						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o campo 'last_synced_at' na tabela external_sync_actions						
+					</actions>
+					<expectedresults>
+						
+Campo é atualizado após cada execução do worker						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[Integração Keycloak] QA 1.5 - Sincronização de usuários via Worker (atualização)">
+		<testcase name="Atualizar nome do usuário no KeyCloak e sincronizar">
+			<summary>
+				
+Verificar se ao alterar o nome de um usuário no KeyCloak e executar o worker, o nome é atualizado na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado com integração KeyCloak
+Worker de sincronização configurado e funcional
+Usuário existente em ambas as plataformas (KeyCloak e Twygo)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar o nome atual do usuário na Twygo (ex: 'João Silva')						
+					</actions>
+					<expectedresults>
+						
+Nome atual é registrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar o nome do usuário no KeyCloak para 'João Santos'						
+					</actions>
+					<expectedresults>
+						
+Nome é alterado no KeyCloak com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o nome do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Nome foi atualizado para 'João Santos'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'last_synced_idp_at' foi atualizado						
+					</actions>
+					<expectedresults>
+						
+Campo contém data/hora da última sincronização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Atualizar e-mail do usuário no KeyCloak e sincronizar">
+			<summary>
+				
+Verificar se ao alterar o e-mail de um usuário no KeyCloak e executar o worker, o e-mail é atualizado na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuário existente em ambas as plataformas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar o e-mail atual do usuário na Twygo (ex: 'joao@email.com')						
+					</actions>
+					<expectedresults>
+						
+E-mail atual é registrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar o e-mail do usuário no KeyCloak para 'joao.novo@email.com'						
+					</actions>
+					<expectedresults>
+						
+E-mail é alterado no KeyCloak com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o e-mail do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+E-mail foi atualizado para 'joao.novo@email.com'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário consegue fazer login com o novo e-mail						
+					</actions>
+					<expectedresults>
+						
+Login é bem-sucedido com o e-mail atualizado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Dados não alterados no KeyCloak não são sobrescritos na Twygo">
+			<summary>
+				
+Verificar que dados preenchidos na Twygo (que não vieram do KeyCloak) não são sobrescritos durante a sincronização.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuário existente em ambas as plataformas
+Usuário com dados adicionais preenchidos na Twygo (ex: CPF, telefone)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Preencher dados adicionais do usuário na Twygo (ex: CPF, telefone, cargo)						
+					</actions>
+					<expectedresults>
+						
+Dados são salvos no perfil da Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os dados adicionais preenchidos na Twygo foram preservados						
+					</actions>
+					<expectedresults>
+						
+CPF, telefone e cargo permanecem inalterados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que apenas os campos sincronizados (nome, e-mail) foram verificados/atualizados						
+					</actions>
+					<expectedresults>
+						
+Somente campos mapeados do KeyCloak são afetados pela sincronização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Sincronização não atualiza dados quando não há alteração no KeyCloak">
+			<summary>
+				
+Verificar que o worker não realiza atualizações desnecessárias quando os dados no KeyCloak não foram alterados.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuário existente em ambas as plataformas com dados sincronizados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar os dados atuais do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Dados são registrados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização SEM alterar nada no KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os dados do usuário na Twygo permanecem iguais						
+					</actions>
+					<expectedresults>
+						
+Nenhum dado foi alterado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'last_synced_idp_at' foi atualizado (indicando que o worker processou)						
+					</actions>
+					<expectedresults>
+						
+Campo foi atualizado com nova data/hora						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[Integração Keycloak] QA 1.6 - Sincronização de usuários via Worker (inativação e deleção)">
+		<testcase name="Inativar usuário no KeyCloak e sincronizar">
+			<summary>
+				
+Verificar se ao inativar um usuário no KeyCloak e executar o worker, o usuário é inativado na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado com integração KeyCloak
+Worker de sincronização configurado e funcional
+Usuário ativo em ambas as plataformas (KeyCloak e Twygo)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que o usuário está ativo na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário está com status ativo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inativar o usuário no KeyCloak (desabilitar conta)						
+					</actions>
+					<expectedresults>
+						
+Usuário é inativado no KeyCloak com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o status do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário está com status INATIVO na Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'last_synced_idp_at' foi atualizado						
+					</actions>
+					<expectedresults>
+						
+Campo contém data/hora da sincronização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Reativar usuário no KeyCloak e sincronizar">
+			<summary>
+				
+Verificar se ao reativar um usuário no KeyCloak e executar o worker, o usuário é reativado na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuário inativado em ambas as plataformas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que o usuário está inativo na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário está com status inativo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Reativar o usuário no KeyCloak (habilitar conta)						
+					</actions>
+					<expectedresults>
+						
+Usuário é reativado no KeyCloak com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o status do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário está com status ATIVO na Twygo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário consegue realizar login novamente						
+					</actions>
+					<expectedresults>
+						
+Login é bem-sucedido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Excluir usuário no KeyCloak e sincronizar">
+			<summary>
+				
+Verificar se ao excluir um usuário no KeyCloak e executar o worker, o usuário é inativado na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuário ativo em ambas as plataformas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que o usuário está ativo na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário está com status ativo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Excluir o usuário no KeyCloak (deletar conta)						
+					</actions>
+					<expectedresults>
+						
+Usuário é excluído do KeyCloak com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o status do usuário na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário está com status INATIVO na Twygo (não é excluído, apenas inativado)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os dados do usuário foram preservados na Twygo						
+					</actions>
+					<expectedresults>
+						
+Dados do usuário permanecem no banco, apenas o status mudou						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Usuário inativado via sincronização não consegue realizar login">
+			<summary>
+				
+Verificar se um usuário inativado na Twygo via sincronização não consegue realizar login.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuário inativado na Twygo via sincronização do worker</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tentar realizar login via SSO com o usuário inativado						
+					</actions>
+					<expectedresults>
+						
+Sistema não permite o login ou exibe mensagem de conta inativa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar realizar login via tela de login padrão (se disponível)						
+					</actions>
+					<expectedresults>
+						
+Sistema não permite o login						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem exibida ao usuário						
+					</actions>
+					<expectedresults>
+						
+Mensagem indica que a conta está inativa ou bloqueada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Inativação de usuários não encontrados no KeyCloak após paginação completa">
+			<summary>
+				
+Verificar se após paginar todos os usuários do KeyCloak, os usuários que não foram encontrados são inativados na Twygo.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Usuários existentes na Twygo que foram removidos do KeyCloak</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar 3 usuários no KeyCloak e sincronizar para a Twygo						
+					</actions>
+					<expectedresults>
+						
+3 usuários existem em ambas as plataformas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Excluir 1 dos 3 usuários no KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Usuário é excluído do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado e pagina todos os usuários do KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os 2 usuários restantes estão ativos na Twygo						
+					</actions>
+					<expectedresults>
+						
+2 usuários permanecem ativos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário excluído do KeyCloak foi inativado na Twygo						
+					</actions>
+					<expectedresults>
+						
+Usuário excluído está com status INATIVO						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[Integração Keycloak] QA 1.7 - Banco histórico">
+		<testcase name="Exclusão da organização - Registros em 'external_sync_settings'">
+			<summary>
+				
+Verificar se ao executar o Worker HistoricBaseCron para exclusão de uma organização, todos os registros da tabela 'external_sync_settings' vinculados à organização são excluídos corretamente.				
+			</summary>
+			<preconditions>Acesso ao banco de dados MySQL
+Organização de teste criada com integração KeyCloak configurada
+Registros existentes na tabela 'external_sync_settings' vinculados à organização de teste
+Acesso ao Worker HistoricBaseCron</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar a tabela 'external_sync_settings' filtrando pelo organization_id da organização de teste						
+					</actions>
+					<expectedresults>
+						
+Registros são encontrados vinculados à organização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Anotar os IDs dos registros encontrados (para validação posterior de tabelas polimórficas)						
+					</actions>
+					<expectedresults>
+						
+IDs anotados: resource_type e resource_id de cada registro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o Worker HistoricBaseCron para a organização de teste						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso, sem erros no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar novamente a tabela 'external_sync_settings' filtrando pelo organization_id						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro é encontrado - todos foram excluídos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar no log do Worker se houve algum erro de FK violation durante a exclusão						
+					</actions>
+					<expectedresults>
+						
+Nenhum erro de FK violation registrado no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da organização - Registros em 'keycloak_sync_settings'">
+			<summary>
+				
+Verificar se ao executar o Worker HistoricBaseCron, os registros da tabela 'keycloak_sync_settings' vinculados via polimorfismo (external_sync_settings) são excluídos e não ficam órfãos.				
+			</summary>
+			<preconditions>Acesso ao banco de dados MySQL
+Organização de teste com integração KeyCloak configurada
+Registros existentes em 'keycloak_sync_settings' vinculados via 'external_sync_settings'
+Worker HistoricBaseCron disponível</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar a tabela 'keycloak_sync_settings' e identificar os registros vinculados à organização de teste (via resource_id em external_sync_settings)						
+					</actions>
+					<expectedresults>
+						
+Registros são encontrados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Anotar os IDs dos registros de keycloak_sync_settings encontrados						
+					</actions>
+					<expectedresults>
+						
+IDs anotados para validação posterior						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o Worker HistoricBaseCron para a organização de teste						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso, sem erros no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar novamente a tabela 'keycloak_sync_settings' pelos IDs anotados						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro é encontrado - registros foram excluídos e não ficaram órfãos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que não existem registros órfãos em 'keycloak_sync_settings' sem vínculo em 'external_sync_settings'						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro órfão encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da organização - Registros em 'external_sync_actions'">
+			<summary>
+				
+Verificar se ao executar o Worker HistoricBaseCron, os registros da tabela 'external_sync_actions' vinculados via polimorfismo (keycloak_sync_settings) são excluídos e não ficam órfãos.				
+			</summary>
+			<preconditions>Acesso ao banco de dados MySQL
+Organização de teste com integração KeyCloak configurada
+Registros existentes em 'external_sync_actions' vinculados via 'keycloak_sync_settings'
+Worker HistoricBaseCron disponível</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar a tabela 'external_sync_actions' e identificar registros vinculados à organização de teste (via resource_id/resource_type referenciando keycloak_sync_settings)						
+					</actions>
+					<expectedresults>
+						
+Registros são encontrados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Anotar os IDs dos registros de external_sync_actions encontrados						
+					</actions>
+					<expectedresults>
+						
+IDs anotados para validação posterior						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o Worker HistoricBaseCron para a organização de teste						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso, sem erros no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar novamente a tabela 'external_sync_actions' pelos IDs anotados						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro é encontrado - registros foram excluídos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que não existem registros órfãos em 'external_sync_actions' sem vínculo em 'keycloak_sync_settings'						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro órfão encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da organização - Coluna 'hide_login_page' em 'organization_saml_configurations'">
+			<summary>
+				
+Verificar se ao executar o Worker HistoricBaseCron, o registro de 'organization_saml_configurations' da organização (incluindo a nova coluna 'hide_login_page') é excluído corretamente.				
+			</summary>
+			<preconditions>Acesso ao banco de dados MySQL
+Organização de teste com configuração SAML (hide_login_page = true)
+Worker HistoricBaseCron disponível</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar a tabela 'organization_saml_configurations' filtrando pela organização de teste						
+					</actions>
+					<expectedresults>
+						
+Registro é encontrado com hide_login_page = true						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o Worker HistoricBaseCron para a organização de teste						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso, sem erros no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar novamente a tabela 'organization_saml_configurations' pela organização						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro é encontrado - registro foi excluído junto com a organização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a nova coluna 'hide_login_page' não causou erro de constraint durante a exclusão						
+					</actions>
+					<expectedresults>
+						
+Nenhum erro de constraint registrado no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da organização - Coluna 'last_synced_idp_at' em 'users'">
+			<summary>
+				
+Verificar se ao executar o Worker HistoricBaseCron, os usuários da organização (incluindo a nova coluna 'last_synced_idp_at') são excluídos corretamente.				
+			</summary>
+			<preconditions>Acesso ao banco de dados MySQL
+Organização de teste com usuários criados via SSO (last_synced_idp_at preenchido)
+Worker HistoricBaseCron disponível</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar a tabela 'users' filtrando pela organização de teste						
+					</actions>
+					<expectedresults>
+						
+Usuários são encontrados, incluindo usuários com 'last_synced_idp_at' preenchido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Anotar os IDs dos usuários encontrados						
+					</actions>
+					<expectedresults>
+						
+IDs anotados para validação posterior						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o Worker HistoricBaseCron para a organização de teste						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso, sem erros no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar novamente a tabela 'users' pelos IDs anotados						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro é encontrado - usuários foram excluídos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a nova coluna 'last_synced_idp_at' e seu índice não causaram erro durante a exclusão						
+					</actions>
+					<expectedresults>
+						
+Nenhum erro de índice ou constraint registrado no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da organização - Ordem de exclusão e conflitos de FK">
+			<summary>
+				
+Verificar se a ordem de exclusão das tabelas pelo Worker HistoricBaseCron respeita os relacionamentos de FK, evitando erros de constraint violation.				
+			</summary>
+			<preconditions>Acesso ao banco de dados MySQL
+Organização de teste com dados completos (external_sync_settings, keycloak_sync_settings, external_sync_actions, users, organization_saml_configurations)
+Worker HistoricBaseCron disponível</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que a organização de teste possui registros em TODAS as novas tabelas do projeto						
+					</actions>
+					<expectedresults>
+						
+Registros confirmados em: external_sync_settings, keycloak_sync_settings, external_sync_actions						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a organização possui registros em tabelas alteradas (users com last_synced_idp_at, organization_saml_configurations com hide_login_page)						
+					</actions>
+					<expectedresults>
+						
+Registros confirmados nas tabelas alteradas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o Worker HistoricBaseCron para a organização de teste						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso, sem erros no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar no log do Worker a ordem de exclusão das tabelas						
+					</actions>
+					<expectedresults>
+						
+Tabelas dependentes (external_sync_actions) são excluídas antes das tabelas pai (keycloak_sync_settings, external_sync_settings)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NÃO houve erro de FK violation (ex: tentar excluir external_sync_settings antes de external_sync_actions)						
+					</actions>
+					<expectedresults>
+						
+Nenhum erro de FK violation no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NÃO houve erro de constraint NOT NULL durante a exclusão						
+					</actions>
+					<expectedresults>
+						
+Nenhum erro de constraint no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da organização - Não afetar outras organizações">
+			<summary>
+				
+Verificar se a exclusão de uma organização pelo Worker HistoricBaseCron não afeta registros de outras organizações nas novas tabelas.				
+			</summary>
+			<preconditions>Acesso ao banco de dados MySQL
+Duas organizações de teste: Org_A (a ser excluída) e Org_B (deve permanecer)
+Ambas com integração KeyCloak configurada e registros nas novas tabelas
+Worker HistoricBaseCron disponível</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar registros de Org_A em 'external_sync_settings'						
+					</actions>
+					<expectedresults>
+						
+Registros de Org_A são encontrados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar registros de Org_B em 'external_sync_settings'						
+					</actions>
+					<expectedresults>
+						
+Registros de Org_B são encontrados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar usuários de Org_A e Org_B na tabela 'users'						
+					</actions>
+					<expectedresults>
+						
+Usuários de ambas as organizações são encontrados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o Worker HistoricBaseCron APENAS para Org_A						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso para Org_A						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que registros de Org_A foram excluídos de 'external_sync_settings'						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro de Org_A encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que registros de Org_B permanecem íntegros em 'external_sync_settings'						
+					</actions>
+					<expectedresults>
+						
+Registros de Org_B estão intactos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que registros de Org_B permanecem íntegros em 'keycloak_sync_settings'						
+					</actions>
+					<expectedresults>
+						
+Registros de Org_B estão intactos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que registros de Org_B permanecem íntegros em 'external_sync_actions'						
+					</actions>
+					<expectedresults>
+						
+Registros de Org_B estão intactos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que usuários de Org_B permanecem íntegros na tabela 'users' (incluindo last_synced_idp_at)						
+					</actions>
+					<expectedresults>
+						
+Usuários de Org_B estão intactos com todos os campos preservados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que configuração SAML de Org_B permanece íntegra (incluindo hide_login_page)						
+					</actions>
+					<expectedresults>
+						
+Configuração de Org_B está intacta						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da organização - Organização sem integração KeyCloak configurada">
+			<summary>
+				
+Verificar se a exclusão de uma organização que NÃO possui integração KeyCloak configurada continua funcionando normalmente, sem ser afetada pelas novas tabelas.				
+			</summary>
+			<preconditions>Acesso ao banco de dados MySQL
+Organização de teste SEM integração KeyCloak (sem registros nas novas tabelas)
+Worker HistoricBaseCron disponível</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que a organização de teste NÃO possui registros em 'external_sync_settings'						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a organização de teste NÃO possui registros em 'keycloak_sync_settings' (via polimorfismo)						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o Worker HistoricBaseCron para a organização de teste						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso, sem erros no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a organização e todos seus dados foram excluídos normalmente						
+					</actions>
+					<expectedresults>
+						
+Organização e dados associados foram excluídos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que as novas tabelas (external_sync_settings, keycloak_sync_settings, external_sync_actions) não causaram nenhum erro durante a exclusão						
+					</actions>
+					<expectedresults>
+						
+Nenhum erro relacionado às novas tabelas no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da organização - Validação completa pós-exclusão">
+			<summary>
+				
+Verificar que após a exclusão completa da organização pelo Worker HistoricBaseCron, não restam registros órfãos em nenhuma das novas tabelas ou tabelas alteradas.				
+			</summary>
+			<preconditions>Acesso ao banco de dados MySQL
+Execução do Worker HistoricBaseCron concluída para a organização de teste</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar 'external_sync_settings' pelo organization_id da organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado (0 rows)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar 'keycloak_sync_settings' pelos resource_ids que estavam vinculados à organização						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado (0 rows)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar 'external_sync_actions' pelos resource_ids que estavam vinculados ao keycloak_sync_settings da organização						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado (0 rows)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar 'organization_saml_configurations' pelo organization_id						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado (0 rows)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar 'users' pelo organization_id da organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum usuário encontrado (0 rows)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar query genérica para buscar registros órfãos em 'keycloak_sync_settings' (sem vínculo em 'external_sync_settings')						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro órfão encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar query genérica para buscar registros órfãos em 'external_sync_actions' (sem vínculo em 'keycloak_sync_settings')						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro órfão encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da organização - Impacto em tabelas existentes (não alteradas pelo projeto)">
+			<summary>
+				
+Verificar se a exclusão da organização pelo Worker HistoricBaseCron não foi afetada negativamente pelas novas tabelas e alterações, garantindo que tabelas existentes (cursos, matrículas, conteúdos, etc.) continuam sendo excluídas normalmente.				
+			</summary>
+			<preconditions>Acesso ao banco de dados MySQL
+Organização de teste com dados completos (cursos, usuários, matrículas, conteúdos, integração KeyCloak)
+Worker HistoricBaseCron disponível</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que a organização de teste possui dados em tabelas existentes (cursos, matrículas, conteúdos)						
+					</actions>
+					<expectedresults>
+						
+Dados existentes confirmados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o Worker HistoricBaseCron para a organização de teste						
+					</actions>
+					<expectedresults>
+						
+Worker é executado com sucesso, sem erros no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que cursos da organização foram excluídos						
+					</actions>
+					<expectedresults>
+						
+Nenhum curso encontrado para a organização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que matrículas da organização foram excluídas						
+					</actions>
+					<expectedresults>
+						
+Nenhuma matrícula encontrada para a organização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que conteúdos da organização foram excluídos						
+					</actions>
+					<expectedresults>
+						
+Nenhum conteúdo encontrado para a organização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NÃO houve erro de FK causado pelas novas tabelas durante a exclusão de tabelas existentes						
+					</actions>
+					<expectedresults>
+						
+Nenhum erro de FK violation entre tabelas novas e existentes						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o tempo total de execução do Worker						
+					</actions>
+					<expectedresults>
+						
+Tempo de execução está dentro do esperado (novas tabelas não causaram lentidão significativa)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[Integração Keycloak] QA 1.8 - Logs">
+		<testcase name="Validar logs de login SSO bem-sucedido">
+			<summary>
+				
+Verificar se logs são gerados corretamente para logins SSO bem-sucedidos.				
+			</summary>
+			<preconditions>Ambiente Stage configurado com integração KeyCloak
+Funcionalidade de logs habilitada
+Acesso ao banco de dados (MySQL e/ou PostgreSQL)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar login via SSO com credenciais válidas						
+					</actions>
+					<expectedresults>
+						
+Login é bem-sucedido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar os logs no banco de dados						
+					</actions>
+					<expectedresults>
+						
+Log de login SSO bem-sucedido é encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: data/hora do evento						
+					</actions>
+					<expectedresults>
+						
+Data/hora está registrada corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: identificação do usuário						
+					</actions>
+					<expectedresults>
+						
+Usuário está identificado no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: tipo de evento (login SSO)						
+					</actions>
+					<expectedresults>
+						
+Tipo de evento indica login via SSO						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log identifica a origem do cadastro como SSO						
+					</actions>
+					<expectedresults>
+						
+Origem do cadastro está marcada como SSO						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar logs de tentativa de login SSO com falha">
+			<summary>
+				
+Verificar se logs de erro são gerados para tentativas de login SSO com falha.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Tentar realizar login via SSO com credenciais inválidas no KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Login falha no KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar os logs no banco de dados						
+					</actions>
+					<expectedresults>
+						
+Log de erro de login SSO é encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: data/hora da tentativa						
+					</actions>
+					<expectedresults>
+						
+Data/hora está registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: motivo da falha						
+					</actions>
+					<expectedresults>
+						
+Motivo da falha está descrito no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: informações do usuário (se disponível)						
+					</actions>
+					<expectedresults>
+						
+Informações disponíveis estão registradas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar logs de sincronização do worker">
+			<summary>
+				
+Verificar se logs são gerados durante a execução do worker de sincronização.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Worker de sincronização configurado
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker é executado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar os logs de sincronização no banco de dados						
+					</actions>
+					<expectedresults>
+						
+Logs de sincronização são encontrados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: data/hora de início da sincronização						
+					</actions>
+					<expectedresults>
+						
+Data/hora de início está registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: data/hora de fim da sincronização						
+					</actions>
+					<expectedresults>
+						
+Data/hora de fim está registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: quantidade de usuários processados						
+					</actions>
+					<expectedresults>
+						
+Quantidade de usuários processados está registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: quantidade de usuários criados						
+					</actions>
+					<expectedresults>
+						
+Quantidade de criações está registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: quantidade de usuários atualizados						
+					</actions>
+					<expectedresults>
+						
+Quantidade de atualizações está registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: quantidade de usuários inativados						
+					</actions>
+					<expectedresults>
+						
+Quantidade de inativações está registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar logs de erros de sincronização">
+			<summary>
+				
+Verificar se logs de erro são registrados quando ocorrem falhas durante a sincronização.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Cenário de falha simulado (ex: KeyCloak indisponível)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Simular uma falha de conexão com o KeyCloak (ex: URL incorreta)						
+					</actions>
+					<expectedresults>
+						
+Conexão com KeyCloak falha						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker de sincronização						
+					</actions>
+					<expectedresults>
+						
+Worker tenta executar e encontra erro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar os logs de erro no banco de dados						
+					</actions>
+					<expectedresults>
+						
+Log de erro de sincronização é encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: descrição do erro						
+					</actions>
+					<expectedresults>
+						
+Descrição do erro está registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém: data/hora do erro						
+					</actions>
+					<expectedresults>
+						
+Data/hora está registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o worker não interrompe completamente em caso de erro parcial						
+					</actions>
+					<expectedresults>
+						
+Worker trata o erro e continua processando (se aplicável)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar logs de configuração SSO (criação e alteração)">
+			<summary>
+				
+Verificar se logs são gerados para criação e alteração das configurações SSO.				
+			</summary>
+			<preconditions>Ambiente Stage configurado
+Acesso ao banco de dados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar uma nova configuração SSO SAML na Twygo						
+					</actions>
+					<expectedresults>
+						
+Configuração é criada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar os logs no banco de dados						
+					</actions>
+					<expectedresults>
+						
+Log de criação de configuração SSO é encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log contém todos os campos da configuração						
+					</actions>
+					<expectedresults>
+						
+Campos da configuração estão registrados no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar um campo da configuração SSO						
+					</actions>
+					<expectedresults>
+						
+Configuração é alterada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar os logs novamente						
+					</actions>
+					<expectedresults>
+						
+Log de alteração de configuração SSO é encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log registra o campo alterado e os valores antigo/novo						
+					</actions>
+					<expectedresults>
+						
+Alteração está detalhada no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar exclusão automática de logs em PostgreSQL (se aplicável)">
+			<summary>
+				
+Verificar se os logs armazenados em PostgreSQL são excluídos automaticamente após o período configurado (90 dias).				
+			</summary>
+			<preconditions>Logs armazenados em PostgreSQL
+Registros com mais de 90 dias da data de criação</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar se existem logs com data de criação superior a 90 dias						
+					</actions>
+					<expectedresults>
+						
+Logs antigos são identificados (ou simular com data retroativa)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o processo de limpeza automática (ou aguardar execução)						
+					</actions>
+					<expectedresults>
+						
+Processo de limpeza é executado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os logs com mais de 90 dias foram excluídos						
+					</actions>
+					<expectedresults>
+						
+Logs antigos foram removidos do banco						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os logs com menos de 90 dias foram preservados						
+					</actions>
+					<expectedresults>
+						
+Logs recentes permanecem no banco						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[Integração Keycloak] QA 1.9 - Feature flag">
+		<testcase name="Feature flag desabilitada - integração não disponível">
+			<summary>
+				
+Verificar que quando a feature flag está desabilitada, a integração com KeyCloak não está disponível.				
+			</summary>
+			<preconditions>Ambiente com feature flag da integração KeyCloak DESABILITADA</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que a feature flag da integração KeyCloak está desabilitada						
+					</actions>
+					<expectedresults>
+						
+Feature flag está OFF						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar menu Integrações &amp;gt; Autenticação SSO via SAML						
+					</actions>
+					<expectedresults>
+						
+Verificar se a opção de configuração SSO com KeyCloak está oculta ou indisponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o parâmetro 'Esconder tela de login' não está disponível						
+					</actions>
+					<expectedresults>
+						
+Parâmetro não é exibido ou está desabilitado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a rota /users/login						
+					</actions>
+					<expectedresults>
+						
+Tela de login padrão da Twygo é exibida sem opção de SSO KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o worker de sincronização não é executado						
+					</actions>
+					<expectedresults>
+						
+Worker não processa sincronização com KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a configuração de sincronização não está disponível						
+					</actions>
+					<expectedresults>
+						
+Opções de sincronização com KeyCloak não são exibidas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Feature flag habilitada - todas funcionalidades disponíveis">
+			<summary>
+				
+Verificar que quando a feature flag está habilitada, todas as funcionalidades da integração estão disponíveis.				
+			</summary>
+			<preconditions>Ambiente com feature flag da integração KeyCloak HABILITADA</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Habilitar a feature flag da integração KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Feature flag é ativada com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar menu Integrações &amp;gt; Autenticação SSO via SAML						
+					</actions>
+					<expectedresults>
+						
+Opções de configuração SSO com KeyCloak estão disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o parâmetro 'Esconder tela de login' está disponível						
+					</actions>
+					<expectedresults>
+						
+Parâmetro é exibido e editável						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Configurar o SSO SAML com KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Configuração é salva com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar login via SSO						
+					</actions>
+					<expectedresults>
+						
+Login SSO funciona corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o worker de sincronização está disponível e funcional						
+					</actions>
+					<expectedresults>
+						
+Worker pode ser executado e sincroniza dados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar criação automática de usuário via SSO						
+					</actions>
+					<expectedresults>
+						
+Usuário é criado automaticamente no primeiro login						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Feature flag desabilitada após uso - comportamento da plataforma">
+			<summary>
+				
+Verificar o comportamento da plataforma ao desabilitar a feature flag após a integração já ter sido utilizada.				
+			</summary>
+			<preconditions>Ambiente com feature flag HABILITADA
+Integração KeyCloak configurada e em uso
+Usuários criados via SSO existentes</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar estado atual: SSO configurado, usuários sincronizados, worker ativo						
+					</actions>
+					<expectedresults>
+						
+Integração está em pleno funcionamento						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar a feature flag da integração KeyCloak						
+					</actions>
+					<expectedresults>
+						
+Feature flag é desativada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se a tela de login volta ao comportamento padrão						
+					</actions>
+					<expectedresults>
+						
+Tela de login padrão da Twygo é exibida (sem redirecionamento SSO)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os usuários criados via SSO continuam existindo na plataforma						
+					</actions>
+					<expectedresults>
+						
+Usuários permanecem na base de dados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se os usuários criados via SSO conseguem fazer login pelo método padrão						
+					</actions>
+					<expectedresults>
+						
+Verificar comportamento de login para esses usuários						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o worker de sincronização para de executar						
+					</actions>
+					<expectedresults>
+						
+Worker não processa mais sincronizações com KeyCloak						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se as configurações SSO são preservadas (para reativação futura)						
+					</actions>
+					<expectedresults>
+						
+Configurações permanecem salvas no banco de dados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Reabilitar a feature flag						
+					</actions>
+					<expectedresults>
+						
+Feature flag é reativada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se as funcionalidades voltam a funcionar com as configurações anteriores						
+					</actions>
+					<expectedresults>
+						
+Integração retoma funcionamento sem necessidade de reconfiguração						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
