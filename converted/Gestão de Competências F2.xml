@@ -1,0 +1,1246 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Organograma">
+		<testcase name="Placeholder nos níveis hierárquicos">
+			<summary>
+				
+Verificar se o placeholder é exibido corretamente nos campos de nível hierárquico do organograma.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Acessar menu 'Skills' &gt; Organograma
+Criar novo organograma</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o campo de entrada para "Nível hierárquico" e verificar placeholder						
+					</actions>
+					<expectedresults>
+						
+Placeholder deve exibir:&lt;br /&gt;
+Nível hierárquico (Ex.: Presidência, Gerência, Coordenação)"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Criar novos cards no organograma e verificar placeholders						
+					</actions>
+					<expectedresults>
+						
+Placeholder deve exibir:&lt;br /&gt;
+Nível hierárquico (Ex.: Presidência, Gerência, Coordenação)"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher campos de nível hierárquico						
+					</actions>
+					<expectedresults>
+						
+Deve persistir texto inserido nos campos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Resetar organograma - Remover vínculo com funções">
+			<summary>
+				
+Verificar se a funcionalidade de resetar o organograma apaga apenas os vínculos de funções, mantendo os cadastros gerais.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+O ambiente deve ter um organograma com funções e competências vinculadas;
+Clicar em 'Resetar organograma'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Selecionar apenas 'Vínculo com funções'&lt;br /&gt;
+Confirmar						
+					</actions>
+					<expectedresults>
+						
+Label deve estar correta 'Vínculo com funções'&lt;br /&gt;
+Apenas os vínculos com as funções devem ter sido removidos&lt;br /&gt;
+As funções cadastradas não devem ter sido excluídas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Resetar organograma - Remover vínculo com competências">
+			<summary>
+				
+Verificar se a funcionalidade de resetar o organograma apaga apenas os vínculos de competências, mantendo os cadastros gerais.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+O ambiente deve ter um organograma com funções e competências vinculadas;
+Clicar em 'Resetar organograma'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Selecionar apenas 'Vínculo com competências'&lt;br /&gt;
+Confirmar						
+					</actions>
+					<expectedresults>
+						
+Label deve estar correta 'Vínculo com competências'&lt;br /&gt;
+Apenas os vínculos com as competências devem ter sido removidos&lt;br /&gt;
+As competências cadastradas não devem ter sido excluídas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Resetar organograma - Remover vínculo com funções e competências">
+			<summary>
+				
+Verificar se a função de resetar o organograma apaga apenas os vínculos de funções e competências (execução simultânea), mantendo os cadastros gerais.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+O ambiente deve ter um organograma com funções e competências vinculadas;
+Clicar em 'Resetar organograma'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Selecionar as opções de:&lt;br /&gt;
+Vínculo com funções e Vínculo com competências&lt;br /&gt;
+Confirmar						
+					</actions>
+					<expectedresults>
+						
+Apenas os vínculos com  funções e competências devem ter sido removidos&lt;br /&gt;
+As funções e competências cadastradas não devem ter sido excluídas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Edição de áreas distintas por usuários simultâneos">
+			<summary>
+				
+Verificar se alterações em áreas diferentes do organograma por múltiplos usuários não se sobrepõem				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter ao menos 2 usuários administradores (logados em navegadores diferentes)
+Organograma criado e com várias áreas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Usuário A: Iniciar edição na Área 1 do organograma.						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Usuário B: Iniciar edição na Área 2 do organograma (diferente da Área 1).						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Usuário A: Salvar alterações na Área 1.						
+					</actions>
+					<expectedresults>
+						
+Alterações do Usuário A na Área 1 devem ser mantidas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Usuário B: Salvar alterações na Área 2.						
+					</actions>
+					<expectedresults>
+						
+Alterações do Usuário B na Área 2 devem ser mantidas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Edição da mesma área por usuários simultâneos">
+			<summary>
+				
+Verificar se, ao editar a mesma área simultaneamente, um modal de confirmação é exibido para sobrepor ou cancelar alterações.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter ao menos 2 usuários administradores (logados em navegadores diferentes)
+Organograma criado e com várias áreas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Usuário A: Iniciar edição na Área X do organograma.						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Usuário B: Iniciar edição na mesma Área X do organograma.						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Usuário A: Salvar alterações na Área X.						
+					</actions>
+					<expectedresults />
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Usuário B: Tentar salvar alterações na Área X.						
+					</actions>
+					<expectedresults>
+						
+Deve exibir um modal de confirmação para o Usuário B						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Título modal						
+					</actions>
+					<expectedresults>
+						
+Conflito de edição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Texto modal						
+					</actions>
+					<expectedresults>
+						
+O usuário [nome do usuário] realizou alterações conflitantes neste organograma. Deseja sobrepor as alterações dele com as suas ou cancelar?						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Opções modal						
+					</actions>
+					<expectedresults>
+						
+Botões: 'x', Cancelarm Sobrepor alterações						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em 'x' no modal						
+					</actions>
+					<expectedresults>
+						
+Não deve atualizar a tela&lt;br /&gt;
+Não deve salvar/sobrepor nenhuma alteração						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em 'Salvar' 						
+					</actions>
+					<expectedresults>
+						
+Deve exibir modal novamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar em 'Cancelar' no modal de conflito						
+					</actions>
+					<expectedresults>
+						
+Não deve atualizar a tela&lt;br /&gt;
+Não deve salvar/sobrepor nenhuma alteração						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente em 'Salvar' 						
+					</actions>
+					<expectedresults>
+						
+Deve exibir modal novamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Sobreposição de alterações via modal">
+			<summary>
+				
+Verificar se a opção de sobrepor alterações no modal funciona corretamente.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter ao menos 2 usuários administradores (logados em navegadores diferentes)
+Organograma criado e com várias áreas
+Dois usuários devem estar logados e no cenário de edição simultânea da mesma área, com o modal de confirmação exibido para o Usuário B</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Usuário B: No modal de confirmação, selecionar a opção para sobrepor as alterações do Usuário A.						
+					</actions>
+					<expectedresults>
+						
+Alterações do Usuário B são aplicadas e as do Usuário A são descartadas para aquela área.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Edição da mesma área - não simultâneos">
+			<summary>
+				
+Verificar se, ao editar a mesma área, em momentos distintos, modal não é exibida e alterações são salvas com sucesso.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter ao menos 2 usuários administradores 
+Organograma criado e com várias áreas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Usuário A: Iniciar edição na Área X do organograma e Salva a edição						
+					</actions>
+					<expectedresults>
+						
+Edição é salva com sucesso&lt;br /&gt;
+Organograma atualiza corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Usuário B: Iniciar edição na mesma Área X do organograma (porém, após atualização do usuário A) e Salva nova edição						
+					</actions>
+					<expectedresults>
+						
+Modal de conflito não é exibido&lt;br /&gt;
+Edição é salva com sucesso&lt;br /&gt;
+Organograma atualiza corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Funções">
+		<testcase name="Remoção do campo &quot;número de funções&quot; na geração com IA">
+			<summary>
+				
+Verificar se o campo "número de funções" é removido da tela de geração de funções com IA.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no botão 'Gerar com IA'&lt;br /&gt;
+Procurar pelo campo "número de funções".						
+					</actions>
+					<expectedresults>
+						
+Confirmar que o campo "número de funções" não está presente na interface.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Quantidade mínima de funções geradas com IA">
+			<summary>
+				
+Verificar se ao realizar uma geração de funções com IA são geradas no mínimo 10 funções. &lt;br /&gt;
+&lt;br /&gt;
+Obs.: Quantidade mínima será fixada no prompt para evitar a geração de poucas funções.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter um organograma
+Acessar 'mais opções' de um item do organograma &gt; Editar &gt; aba 'Funções'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no botão 'Gerar com IA'&lt;br /&gt;
+Realizar algumas gerações de funções com IA						
+					</actions>
+					<expectedresults>
+						
+Deve sempre gerar, no mínimo, 10 funções&lt;br /&gt;
+Obs.: 10 funções não deve ser fixo, e sim o mínimo.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Funções - Campo &quot;Configurações de geração (prompt padrão)&quot;">
+			<summary>
+				
+Verificar se o campo textarea "Configurações de Geração (Prompt padrão)" é adicionado e preenchido com o texto default e se o tooltip exibe o texto definido.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter um organograma
+Acessar 'mais opções' de um item do organograma &gt; Editar &gt; aba 'Funções'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o campo textarea "Configurações de geração (prompt padrão)"&lt;br /&gt;
+						
+					</actions>
+					<expectedresults>
+						
+Campo deve estar presente na interface&lt;br /&gt;
+E ser do tipo textarea						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar texto padrão						
+					</actions>
+					<expectedresults>
+						
+“Ex. Você é um especialista de RH e desenvolvimento organizacional. Gere funções com títulos claros e um parágrafo de descrição objetiva mas completa sobre o que faz a função. Complemente com uma lista de "Principais atribuições" e de "Resultados chave". Se for uma área de liderança, detenha-se a descrever a função de liderança correspondente.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar texto do tooltip						
+					</actions>
+					<expectedresults>
+						
+“Defina instruções de formatação e estrutura para a IA (estilo de escrita, tamanho do texto e uso de tópicos). Essas instruções serão salvas como padrão para todas as gerações do ambiente, garantindo uniformidade; evite conteúdos específicos de área, que devem ficar nas instruções adicionais.“						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Funções - Persistência das configurações de geração">
+			<summary>
+				
+Verificar se as alterações no campo "Configurações de geração (prompt padrão)" são salvas e exibidas para os administradores nas próximas gerações de funções.				
+			</summary>
+			<preconditions>Ter ao menos 2 administradores cadastrados
+Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter um organograma
+Acessar 'mais opções' de um item do organograma &gt; Editar &gt; aba 'Funções' &gt; Gerar com IA</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Alterar o conteúdo do campo "Configurações de geração (prompt padrão)"&lt;br /&gt;
+Gerar funções e salvá-las						
+					</actions>
+					<expectedresults>
+						
+Funções devem ser geradas com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar novamente a tela de geração de funções com IA (como o mesmo administrador)						
+					</actions>
+					<expectedresults>
+						
+Campo "Configurações de geração (prompt padrão)" exibe as últimas alterações realizadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Com um administrador diferente, acessar novamente a tela de geração de funções com IA						
+					</actions>
+					<expectedresults>
+						
+Campo "Configurações de geração (prompt padrão)" exibe as últimas alterações realizadas&lt;br /&gt;
+(pelo administrador anterior)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Funções - Gerar com IA - Correspondência entre prompt vs. conteúdo gerado">
+			<summary>
+				
+Validar que, ao inserir contextos no campo de prompt, as funções geradas correspondem com o conteúdo inserido, que não contém alucinações, vieses ou informações incorretas.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter um organograma
+Acessar 'mais opções' de um item do organograma &gt; Editar &gt; aba 'Funções' &gt; Gerar com IA</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Inserir contexto coerente no campo de configuração de geração&lt;br /&gt;
+Gerar funções						
+					</actions>
+					<expectedresults>
+						
+Funções geradas devem corresponder e ser coerentes com o prompt inserido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir contexto sem relações, com informações aleatórias&lt;br /&gt;
+Gerar funções						
+					</actions>
+					<expectedresults>
+						
+Funções geradas não devem gerar resultados altamente relevantes						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir contexto citando múltiplas "áreas" &lt;br /&gt;
+Gerar funções						
+					</actions>
+					<expectedresults>
+						
+Funções geradas devem corresponder parcialmente com o prompt inserido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Funções - Gerar com IA - &quot;+ Gerar mais funções&quot;">
+			<summary>
+				
+Verificar se o botão "+ Gerar mais funções" é exibido e permite gerar funções adicionais sem repetição				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter um organograma
+Acessar 'mais opções' de um item do organograma &gt; Editar &gt; aba 'Funções' &gt; Gerar com IA
+Iniciar a geração de funções com IA (permanecer na tela, sem salvar)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a existência do botão "+ Gerar mais funções" no final da listagem						
+					</actions>
+					<expectedresults>
+						
+Botão deve ser exibido corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "+ Gerar mais funções"						
+					</actions>
+					<expectedresults>
+						
+Deve exibir toast message com a quantidade de novas funções geradas&lt;br /&gt;
+Não deve ter repetido nenhuma função (anteriores e/ou novas)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente para gerar mais funções						
+					</actions>
+					<expectedresults>
+						
+Conforme RE2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Regerar função com textarea e opções pré-definidas">
+			<summary>
+				
+Verificar se o clique em 'Regerar função' abre um textarea com opções pré-definidas e esconde botões de ação (regerar, remover e editar).				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter um organograma
+Acessar 'mais opções' de um item do organograma &gt; Editar &gt; aba 'Funções' &gt; Gerar com IA
+Iniciar a geração de funções com IA (permanecer na tela, sem salvar)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Na listagem de funções geradas, localizar uma função e clicar em 'Regerar função'						
+					</actions>
+					<expectedresults>
+						
+Deve exibir um textarea para descrever melhorias para o prompt de regerar função&lt;br /&gt;
+&lt;br /&gt;
+As opções "pré-definidas" devem ser:&lt;br /&gt;
+Mais detalhado; Mais conciso; Foco em execução; Foco em liderança; Foco em impacto no time; Foco em impacto organizacional						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar os botões "regerar", "remover" e "editar" da função à ser regerada						
+					</actions>
+					<expectedresults>
+						
+Botões da função não devem ser exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Regerar função - Correspondência entre prompt vs. geração">
+			<summary>
+				
+Validar que, ao inserir contextos no campo de prompt para regerar uma função, conteúdo gerado corresponde com informações inseridas, e que não contém alucinações, vieses ou informações incorretas.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter um organograma
+Acessar 'mais opções' de um item do organograma &gt; Editar &gt; aba 'Funções' &gt; Gerar com IA
+Iniciar a geração de funções com IA (permanecer na tela, sem salvar)
+Escolher função e clicar em 'Regerar função'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Descrever melhorias no textarea e confirmar a regeração.						
+					</actions>
+					<expectedresults>
+						
+Deve exibir toast message de sucesso&lt;br /&gt;
+E a função deve ser atualizada com base no prompt de melhoria inserido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o processo de regerar com outras funções, modificando prompts e analisando resultados						
+					</actions>
+					<expectedresults>
+						
+Conforme RE1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Competências">
+		<testcase name="Remoção do campo &quot;quantidade de competências por tipo&quot; na geração com IA">
+			<summary>
+				
+Verificar se o campo "quantidade de competências por tipo" é removido da tela de geração de competências com IA.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no botão 'Gerar com IA'&lt;br /&gt;
+Procurar pelo campo "quantidade de competências por tipo".						
+					</actions>
+					<expectedresults>
+						
+Confirmar que o campo "quantidade" não está presente na interface.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Quantidade mínima de competências geradas com IA">
+			<summary>
+				
+Verificar se ao realizar uma geração de competências com IA são geradas no mínimo 10 competências. &lt;br /&gt;
+&lt;br /&gt;
+Obs.: Quantidade mínima será fixada no prompt para evitar a geração de poucas competências.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Funções criadas
+Acessar  Skills &gt; Funções &gt; Editar &gt; aba 'Competências'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no botão 'Gerar com IA'&lt;br /&gt;
+Realizar algumas gerações de competências com IA						
+					</actions>
+					<expectedresults>
+						
+Deve sempre gerar, no mínimo, 10 competências&lt;br /&gt;
+Obs.: 10 competências não deve ser fixo, e sim o mínimo.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Competências - Campo &quot;Configurações de geração (prompt padrão)&quot;">
+			<summary>
+				
+Verificar se o campo textarea "Configurações de geração (prompt padrão)" é adicionado e preenchido com o texto default e se o tooltip exibe o texto definido.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Funções criadas
+Acessar  Skills &gt; Funções &gt; Editar &gt; aba 'Competências' &gt; Gerar com IA</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o campo textarea "Configurações de geração (prompt padrão)"&lt;br /&gt;
+						
+					</actions>
+					<expectedresults>
+						
+Campo deve estar presente na interface&lt;br /&gt;
+E ser do tipo textarea						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar texto padrão						
+					</actions>
+					<expectedresults>
+						
+“Ex. Você é um especialista em RH e desenvolvimento organizacional. Gere competências profissionais com nomes claros e objetivos. Para cada competência, escreva uma descrição sucinta porém completa, explicando o que ela representa na prática e em quais contextos se manifesta. Complemente com uma lista de “Comportamentos observáveis” e outra de “Resultados esperados”. Quando a competência estiver relacionada à liderança, descreva explicitamente os comportamentos de liderança associados.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Confirmar texto do tooltip						
+					</actions>
+					<expectedresults>
+						
+“Defina instruções de formatação e estrutura para a IA (estilo de escrita, tamanho do texto e uso de tópicos). Essas instruções serão salvas como padrão para todas as gerações do ambiente, garantindo uniformidade; evite conteúdos específicos de área, que devem ficar nas instruções adicionais.“						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Competências - Persistência das configurações de geração">
+			<summary>
+				
+Verificar se as alterações no campo "Configurações de geração (prompt padrão)" são salvas e exibidas para os administradores nas próximas gerações de competências.				
+			</summary>
+			<preconditions>Ter ao menos 2 administradores cadastrados
+Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Acessar  Skills &gt; Funções &gt; Editar &gt; aba 'Competências' &gt; Gerar com IA</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Alterar o conteúdo do campo "Configurações de geração (prompt padrão)"&lt;br /&gt;
+Gerar competências e salvá-las						
+					</actions>
+					<expectedresults>
+						
+Funções devem ser geradas com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar novamente a tela de geração de competências com IA (como o mesmo administrador)						
+					</actions>
+					<expectedresults>
+						
+Campo "Configurações de geração (prompt padrão)" exibe as últimas alterações realizadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Com um administrador diferente, acessar novamente a tela de geração de competências  com IA						
+					</actions>
+					<expectedresults>
+						
+Campo "Configurações de geração (prompt padrão)" exibe as últimas alterações realizadas&lt;br /&gt;
+(pelo administrador anterior)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Competências - Gerar com IA - Correspondência entre prompt vs. conteúdo gerado">
+			<summary>
+				
+Validar que, ao inserir contextos no campo de prompt, as competências geradas correspondem com o conteúdo inserido (incluindo o nível de importância), não contém alucinações, vieses ou informações incorretas. Além disso, deve sempre gerar 2 competências, uma para cada um dos tipos (técnica e comportamental) de maneira igualitária ou relativa.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Ter um organograma
+Funções criadas
+Acessar  Skills &gt; Funções &gt; Editar &gt; aba 'Competências' &gt; Gerar com IA</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Inserir contexto coerente no campo de configuração de geração&lt;br /&gt;
+Gerar competências						
+					</actions>
+					<expectedresults>
+						
+Competências geradas devem corresponder e ser coerentes com o prompt inserido, além de serem adequadas para os tipos: técnicas e comportamentais&lt;br /&gt;
+Devem exibir a sugestão para o nível de importância						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir contexto sem relações, com informações aleatórias&lt;br /&gt;
+Gerar competências						
+					</actions>
+					<expectedresults>
+						
+Competências geradas não devem gerar resultados altamente relevantes&lt;br /&gt;
+Devem exibir a sugestão para o nível de importância						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inserir contexto citando múltiplas "áreas" &lt;br /&gt;
+Gerar competências						
+					</actions>
+					<expectedresults>
+						
+Funções geradas devem corresponder parcialmente com o prompt inserido&lt;br /&gt;
+Devem exibir a sugestão para o nível de importância						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Competências - Gerar com IA - &quot;+ Gerar mais competências&quot;">
+			<summary>
+				
+Verificar se o botão "+ Gerar mais competências" é exibido e permite gerar competências adicionais sem repetição ((incluindo o nível de importância).				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Funções criadas
+Acessar  Skills &gt; Funções &gt; Editar &gt; aba 'Competências' &gt; Gerar com IA
+Iniciar a geração de competências com IA (permanecer na tela, sem salvar)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a existência do botão "+ Gerar mais competências" no final da listagem						
+					</actions>
+					<expectedresults>
+						
+Botão deve ser exibido corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão "+ Gerar mais competências"						
+					</actions>
+					<expectedresults>
+						
+Deve exibir toast message com a quantidade de novas competências geradas&lt;br /&gt;
+Não deve ter repetido nenhuma competências (anteriores e/ou novas)&lt;br /&gt;
+Deve exibir a sugestão para o nível de importância das competências geradas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar novamente para gerar mais competências						
+					</actions>
+					<expectedresults>
+						
+Conforme RE2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Regerar competência com textarea e opções pré-definidas">
+			<summary>
+				
+Verificar se o clique em 'Regerar competência' abre um textarea com opções pré-definidas e esconde botões de ação (regerar, remover e editar).				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Acessar  Skills &gt; Funções &gt; Editar &gt; aba 'Competências'
+Iniciar a geração de competência com IA (permanecer na tela, sem salvar)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Na listagem de competências geradas, localizar uma competência e clicar em 'Regerar competência'						
+					</actions>
+					<expectedresults>
+						
+Deve exibir um textarea para descrever melhorias para o prompt de regerar competência&lt;br /&gt;
+&lt;br /&gt;
+As opções "pré-definidas" devem ser:&lt;br /&gt;
+Mais detalhado; Mais conciso; Foco em liderança; Mais técnica; Foco em soft skills; Foco em hard skills						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar os botões "regerar", "remover" e "editar" da competência à ser regerada						
+					</actions>
+					<expectedresults>
+						
+Botões não devem ser exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Regerar competência - Correspondência entre prompt vs. geração">
+			<summary>
+				
+Validar que, ao inserir contextos no campo de prompt para regerar uma competência, conteúdo gerado corresponde com informações inseridas, e que não contém alucinações, vieses ou informações incorretas, incluindo o nível de importância.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Acessar  Skills &gt; Funções &gt; Editar &gt; aba 'Competências'
+Iniciar a geração de competência com IA (permanecer na tela, sem salvar)
+Escolher competência e clicar em 'Regerar competência'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Descrever melhorias no textarea e confirmar a regeração.						
+					</actions>
+					<expectedresults>
+						
+Deve exibir toast message de sucesso&lt;br /&gt;
+E a competência deve ser atualizada com base no prompt de melhoria inserido&lt;br /&gt;
+Atualizando, se necessário, o nível de importância sugerido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o processo de regerar com outras competências, modificando prompts e analisando resultados						
+					</actions>
+					<expectedresults>
+						
+Conforme RE1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Gerar com IA - Estilo do slider e tooltip do nível de importância">
+			<summary>
+				
+Verificar se o estilo do slider e do tooltip para o nível de importância da competência é consistente com o padrão existente.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Acessar  Skills &gt; Funções &gt; Editar &gt; aba 'Competências'
+Iniciar a geração de competência com IA (permanecer na tela, sem salvar)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Interagir com o slider de nível de importância da competência.						
+					</actions>
+					<expectedresults>
+						
+Estilo visual do slider é consistente e idêntico ao existente (listagem de competências)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Validar o tooltip do nível de importância						
+					</actions>
+					<expectedresults>
+						
+“Defina o nível de importância desta competência para a função:&lt;br /&gt;
+&lt;br /&gt;
+Nível 1: Nem um pouco importante&lt;br /&gt;
+Nível 2: Desejável&lt;br /&gt;
+Nível 3: Essencial&lt;br /&gt;
+Nível 4: Importante&lt;br /&gt;
+Nível 5: Extremamente importante”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Listagem de competências - Exibir coluna de 'Descrição'">
+			<summary>
+				
+Verificar se a descrição da competência (50 primeiros caracteres) é exibida e se ao posicionar o mouse sobre a descrição, a mesma é exibida por completo no tooltip.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Acessar  Skills &gt; Funções &gt; Editar &gt; aba 'Competências'
+Ter competências geradas que contenham descrições com vários caracteres (&lt; 50, = 50, &gt;50)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Validar informações da coluna 'Descrição' para competência com -50 caracteres						
+					</actions>
+					<expectedresults>
+						
+Deve exibir a descrição completa da competência						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Validar informações da coluna 'Descrição' para competência com 50 caracteres						
+					</actions>
+					<expectedresults>
+						
+Deve exibir a descrição completa da competência						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Validar informações da coluna 'Descrição' para competência com +50 caracteres						
+					</actions>
+					<expectedresults>
+						
+Deve exibir apenas os 50 primeiros caracteres da descrição da competência&lt;br /&gt;
+Conter '....' ao final do texto visível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Passar o mouse sobre a descrição da competência com +50 caracteres						
+					</actions>
+					<expectedresults>
+						
+Deve exibir todo o conteúdo no tooltip						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Listagem de competências - Tooltip 'Nível de importância'">
+			<summary>
+				
+Verificar se o tooltip da coluna de nível de importância exibe o texto atualizado com a descrição dos níveis.				
+			</summary>
+			<preconditions>Funcionalidade 'Gestão de competências' habilitada no contrato vigente do ambiente;
+Acessar  Skills &gt; Funções &gt; Editar &gt; aba 'Competências'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Passar o mouse sobre ícone de informação da coluna de nível de importância.						
+					</actions>
+					<expectedresults>
+						
+Defina o nível de importância desta competência para a função:&lt;br /&gt;
+&lt;br /&gt;
+Nível 1: Nem um pouco importante&lt;br /&gt;
+Nível 2: Desejável&lt;br /&gt;
+Nível 3: Essencial&lt;br /&gt;
+Nível 4: Importante&lt;br /&gt;
+Nível 5: Extremamente importante						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Banco histórico">
+		<testcase name="Inclusão de novas tabelas no banco histórico">
+			<summary>
+				
+Verificar se todas as novas tabelas criadas na fase 01 do projeto são incluídas na rotina do banco histórico				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Executar a rotina de banco histórico.						
+					</actions>
+					<expectedresults>
+						
+Dados das tabelas devem ter sido excluídos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>

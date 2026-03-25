@@ -1,0 +1,902 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Feature Flag">
+		<testcase name="Unindo as feature de IA">
+			<summary>
+				
+Verificar se a opção "Créditos de IA" existe e se ela pode ser habilitada/desabilitada no campo "Funcionalidade" da tabela de preços.				
+			</summary>
+			<preconditions>Usuário com acesso SuperAdmin &gt; Manutenção de Tabela de preços e a feature flag analise_creditos_ia_beta_test</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Habilitar a feature flag "analise_creditos_ia_beta_test" para um ambiente						
+					</actions>
+					<expectedresults>
+						
+Confirmar que todas as funcionalidades das features flags listadas a seguir continuam funcionando:&lt;br /&gt;
+&lt;br /&gt;
+estudio_de_criacao&lt;br /&gt;
+agente_de_importacao&lt;br /&gt;
+sophIA_beta_test&lt;br /&gt;
+analise_de_questionario_por_ia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar a feature flag "analise_creditos_ia_beta_test" para um ambiente						
+					</actions>
+					<expectedresults>
+						
+Confirmar que todas as funcionalidades das features flags listadas a seguir NÃO estejam funcionando:&lt;br /&gt;
+&lt;br /&gt;
+estudio_de_criacao&lt;br /&gt;
+agente_de_importacao&lt;br /&gt;
+sophIA_beta_test&lt;br /&gt;
+analise_de_questionario_por_ia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Super Admin - Tabela de Preços">
+		<testcase name="Opção de &quot;Créditos de IA&quot; na funcionalidade da Tabela de Preços">
+			<summary>
+				
+Verificar se a opção "Créditos de IA" existe e se ela pode ser habilitada/desabilitada no campo "Funcionalidade" da tabela de preços.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar tabela de preços &lt;br /&gt;
+Verificar o campo "Funcionalidade"						
+					</actions>
+					<expectedresults>
+						
+A opção "Créditos de IA" deve ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar a opção "Créditos de IA" e Salvar 						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir a seleção e a opção deve permanecer habilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar a opção "Créditos de IA" e Salvar 						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir desmarcar a seleção e a opção deve permanecer desabilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Super Admin - Manutenção de Assinaturas - Contrato">
+		<testcase name="Contrato - &quot;Créditos de IA&quot; habilitado na tabela de preço">
+			<summary>
+				
+Verificar se a opção "Créditos de IA" existe e se ela pode ser habilitada/desabilitada no campo "Funcionalidade" do contrato conforme situação na tabela de preços.				
+			</summary>
+			<preconditions>Usuário com acessos:
+SuperAdmin &gt; Manutenção de tabela de preços
+    - Habilitar "Créditos de IA" para um plano na tabela de preços
+SuperAdmin &gt; Manutenção de assinaturas
+    - Configurar o plano como vigente no ambiente de teste</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar o contrato do ambiente e verificar a funcionalidade "Créditos de IA"						
+					</actions>
+					<expectedresults>
+						
+Opção deve estar habilitada por padrão e não deve permitir desabilitar (pois está habilitada por padrão, na tabela de preço)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Contrato - &quot;Créditos de IA&quot; desabilitado na tabela de preço">
+			<summary>
+				
+Verificar se a opção "Créditos de IA" existe e se ela pode ser habilitada/desabilitada no campo "Funcionalidade" do contrato conforme situação na tabela de preços.				
+			</summary>
+			<preconditions>Usuário com acessos:
+SuperAdmin &gt; Manutenção de tabela de preços
+    - Habilitar/Desabilitar "Créditos de IA" para um plano na tabela de preços
+SuperAdmin &gt; Manutenção de assinaturas
+    - Configurar o plano como vigente no ambiente de teste</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar o contrato do ambiente e verificar a funcionalidade "Créditos de IA"						
+					</actions>
+					<expectedresults>
+						
+Opção deve estar desabilitada e desbloqueada, permitindo a seleção para habilitar/desabilitar (pois não está habilitada por padrão na tabela de preço)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar funcionalidade no contrato&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir a seleção e a opção deve permanecer habilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar funcionalidade no contrato&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir desmarcar a seleção e a opção deve permanecer desabilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="#RN3 Permitir que o usuário configure o acesso de IA por ambiente">
+		<testcase name="Aba &quot;Configurações&quot; &gt; Tabela">
+			<summary>
+				
+Validar que os a tabela de "Configurações" da funcionalidade de Créditos de IA continuam funcionando.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente e a feature flag analise_creditos_ia_beta_test</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Passar o cursor do mouse em cima da aba "Configurações"						
+					</actions>
+					<expectedresults>
+						
+Uma tooltip será exibida com o texto: "Configure quais ambientes podem ter acesso a funcionalidades com IA e quais funcionalidades você deseja disponibilizar".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações"						
+					</actions>
+					<expectedresults>
+						
+Será exibido uma tela com as seguintes colunas: Ambiente, Acesso de IA ativo, Herdar configurações do principal e Ações.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" e interagir com as toogles das colunas "Acesso de IA ativo" e "Herdar configurações do principal"						
+					</actions>
+					<expectedresults>
+						
+Será possível desmarcar ou marcar os ambientes listados e a cada ação será apresentado uma toast message verde com a seguinte mensagem: "Configuração atualizada com sucesso".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Verificar o ambiente principal						
+					</actions>
+					<expectedresults>
+						
+A toogle do "Acesso de IA ativo" estará visível e a toogle "Herdar configurações do principal" não vai existir e será apresentado o seguinte texto no campo dessa coluna: "Ambiente principal"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Verificar o ambiente adicional &amp;gt; marcar e desmarcar a toogle "Acesso de IA ativo"						
+					</actions>
+					<expectedresults>
+						
+Ao desmarcar ou marcar essa toogle automaticamente será desmarcado ou marcado a toogle da coluna: "Herdar configurações do principal"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Verificar o ambiente adicional &amp;gt; Marcar a toogle "Acesso de IA ativo"						
+					</actions>
+					<expectedresults>
+						
+A edição desse ambiente vai ficar bloqueada e será exibido um tooltip explicativo com o seguinte texto: "Este ambiente está herdando configurações do ambiente principal. Desative a herança para editar."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Verificar o ambiente adicional &amp;gt; Marcar a toogle "Acesso de IA ativo" e Desmarcar a toogle da coluna "Herdar configurações do principal"						
+					</actions>
+					<expectedresults>
+						
+A edição desse ambiente será habilitada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Verificar o ambiente Principal &amp;gt; Marcar ou Desmarcar a toogle "Acesso de IA ativo"						
+					</actions>
+					<expectedresults>
+						
+A edição desse ambiente continua sempre habilitada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Aba &quot;Configurações&quot; &gt; Editar um Ambiente">
+			<summary>
+				
+Validar que os a edição de um ambiente em "Configurações" da funcionalidade Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente e a feature flag analise_creditos_ia_beta_test</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente						
+					</actions>
+					<expectedresults>
+						
+Será exibido uma tela com as seguintes informações:&lt;br /&gt;
+&lt;br /&gt;
+Você está editando o ambiente: "título do ambiente"&lt;br /&gt;
+Sub-título: Escolha as funcionalidades de IA a serem liberadas&lt;br /&gt;
+&lt;br /&gt;
+Toogle Desablitada por padrão para "Criação de conteúdo"&lt;br /&gt;
+Toogle Desablitada por padrão para "Análise e acompanhamento"&lt;br /&gt;
+Toogle Desablitada por padrão para "Automação e assistência"&lt;br /&gt;
+&lt;br /&gt;
+Botões "Voltar", "Salvar" e "Cancelar"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Verificar as tooltips de:&lt;br /&gt;
+&lt;br /&gt;
+Criação de conteúdo&lt;br /&gt;
+Análise e acompanhamento&lt;br /&gt;
+Automação e assistência						
+					</actions>
+					<expectedresults>
+						
+Criação de conteúdo &amp;gt; tooltip &amp;gt; Ferramentas para criar e produzir materiais educacionais.&lt;br /&gt;
+&lt;br /&gt;
+Análise e acompanhamento &amp;gt; tooltip &amp;gt; Ferramentas de análise e mapeamento de desempenho.&lt;br /&gt;
+&lt;br /&gt;
+Automação e assistência &amp;gt; tooltip &amp;gt; Agentes e ferramentas para automatizar processos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle de "Criação de conteúdo"						
+					</actions>
+					<expectedresults>
+						
+Será habilitado alguns opções e todas elas vão vir com o checkbox marcado, são elas:&lt;br /&gt;
+&lt;br /&gt;
+Criação de conteúdos, no tipo página ou em vídeo com IA.&lt;br /&gt;
+&lt;br /&gt;
+Geração de questionários baseados em novos arquivos ou atividades já existentes.&lt;br /&gt;
+&lt;br /&gt;
+Criação de estrutura de atividades para auxiliar na construção de um conteúdo.&lt;br /&gt;
+&lt;br /&gt;
+Geração de resumos para suas atividades.&lt;br /&gt;
+&lt;br /&gt;
+Edição de conteúdos do tipo página com IA.&lt;br /&gt;
+&lt;br /&gt;
+Edição conteúdos do tipo aula com IA.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle de "Análise e acompanhamento"						
+					</actions>
+					<expectedresults>
+						
+Será habilitado uma opção e ela vai vir com o checkbox marcado:&lt;br /&gt;
+&lt;br /&gt;
+Geração de parecer da IA nos questionários aplicados para o usuário final.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle de "Automação e assistência"						
+					</actions>
+					<expectedresults>
+						
+Será habilitado alguns opções e todas elas vão vir com o checkbox marcado, são elas:&lt;br /&gt;
+&lt;br /&gt;
+Importação de arquivos ou textos para a criação de questionários de forma automatizada.&lt;br /&gt;
+&lt;br /&gt;
+Compreensão de arquivos importados e geração de organograma da sua empresa, função e competências de cada função.&lt;br /&gt;
+&lt;br /&gt;
+Registros externos: Leitura de arquivos com IA e auto preenchimento dos registros realizados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Desmarcar todas as opções do checkbox, dentro de uma categoria (uma das três toogles)						
+					</actions>
+					<expectedresults>
+						
+Ao desmarcar o último checkbox, automaticamente o toggle é desabilitado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Aba &quot;Configurações&quot; &gt; Ações HABILITADAS">
+			<summary>
+				
+Validar todas as ações disponíveis para a funcionalidade de Créditos de IA considerando ela como HABILITADAS				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; Habilitar a Criação de conteúdos, no tipo página ou em video com IA.						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade habilitada funcionará normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; Habilitar a Geração de questionários baseados em novos arquivos ou atividades já existentes.						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade habilitada funcionará normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; Habilitar a Criação de estrutura de atividades para auxiliar na construção de um conteúdo.						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade habilitada funcionará normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; Habilitar a Geração de resumos para suas atividades.						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade habilitada funcionará normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; Habilitar a Edição de conteúdos do tipo página com IA.						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade habilitada funcionará normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; Habilitar a Edição conteúdos do tipo aula com IA.						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade habilitada funcionará normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Análise e acompanhamento" &amp;gt; Habilitar a Geração de parecer da IA nos questionários aplicados para o usuário final.						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade habilitada funcionará normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Automação e assistência" &amp;gt; Habilitar a Importação de arquivos ou textos para a criação de questionários de forma automatizada.						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade habilitada funcionará normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Automação e assistência" &amp;gt; Habilitar a Compreensão de arquivos importados e geração de organograma da sua empresa, função e competências de cada função.						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade habilitada funcionará normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Automação e assistência" &amp;gt; Habilitar a Registros externos: Leitura de arquivos com IA e auto preenchimento dos registros realizados.						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade habilitada funcionará normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Aba &quot;Configurações&quot; &gt; Ações DESABILITADAS">
+			<summary>
+				
+Validar todas as ações disponíveis para a funcionalidade de Créditos de IA considerando ela como DESABILITADAS validando o retorno do bloqueio.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; DESABILITAR a Criação de conteúdos, no tipo página ou em video com IA.						
+					</actions>
+					<expectedresults>
+						
+Ao tentar utilizar a funcionalidade o sistema vai bloquear e vai emitir uma toast message vermelha com o texto: "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; DESABILITAR a Geração de questionários baseados em novos arquivos ou atividades já existentes.						
+					</actions>
+					<expectedresults>
+						
+Ao tentar utilizar a funcionalidade o sistema vai bloquear e vai emitir uma toast message vermelha com o texto: "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; DESABILITAR a Criação de estrutura de atividades para auxiliar na construção de um conteúdo.						
+					</actions>
+					<expectedresults>
+						
+Ao tentar utilizar a funcionalidade o sistema vai bloquear e vai emitir uma toast message vermelha com o texto: "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; DESABILITAR a Geração de resumos para suas atividades.						
+					</actions>
+					<expectedresults>
+						
+Ao tentar utilizar a funcionalidade o sistema vai bloquear e vai emitir uma toast message vermelha com o texto: "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; DESABILITAR a Edição de conteúdos do tipo página com IA.						
+					</actions>
+					<expectedresults>
+						
+Ao tentar utilizar a funcionalidade o sistema vai bloquear e vai emitir uma toast message vermelha com o texto: "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Criação de conteúdo" &amp;gt; DESABILITAR a Edição conteúdos do tipo aula com IA.						
+					</actions>
+					<expectedresults>
+						
+Ao tentar utilizar a funcionalidade o sistema vai bloquear e vai emitir uma toast message vermelha com o texto: "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Análise e acompanhamento" &amp;gt; DESABILITAR a Geração de parecer da IA nos questionários aplicados para o usuário final.						
+					</actions>
+					<expectedresults>
+						
+Ao tentar utilizar a funcionalidade o sistema vai bloquear e vai emitir uma toast message vermelha com o texto: "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Automação e assistência" &amp;gt; DESABILITAR a Importação de arquivos ou textos para a criação de questionários de forma automatizada.						
+					</actions>
+					<expectedresults>
+						
+Ao tentar utilizar a funcionalidade o sistema vai bloquear e vai emitir uma toast message vermelha com o texto: "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Automação e assistência" &amp;gt; DESABILITAR a Compreensão de arquivos importados e geração de organograma da sua empresa, função e competências de cada função.						
+					</actions>
+					<expectedresults>
+						
+Ao tentar utilizar a funcionalidade o sistema vai bloquear e vai emitir uma toast message vermelha com o texto: "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Configurações" &amp;gt; Editar um Ambiente &amp;gt; Habilitar a toogle "Automação e assistência" &amp;gt; DESABILITAR a Registros externos: Leitura de arquivos com IA e auto preenchimento dos registros realizados.						
+					</actions>
+					<expectedresults>
+						
+Ao tentar utilizar a funcionalidade o sistema vai bloquear e vai emitir uma toast message vermelha com o texto: "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="#RN4 Usuário visualizar a política de créditos de IA">
+		<testcase name="Aba &quot;Política de créditos de IA&quot;">
+			<summary>
+				
+Validar a Aba "Política de créditos de IA" e todas as informações em tela.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Passar o cursor do mouse em cima da aba "Política de créditos de IA"						
+					</actions>
+					<expectedresults>
+						
+Uma tooltip será exibida com o texto: "Entenda como funciona o sistema de créditos e os consumos por funcionalidade".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Política de créditos de IA"						
+					</actions>
+					<expectedresults>
+						
+O sistema deve exibir uma tabela de consumo aproximado com as colunas: Ação, Créditos aproximados e Descrição.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Política de créditos de IA"						
+					</actions>
+					<expectedresults>
+						
+Acima da tabela, deve haver um botão chamado “Como funciona o consumo de créditos”.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Política de créditos de IA" &amp;gt; Clicar no botão: "Como funciona o consumo de créditos"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão uma modal informativa será apresentada com o texto:&lt;br /&gt;
+&lt;br /&gt;
+Como funciona o consumo de créditos&lt;br /&gt;
+&lt;br /&gt;
+Pacote de créditos&lt;br /&gt;
+&lt;br /&gt;
+Os créditos mensais inclusos no seu pacote são renovados automaticamente a cada virada de mês.&lt;br /&gt;
+&lt;br /&gt;
+Importante: Os créditos mensais não utilizados expiram e são substituídos pelos novos créditos do mês seguinte.&lt;br /&gt;
+&lt;br /&gt;
+Vouchers de créditos&lt;br /&gt;
+&lt;br /&gt;
+Vouchers de créditos adquiridos separadamente possuem validade de um ano a partir da data de aquisição.&lt;br /&gt;
+&lt;br /&gt;
+Consumo por ação&lt;br /&gt;
+&lt;br /&gt;
+Cada funcionalidade de IA consome uma quantidade específica de créditos. O consumo varia conforme a complexidade da tarefa realizada.&lt;br /&gt;
+&lt;br /&gt;
+Saldo negativo e débito automático&lt;br /&gt;
+&lt;br /&gt;
+Para não interromper seu trabalho, permitimos que você complete sua última ação mesmo que o saldo fique negativo.&lt;br /&gt;
+&lt;br /&gt;
+Caso isso ocorra, o valor negativo será automaticamente debitado dos créditos renovados no próximo mês.&lt;br /&gt;
+&lt;br /&gt;
+Ordem de consumo de créditos&lt;br /&gt;
+&lt;br /&gt;
+Os créditos são consumidos na seguinte ordem: primeiro os créditos mensais do pacote, depois os créditos adicionais mais antigos (próximos de expirar).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Política de créditos de IA" &amp;gt; Verificar o título que está abaixo do botão: "Como funciona o consumo de créditos"						
+					</actions>
+					<expectedresults>
+						
+Esse título terá um texto: Tabela de consumo aproximado&lt;br /&gt;
+&lt;br /&gt;
+Com um tooltip ao lado com o seguinte texto: “Os valores de consumo apresentados são aproximados e podem variar conforme a complexidade da tarefa, tamanho do conteúdo processado e outros fatores.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Política de créditos de IA" &amp;gt; Verificar a tabela e ações						
+					</actions>
+					<expectedresults>
+						
+Não teremos ações nessa tela;&lt;br /&gt;
+A modal aberta pelo botão "Como funciona o consumo de créditos" é somente informativa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="#RN5 Adicionar a aba Glossário de Termos">
+		<testcase name="Aba &quot;Adicionar a aba Glossário de Termos&quot;">
+			<summary>
+				
+Validar a Aba "Adicionar a aba Glossário de Termos", validar todas as informações em tela e validar a criação, edição e exclusão de novos termos.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Passar o cursor do mouse em cima da aba "Adicionar a aba Glossário de Termos"						
+					</actions>
+					<expectedresults>
+						
+Uma tooltip será exibida com o texto: "Configure os termos específicos do seu negócio que a IA deve aprender e saber falar."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Adicionar a aba Glossário de Termos"						
+					</actions>
+					<expectedresults>
+						
+Será apresentado uma tela listando as colunas "Termo" e "Definição", botão "Adicionar" e o campo de filtro.&lt;br /&gt;
+E os termos criados possuem a opção de "editar" e "excluir".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Adicionar a aba Glossário de Termos" &amp;gt; Clicar no botão "Adicionar"						
+					</actions>
+					<expectedresults>
+						
+Será apresentado uma nova tela com o título: "Adicionar termo" e com os seguintes campos:&lt;br /&gt;
+&lt;br /&gt;
+"Termo" (obrigatório com um contador de até 250 caracteres)&lt;br /&gt;
+&lt;br /&gt;
+"Definição" (obrigatório com um contador de até 400 caracteres)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Adicionar a aba Glossário de Termos" &amp;gt; Clicar no botão "Adicionar" &amp;gt; Criar termos e Salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado uma toast message: "Termo salvo com sucesso" e o usuário será direcionado para a tela da listagem de todos os termos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Troca de Contratos">
+		<testcase name="Troca de Contrato: Vigente x Expirados">
+			<summary>
+				
+Validar a troca de contratos onde pode haver alterações nas funcionalidades habilitadas.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente
+Estar com a opção de "Créditos de IA" desabilitada no contrato vigente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Ter um contrato vigente com a funcionalidade de "Créditos de IA" habilitada com data de término para hoje.&lt;br /&gt;
+Ter um novo contrato para iniciar amanhã com a funcionalidade de "Créditos de IA" desabilitada						
+					</actions>
+					<expectedresults>
+						
+No dia de hoje a funcionalidade vai continuar funcionando mas amanhã não.&lt;br /&gt;
+E a funcionalidade vai ficar desabilitada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ter um contrato vigente com a funcionalidade de "Cupons e Vouchers" desabilitada com data de término para hoje.&lt;br /&gt;
+Ter um novo contrato para iniciar amanhã com a funcionalidade de "Créditos de IA" habilitada						
+					</actions>
+					<expectedresults>
+						
+No dia de hoje a funcionalidade vai continuar bloqueada mas amanhã não.&lt;br /&gt;
+E a funcionalidade vai ficar habilitada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>

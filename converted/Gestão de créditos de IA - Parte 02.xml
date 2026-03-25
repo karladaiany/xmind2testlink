@@ -1,0 +1,1170 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="#RN1 Permitir que o usuário visualize o extrato de créditos de IA">
+		<testcase name="Aba &quot;Extrato&quot;">
+			<summary>
+				
+Validar a tela de "Extrato" da funcionalidade de Créditos de IA continuam funcionando.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente e a feature flag analise_creditos_ia_beta_test</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Passar o cursor do mouse em cima da aba "Extrato"						
+					</actions>
+					<expectedresults>
+						
+NENHUMA tooltip será apresentada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato"						
+					</actions>
+					<expectedresults>
+						
+Será exibido um título centralizado informando &amp;gt; mês/ano&lt;br /&gt;
+&lt;br /&gt;
+Abaixo um subtítulo justificado à esquerda informando:&lt;br /&gt;
+&lt;br /&gt;
+Demonstrativo de uso de créditos de IA&lt;br /&gt;
+&lt;br /&gt;
+abaixo três blocos com as seguintes informações:&lt;br /&gt;
+&lt;br /&gt;
+Pacote de créditos&lt;br /&gt;
+Saldo inicial&lt;br /&gt;
+(+) Renovação mensal&lt;br /&gt;
+(-) Crédito utilizado&lt;br /&gt;
+Saldo final&lt;br /&gt;
+&lt;br /&gt;
+Vouchers de créditos&lt;br /&gt;
+Saldo inicial&lt;br /&gt;
+(+) Voucher recorrente recebido&lt;br /&gt;
+(+) Voucher adquirido&lt;br /&gt;
+(+) Bônus adquirido&lt;br /&gt;
+(-) Crédito utilizado&lt;br /&gt;
+Saldo final&lt;br /&gt;
+&lt;br /&gt;
+Saldo final total						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar as tooltips do mês ATUAL						
+					</actions>
+					<expectedresults>
+						
+As tooltips são &amp;gt;&lt;br /&gt;
+&lt;br /&gt;
+(Bloco 1):&lt;br /&gt;
+&lt;br /&gt;
+Pacote de créditos &amp;gt; Créditos disponibilizados mensalmente conforme o plano de contrato&lt;br /&gt;
+&lt;br /&gt;
+Saldo inicial &amp;gt; Créditos do plano mensal que restaram do mês anterior&lt;br /&gt;
+&lt;br /&gt;
+(+) Renovação mensal &amp;gt; Quantidade de créditos disponibilizados no início do mês conforme plano contratado&lt;br /&gt;
+&lt;br /&gt;
+(-) Crédito utilizado &amp;gt; Quantidade de créditos do plano mensal já consumidos pelas ferramentas de IA&lt;br /&gt;
+&lt;br /&gt;
+Saldo final &amp;gt; Saldo atual disponível para uso nas ferramentas de IA&lt;br /&gt;
+&lt;br /&gt;
+(Bloco 2):&lt;br /&gt;
+&lt;br /&gt;
+Vouchers de créditos &amp;gt; Créditos extras adquiridos além do plano mensal&lt;br /&gt;
+&lt;br /&gt;
+Saldo inicial &amp;gt; Créditos adicionais não utilizados que restaram no mês anterior&lt;br /&gt;
+&lt;br /&gt;
+(+) Voucher recorrente recebido &amp;gt; Voucher de créditos recebido mensalmente de forma recorrente&lt;br /&gt;
+&lt;br /&gt;
+(+) Voucher adquirido &amp;gt; Voucher de créditos comprado neste mês&lt;br /&gt;
+&lt;br /&gt;
+(+) Bônus adquirido &amp;gt; Bônus de créditos adquirido neste mês&lt;br /&gt;
+&lt;br /&gt;
+(-) Crédito utilizado &amp;gt; Quantidade de créditos adicionais já utilizados pelas ferramentas de IA&lt;br /&gt;
+&lt;br /&gt;
+Saldo final &amp;gt; Resultado: Saldo inicial - Crédito utilizado&lt;br /&gt;
+&lt;br /&gt;
+(Bloco 3):&lt;br /&gt;
+&lt;br /&gt;
+Saldo final total &amp;gt; Soma de todos os créditos disponíveis (pacote de créditos + vouchers de créditos) para uso nas ferramentas de IA						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar as tooltips do mês ATUAL&lt;br /&gt;
+&lt;br /&gt;
+Quando houver consumo excedente, o sistema deve exibir:						
+					</actions>
+					<expectedresults>
+						
+“Consumo excedente” em vez de “Saldo não utilizado” tanto no vouchers de crédito quanto no pacote de créditos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar os textos e tooltips do mês ANTERIOR						
+					</actions>
+					<expectedresults>
+						
+As tooltips são &amp;gt;&lt;br /&gt;
+&lt;br /&gt;
+(Bloco 1):&lt;br /&gt;
+&lt;br /&gt;
+Pacote de créditos &amp;gt; Créditos disponibilizados mensalmente conforme o plano de contrato&lt;br /&gt;
+&lt;br /&gt;
+Saldo inicial &amp;gt; Créditos do plano mensal que restaram do mês anterior&lt;br /&gt;
+&lt;br /&gt;
+(+) Renovação mensal &amp;gt; Quantidade de créditos disponibilizados no início do mês conforme plano contratado&lt;br /&gt;
+&lt;br /&gt;
+(-) Crédito utilizado &amp;gt; Quantidade de créditos do plano mensal já consumidos pelas ferramentas de IA&lt;br /&gt;
+&lt;br /&gt;
+Saldo não utilizado &amp;gt; Créditos do plano mensal que não foram utilizados e expiraram&lt;br /&gt;
+&lt;br /&gt;
+(Bloco 2):&lt;br /&gt;
+&lt;br /&gt;
+Vouchers de créditos &amp;gt; Créditos extras adquiridos além do plano mensal&lt;br /&gt;
+&lt;br /&gt;
+Saldo inicial &amp;gt; Créditos adicionais não utilizados que restaram no mês anterior&lt;br /&gt;
+&lt;br /&gt;
+(+) Voucher recorrente recebido &amp;gt; Voucher de créditos recebido mensalmente de forma recorrente&lt;br /&gt;
+&lt;br /&gt;
+(+) Voucher adquirido &amp;gt; Voucher de créditos comprado neste mês&lt;br /&gt;
+&lt;br /&gt;
+(+) Bônus adquirido &amp;gt; Bônus de créditos adquirido neste mês&lt;br /&gt;
+&lt;br /&gt;
+(-) Crédito utilizado &amp;gt; Quantidade de créditos adicionais já utilizados pelas ferramentas de IA&lt;br /&gt;
+&lt;br /&gt;
+Saldo transportado para o próximo mês &amp;gt; Créditos adicionais não utilizados que foram transportados para o próximo mês						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar os textos e tooltips do mês ANTERIOR quanto as mudanças de tempo verbal&lt;br /&gt;
+&lt;br /&gt;
+Ao selecionar um mês anterior, o sistema deve exibir:						
+					</actions>
+					<expectedresults>
+						
+Para Pacote de créditos → “Saldo inicial” e “Saldo não utilizado”.&lt;br /&gt;
+&lt;br /&gt;
+Para Vouchers de crédito → “Saldo inicial” e “Saldo transportado para o próximo mês”.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar os textos e tooltips do mês ANTERIOR quanto as mudanças de tempo verbal&lt;br /&gt;
+&lt;br /&gt;
+Ao selecionar um mês anterior, o sistema deve exibir para os tooltips de “Créditos adquiridos” e “Créditos utilizados” devem se aplicar também aos vouchers, com diferenças:						
+					</actions>
+					<expectedresults>
+						
+Créditos adquiridos → “Créditos adicionais comprados neste mês.”&lt;br /&gt;
+&lt;br /&gt;
+Créditos utilizados → “Créditos adicionais já utilizados pelas ferramentas de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; Caso o saldo de vouchers fique negativo, o sistema deve exibir a mensagem:						
+					</actions>
+					<expectedresults>
+						
+“Este débito de X créditos será debitado do pacote de créditos na próxima renovação mensal.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="#RN2 Permitir que o usuário visualize o histórico de créditos de IA">
+		<testcase name="Aba &quot;Extrato&quot; &gt; Histórico de créditos">
+			<summary>
+				
+Validar a tela de "Extrato" &amp;gt; "Histórico de créditos" da funcionalidade de Créditos de IA continuam funcionando.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos"						
+					</actions>
+					<expectedresults>
+						
+O histórico deve ser exibido abaixo da seção de extrato.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; O histórico deve apresentar uma tabela com colunas que possam ser reordenáveis:						
+					</actions>
+					<expectedresults>
+						
+As colunas são:&lt;br /&gt;
+&lt;br /&gt;
+· Data&lt;br /&gt;
+· Ação Realizada&lt;br /&gt;
+· Usuário&lt;br /&gt;
+· Créditos de IA&lt;br /&gt;
+· Operação&lt;br /&gt;
+· Fonte&lt;br /&gt;
+· Expiração.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar a coluna "Data"						
+					</actions>
+					<expectedresults>
+						
+A coluna Data deve indicar o momento da ação executada e deve apresentar Data e Hora						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar a coluna "Ação realizada" &amp;gt; Utilizar todos os recursos de IA disponíveis para gerar todos os tipos de históricos						
+					</actions>
+					<expectedresults>
+						
+A coluna "Ação realizada" vai conter:&lt;br /&gt;
+&lt;br /&gt;
+"Criação de conteúdos, no tipo página ou em video com IA."&lt;br /&gt;
+"Importação de arquivos ou textos para a criação de questionários de forma automatizada."&lt;br /&gt;
+"Agente de atendimento"&lt;br /&gt;
+"Geração de parecer da IA nos questionários aplicados para o usuário final."&lt;br /&gt;
+"Geração de questionários baseados em novos arquivos ou atividades já existentes"&lt;br /&gt;
+"Geração de resumo com base em conteúdo indexado."&lt;br /&gt;
+"Geração de script com base em conteúdo indexado."&lt;br /&gt;
+"Geração de atividades com base em conteúdo indexado."&lt;br /&gt;
+"Indexação de conteúdo"&lt;br /&gt;
+"Sincronização dos documentos da organização."&lt;br /&gt;
+"Compreensão de arquivos importados e geração de organograma da sua empresa, função e competências de cada função."&lt;br /&gt;
+"Indexação de arquivos para autopreenchimento de registro externo."&lt;br /&gt;
+"Compreensão de arquivos importados e geração de organograma da sua empresa, função e competências de cada função."&lt;br /&gt;
+"Pré-geração do curso - Gerar nova descrição"&lt;br /&gt;
+"Pré-geração do curso - Gerar novo nome"&lt;br /&gt;
+"Pré-geração do curso - Gerar novas atividades"&lt;br /&gt;
+"Pré-geração do curso - Compreensão de arquivos importados."&lt;br /&gt;
+"Compreensão de arquivos importados e geração de organograma da sua empresa, função e competências de cada função."&lt;br /&gt;
+"Edição de conteúdos do tipo aula com IA."&lt;br /&gt;
+"Renderização de vídeo de um conteúdo do tipo aula."&lt;br /&gt;
+"Expiração de pacote mensal de créditos"&lt;br /&gt;
+"Expiração de pacote adicional"&lt;br /&gt;
+"Expiração de vouchers de créditos"&lt;br /&gt;
+"Expiração de bônus promocional"&lt;br /&gt;
+"Renovação mensal de créditos"&lt;br /&gt;
+"Compra de pacote extra"&lt;br /&gt;
+"Bônus por indicação"&lt;br /&gt;
+"Funcionalidade de IA no editor de texto de registro externo"&lt;br /&gt;
+"Funcionalidade de IA no editor de texto de função"&lt;br /&gt;
+"Funcionalidade de IA no editor de texto de competência"&lt;br /&gt;
+"Edição de conteúdos do tipo página com IA."&lt;br /&gt;
+"Importação de arquivos ou textos para a criação de questionários de forma automatizada."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar as ações de pré criação de cursos e sair da tela (não ficam registradas como criação de curso) &amp;gt; Realizar: Etapa inicial da criação do curso que o usuário em “Identificação” clica em Gerar novo nome						
+					</actions>
+					<expectedresults>
+						
+Nome que deve ser registrado no histórico é:&lt;br /&gt;
+&lt;br /&gt;
+Pré-geração do curso – Gerar novo nome						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar as ações de pré criação de cursos e sair da tela (não ficam registradas como criação de curso) &amp;gt; Realizar: Etapa inicial da criação do curso que o usuário em “Identificação” clica em Gerar nova descrição						
+					</actions>
+					<expectedresults>
+						
+Nome que deve ser registrado no histórico é:&lt;br /&gt;
+&lt;br /&gt;
+Pré-geração do curso – Gerar nova descrição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar as ações de pré criação de cursos e sair da tela (não ficam registradas como criação de curso) &amp;gt; Realizar: Etapa inicial da criação do curso que o usuário em “Atividade” clica em Assistente de IA						
+					</actions>
+					<expectedresults>
+						
+Nome que deve ser registrado no histórico é:&lt;br /&gt;
+&lt;br /&gt;
+Pré-geração do curso – Assistente de IA						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar a coluna "Usuário"						
+					</actions>
+					<expectedresults>
+						
+A coluna Usuário deve indicar quem executou a ação e deve mostrar o nome e o e-mail do usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar a coluna "Usuário" &amp;gt; realizar alterações de créditos via super admin						
+					</actions>
+					<expectedresults>
+						
+A coluna Usuário deve indicar quem executou a ação e deve mostrar o registro de "Sistema" e o sistema deve registrar ações automáticas como adicionar créditos, aplicar bônus ou expiração.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar a coluna "Créditos de IA"						
+					</actions>
+					<expectedresults>
+						
+A coluna Créditos de IA deve indicar o valor movimentado (positivo para acréscimo, negativo para uso).						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar a coluna "Operação" &amp;gt; Essa coluna registra qual é o status daquela ação, se foi um registro de acréscimo de saldo (pacote de crédito, voucher, bonus) ou se foi de decréscimo (consumo).						
+					</actions>
+					<expectedresults>
+						
+Os valores exibidos são:&lt;br /&gt;
+&lt;br /&gt;
+"Consumo"&lt;br /&gt;
+"Expiração"&lt;br /&gt;
+"Bônus/Voucher"&lt;br /&gt;
+"Voucher"&lt;br /&gt;
+"Voucher recorrente"&lt;br /&gt;
+"Pacote de créditos"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar a coluna "Expiração" &amp;gt; A coluna Expiração deve indicar a data de validade de créditos adicionados, quando aplicável.						
+					</actions>
+					<expectedresults>
+						
+Os valores exibidos são:&lt;br /&gt;
+&lt;br /&gt;
+Data e Hora da Expiração						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba de "Extrato" &amp;gt; verificar o "Histórico de créditos" &amp;gt; verificar a coluna o campo de busca "Pesquise aqui..."						
+					</actions>
+					<expectedresults>
+						
+Esse campo NÃO vai existir, foi removido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>13</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="#RN6 Permitir filtrar a visualização do histórico de créditos de IA">
+		<testcase name="Aba &quot;Extrato&quot; &gt; Seção &quot;Histórico de créditos&quot; &gt; Filtro">
+			<summary>
+				
+Validar a tela de "Extrato" &amp;gt; "Filtro" da funcionalidade de Créditos de IA continuam funcionando.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Filtro padrão						
+					</actions>
+					<expectedresults>
+						
+O sistema deve disponibilizar quatro filtros padrão previamente configurados:&lt;br /&gt;
+&lt;br /&gt;
+· Consumos utilizados&lt;br /&gt;
+· Adições de créditos de IA realizadas&lt;br /&gt;
+· Consumos usando pacote de créditos&lt;br /&gt;
+· Consumos usando voucher						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Filtro padrão &amp;gt; Consumos utilizados						
+					</actions>
+					<expectedresults>
+						
+O filtro Consumos utilizados devem considerar registros cuja operação seja do tipo Consumo.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Filtro padrão &amp;gt; Adições de créditos de IA realizadas						
+					</actions>
+					<expectedresults>
+						
+O filtro Adições de créditos de IA realizadas deve considerar todas as operações de acréscimo de créditos, incluindo:&lt;br /&gt;
+&lt;br /&gt;
+· Pacote de Créditos&lt;br /&gt;
+· Bônus/Voucher&lt;br /&gt;
+· Vouchers&lt;br /&gt;
+· Vouchers recorrentes						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Filtro padrão &amp;gt; Consumos usando pacote de créditos						
+					</actions>
+					<expectedresults>
+						
+O filtro Consumos usando pacote de créditos deve considerar registros cuja fonte seja Pacote de Créditos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Ao clicar no ícone de informação de qualquer um dos filtros padrão, o sistema deve exibir as seguintes colunas:						
+					</actions>
+					<expectedresults>
+						
+· Data&lt;br /&gt;
+· Ação Realizada&lt;br /&gt;
+· Usuário&lt;br /&gt;
+· Créditos de IA&lt;br /&gt;
+· Operação&lt;br /&gt;
+· Fonte&lt;br /&gt;
+· Expiração						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Novo filtro						
+					</actions>
+					<expectedresults>
+						
+Ao clicar em Novo filtro, o sistema deve adicionar automaticamente o filtro Usuário como seleção padrão.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Novo filtro &amp;gt; O sistema deve adicionar automaticamente o filtro Usuário como seleção padrão.						
+					</actions>
+					<expectedresults>
+						
+O usuário deve poder remover o filtro padrão de Usuário, caso deseje.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Novo filtro &amp;gt; Filtrar por Usuário						
+					</actions>
+					<expectedresults>
+						
+No filtro Usuário, o sistema deve permitir pesquisar e selecionar SOMENTE os usuários que possuem histórico de créditos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Ao clicar em Mais opções de filtro, o sistema deve disponibilizar as seguintes opções:						
+					</actions>
+					<expectedresults>
+						
+· Ação Realizada&lt;br /&gt;
+· Data/Hora&lt;br /&gt;
+· Operação&lt;br /&gt;
+· Fonte						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; No filtro Ação Realizada, o sistema deve permitir selecionar todas as funcionalidades relacionadas à IA disponíveis na plataforma, são elas:						
+					</actions>
+					<expectedresults>
+						
+"Criação de conteúdos, no tipo página ou em video com IA."&lt;br /&gt;
+"Importação de arquivos ou textos para a criação de questionários de forma automatizada."&lt;br /&gt;
+"Agente de atendimento"&lt;br /&gt;
+"Geração de parecer da IA nos questionários aplicados para o usuário final."&lt;br /&gt;
+"Geração de questionários baseados em novos arquivos ou atividades já existentes"&lt;br /&gt;
+"Geração de resumo com base em conteúdo indexado."&lt;br /&gt;
+"Geração de script com base em conteúdo indexado."&lt;br /&gt;
+"Geração de atividades com base em conteúdo indexado."&lt;br /&gt;
+"Indexação de conteúdo"&lt;br /&gt;
+"Sincronização dos documentos da organização."&lt;br /&gt;
+"Compreensão de arquivos importados e geração de organograma da sua empresa, função e competências de cada função."&lt;br /&gt;
+"Indexação de arquivos para autopreenchimento de registro externo."&lt;br /&gt;
+"Compreensão de arquivos importados e geração de organograma da sua empresa, função e competências de cada função."&lt;br /&gt;
+"Pré-geração do curso - Gerar nova descrição"&lt;br /&gt;
+"Pré-geração do curso - Gerar novo nome"&lt;br /&gt;
+"Pré-geração do curso - Gerar novas atividades"&lt;br /&gt;
+"Pré-geração do curso - Compreensão de arquivos importados."&lt;br /&gt;
+"Compreensão de arquivos importados e geração de organograma da sua empresa, função e competências de cada função."&lt;br /&gt;
+"Edição de conteúdos do tipo aula com IA."&lt;br /&gt;
+"Renderização de vídeo de um conteúdo do tipo aula."&lt;br /&gt;
+"Expiração de pacote mensal de créditos"&lt;br /&gt;
+"Expiração de pacote adicional"&lt;br /&gt;
+"Expiração de vouchers de créditos"&lt;br /&gt;
+"Expiração de bônus promocional"&lt;br /&gt;
+"Renovação mensal de créditos"&lt;br /&gt;
+"Compra de pacote extra"&lt;br /&gt;
+"Bônus por indicação"&lt;br /&gt;
+"Funcionalidade de IA no editor de texto de registro externo"&lt;br /&gt;
+"Funcionalidade de IA no editor de texto de função"&lt;br /&gt;
+"Funcionalidade de IA no editor de texto de competência"&lt;br /&gt;
+"Edição de conteúdos do tipo página com IA."&lt;br /&gt;
+"Importação de arquivos ou textos para a criação de questionários de forma automatizada."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; No filtro Data/Hora, o sistema deve exibir o componente de seleção de data para definição do período desejado. 						
+					</actions>
+					<expectedresults>
+						
+O sistema deve permitir selecionar apenas o dia do mês filtrado e possibilitar selecionar um range desses dias.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; No filtro Operação, o sistema deve permitir selecionar as seguintes opções:						
+					</actions>
+					<expectedresults>
+						
+· Consumo&lt;br /&gt;
+· Pacote de Créditos&lt;br /&gt;
+· Bônus/Voucher&lt;br /&gt;
+· Voucher recorrente&lt;br /&gt;
+· Voucher&lt;br /&gt;
+· Expiração						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; No filtro Fonte, o sistema deve permitir selecionar apenas:						
+					</actions>
+					<expectedresults>
+						
+Pacote de Créditos = Refere-se a pacote de créditos do plano.&lt;br /&gt;
+&lt;br /&gt;
+Voucher = Refere-se a pacote de créditos adicionais. Todos os três tipos de vouchers: “Voucher”, “Voucher recorrente”, “Bonus/Voucher”.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>13</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Ao clicar em Colunas para exibir, o sistema deve permitir selecionar via checkbox as seguintes colunas:						
+					</actions>
+					<expectedresults>
+						
+· Data&lt;br /&gt;
+· Ação Realizada&lt;br /&gt;
+· Usuário&lt;br /&gt;
+· Créditos de IA&lt;br /&gt;
+· Operação&lt;br /&gt;
+· Fonte&lt;br /&gt;
+· Expiração						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>14</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Selecionar uma ou mais coluna e aplicar						
+					</actions>
+					<expectedresults>
+						
+O sistema deve exibir na tabela apenas as colunas selecionadas pelo usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>15</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Extrato" &amp;gt; Clicar no filtro &amp;gt; Selecionar uma configuração de filtro &amp;gt; Aplicar e Salvar						
+					</actions>
+					<expectedresults>
+						
+A funcionalidade de salvar filtros deve seguir exatamente o mesmo comportamento padrão já existente na plataforma.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>16</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="#RN7 Exibir mensagem de funcionalidade não liberada nos botões/funcionalidades de cada feature flag">
+		<testcase name="Mensagem de funcionalidade não liberada">
+			<summary>
+				
+Validar as mensagens de bloqueio de acordo com as configurações bloqueadas em "Configurações" da funcionalidade de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Ferramenta para criação de conteúdos interativos, no tipo página ou em vídeo com inteligência artificial." &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteúdos" &amp;gt; clicar no botão "Criar curso com IA"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Gera questionários baseados em novos arquivos ou atividades já existentes." &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteúdos &amp;gt; Atividades &amp;gt; Sophia &amp;gt; Criar questionários." &amp;gt; clicar no botão "Criar questionário"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Criador de estrutura de atividades para auxiliar na construção de um conteúdo." &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteudos &amp;gt; Atividades &amp;gt; Sophia &amp;gt; Criar atividades" &amp;gt; clicar no botão "Criar atividades"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Gere resumos para suas atividades" &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteudos &amp;gt; Atividades &amp;gt; Sophia &amp;gt; Gerar resumo de atividade." &amp;gt; clicar no botão "Criar resumo de atividade"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Edição de conteúdos do tipo página com recursos de IA." &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteudos &amp;gt; Atividades &amp;gt; Selecionar edição de uma atividade &amp;gt; Clicar no botão Editar página" &amp;gt; clicar no botão "Editar página"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Edição de conteúdos do tipo aula com recursos de IA." &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Conteudos &amp;gt; Atividades &amp;gt; Selecionar edição de uma atividade &amp;gt; Clicar no botão Editar aula" &amp;gt; clicar no botão "Editar aula"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Parecer da nossa inteligência artificial dos questionários aplicados aos respondentes." &amp;gt; Acessar "Menu questionários &amp;gt; Criar ou editar questionário." &amp;gt; clicar no botão "Toggle Análise por IA (ao habilitar exibe a mensagem)."						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Permite fazer a importação de arquivos ou textos para a criação de questionários de forma automatizada." &amp;gt; Acessar "Menu questionários &amp;gt; Clicar no botão importação inteligente" &amp;gt; clicar no botão "Importação inteligente"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função." &amp;gt; Acessar "Menu Skills" &amp;gt; clicar no botão "Botões que usam IA no menu skills."						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar ao menu de "Créditos de IA" &amp;gt; Clicar na aba "Configurações" &amp;gt; Desmarcar a funcionalidade "Utilize a IA para ler arquivos e autopreencher os registros de treinamentos externos realizados" &amp;gt; Acessar "Menu Aprendizagem &amp;gt; Registros &amp;gt; Adicionar" &amp;gt; clicar no botão "Preencher com IA"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão o acesso será bloqueado e será emitido uma toast message vermelha com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+“Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.”						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="#RN9 Exibição do menu de créditos de IA">
+		<testcase name="Menu &quot;Créditos de IA&quot;">
+			<summary>
+				
+Validar o menu "Créditos de IA" no ambiente Gerenciador e Adicional.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o usuário com perfil administrador &amp;gt; "Configurações" &amp;gt; Menu "Créditos de IA"						
+					</actions>
+					<expectedresults>
+						
+- O menu será exibido por último dentro das configurações;&lt;br /&gt;
+- Terá uma badge escrito BETA com a cor #63B3ED;						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o usuário com perfil administrador &amp;gt; "Configurações" &amp;gt; Menu "Créditos de IA" &amp;gt; Acessar o ambiente Gerenciador						
+					</actions>
+					<expectedresults>
+						
+O menu será exibido, pois, o sistema deve exibir o menu Créditos de IA apenas para o ambiente principal. Os ambientes adicionais não devem visualizar esse menu						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o usuário com perfil administrador &amp;gt; "Configurações" &amp;gt; Menu "Créditos de IA" &amp;gt; Acessar o ambiente Adicional						
+					</actions>
+					<expectedresults>
+						
+NÃO será exibido o menu, pois, o sistema deve exibir o menu Créditos de IA apenas para o ambiente principal. Os ambientes adicionais não devem visualizar esse menu						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="#RN10 Migração de feature flag para Créditos de IA + runner">
+		<testcase name="&quot;Migração de feature flag para Créditos de IA&quot; &gt; RUNNER: lib/runners/160_sync_main_organizations_ai_access_and_permissions_runner.rb">
+			<summary>
+				
+Validar a execução do runner de migração das features flags.&lt;br /&gt;
+&lt;br /&gt;
+lib/runners/160_sync_main_organizations_ai_access_and_permissions_runner.rb				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Executar o RUNNER de Migração de feature flag para Créditos de IA, se ao menos um feature flag abaixo estiver habilitada no ambiente&lt;br /&gt;
+&lt;br /&gt;
+- agente_de_importacao&lt;br /&gt;
+- agente_suporte_ia&lt;br /&gt;
+- analise_de_questionario_por_ia&lt;br /&gt;
+- documentacao_processos_ia&lt;br /&gt;
+- estudio_de_criacao&lt;br /&gt;
+- sophIA_beta_test						
+					</actions>
+					<expectedresults>
+						
+SOMENTE as funcionalidades habilitadas anteriormente devem continuar habilitadas para o ambiente e a feature flag deve ser migrada para "analise_creditos_ia_beta_test"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o RUNNER de Migração de feature flag para Créditos de IA, se NENHUMA feature flag abaixo estiver habilitada no ambiente&lt;br /&gt;
+&lt;br /&gt;
+- agente_de_importacao&lt;br /&gt;
+- agente_suporte_ia&lt;br /&gt;
+- analise_de_questionario_por_ia&lt;br /&gt;
+- documentacao_processos_ia&lt;br /&gt;
+- estudio_de_criacao&lt;br /&gt;
+- sophIA_beta_test						
+					</actions>
+					<expectedresults>
+						
+As funcionalidades continuaram desabilitadas para o ambiente e o ambiente NÃO deve herdar a feature flag "analise_creditos_ia_beta_test"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="#RN4.1 a #RN4.8 Política de créditos de IA + runner">
+		<testcase name="Política de créditos de IA &gt; RUNNER: lib/runners/157_create_ai_politics.rb">
+			<summary>
+				
+Validar a execução do runner de Política de créditos de IA.&lt;br /&gt;
+&lt;br /&gt;
+lib/runners/157_create_ai_politics.rb&lt;br /&gt;
+&lt;br /&gt;
+Validar a execução do runner para os 3 idiomas.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Ao executar o runner a aba de "Política de créditos de IA" será populada com informações fixos, são elas:						
+					</actions>
+					<expectedresults>
+						
+Conteúdo com carga horária micro (30s-5min)&lt;br /&gt;
+~800-1500&lt;br /&gt;
+Criação de conteúdo educacional curto com IA&lt;br /&gt;
+&lt;br /&gt;
+Conteúdo com carga horária curto (5-15min)&lt;br /&gt;
+~1500-2500&lt;br /&gt;
+Criação de conteúdo educacional de curta duração com IA&lt;br /&gt;
+&lt;br /&gt;
+Conteúdo com carga horária médio (15-30min)&lt;br /&gt;
+~2500-3500&lt;br /&gt;
+Criação de conteúdo educacional de média duração com IA&lt;br /&gt;
+&lt;br /&gt;
+Conteúdo com carga horária longo (30-60min)&lt;br /&gt;
+~3500-5000&lt;br /&gt;
+Criação de conteúdo educacional de longa duração com IA&lt;br /&gt;
+&lt;br /&gt;
+Conteúdo com carga horária muito longo (1-2h)&lt;br /&gt;
+~6000-10000&lt;br /&gt;
+Criação de conteúdo educacional extenso com IA&lt;br /&gt;
+&lt;br /&gt;
+Agente de importação - Questionário&lt;br /&gt;
+~3-10&lt;br /&gt;
+Importação e conversão automática de arquivos em questionários&lt;br /&gt;
+&lt;br /&gt;
+Análise de IA - Questionário (para 1 usuário)&lt;br /&gt;
+~3-10&lt;br /&gt;
+Análise completa do questionário respondido com insights&lt;br /&gt;
+&lt;br /&gt;
+Geração de questionários com base em conteúdo&lt;br /&gt;
+~30-300&lt;br /&gt;
+Geração automática de questionários personalizados&lt;br /&gt;
+&lt;br /&gt;
+Geração de atividades&lt;br /&gt;
+~10-20&lt;br /&gt;
+Criação de atividades educacionais adaptadas&lt;br /&gt;
+&lt;br /&gt;
+Geração de resumo&lt;br /&gt;
+~10-20&lt;br /&gt;
+Geração automática de resumos com base em conteúdo indexado para cada atividade						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Banco Histórico">
+		<testcase name="Excluir a organização e os registros das tabelas">
+			<summary>
+				
+Validar a exclusão da organização e seus respectivos registros das tabelas a seguir:&lt;br /&gt;
+&lt;br /&gt;
+additional_organization_ai_accesses_logs additional_organization_permissions additional_organization_ai_accesses				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Ao excluir o ambiente todos os registros desse ambiente das tabelas devem ser excluídas.						
+					</actions>
+					<expectedresults>
+						
+As tabelas são:&lt;br /&gt;
+&lt;br /&gt;
+additional_organization_ai_accesses_logs&lt;br /&gt;
+additional_organization_permissions&lt;br /&gt;
+additional_organization_ai_accesses&lt;br /&gt;
+						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Beta/Launch">
+		<testcase name="Beta MANUAL da funcionalidade">
+			<summary>
+				
+Validar o BETA MANUAL.&lt;br /&gt;
+&lt;br /&gt;
+Figma do Beta: https://www.figma.com/design/snMydAM6sBuMGiDtjpPNKj/Notifica%C3%A7%C3%B5es-de-lan%C3%A7amento---LAUINCH---BETA?node-id=1880-12&amp;amp;p=f&amp;amp;t=HXAppa4FfqrLJFag-0				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Ao habilitar o beta manual devemos validar o comportamento do beta quando a exibição da modal, textos, responder pesquisa, fechar (x), etc.&lt;br /&gt;
+&lt;br /&gt;
+Além do texto e vídeo a seguir:						
+					</actions>
+					<expectedresults>
+						
+Figma do Beta:&lt;br /&gt;
+&lt;br /&gt;
+https://www.figma.com/design/snMydAM6sBuMGiDtjpPNKj/Notifica%C3%A7%C3%B5es-de-lan%C3%A7amento---LAUINCH---BETA?node-id=1880-12&amp;amp;p=f&amp;amp;t=HXAppa4FfqrLJFag-0&lt;br /&gt;
+						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Trial">
+		<testcase name="Criação e exclusão do TRIAL com a feature flag habilitada">
+			<summary>
+				
+Validar a criação do TRIAL e exclusão dos registros via Sophia.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Validar a criação e exclusão do TRIAL com a feature flag habilitada						
+					</actions>
+					<expectedresults>
+						
+Feature flag full enable para repassar a criação, utilizando um ambiente de base de cópia com configurações ativas&lt;br /&gt;
+Validar que não ocorrem erros ao criar / excluir&lt;br /&gt;
+&lt;br /&gt;
+Executar criação de trial (via URL e API) - Ao menos 2 ambientes para validar as exclusões&lt;br /&gt;
+URL: https://stage.twygoead.com/new/register/steps?1&lt;br /&gt;
+API: https://stage.twygo.com/api/v2/external_onboarding&lt;br /&gt;
+&lt;br /&gt;
+Realizar exclusões de trial&lt;br /&gt;
+Todas as informações pré-definidas da SophiaTech&lt;br /&gt;
+Todas informações (pré-definidas e criadas pelos administradores)&lt;br /&gt;
+						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="RN3.18 e RN3.19 - Logs">
+		<testcase name="Logs dos Créditos de IA">
+			<summary>
+				
+Validar os logs nas seguintes tabelas:&lt;br /&gt;
+&lt;br /&gt;
+AdditionalOrganizationAiAccessesLog&lt;br /&gt;
+AdditionalOrganizationPermissionsLog				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Créditos de IA" habilitada no contrato vigente, estar com a feature flag analise_creditos_ia_beta_test habilitada na organização.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+RN 3.18 O sistema deve armazenar as logs de alterações nas configurações do ambiente (Acesso de IA ativo, mudanças em herdar configuração ou não do ambiente principal), , indicando a mudança realizada, data/hora e o usuário.&lt;br /&gt;
+&lt;br /&gt;
+RN 3.19 O sistema deve armazenas as logs de alterações nas funcionalidades habilitadas/desabilitadas do ambiente, indicando a mudança realizada, data/hora e o usuário.						
+					</actions>
+					<expectedresults>
+						
+Logs relacionados à tela de Configurações:&lt;br /&gt;
+Ativo / inativo&lt;br /&gt;
+Herdar sim / não&lt;br /&gt;
+funcionalidades habilitadas / desabilitadas (criação de conteúdo, análise e acompanhamento, automação e assistência)&lt;br /&gt;
+&lt;br /&gt;
+Tabelas:&lt;br /&gt;
+&lt;br /&gt;
+AdditionalOrganizationAiAccessesLog&lt;br /&gt;
+AdditionalOrganizationPermissionsLog&lt;br /&gt;
+&lt;br /&gt;
+Obs.: Se PostgreSQL, necessário validar por QA a exclusão automática dos logs quando ??(90?) dias da data de criação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
