@@ -2706,7 +2706,7 @@ O nome da funcionalidade de “Agente de IA” deve ser trocado para “Agente d
 		</testcase>
 	</testsuite>
 	<testsuite name="Bloquear uso por não possuírem a funcionalidade habilitada no contrato">
-		<testcase name="Bloquear uso por ambientes que não possuírem a funcionalidade &quot;Agente de atendimento&quot; habilitada no contrato">
+		<testcase name="Bloquear quando não tem a funcionalidade &quot;Agente de atendimento&quot; habilitada no contrato">
 			<summary>
 				
 Validar o bloqueio em contrato da utilização da funcionalidade do Agente de atendimento				
@@ -3465,7 +3465,7 @@ O Ambiente adicional deve respeitar as configurações/funcionalidades do ambien
 		</testcase>
 	</testsuite>
 	<testsuite name="Runner para migrar o modo de uso agente de atendimento antigo e sincronizar">
-		<testcase name="Runner para migrar organizações com modo de uso agente de atendimento antigo e sincronização já ativada">
+		<testcase name="Runner para migrar o modo de uso agente de atendimento antigo e sincronização já ativada">
 			<summary>
 				
 Validar a execução do Runner para migrar organizações com modo de uso agente de atendimento antigo e sincronização já ativada				
