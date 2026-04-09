@@ -1,0 +1,3515 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Super Admin - Tabela de Preços">
+		<testcase name="Opção de &quot;Agente de atendimento&quot; na funcionalidade da Tabela de Preços">
+			<summary>
+				
+Verificar se a opção "Agente de atendimento" existe e se ela pode ser habilitada/desabilitada no campo "Funcionalidade" da tabela de preços.				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar tabela de preços &lt;br /&gt;
+Verificar o campo "Funcionalidade"						
+					</actions>
+					<expectedresults>
+						
+A opção "Agente de atendimento" deve ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar a opção "Agente de atendimento" e Salvar 						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir a seleção e a opção deve permanecer habilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar a opção "Agente de atendimento" e Salvar 						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir desmarcar a seleção e a opção deve permanecer desabilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Super Admin - Manutenção de Assinaturas - Contrato">
+		<testcase name="Contrato - &quot;Agente de atendimento&quot; habilitado na tabela de preço">
+			<summary>
+				
+Verificar se a opção "Agente de atendimento" existe e se ela pode ser habilitada/desabilitada no campo "Funcionalidade" da tabela de preços.				
+			</summary>
+			<preconditions>Usuário com acessos:
+SuperAdmin &gt; Manutenção de tabela de preços
+    - Habilitar "Agente de atendimento" para um plano na tabela de preços
+SuperAdmin &gt; Manutenção de assinaturas
+    - Configurar o plano como vigente no ambiente de teste</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar o contrato do ambiente e verificar a funcionalidade "Agente de atendimento"						
+					</actions>
+					<expectedresults>
+						
+Opção deve estar habilitada por padrão e não deve permitir desabilitar (pois está habilitada por padrão, na tabela de preço)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Contrato - &quot;Agente de atendimento&quot; desabilitado na tabela de preço">
+			<summary>
+				
+Verificar se a opção "Agente de atendimento" existe e se ela pode ser habilitada/desabilitada no campo "Funcionalidade" do contrato conforme situação na tabela de preços.				
+			</summary>
+			<preconditions>Usuário com acessos:
+SuperAdmin &gt; Manutenção de tabela de preços
+    - Desabilitar "Agente de atendimento" para um plano na tabela de preços
+SuperAdmin &gt; Manutenção de assinaturas
+    - Configurar o plano como vigente no ambiente de teste</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Editar o contrato do ambiente e verificar a funcionalidade "Agente de atendimento"						
+					</actions>
+					<expectedresults>
+						
+Opção deve estar desabilitada e desbloqueada, permitindo a seleção para habilitar/desabilitar (pois não está habilitada por padrão na tabela de preço)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Habilitar funcionalidade no contrato&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir a seleção e a opção deve permanecer habilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar funcionalidade no contrato&lt;br /&gt;
+Salvar						
+					</actions>
+					<expectedresults>
+						
+Campo deve permitir desmarcar a seleção e a opção deve permanecer desabilitada (retornar à tela)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Configurar a utilização do indexação de conteúdo por ambiente">
+		<testcase name="Indexação e Agente de atendimento - Layout">
+			<summary>
+				
+Essas funcionalidades permitirão que o usuário configure como a IA poderá aprender com conteúdos internos e utilizar fontes de conhecimento para atendimento.&lt;br /&gt;
+A funcionalidade também devem ser considerada na tabela de consumo aproximado da aba Política de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar textos, layout, fonte, espaçamentos, traduções e tooltips.						
+					</actions>
+					<expectedresults>
+						
+No toogle "Indexação de conteúdo" temos um tooltip com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+Configure como a IA aprende com seus conteúdos. A indexação tem um custo inicial de créditos maior devido ao aprendizado, mas torna as operações futuras (como agente de atendimento, geração de questionários e outras funcionalidades) significativamente mais rápidas e baratas.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar textos, layout, fonte, espaçamentos, traduções e tooltips.						
+					</actions>
+					<expectedresults>
+						
+No toogle "Período" temos um tooltip com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+Caso seja habilitado, a IA irá considerar apenas o período que o usuário inserir						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar textos, layout, fonte, espaçamentos, traduções e tooltips.						
+					</actions>
+					<expectedresults>
+						
+A baixo da toogle "Período" temos dois campos:&lt;br /&gt;
+&lt;br /&gt;
+Data inicial&lt;br /&gt;
+dd/mm/aaaa&lt;br /&gt;
+&lt;br /&gt;
+Data final (Opcional)&lt;br /&gt;
+dd/mm/aaaa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar textos, layout, fonte, espaçamentos, traduções e tooltips.						
+					</actions>
+					<expectedresults>
+						
+A baixo da "Data inicial" e "Data final (Opcional)" temos o "Tipo de conteúdo" com os checkbox:&lt;br /&gt;
+&lt;br /&gt;
+Curso - Trilha - Pacote&lt;br /&gt;
+&lt;br /&gt;
+Texto - Página - Aula - PDF estampado - Vídeo&lt;br /&gt;
+&lt;br /&gt;
+Arquivos - Questionário - Vídeo externo (não elegível) - Scorm (não elegível) - Games (não elegível)&lt;br /&gt;
+						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar textos, layout, fonte, espaçamentos, traduções e tooltips.						
+					</actions>
+					<expectedresults>
+						
+A baixo da "Situação de conteúdos" temos os checkbox:&lt;br /&gt;
+&lt;br /&gt;
+Em desenvolvimento - Liberados - Suspensos&lt;br /&gt;
+						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar textos, layout, fonte, espaçamentos, traduções e tooltips.						
+					</actions>
+					<expectedresults>
+						
+A baixo das "Exceções" temos o campo:&lt;br /&gt;
+&lt;br /&gt;
+Pesquise por nome do conteúdo&lt;br /&gt;
+&lt;br /&gt;
+(placeholder) campo: Digite o nome do conteúdo para adicionar às exceções						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar textos, layout, fonte, espaçamentos, traduções e tooltips.						
+					</actions>
+					<expectedresults>
+						
+Temos a toogle "Agente de atendimento"&lt;br /&gt;
+&lt;br /&gt;
+Tooltip com o texto: Agente de atendimento com atendimento automatizado e fontes de conhecimento configuráveis&lt;br /&gt;
+&lt;br /&gt;
+Fontes de conhecimento&lt;br /&gt;
+&lt;br /&gt;
+[ ] Interna&lt;br /&gt;
+Tooltip com o texto: Utiliza conteúdos da sua organização. É necessário habilitar a Indexação de conteúdo acima para utilizar esta fonte.&lt;br /&gt;
+&lt;br /&gt;
+[ ] Externa&lt;br /&gt;
+Tooltip com o texto: Utiliza fontes de conhecimento público disponíveis na internet.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar textos, layout, fonte, espaçamentos, traduções e tooltips.						
+					</actions>
+					<expectedresults>
+						
+Validar fontes, espaçamento, tamanho dos textos e margens						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar textos, layout, fonte, espaçamentos, traduções e tooltips.						
+					</actions>
+					<expectedresults>
+						
+Validar as traduções, alterando o idioma do ambiente para português, espanhol e inglês.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Configurar a indexação - Ambientes antigos - RUNNER">
+			<summary>
+				
+Essas funcionalidades permitirão que o usuário configure como a IA poderá aprender com conteúdos internos e utilizar fontes de conhecimento para atendimento.&lt;br /&gt;
+A funcionalidade também devem ser considerada na tabela de consumo aproximado da aba Política de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente
+
+Rodar o Runner para atualizar registros no banco vetorial</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Ao ter um ambiente ANTES da implementação desse projeto a toogle "Indexação de conteúdo" deve vir desabilitada e devemos rodar o "Runner para atualizar registros no banco vetorial"						
+					</actions>
+					<expectedresults>
+						
+Ao rodar o runner "Runner para atualizar registros no banco vetorial" a toogle "Indexação de conteúdo" deve ser habilitada e todos os checkboxes LEGÍVEIS devem ser marcados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Configurar a indexação - Ambientes novo">
+			<summary>
+				
+Essas funcionalidades permitirão que o usuário configure como a IA poderá aprender com conteúdos internos e utilizar fontes de conhecimento para atendimento.&lt;br /&gt;
+A funcionalidade também devem ser considerada na tabela de consumo aproximado da aba Política de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Ao criar um ambiente novo após a implementação desse projeto a toogle "Indexação de conteúdo" deve vir:						
+					</actions>
+					<expectedresults>
+						
+DESABILITADA por padrão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Configurar a indexação - CURSO checkbox">
+			<summary>
+				
+Essas funcionalidades permitirão que o usuário configure como a IA poderá aprender com conteúdos internos e utilizar fontes de conhecimento para atendimento.&lt;br /&gt;
+A funcionalidade também devem ser considerada na tabela de consumo aproximado da aba Política de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox TEXTO e Salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que somente TEXTO foi indexado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox PÁGINA e Salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que somente PÁGINA foi indexado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox AULA e Salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que somente AULA foi indexado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox PDF ESTAMPADO e Salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que somente PDF ESTAMPADO foi indexado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox VÍDEO e Salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que somente VÍDEO foi indexado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox ARQUIVOS e Salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que somente ARQUIVOS foi indexado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox Questionário (não elegível), Vídeo externo (não elegível), SCORM (não elegível) e Games (não elegível)						
+					</actions>
+					<expectedresults>
+						
+NÃO será possível marcar esses 4 checkbox: Questionário (não elegível), Vídeo externo (não elegível), SCORM (não elegível) e Games (não elegível) e por consequência NÃO será possível fazer a indexação deles.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox EM DESENVOLVIMENTO e Salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para essa situação de conteúdo.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que somente conteúdos EM DESENVOLVIMENTO foi indexado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox LIBERADOS e Salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para essa situação de conteúdo.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que somente conteúdos LIBERADOS foi indexado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox SUSPENSOS e Salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para essa situação de conteúdo.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que somente conteúdos SUSPENSOS foi indexado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar MAIS DE UM CHECKBOX						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que somente que os checkbox marcados foram indexados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar todos os checkbox LEGÍVEIS						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que todos os checkbox marcados foram indexados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar alguns checkbox &amp;gt; indexar &amp;gt; depois desmarcar eles &amp;gt; indexar de novo						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
+&lt;br /&gt;
+E os checkbox desmarcados não devem indexar suas atualizações.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que SOMENTE os checkbox marcados foram indexados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>13</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox de CURSO						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
+&lt;br /&gt;
+Ao selecionar o tipo de conteúdo “Curso”, o sistema deve considerar os cursos como unidade principal de indexação.&lt;br /&gt;
+&lt;br /&gt;
+Obs.: Nessa condição, trilhas e pacotes consequentemente passam a ser indexados também (mesmo que não marcados em tela), pois hoje atuam como agrupadores de cursos.&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que SOMENTE os checkbox marcados foram indexados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>14</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar alguns checkbox e salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
+&lt;br /&gt;
+Sempre que o usuário salvar alterações nas configurações da indexação de conteúdo, o sistema deve iniciar uma nova reavaliação, incluindo a verificação de conteúdos a serem indexados, reindexados, inativados ou reativados.&lt;br /&gt;
+&lt;br /&gt;
+Deve bloquear a tela de configuração do ambiente até finalizar a verificação, evitando múltiplas alterações seguidas pelo usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>15</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar alguns checkbox e salvar						
+					</actions>
+					<expectedresults>
+						
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
+&lt;br /&gt;
+Quando uma nova reavaliação ou novo processamento for iniciado após alterações nas configurações da indexação, o sistema deve voltar a exibir o status visual de indexação em andamento na interface.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>16</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; desmarcar TODOS os checkbox e salvar						
+					</actions>
+					<expectedresults>
+						
+Caso o usuário desmarque todas as opções (checkbox) dentro de uma categoria, ao desmarcar o último checkbox, automaticamente o toggle deve ser desabilitado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>17</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>18</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>19</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Configurar a indexação - CURSO Período">
+			<summary>
+				
+Essas funcionalidades permitirão que o usuário configure como a IA poderá aprender com conteúdos internos e utilizar fontes de conhecimento para atendimento.&lt;br /&gt;
+A funcionalidade também devem ser considerada na tabela de consumo aproximado da aba Política de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo						
+					</actions>
+					<expectedresults>
+						
+Por padrão a toogle "Período" virá DESABILITADA						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; habilitar o "Período" Indexar período específico						
+					</actions>
+					<expectedresults>
+						
+Será habilitado os campos:&lt;br /&gt;
+&lt;br /&gt;
+Data inicial (obrigatório)&lt;br /&gt;
+Data final (opcional)&lt;br /&gt;
+&lt;br /&gt;
+Obs 1: A validação das datas só deve ocorrer quando o switch estiver habilitado.&lt;br /&gt;
+&lt;br /&gt;
+Obs 2: Caso seja informada a “Data inicial” e “Data final”, será realizada a indexação apenas de conteúdos criados/atualizados dentro daquele período. Novos conteúdos ou atualizações fora do período informado não devem ser indexados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; habilitar o "Período" Indexar período específico &amp;gt; habilitar somente a Data inicial						
+					</actions>
+					<expectedresults>
+						
+Caso seja informada apenas a “Data inicial” será realizada a indexação a partir daquele período apenas e sem data final de indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; habilitar o "Período" Indexar período específico &amp;gt; habilitar as datas						
+					</actions>
+					<expectedresults>
+						
+Após informar o período, abaixo do campo será exibida uma seção com a confirmação das datas. Caso seja um período fechado, será exibida uma mensagem de alerta ao período limitado, conforme exemplos abaixo:&lt;br /&gt;
+&lt;br /&gt;
+Data inicial - Exemplo 1 (RN 6)&lt;br /&gt;
+&lt;br /&gt;
+Data inicial e final - Exemplo 2 (RN 6)&lt;br /&gt;
+&lt;br /&gt;
+Atenção ao período limitado&lt;br /&gt;
+Ao definir uma data inicial e final, a IA irá aprender apenas com os conteúdos criados neste período específico. Isso significa que novos conteúdos criados após a data final ou atualizações em conteúdos existentes não serão considerados no aprendizado da IA.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; habilitar o "Período" Indexar período específico &amp;gt; Alterar filtros ou critérios da indexação						
+					</actions>
+					<expectedresults>
+						
+Ao alterar filtros ou critérios da indexação os conteúdos que já haviam sido indexados, mas que agora não façam mais parte da nova configuração não serão excluídos, mas sim inativados.&lt;br /&gt;
+&lt;br /&gt;
+Caso conteúdos anteriormente inativados voltem a fazer parte do escopo configurado, serão reativados.&lt;br /&gt;
+&lt;br /&gt;
+IMPORTANTE: Para este caso não serão cobrados créditos novamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Configurar a indexação - CURSO Exceções">
+			<summary>
+				
+Essas funcionalidades permitirão que o usuário configure como a IA poderá aprender com conteúdos internos e utilizar fontes de conhecimento para atendimento.&lt;br /&gt;
+A funcionalidade também devem ser considerada na tabela de consumo aproximado da aba Política de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; Campo "Exceções"						
+					</actions>
+					<expectedresults>
+						
+É um campo “Conteúdos que não serão indexados”&lt;br /&gt;
+&lt;br /&gt;
+Placeholder: “Pesquise por nome ou ID do conteúdo”&lt;br /&gt;
+&lt;br /&gt;
+Tooltip:&lt;br /&gt;
+&lt;br /&gt;
+Escolha conteúdos que serão ignorados na indexação. Os conteúdos selecionados não serão indexados, mesmo que se enquadrem em algum dos critérios acima.&lt;br /&gt;
+&lt;br /&gt;
+Campo multiselect.&lt;br /&gt;
+&lt;br /&gt;
+Os conteúdos selecionados neste campo serão ignorados no momento da sincronização mesmo que se enquadrem em algum dos demais critérios.&lt;br /&gt;
+&lt;br /&gt;
+Ao serem removidos deste campo, caso se enquadrem em algum outro critério, serão então indexados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; Campo "Exceções"						
+					</actions>
+					<expectedresults>
+						
+Realizar múltiplas seleções&lt;br /&gt;
+&lt;br /&gt;
+Única seleção&lt;br /&gt;
+&lt;br /&gt;
+Selecionar &amp;gt; indexar &amp;gt; desmarcar &amp;gt; indexar de novo&lt;br /&gt;
+&lt;br /&gt;
+Obs: utilizar recursos de IA para validar que apenas as exceções salvas estão sendo excluídas das análises por recursos de IA						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Configurar a indexação - TRILHA">
+			<summary>
+				
+Essas funcionalidades permitirão que o usuário configure como a IA poderá aprender com conteúdos internos e utilizar fontes de conhecimento para atendimento.&lt;br /&gt;
+A funcionalidade também devem ser considerada na tabela de consumo aproximado da aba Política de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; Campo TRILHA						
+					</actions>
+					<expectedresults>
+						
+Ao selecionar o tipo de conteúdo “Trilha”, o sistema deve considerar para indexação todas as trilhas selecionadas e todos os conteúdos vinculados a elas. Conteúdos que estejam fora de trilhas não devem ser considerados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Configurar a indexação - PACOTE">
+			<summary>
+				
+Essas funcionalidades permitirão que o usuário configure como a IA poderá aprender com conteúdos internos e utilizar fontes de conhecimento para atendimento.&lt;br /&gt;
+A funcionalidade também devem ser considerada na tabela de consumo aproximado da aba Política de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; Campo PACOTE						
+					</actions>
+					<expectedresults>
+						
+Ao selecionar o tipo de conteúdo “Pacote”, o sistema deve considerar para indexação todos os pacotes selecionados e todos os conteúdos vinculados a eles, incluindo cursos e trilhas pertencentes a esses pacotes. Conteúdos que estejam fora de pacotes não devem ser considerados.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Configurar a utilização do agente de atendimento por ambiente">
+		<testcase name="Configurar Agente de atendimento">
+			<summary>
+				
+A funcionalidade Agente de atendimento permite configurar quais fontes de conhecimento poderão ser utilizadas pela IA em interações de atendimento.&lt;br /&gt;
+A funcionalidade também deve ser considerada na tabela de consumo aproximado da aba Política de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente						
+					</actions>
+					<expectedresults>
+						
+Por default o Agente de atendimento virá desabilitada para novos ambientes.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar a opção do Agente de atendimento						
+					</actions>
+					<expectedresults>
+						
+Por default o Agente de atendimento virá desabilitada para novos ambientes.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; verificar a opção do Agente de atendimento						
+					</actions>
+					<expectedresults>
+						
+Tooltip:&lt;br /&gt;
+Agente de atendimento com respostas automatizadas, utilizando fontes de conhecimento configuráveis.&lt;br /&gt;
+&lt;br /&gt;
+Terá a seção:&lt;br /&gt;
+Fontes de conhecimento&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+Fontes de conhecimento&lt;br /&gt;
+&lt;br /&gt;
+Conterá as opções: Interna&lt;br /&gt;
+Tooltip:&lt;br /&gt;
+Utiliza conteúdos do seu ambiente como fonte de conhecimento. Para utilizar esta fonte, é necessário habilitar a indexação de conteúdo acima.&lt;br /&gt;
+&lt;br /&gt;
+Conterá as opções: Externa&lt;br /&gt;
+Tooltip:&lt;br /&gt;
+Utiliza conteúdos públicos da internet como fonte de conhecimento.&lt;br /&gt;
+&lt;br /&gt;
+As opções de fontes de conhecimento devem permitir seleção múltipla.&lt;br /&gt;
+&lt;br /&gt;
+Caso o usuário desmarque todas as opções (checkbox) dentro de uma categoria, ao desmarcar o último checkbox, automaticamente o toggle deve ser desabilitado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; desabilitar a toogle: Agente de atendimento com ao menos um checkbox habilitado						
+					</actions>
+					<expectedresults>
+						
+Ao tentar desabilitar Indexação de conteúdo, o sistema deve verificar se existem menus habilitados no modo de uso que dependem dessa função.&lt;br /&gt;
+&lt;br /&gt;
+A toogle NÃO será demarcada.&lt;br /&gt;
+&lt;br /&gt;
+Será apresentado uma modal informativa em tela com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+Indexação de conteúdo em uso&lt;br /&gt;
+&lt;br /&gt;
+Não é possível desabilitar pois existem menus configurados que estão utilizando este recurso no modo de uso.&lt;br /&gt;
+&lt;br /&gt;
+Para desabilitar, você precisa primeiro desabilitar ou alterar a configuração dos seguintes menus:&lt;br /&gt;
+&lt;br /&gt;
+Nome do menu: (nome)&lt;br /&gt;
+Modo de uso: Aluno&lt;br /&gt;
+&lt;br /&gt;
+Nome do menu: (nome)&lt;br /&gt;
+Modo de uso: Colaborador&lt;br /&gt;
+&lt;br /&gt;
+Acesse Configurações &amp;gt; Navegação &amp;gt; Selecionar edição do menu desejado &amp;gt; Clicar na aba menu &amp;gt; Desabilitar na coluna Menu habilitado&lt;br /&gt;
+&lt;br /&gt;
+[Botão] Entendi&lt;br /&gt;
+&lt;br /&gt;
+Obs: O usuário somente poderá desabilitar a indexação de conteúdo quando o menu que utiliza essa funcionalidade for inativado ou excluído.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Configurar Agente de atendimento + Indexação">
+			<summary>
+				
+A funcionalidade Agente de atendimento permite configurar quais fontes de conhecimento poderão ser utilizadas pela IA em interações de atendimento.&lt;br /&gt;
+A funcionalidade também deve ser considerada na tabela de consumo aproximado da aba Política de Créditos de IA.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox CURSO &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox TRILHA &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox PACOTE &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox TEXTO &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox PÁGINA &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox AULA &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox PDF ESTAMPADO &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox VÍDEO &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox ARQUIVO &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox EM DESENVOLVIMENTO &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox LIBERADOS &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar o checkbox SUSPENSOS &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar mais de um checkbox &amp;gt; Salvar e indexar						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA esta retornando textos de acordo com o item dessa indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>13</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; DESABILITAR a toogle: Indexação de conteúdo						
+					</actions>
+					<expectedresults>
+						
+Verificar no chat do Agente de atendimento que a IA NÃO esta retornando textos, pois, não tem nada indexado.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>14</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>15</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente						
+					</actions>
+					<expectedresults>
+						
+Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>16</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Armazenar logs da indexação e agente de atendimento">
+		<testcase name="Armazenar logs de alteração das configurações de indexação e agente de atendimento">
+			<summary>
+				
+Verificar que os logs de créditos estão salvos na tabela “additional_organization_permissions_logs”, precisamos atualizar com os novos parâmetros adicionados nesta fase.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Realizar criações e alterações das configurações da Indexação de conteúdo e acessar a tabela “additional_organization_permissions_logs”						
+					</actions>
+					<expectedresults>
+						
+Deverão ser armazenados os logs de alterações nas configurações do ambiente (Acesso de IA ativo, mudanças em herdar configuração ou não do ambiente principal), indicando a mudança realizada, data/hora e o usuário.&lt;br /&gt;
+&lt;br /&gt;
+E deverão ser armazenados os logs de alterações nas funcionalidades habilitadas/desabilitadas do ambiente, indicando a mudança realizada, data/hora e o usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar criações e alterações das configurações do Agente de atendimento e acessar a tabela “additional_organization_permissions_logs”						
+					</actions>
+					<expectedresults>
+						
+Deverão ser armazenados os logs de alterações nas configurações do ambiente (Acesso de IA ativo, mudanças em herdar configuração ou não do ambiente principal), indicando a mudança realizada, data/hora e o usuário.&lt;br /&gt;
+&lt;br /&gt;
+E deverão ser armazenados os logs de alterações nas funcionalidades habilitadas/desabilitadas do ambiente, indicando a mudança realizada, data/hora e o usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar os logs um ambiente adicional que herdou as configurações do ambiente principal (indexação e agente de atendimento)						
+					</actions>
+					<expectedresults>
+						
+Deverão ser armazenados os logs de alterações nas configurações do ambiente (Acesso de IA ativo, mudanças em herdar configuração ou não do ambiente principal), indicando a mudança realizada, data/hora e o usuário.&lt;br /&gt;
+&lt;br /&gt;
+E deverão ser armazenados os logs de alterações nas funcionalidades habilitadas/desabilitadas do ambiente, indicando a mudança realizada, data/hora e o usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar os logs um ambiente adicional independente (indexação e agente de atendimento)						
+					</actions>
+					<expectedresults>
+						
+Deverão ser armazenados os logs de alterações nas configurações do ambiente (Acesso de IA ativo, mudanças em herdar configuração ou não do ambiente principal), indicando a mudança realizada, data/hora e o usuário.&lt;br /&gt;
+&lt;br /&gt;
+E deverão ser armazenados os logs de alterações nas funcionalidades habilitadas/desabilitadas do ambiente, indicando a mudança realizada, data/hora e o usuário.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Visualizar histórico de consumo da indexação e do agente de atendimento">
+		<testcase name="Histórico de indexação de conteúdo">
+			<summary>
+				
+Validar o histórico de consumo indexado e do agente de atendimento				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Extrato”.						
+					</actions>
+					<expectedresults>
+						
+A tela de extrato é carregada exibindo o&lt;br /&gt;
+demonstrativo e o histórico.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Extrato” &amp;gt; Visualizar o histórico						
+					</actions>
+					<expectedresults>
+						
+Na tela do histórico de créditos é apresentado as seguintes colunas na ordem:  "Data", "Ação realizada", "Usuário", "Créditos de IA", "Operação", "Fonte" e "Expiração".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Extrato” &amp;gt; Após executar uma operação de consumo de indexação						
+					</actions>
+					<expectedresults>
+						
+O registro será apresentado nessa tela com as seguintes informações para cada coluna:&lt;br /&gt;
+&lt;br /&gt;
+"Data": data e hora da contabilização do consumo&lt;br /&gt;
+&lt;br /&gt;
+"Ação realizada": Indexação de conteúdo&lt;br /&gt;
+&lt;br /&gt;
+"Usuário": Nome + E-mail ou CPF do usuário que realizou a ação que consumiu créditos&lt;br /&gt;
+&lt;br /&gt;
+"Créditos de IA": Quantidade de créditos consumidos&lt;br /&gt;
+&lt;br /&gt;
+"Operação": Consumo&lt;br /&gt;
+&lt;br /&gt;
+"Fonte": Fonte da qual foi descontado o crédito (Pacote ou Voucher)&lt;br /&gt;
+&lt;br /&gt;
+"Expiração": -						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Extrato” &amp;gt; Após executar uma operação de consumo de indexação &amp;gt; Ordenar a coluna de "Ação realizada"						
+					</actions>
+					<expectedresults>
+						
+Confirmar que o valor "Indexação de conteúdo" da coluna de "Ação realizada" esta ordenando corretamente de forma crescente e decrescente em relação aos demais valores existentes nessa coluna						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal &amp;gt; gerar registros						
+					</actions>
+					<expectedresults>
+						
+Verificar o histórico dela no histórico de consumo do ambiente principal						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente &amp;gt; gerar registros						
+					</actions>
+					<expectedresults>
+						
+Verificar o histórico dela no histórico de consumo do ambiente principal						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Histórico do agente de atendimento">
+			<summary>
+				
+Validar o histórico de consumo indexado e do agente de atendimento				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Extrato”.						
+					</actions>
+					<expectedresults>
+						
+A tela de extrato é carregada exibindo o&lt;br /&gt;
+demonstrativo e o histórico.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Extrato” &amp;gt; Visualizar o histórico						
+					</actions>
+					<expectedresults>
+						
+Na tela do histórico de créditos é apresentado as seguintes colunas na ordem:  "Data", "Ação realizada", "Usuário", "Créditos de IA", "Operação", "Fonte" e "Expiração".						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Extrato” &amp;gt; Após executar uma operação de agente de atendimento						
+					</actions>
+					<expectedresults>
+						
+O registro será apresentado nessa tela com as seguintes informações para cada coluna:&lt;br /&gt;
+&lt;br /&gt;
+"Data": data e hora da contabilização do consumo&lt;br /&gt;
+&lt;br /&gt;
+"Ação realizada": agente de atendimento&lt;br /&gt;
+&lt;br /&gt;
+"Usuário": Nome + E-mail ou CPF do usuário que realizou a ação que consumiu créditos&lt;br /&gt;
+&lt;br /&gt;
+"Créditos de IA": Quantidade de créditos consumidos&lt;br /&gt;
+&lt;br /&gt;
+"Operação": Consumo&lt;br /&gt;
+&lt;br /&gt;
+"Fonte": Fonte da qual foi descontado o crédito (Pacote ou Voucher)&lt;br /&gt;
+&lt;br /&gt;
+"Expiração": -						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Extrato” &amp;gt; Após executar uma operação de consumo de indexação &amp;gt; Ordenar a coluna de "Ação realizada"						
+					</actions>
+					<expectedresults>
+						
+Confirmar que o valor "agente de atendimento" da coluna de "Ação realizada" esta ordenando corretamente de forma crescente e decrescente em relação aos demais valores existentes nessa coluna						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal &amp;gt; gerar registros						
+					</actions>
+					<expectedresults>
+						
+Verificar o histórico dela no histórico de consumo do ambiente principal						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente &amp;gt; gerar registros						
+					</actions>
+					<expectedresults>
+						
+Verificar o histórico dela no histórico de consumo do ambiente principal						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Permitir a visualização da política de créditos de IA + Runner">
+		<testcase name="Política de créditos de IA - Indexação de conteúdo + RUNNER">
+			<summary>
+				
+Na aba Política de Créditos de IA, o usuário poderá compreender as regras e critérios de consumo de créditos por funcionalidade, com uma tabela explicativa e modais de apoio.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente
+
+Rodar o Runner para atualizar tabela de consumo aproximado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Rodar o runner XXX &amp;gt; Acessar o menu "Créditos de IA" &amp;gt; Aba "Política de créditos de IA" e verificar a tabela o consumo aproximado da indexação de conteúdos:						
+					</actions>
+					<expectedresults>
+						
+Ação &amp;gt;&amp;gt;&amp;gt; Créditos aproximados &amp;gt;&amp;gt;&amp;gt; Descrição&lt;br /&gt;
+&lt;br /&gt;
+Indexação de conteúdo - Vídeo (60 minutos) &amp;gt;&amp;gt;&amp;gt; ~2000-2400 &amp;gt;&amp;gt;&amp;gt; Sincronização de vídeos para aprendizado da IA&lt;br /&gt;
+&lt;br /&gt;
+Indexação de conteúdo - Texto (10.000 caracteres) &amp;gt;&amp;gt;&amp;gt; ~80-120 &amp;gt;&amp;gt;&amp;gt; Sincronização de conteúdo em texto para aprendizado da IA&lt;br /&gt;
+&lt;br /&gt;
+Indexação de conteúdo - PDF (100 páginas) &amp;gt;&amp;gt;&amp;gt; ~20-40 &amp;gt;&amp;gt;&amp;gt; Sincronização de arquivos PDF para aprendizado da IA&lt;br /&gt;
+&lt;br /&gt;
+Indexação de conteúdo - Imagem (10 imagens) &amp;gt;&amp;gt;&amp;gt; ~1-3 &amp;gt;&amp;gt;&amp;gt; Sincronização de imagens para aprendizado da IA&lt;br /&gt;
+&lt;br /&gt;
+Indexação de conteúdo - PPTX (8 slides) &amp;gt;&amp;gt;&amp;gt; ~3-8 &amp;gt;&amp;gt;&amp;gt; Sincronização de arquivos PPT para aprendizado da IA&lt;br /&gt;
+&lt;br /&gt;
+Indexação de conteúdo - CSV (150 linhas) &amp;gt;&amp;gt;&amp;gt; ~1-3 &amp;gt;&amp;gt;&amp;gt; Sincronização de arquivos CSV para aprendizado da IA&lt;br /&gt;
+&lt;br /&gt;
+Indexação de conteúdo - DOCX (100 páginas) &amp;gt;&amp;gt;&amp;gt; ~20-40 &amp;gt;&amp;gt;&amp;gt; Sincronização de arquivos DOC para aprendizado da IA						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Política de créditos de IA - agente de atendimento + RUNNER">
+			<summary>
+				
+Na aba Política de Créditos de IA, o usuário poderá compreender as regras e critérios de consumo de créditos por funcionalidade, com uma tabela explicativa e modais de apoio.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente
+
+Rodar o Runner para atualizar tabela de consumo aproximado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Rodar o runner XXX &amp;gt; Acessar o menu "Créditos de IA" &amp;gt; Aba "Política de créditos de IA" e verificar a tabela o consumo aproximado do agente de atendimento:						
+					</actions>
+					<expectedresults>
+						
+Ação &amp;gt;&amp;gt;&amp;gt; Créditos aproximados &amp;gt;&amp;gt;&amp;gt; Descrição&lt;br /&gt;
+&lt;br /&gt;
+Agente de atendimento – Resposta &amp;gt;&amp;gt;&amp;gt; ~3-10 &amp;gt;&amp;gt;&amp;gt; Cada resposta gerada pelo assistente virtual						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Permitir filtrar a visualização do histórico de créditos de IA">
+		<testcase name="Filtrar a visualização da indexação de conteúdo">
+			<summary>
+				
+Na aba Extrato, dentro da seção Histórico de Créditos de IA, o usuário poderá aplicar filtros avançados para refinar a visualização das movimentações de créditos, conforme padrão já existente na plataforma.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Extrato” &amp;gt; Após executar uma operação de consumo de indexação &amp;gt; Utilizar o filtros						
+					</actions>
+					<expectedresults>
+						
+Tipos de filtros:&lt;br /&gt;
+&lt;br /&gt;
+- Aplicar&lt;br /&gt;
+- Aplicar e Salvar&lt;br /&gt;
+- Salvar&lt;br /&gt;
+&lt;br /&gt;
+Criar combinações com e sem a coluna de "Ação realizada"&lt;br /&gt;
+&lt;br /&gt;
+Criar combinações com e sem o filtro de "indexação de conteúdo"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar a visualização do agente de atendimento">
+			<summary>
+				
+Na aba Extrato, dentro da seção Histórico de Créditos de IA, o usuário poderá aplicar filtros avançados para refinar a visualização das movimentações de créditos, conforme padrão já existente na plataforma.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Extrato” &amp;gt; Após executar uma operação de agente de atendimento &amp;gt; Utilizar o filtros						
+					</actions>
+					<expectedresults>
+						
+Tipos de filtros:&lt;br /&gt;
+&lt;br /&gt;
+- Aplicar&lt;br /&gt;
+- Aplicar e Salvar&lt;br /&gt;
+- Salvar&lt;br /&gt;
+&lt;br /&gt;
+Criar combinações com e sem a coluna de "Ação realizada"&lt;br /&gt;
+&lt;br /&gt;
+Criar combinações com e sem o filtro de "agente de atendimento"						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal &amp;gt; gerar registros						
+					</actions>
+					<expectedresults>
+						
+Verificar o histórico dela no histórico de consumo do ambiente principal, visualizar e aplicar filtros.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente &amp;gt; gerar registros						
+					</actions>
+					<expectedresults>
+						
+Verificar o histórico dela no histórico de consumo do ambiente principal, visualizar e aplicar filtros.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Mensagem de aviso e saldo ao salvar configurações com a indexação ligada">
+		<testcase name="Mensagem de aviso e verificação de saldo na indexação - Layout">
+			<summary>
+				
+Validar a mensagem de aviso que verifica se o ambiente tem saldo ou não para realizar a indexação.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar						
+					</actions>
+					<expectedresults>
+						
+Vai ser exibido o seguinte modal de confirmação explicando como este processo funciona, modal na RN37: https://twygoead.sharepoint.com/:w:/s/Twygo-TeamHub-GPRODUTO/IQAxHVmSDe1NTYrD2OtFs_-AAeB6duCIuhLjj29W-d9WaaM?e=Cr7rxY&amp;amp;isSPOFile=1&amp;amp;ovuser=45554a02-cbdc-49ac-b9af-44a35d56c547%2Ceverton.gambeta%40fleeg.com						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar quando tiver saldo suficiente (o sistema vai calcular os créditos aproximados para essa indexação)						
+					</actions>
+					<expectedresults>
+						
+O texto da modal deve conter:&lt;br /&gt;
+&lt;br /&gt;
+Processo de indexação de conteúdo&lt;br /&gt;
+&lt;br /&gt;
+Antes de iniciar, é importante considerar:&lt;br /&gt;
+&lt;br /&gt;
+• Tempo de processamento: Poderá levar algum tempo a depender da quantidade de conteúdos que sua organização possui.&lt;br /&gt;
+&lt;br /&gt;
+• Consumo de créditos de IA: O processo inicial de indexação tem um custo de créditos maior devido ao aprendizado da IA com seus conteúdos. Porém, esse investimento torna as operações futuras significativamente mais rápidas e baratas.&lt;br /&gt;
+&lt;br /&gt;
+• Indexação automática: Uma vez habilitada a indexação, todo novo conteúdo adicionado ou atualizado será automaticamente aprendido pela IA necessitará de custo de crédito de IA.&lt;br /&gt;
+&lt;br /&gt;
+• Ativação do agente: Para ativar o agente de atendimento é necessário habilitá-lo no modo de uso. Acesse Configurações &amp;gt; Navegação para adicionar o agente de atendimento.&lt;br /&gt;
+&lt;br /&gt;
+Custo estimado:&lt;br /&gt;
+XXX - XXX créditos (aproximado)&lt;br /&gt;
+&lt;br /&gt;
+Saldo atual:&lt;br /&gt;
+XXX créditos&lt;br /&gt;
+&lt;br /&gt;
+Botões:&lt;br /&gt;
+Cancelar | Contato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar quando NÃO tiver saldo suficiente						
+					</actions>
+					<expectedresults>
+						
+O texto da modal deve conter:&lt;br /&gt;
+&lt;br /&gt;
+Processo de indexação de conteúdo&lt;br /&gt;
+&lt;br /&gt;
+Antes de iniciar, é importante considerar:&lt;br /&gt;
+&lt;br /&gt;
+• Tempo de processamento: Poderá levar algum tempo a depender da quantidade de conteúdos que sua organização possui.&lt;br /&gt;
+&lt;br /&gt;
+• Consumo de créditos de IA: O processo inicial de indexação tem um custo de créditos maior devido ao aprendizado da IA com seus conteúdos. Porém, esse investimento torna as operações futuras significativamente mais rápidas e baratas.&lt;br /&gt;
+&lt;br /&gt;
+• Indexação automática: Uma vez habilitada a indexação, todo novo conteúdo adicionado ou atualizado será automaticamente aprendido pela IA necessitará de custo de crédito de IA.&lt;br /&gt;
+&lt;br /&gt;
+• Ativação do agente: Para ativar o agente de atendimento é necessário habilitá-lo no modo de uso. Acesse Configurações &amp;gt; Navegação para adicionar o agente de atendimento.&lt;br /&gt;
+&lt;br /&gt;
+Custo estimado:&lt;br /&gt;
+XXX - XXX créditos (aproximado)&lt;br /&gt;
+&lt;br /&gt;
+Saldo atual:&lt;br /&gt;
+XXX créditos&lt;br /&gt;
+&lt;br /&gt;
+Saldo insuficiente&lt;br /&gt;
+Não é possível iniciar o processo de indexação. Adquira mais créditos de IA entrando em contato com a nossa equipe via chat!&lt;br /&gt;
+&lt;br /&gt;
+Botões:&lt;br /&gt;
+Cancelar | Contato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar &amp;gt; Mostrar a modal tendo saldo suficiente						
+					</actions>
+					<expectedresults>
+						
+Caso o usuário possua saldo suficiente (maior ou igual ao estimado):&lt;br /&gt;
+&lt;br /&gt;
+O saldo ficará com a cor azul.&lt;br /&gt;
+&lt;br /&gt;
+O botão “Cancelar” fecha o modal, a indexação não é salva/iniciada.&lt;br /&gt;
+&lt;br /&gt;
+O botão “Confirmar e iniciar” salva as alterações e dá início na indexação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Mensagem de aviso e verificação de saldo na indexação - Cálculo">
+			<summary>
+				
+Validar a mensagem de aviso que verifica se o ambiente tem saldo ou não para realizar a indexação.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+A modal deve exibir o custo estimado da indexação em créditos de IA.&lt;br /&gt;
+&lt;br /&gt;
+O custo estimado deve ser apresentado em formato de range aproximado, considerando um valor mínimo e um valor máximo.&lt;br /&gt;
+&lt;br /&gt;
+Para calcular o range aproximado, vamos considerar o custo da indexação baseado no tipo e tamanho dos arquivos armazenados no banco de dados, e essas são nossas referências:&lt;br /&gt;
+&lt;br /&gt;
+- pptx (16279951 kbps = 2.4 créditos)&lt;br /&gt;
+- csv (14383 kbpds = 0,3 crédito)&lt;br /&gt;
+- pdf (35 páginas texto - 170838 kbpds = 5 créditos)&lt;br /&gt;
+- vídeo (151141686 kbpds = 5 créditos)&lt;br /&gt;
+- docx/doc (92544 kbpds = 0.9 créditos)&lt;br /&gt;
+- xlsx (11505 kbps = 0.3 créditos)&lt;br /&gt;
+&lt;br /&gt;
+Será aplicado uma variação percentual sobre este valor estimado. Por padrão, a exibir 10% para baixo e 10% para cima.&lt;br /&gt;
+&lt;br /&gt;
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar &amp;gt; visualizar a modal						
+					</actions>
+					<expectedresults>
+						
+Visualizar na modal o estimado para arquivos (um e mais) PPTX:&lt;br /&gt;
+&lt;br /&gt;
+Custo estimado:&lt;br /&gt;
+(número) - (número) créditos (aproximado)&lt;br /&gt;
+&lt;br /&gt;
+Saldo atual:&lt;br /&gt;
+(número) créditos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+A modal deve exibir o custo estimado da indexação em créditos de IA.&lt;br /&gt;
+&lt;br /&gt;
+O custo estimado deve ser apresentado em formato de range aproximado, considerando um valor mínimo e um valor máximo.&lt;br /&gt;
+&lt;br /&gt;
+Para calcular o range aproximado, vamos considerar o custo da indexação baseado no tipo e tamanho dos arquivos armazenados no banco de dados, e essas são nossas referências:&lt;br /&gt;
+&lt;br /&gt;
+- pptx (16279951 kbps = 2.4 créditos)&lt;br /&gt;
+- csv (14383 kbpds = 0,3 crédito)&lt;br /&gt;
+- pdf (35 páginas texto - 170838 kbpds = 5 créditos)&lt;br /&gt;
+- vídeo (151141686 kbpds = 5 créditos)&lt;br /&gt;
+- docx/doc (92544 kbpds = 0.9 créditos)&lt;br /&gt;
+- xlsx (11505 kbps = 0.3 créditos)&lt;br /&gt;
+&lt;br /&gt;
+Será aplicado uma variação percentual sobre este valor estimado. Por padrão, a exibir 10% para baixo e 10% para cima.&lt;br /&gt;
+&lt;br /&gt;
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar &amp;gt; visualizar a modal						
+					</actions>
+					<expectedresults>
+						
+Visualizar na modal o estimado para arquivos (um e mais) CSV:&lt;br /&gt;
+&lt;br /&gt;
+Custo estimado:&lt;br /&gt;
+(número) - (número) créditos (aproximado)&lt;br /&gt;
+&lt;br /&gt;
+Saldo atual:&lt;br /&gt;
+(número) créditos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+A modal deve exibir o custo estimado da indexação em créditos de IA.&lt;br /&gt;
+&lt;br /&gt;
+O custo estimado deve ser apresentado em formato de range aproximado, considerando um valor mínimo e um valor máximo.&lt;br /&gt;
+&lt;br /&gt;
+Para calcular o range aproximado, vamos considerar o custo da indexação baseado no tipo e tamanho dos arquivos armazenados no banco de dados, e essas são nossas referências:&lt;br /&gt;
+&lt;br /&gt;
+- pptx (16279951 kbps = 2.4 créditos)&lt;br /&gt;
+- csv (14383 kbpds = 0,3 crédito)&lt;br /&gt;
+- pdf (35 páginas texto - 170838 kbpds = 5 créditos)&lt;br /&gt;
+- vídeo (151141686 kbpds = 5 créditos)&lt;br /&gt;
+- docx/doc (92544 kbpds = 0.9 créditos)&lt;br /&gt;
+- xlsx (11505 kbps = 0.3 créditos)&lt;br /&gt;
+&lt;br /&gt;
+Será aplicado uma variação percentual sobre este valor estimado. Por padrão, a exibir 10% para baixo e 10% para cima.&lt;br /&gt;
+&lt;br /&gt;
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar &amp;gt; visualizar a modal						
+					</actions>
+					<expectedresults>
+						
+Visualizar na modal o estimado para arquivos (um e mais) PDF:&lt;br /&gt;
+&lt;br /&gt;
+Custo estimado:&lt;br /&gt;
+(número) - (número) créditos (aproximado)&lt;br /&gt;
+&lt;br /&gt;
+Saldo atual:&lt;br /&gt;
+(número) créditos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+A modal deve exibir o custo estimado da indexação em créditos de IA.&lt;br /&gt;
+&lt;br /&gt;
+O custo estimado deve ser apresentado em formato de range aproximado, considerando um valor mínimo e um valor máximo.&lt;br /&gt;
+&lt;br /&gt;
+Para calcular o range aproximado, vamos considerar o custo da indexação baseado no tipo e tamanho dos arquivos armazenados no banco de dados, e essas são nossas referências:&lt;br /&gt;
+&lt;br /&gt;
+- pptx (16279951 kbps = 2.4 créditos)&lt;br /&gt;
+- csv (14383 kbpds = 0,3 crédito)&lt;br /&gt;
+- pdf (35 páginas texto - 170838 kbpds = 5 créditos)&lt;br /&gt;
+- vídeo (151141686 kbpds = 5 créditos)&lt;br /&gt;
+- docx/doc (92544 kbpds = 0.9 créditos)&lt;br /&gt;
+- xlsx (11505 kbps = 0.3 créditos)&lt;br /&gt;
+&lt;br /&gt;
+Será aplicado uma variação percentual sobre este valor estimado. Por padrão, a exibir 10% para baixo e 10% para cima.&lt;br /&gt;
+&lt;br /&gt;
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar &amp;gt; visualizar a modal						
+					</actions>
+					<expectedresults>
+						
+Visualizar na modal o estimado para arquivos (um e mais) VÍDEO:&lt;br /&gt;
+&lt;br /&gt;
+Custo estimado:&lt;br /&gt;
+(número) - (número) créditos (aproximado)&lt;br /&gt;
+&lt;br /&gt;
+Saldo atual:&lt;br /&gt;
+(número) créditos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+A modal deve exibir o custo estimado da indexação em créditos de IA.&lt;br /&gt;
+&lt;br /&gt;
+O custo estimado deve ser apresentado em formato de range aproximado, considerando um valor mínimo e um valor máximo.&lt;br /&gt;
+&lt;br /&gt;
+Para calcular o range aproximado, vamos considerar o custo da indexação baseado no tipo e tamanho dos arquivos armazenados no banco de dados, e essas são nossas referências:&lt;br /&gt;
+&lt;br /&gt;
+- pptx (16279951 kbps = 2.4 créditos)&lt;br /&gt;
+- csv (14383 kbpds = 0,3 crédito)&lt;br /&gt;
+- pdf (35 páginas texto - 170838 kbpds = 5 créditos)&lt;br /&gt;
+- vídeo (151141686 kbpds = 5 créditos)&lt;br /&gt;
+- docx/doc (92544 kbpds = 0.9 créditos)&lt;br /&gt;
+- xlsx (11505 kbps = 0.3 créditos)&lt;br /&gt;
+&lt;br /&gt;
+Será aplicado uma variação percentual sobre este valor estimado. Por padrão, a exibir 10% para baixo e 10% para cima.&lt;br /&gt;
+&lt;br /&gt;
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar &amp;gt; visualizar a modal						
+					</actions>
+					<expectedresults>
+						
+Visualizar na modal o estimado para arquivos (um e mais) DOCX:&lt;br /&gt;
+&lt;br /&gt;
+Custo estimado:&lt;br /&gt;
+(número) - (número) créditos (aproximado)&lt;br /&gt;
+&lt;br /&gt;
+Saldo atual:&lt;br /&gt;
+(número) créditos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+A modal deve exibir o custo estimado da indexação em créditos de IA.&lt;br /&gt;
+&lt;br /&gt;
+O custo estimado deve ser apresentado em formato de range aproximado, considerando um valor mínimo e um valor máximo.&lt;br /&gt;
+&lt;br /&gt;
+Para calcular o range aproximado, vamos considerar o custo da indexação baseado no tipo e tamanho dos arquivos armazenados no banco de dados, e essas são nossas referências:&lt;br /&gt;
+&lt;br /&gt;
+- pptx (16279951 kbps = 2.4 créditos)&lt;br /&gt;
+- csv (14383 kbpds = 0,3 crédito)&lt;br /&gt;
+- pdf (35 páginas texto - 170838 kbpds = 5 créditos)&lt;br /&gt;
+- vídeo (151141686 kbpds = 5 créditos)&lt;br /&gt;
+- docx/doc (92544 kbpds = 0.9 créditos)&lt;br /&gt;
+- xlsx (11505 kbps = 0.3 créditos)&lt;br /&gt;
+&lt;br /&gt;
+Será aplicado uma variação percentual sobre este valor estimado. Por padrão, a exibir 10% para baixo e 10% para cima.&lt;br /&gt;
+&lt;br /&gt;
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar &amp;gt; visualizar a modal						
+					</actions>
+					<expectedresults>
+						
+Visualizar na modal o estimado para arquivos (um e mais) XLSX:&lt;br /&gt;
+&lt;br /&gt;
+Custo estimado:&lt;br /&gt;
+(número) - (número) créditos (aproximado)&lt;br /&gt;
+&lt;br /&gt;
+Saldo atual:&lt;br /&gt;
+(número) créditos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+A modal deve exibir o custo estimado da indexação em créditos de IA.&lt;br /&gt;
+&lt;br /&gt;
+O custo estimado deve ser apresentado em formato de range aproximado, considerando um valor mínimo e um valor máximo.&lt;br /&gt;
+&lt;br /&gt;
+Para calcular o range aproximado, vamos considerar o custo da indexação baseado no tipo e tamanho dos arquivos armazenados no banco de dados, e essas são nossas referências:&lt;br /&gt;
+&lt;br /&gt;
+- pptx (16279951 kbps = 2.4 créditos)&lt;br /&gt;
+- csv (14383 kbpds = 0,3 crédito)&lt;br /&gt;
+- pdf (35 páginas texto - 170838 kbpds = 5 créditos)&lt;br /&gt;
+- vídeo (151141686 kbpds = 5 créditos)&lt;br /&gt;
+- docx/doc (92544 kbpds = 0.9 créditos)&lt;br /&gt;
+- xlsx (11505 kbps = 0.3 créditos)&lt;br /&gt;
+&lt;br /&gt;
+Será aplicado uma variação percentual sobre este valor estimado. Por padrão, a exibir 10% para baixo e 10% para cima.&lt;br /&gt;
+&lt;br /&gt;
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e salvar &amp;gt; visualizar a modal						
+					</actions>
+					<expectedresults>
+						
+Visualizar na modal o estimado para arquivos (um e mais) PPTX, CSV, PDF, VIDEO, DOCX e XLSX (combinar todos).&lt;br /&gt;
+&lt;br /&gt;
+Custo estimado:&lt;br /&gt;
+(número) - (número) créditos (aproximado)&lt;br /&gt;
+&lt;br /&gt;
+Saldo atual:&lt;br /&gt;
+(número) créditos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Indicar status da indexação, interrupção e retomada do processo">
+		<testcase name="Status da indexação em andamento">
+			<summary>
+				
+Validar a mensagem de status no top da tela com as informações do andamento da indexação.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente						
+					</actions>
+					<expectedresults>
+						
+Enquanto a indexação de conteúdo estiver em andamento, será exibido uma notificação na parte superior da tela da Twygo indicando o processamento.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela						
+					</actions>
+					<expectedresults>
+						
+Durante o processamento, o sistema deve exibir a quantidade de arquivos já processados e o total de arquivos previstos para indexação.&lt;br /&gt;
+&lt;br /&gt;
+Texto:&lt;br /&gt;
+&lt;br /&gt;
+Indexando conteúdos: processando (número) de (número) itens...						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Esperar a indexação ser concluída com sucesso						
+					</actions>
+					<expectedresults>
+						
+A indexação de todos os itens será realizada e a notificação no top da tela vai sumir.&lt;br /&gt;
+&lt;br /&gt;
+Quando o processo de indexação for concluído, deve ser enviada uma notificação para os usuários administradores informando que todos os conteúdos foram indexados com sucesso.&lt;br /&gt;
+&lt;br /&gt;
+Título: Indexação de conteúdo concluída&lt;br /&gt;
+&lt;br /&gt;
+Descrição: Seus conteúdos foram indexados e já podem ser utilizados pela IA.&lt;br /&gt;
+&lt;br /&gt;
+Ação: Não terá nenhuma ação/redirecionamento ao clicar sobre esta notificação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Esperar a indexação ser concluída com sucesso &amp;gt; Acessar o ambiente com um usuário Administrador						
+					</actions>
+					<expectedresults>
+						
+Esse usuário vai ver a notificação no topo da tela, seja ela com status de em andamento ou com interrupção na qual será apresentado o botão de retomada.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Esperar a indexação ser concluída com sucesso &amp;gt; Acessar o ambiente com um usuário Instrutor						
+					</actions>
+					<expectedresults>
+						
+Esse usuário NÃO vai ver a notificação no topo da tela.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Esperar a indexação ser concluída com sucesso &amp;gt; Acessar o ambiente com um usuário Gestor de turma						
+					</actions>
+					<expectedresults>
+						
+Esse usuário NÃO vai ver a notificação no topo da tela.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Esperar a indexação ser concluída com sucesso &amp;gt; Acessar o ambiente com um usuário Aluno						
+					</actions>
+					<expectedresults>
+						
+Esse usuário NÃO vai ver a notificação no topo da tela.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Status da indexação na interrupção">
+			<summary>
+				
+Validar a mensagem de status no top da tela com as informações do andamento da indexação.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Mas NÃO ter saldo suficiente para finalizar o processamento						
+					</actions>
+					<expectedresults>
+						
+Caso durante a indexação os créditos de IA se esgotem, a indexação será pausada.&lt;br /&gt;
+&lt;br /&gt;
+Texto:&lt;br /&gt;
+&lt;br /&gt;
+Existem conteúdos não indexados. Estimamos que faltam (número) - (número) créditos para poder retomar.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Mas NÃO ter saldo suficiente para finalizar o processamento e os créditos de IA serem esgotados						
+					</actions>
+					<expectedresults>
+						
+No alerta deve haver um botão “Retomar”&lt;br /&gt;
+&lt;br /&gt;
+Caso não possua créditos suficientes, será exibida a modal de saldo insuficiente de créditos de IA:&lt;br /&gt;
+&lt;br /&gt;
+Com o botão “Cancelar” fecha o modal.&lt;br /&gt;
+&lt;br /&gt;
+Com o botão “Contato” abre o chat da hubstpot.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Mas NÃO ter saldo suficiente para finalizar o processamento e os créditos de IA serem esgotados						
+					</actions>
+					<expectedresults>
+						
+No alerta deve ser exibido um botão chamado “Retomar” nesse momento						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Mas NÃO ter saldo suficiente para finalizar o processamento e os créditos de IA serem esgotados &amp;gt; Clicar no botão "Retomar"						
+					</actions>
+					<expectedresults>
+						
+Caso não possua créditos suficientes, será exibida uma modal com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+Saldo de créditos insuficiente&lt;br /&gt;
+&lt;br /&gt;
+Seu saldo atual de créditos de IA não é suficiente para retomar o processo de indexação de conteúdo. O custo aproximado estimado é de (número) - (número) créditos.&lt;br /&gt;
+&lt;br /&gt;
+Adquira mais créditos de IA entrando em contato com a nossa equipe via chat!&lt;br /&gt;
+&lt;br /&gt;
+[ Cancelar ] [ Contato ]						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Mas NÃO ter saldo suficiente para finalizar o processamento e os créditos de IA serem esgotados &amp;gt; Clicar no botão "Retomar" &amp;gt; Clicar no botão "Cancelar" e/ou no ícone do "X"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão "Cancelar" a modal será fechada&lt;br /&gt;
+Ao clicar no ícone de "X" a modal será fechada&lt;br /&gt;
+&lt;br /&gt;
+Em ambos os casos o processamento os itens ficará pausado e a notificação com essas informações ficará sendo exibida no topo da tela						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Mas NÃO ter saldo suficiente para finalizar o processamento e os créditos de IA serem esgotados &amp;gt; Clicar no botão "Retomar" &amp;gt; Clicar no botão "Contato"						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão "Contato" será aberto o chat da hubspot onde o usuário administrador poderá entrar em contato com o time de suporte e negociar a compra de mais créditos.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Mas NÃO ter saldo suficiente para finalizar o processamento &amp;gt; pausar o processamento &amp;gt; inserir mais créditos &amp;gt; Clicar no botão "Retornar"						
+					</actions>
+					<expectedresults>
+						
+No alerta deve haver um botão “Retomar”&lt;br /&gt;
+&lt;br /&gt;
+Ao clicar em “Retomar”, será validado se o ambiente possui créditos de IA disponíveis para continuar o processamento.&lt;br /&gt;
+&lt;br /&gt;
+Caso possua créditos suficientes, a indexação será retomada a partir dos conteúdos pendentes, indicando novamente o status da indexação..&lt;br /&gt;
+						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Status da indexação na retomada e conclusão">
+			<summary>
+				
+Validar a mensagem de status no top da tela com as informações do andamento da indexação.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Mas NÃO ter saldo suficiente para finalizar o processamento &amp;gt; pausar o processamento &amp;gt; inserir MAIS créditos para finalizar o processo &amp;gt; Clicar no botão "Retornar"						
+					</actions>
+					<expectedresults>
+						
+O processamento será reiniciado a partir da quantidade de itens que ele tinha parado anteriormente.&lt;br /&gt;
+&lt;br /&gt;
+A indexação volta com o status da indexação.&lt;br /&gt;
+&lt;br /&gt;
+Texto:&lt;br /&gt;
+Indexando conteúdos: processando (número) de (número) itens...						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; habilitar a toogle de Indexação de conteúdo e clicar no botão “Confirmar e iniciar” COM saldo suficiente &amp;gt; Visualizar a notificação no topo da tela &amp;gt; Mas NÃO ter saldo suficiente para finalizar o processamento &amp;gt; pausar o processamento &amp;gt; inserir MAIS créditos para finalizar o processo &amp;gt; Clicar no botão "Retornar" &amp;gt; Esperar concluir com sucesso o processamento						
+					</actions>
+					<expectedresults>
+						
+Quando o processo de indexação for concluído, deve ser enviada uma notificação para os usuários administradores informando que todos os conteúdos foram indexados com sucesso.&lt;br /&gt;
+&lt;br /&gt;
+Título: Indexação de conteúdo concluída&lt;br /&gt;
+&lt;br /&gt;
+Descrição: Seus conteúdos foram indexados e já podem ser utilizados pela IA.&lt;br /&gt;
+&lt;br /&gt;
+Ação: Não terá nenhuma ação/redirecionamento ao clicar sobre esta notificação.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Alterar a fontes de conhecimento no modo de uso do agente de atendimento">
+		<testcase name="Modo de uso do agente de atendimento - Remoções de campos">
+			<summary>
+				
+Validar o modo de uso com as alterações feitas para o agente de atendimento.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento"						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo “Situação dos conteúdos” foi removido.&lt;br /&gt;
+Verificar que o campo “Permitir fontes externas” foi removido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Modo de uso do agente de atendimento - Inclusões de campos">
+			<summary>
+				
+Validar o modo de uso com as alterações feitas para o agente de atendimento.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento"						
+					</actions>
+					<expectedresults>
+						
+Verificar que o campo “Permitir fontes externas” foi removido e no lugar desta configuração é exibida a seção “Fontes de conhecimento”.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento" &amp;gt; Verificar as opções em "Fontes de conhecimento"						
+					</actions>
+					<expectedresults>
+						
+Temos a fonte "Interna" com o seguinte texto na tooltip:&lt;br /&gt;
+&lt;br /&gt;
+Utiliza conteúdos do seu ambiente como fonte de conhecimento. Requer a indexação de conteúdos habilitada para este ambiente.&lt;br /&gt;
+&lt;br /&gt;
+E&lt;br /&gt;
+&lt;br /&gt;
+Temos a fonte "Externa" com o seguinte texto na tooltip:&lt;br /&gt;
+&lt;br /&gt;
+Utiliza fontes públicas da internet como conhecimento. Requer a habilitação de fontes externas nas configurações de IA.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento" &amp;gt; Verificar as opções de "Fontes de conhecimento"						
+					</actions>
+					<expectedresults>
+						
+O usuário poderá selecionar uma ou mais opções de fonte de conhecimento por agente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento" &amp;gt; Verificar a opção a baixo de "Fontes de conhecimento"						
+					</actions>
+					<expectedresults>
+						
+Será apresentado um link com o texto “Ir para configurações” e ao clicar o usuário será redirecionado, em uma nova aba, para o menu Créditos de IA, com abertura direta na aba Configurações.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Modo de uso do agente de atendimento - Desabilitado em contrato pelo ambiente">
+			<summary>
+				
+Validar o modo de uso com as alterações feitas para o agente de atendimento.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento"						
+					</actions>
+					<expectedresults>
+						
+Ao selecionar essa opção no campo “Modelo de página” deve ser exibido o modal de alerta:&lt;br /&gt;
+&lt;br /&gt;
+Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável para liberar o acesso a essa funcionalidade no menu de Créditos de IA.&lt;br /&gt;
+&lt;br /&gt;
+E vamos alterar automaticamente a opção do select “Modelo de página” para a primeira opção disponível.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Modo de uso do agente de atendimento - Indexação desabilitada">
+			<summary>
+				
+Validar o modo de uso com as alterações feitas para o agente de atendimento.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento"						
+					</actions>
+					<expectedresults>
+						
+No caso a funcionalidade Agente de atendimento esteja habilitada, mas a Indexação de conteúdo esteja desabilitada no ambiente, deve permitir a seleção da fonte Externa e não deve permitir a seleção da fonte Interna.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Modo de uso do agente de atendimento - Indexação e agente de atendimento habilitadas">
+			<summary>
+				
+Validar o modo de uso com as alterações feitas para o agente de atendimento.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento"						
+					</actions>
+					<expectedresults>
+						
+Caso tanto o agente de atendimento quanto a indexação estejam habilitadas, então o sistema deve permitir a seleção de ambas as fontes de conhecimento.&lt;br /&gt;
+&lt;br /&gt;
+Mas conforme configuração feita na tela de créditos de IA.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento" com a indexação de conteúdos em andamento						
+					</actions>
+					<expectedresults>
+						
+Ao tentar salvar um modo de uso onde o menu com modelo de página “agente de atendimento” tenha sido adicionado, se a indexação de conteúdos ainda estiver sendo realizada deve ser exibida a mensagem de confirmação em forma de modal:&lt;br /&gt;
+&lt;br /&gt;
+Conteúdos em indexação&lt;br /&gt;
+&lt;br /&gt;
+Existem conteúdos sendo indexados no momento. Durante o processo de indexação, podem haver conteúdos que o Agente de atendimento não saberá responder até que a indexação seja finalizada.&lt;br /&gt;
+&lt;br /&gt;
+[ Cancelar ] [ Continuar ]						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento" com a indexação de conteúdos em andamento &amp;gt; exibir a modal e clicar nos dois botões						
+					</actions>
+					<expectedresults>
+						
+Botão “Cancelar” fecha o modal e mantém a tela de modo de uso aberta para o usuário realizar as alterações que deseja.&lt;br /&gt;
+&lt;br /&gt;
+Botão “Continuar” salva as alterações.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Ajustar nomenclatura do agente de atendimento no super admin">
+		<testcase name="Ajustar nomenclatura do agente de atendimento no super admin">
+			<summary>
+				
+Ajustar a nomenclatura do Agente de IA para Agente de atendimento no Super Admin				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a tabela de preços do super admin &amp;gt; Assinatura &amp;gt; Manutenção da tabela de preços						
+					</actions>
+					<expectedresults>
+						
+O nome da funcionalidade de “Agente de IA” deve ser trocado para “Agente de atendimento” na tabela de preços, campo “Funcionalidades”.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a tabela de preços do super admin &amp;gt; Assinatura &amp;gt; Manutenção de assinaturas						
+					</actions>
+					<expectedresults>
+						
+O nome da funcionalidade de “Agente de IA” deve ser trocado para “Agente de atendimento” na edição dos contratos, campo “Funcionalidades”.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Bloquear uso por não possuírem a funcionalidade habilitada no contrato">
+		<testcase name="Bloquear uso por ambientes que não possuírem a funcionalidade &quot;Agente de atendimento&quot; habilitada no contrato">
+			<summary>
+				
+Validar o bloqueio em contrato da utilização da funcionalidade do Agente de atendimento				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; clicar na toogle: "Agente de atendimento" quando a funcionalidade "Agente de atendimento" estiver HABILITADA no contrato						
+					</actions>
+					<expectedresults>
+						
+Então a toogle: "Agente de atendimento" será habilitada e o usuário poderá interagir com todas as opções disponíveis a partir dela.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; clicar na toogle: "Agente de atendimento" quando a funcionalidade "Agente de atendimento" estiver DESABILITADA no contrato						
+					</actions>
+					<expectedresults>
+						
+Então a toogle: "Agente de atendimento" continuará desabilitada.&lt;br /&gt;
+E vamos mostrar uma modal com o seguinte texto:&lt;br /&gt;
+&lt;br /&gt;
+[Título]: Ops! Essa opção não está disponível no seu plano&lt;br /&gt;
+&lt;br /&gt;
+[Parágrafo]: Mude suas opções de assinatura entrando em contato com nossa equipe!&lt;br /&gt;
+&lt;br /&gt;
+[Botão] Contato						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; clicar na toogle: "Agente de atendimento" e interagir com o botão "Contato" da modal quando a funcionalidade "Agente de atendimento" estiver DESABILITADA no contrato						
+					</actions>
+					<expectedresults>
+						
+Ao clicar no botão "Contato" deve abrir o chat da hubspot na qual o usuário poderá enviar uma mensagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; verificar que a toogle: "Agente de atendimento" está habilitada por conta da funcionalidade "Agente de atendimento" estar HABILITADA no contrato &amp;gt; Trocar o contrato do ambiente para outro que a funcionalidade "Agente de atendimento" esteja DESABILITADA						
+					</actions>
+					<expectedresults>
+						
+Ao realizar a troca do contrato para um que não possua a funcionalidade a toogle deve ser desabilitada automaticamente.&lt;br /&gt;
+E o ambiente vai perder o acesso a essa funcionalidade						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Bloquear uso das funcionalidades quando o ambiente estiver sem créditos">
+		<testcase name="Mensagens de bloqueio das funcionalidades SEM créditos disponíveis">
+			<summary>
+				
+Validar que os bloqueios e mensagens (sem créditos)&lt;br /&gt;
+Validar acesso funcionando (com créditos)&lt;br /&gt;
+&lt;br /&gt;
+Vamos ter 4 tipos de mensagens, são elas:&lt;br /&gt;
+&lt;br /&gt;
+Mensagem 1 (visão do admin)&lt;br /&gt;
+Título: Limite de créditos atingido.&lt;br /&gt;
+Descrição: Todos os créditos disponíveis foram utilizados. Para continuar, entre em contato com o suporte ou aguarde a renovação.&lt;br /&gt;
+[Botão] Contato&lt;br /&gt;
+&lt;br /&gt;
+Mensagem 2 (visão do gestor, instrutor)&lt;br /&gt;
+Título: Limite de créditos atingido.&lt;br /&gt;
+Descrição: Todos os créditos disponíveis foram utilizados. Para continuar, entre em contato com o responsável do ambiente ou aguarde a renovação.&lt;br /&gt;
+&lt;br /&gt;
+Mensagem 3 (visão do aluno)&lt;br /&gt;
+Título: Ação indisponível no momento.&lt;br /&gt;
+Descrição: Não foi possível concluir esta ação agora. Entre em contato com o responsável pelo ambiente para mais informações.&lt;br /&gt;
+&lt;br /&gt;
+Mensagem 4&lt;br /&gt;
+Notificação amarela no topo da tela (componente padrão)				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente.</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o Super admin &amp;gt; remover a funcionalidade do "Agente de atendimento" do ambiente &amp;gt; Acessar o ambiente como aluno tendo o respectivo modo de uso para essa funcionalidade &amp;gt; clicar no menu do Agente de atendimento						
+					</actions>
+					<expectedresults>
+						
+Mensagem 3						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o Super admin &amp;gt; remover a funcionalidade do "Agente de atendimento" do ambiente &amp;gt; Acessar o ambiente como aluno tendo o respectivo modo de uso para essa funcionalidade &amp;gt; clicar no menu do Agente de atendimento &amp;gt; interagir com o chat						
+					</actions>
+					<expectedresults>
+						
+Mensagem 3						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar a toogle: "Indexação de conteúdo"						
+					</actions>
+					<expectedresults>
+						
+Mensagem 4						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar a toogle: "Indexação de conteúdo" &amp;gt; Sincronizar conteúdos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 4						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Ferramenta para criação de conteúdos interativos, no tipo página ou em vídeo com inteligência artificial" &amp;gt; Acessar a listagem de conteúdos e clicar no botão "Criar curso com IA"						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Ferramenta para criação de conteúdos interativos, no tipo página ou em vídeo com inteligência artificial" &amp;gt; Acessar a listagem de conteúdos e clicar no botão "Criar curso com IA" &amp;gt; chegar na etapa de: Geração de imagem em conteúdos do tipo aula						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Ferramenta para criação de conteúdos interativos, no tipo página ou em vídeo com inteligência artificial" &amp;gt; Acessar a listagem de conteúdos e clicar no botão "Criar curso com IA" &amp;gt; chegar na etapa de: Geração de áudio em conteúdos do tipo aula com IA						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Ferramenta para criação de conteúdos interativos, no tipo página ou em vídeo com inteligência artificial" &amp;gt; Acessar a listagem de conteúdos e clicar no botão "Criar curso com IA" &amp;gt; Gerar um curso com AULA &amp;gt; Editar esse curso e fazer a renderização de vídeo de conteúdos do tipo aula						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Gera questionários baseados em novos arquivos ou atividades já existentes" &amp;gt; Acessar a listagem de conteúdos &amp;gt; editar um curso &amp;gt; Acessar o botão da Sophia &amp;gt; Geração de questionários						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Criador de estrutura de atividades para auxiliar na construção de um conteúdo" &amp;gt; Acessar a listagem de conteúdos &amp;gt; editar um curso &amp;gt; Acessar o botão da Sophia &amp;gt; Sugestão de atividades						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Gere resumos para suas atividades" &amp;gt; Acessar a listagem de conteúdos &amp;gt; editar um curso &amp;gt; Acessar o botão da Sophia &amp;gt; Geração de resumo						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Gere resumos para suas atividades" &amp;gt; Acessar a listagem de conteúdos &amp;gt; editar um curso &amp;gt; Acessar o botão da Sophia &amp;gt; Geração de roteiro do narrador						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Edição de conteúdos do tipo página com recursos de IA" &amp;gt; Editar uma página e utilizar o recurso de IA dela (ícone no editor de texto)						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1 e 2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>13</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Edição de conteúdos do tipo página com recursos de IA" &amp;gt; Editar uma aula e utilizar o recurso de IA dela (renderizar)						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1 e 2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>14</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Parecer da nossa inteligência artificial dos questionários aplicados aos respondentes" &amp;gt; Realizar um curso com o aluno com as opções de IA habilitados para as perguntas desse questionário &amp;gt; realizar o curso como aluno &amp;gt; no final do questionário clicar no botão "Analisar"						
+					</actions>
+					<expectedresults>
+						
+Mensagem 3						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>15</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Permite fazer a importação de arquivos ou textos para a criação de questionários de forma automatizada" &amp;gt; Acessar o menu de Questionário &amp;gt; clicar no botão importar questionário &amp;gt; realizar o upload de algum documento						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1 e 2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>16</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Permite fazer a importação de arquivos ou textos para a criação de questionários de forma automatizada" &amp;gt; Acessar o menu de Questionário &amp;gt; clicar no botão importar questionário &amp;gt; interagir com o chat de alguma importação feita anteriormente						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1 e 2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>17</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Geração de funções no organograma com base em arquivos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>18</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Geração de competências no organograma com base em arquivos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>19</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Regeração de competências no organograma						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>20</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Regeração de funções no organograma						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>21</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Geração de organograma (funções e competências) a partir de arquivos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>22</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; IA no editor de texto de funções						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>23</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; IA no editor de texto de competências						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>24</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Geração de descrição de competências no organograma						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>25</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Geração de descrição de funções no organograma						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>26</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Utilize a IA para ler arquivos e auto preencher os registros de treinamentos externos realizados" &amp;gt; Acessar o menu de "Registros" na tela principal &amp;gt; clicar em autopreenchimento de registros externos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>27</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; desabilitar o checkbox: "Utilize a IA para ler arquivos e auto preencher os registros de treinamentos externos realizados" &amp;gt; Acessar o menu de "Registros" na tela principal &amp;gt; clicar na IA do editor de texto para registros externos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>28</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a listagem de conteúdos - Clicar no botão "Criar curso com IA" &amp;gt; interagir com a Pré-geração de curso: sugestão de descrição						
+					</actions>
+					<expectedresults>
+						
+Local que possuí interação com IA porém NÃO vamos bloquear no momento, conferir que esta funcionando normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>29</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a listagem de conteúdos - Clicar no botão "Criar curso com IA" &amp;gt; interagir com a Pré-geração de curso: sugestão de título						
+					</actions>
+					<expectedresults>
+						
+Local que possuí interação com IA porém NÃO vamos bloquear no momento, conferir que esta funcionando normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>30</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a listagem de conteúdos - Clicar no botão "Criar curso com IA" &amp;gt; interagir com a Pré-geração de curso: sugestão de atividades						
+					</actions>
+					<expectedresults>
+						
+Local que possuí interação com IA porém NÃO vamos bloquear no momento, conferir que esta funcionando normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>31</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a listagem de conteúdos - Clicar no botão "Criar curso com IA" &amp;gt; interagir com a Pré-geração de curso: compreensão de arquivos importados						
+					</actions>
+					<expectedresults>
+						
+Local que possuí interação com IA porém NÃO vamos bloquear no momento, conferir que esta funcionando normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>32</step_number>
+				</step>
+				<step>
+					<actions>
+						
+RN 58 Caso um ambiente inicie um processo que utilize créditos de IA e os créditos acabem no meio do processo:						
+					</actions>
+					<expectedresults>
+						
+- Deixaremos que a ação atual seja finalizada.&lt;br /&gt;
+- Os créditos serão contabilizados normalmente no extrato.&lt;br /&gt;
+- O total de créditos será debitado do saldo do ambiente, mesmo que o saldo fique negativo.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>33</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal &amp;gt; REPASSAR TODOS OS PASSOS comentados anteriormente, agora no ambiente adicional herdado						
+					</actions>
+					<expectedresults>
+						
+Confirmar todas as mensagens de bloqueio listadas nos passos anteriores						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>34</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal &amp;gt; MARCAR TODOS os checkbox das configurações de créditos de IA &amp;gt; REPASSAR TODOS OS PASSOS comentados anteriormente, agora no ambiente adicional herdado						
+					</actions>
+					<expectedresults>
+						
+Confirmar que todas as operações de IA estão funcionando e que NÃO TEM BLOQUEIO						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>35</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional com configurações independente &amp;gt; REPASSAR TODOS OS PASSOS comentados anteriormente, agora no ambiente adicional herdado						
+					</actions>
+					<expectedresults>
+						
+Confirmar todas as mensagens de bloqueio no ambiente adicional com configurações independentes listadas nos passos anteriores						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>36</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional com configurações independente &amp;gt; MARCAR TODOS os checkbox das configurações de créditos de IA &amp;gt; REPASSAR TODOS OS PASSOS comentados anteriormente, agora no ambiente adicional herdado						
+					</actions>
+					<expectedresults>
+						
+Confirmar que todas as operações de IA estão funcionando e que NÃO TEM BLOQUEIO						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>37</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Criar view para acompanhamento de consumo de créditos (view interna)">
+		<testcase name="Validar as 4 views e suas respectivas colunas">
+			<summary>
+				
+Validar os registros e todas as colunas das 4 views:&lt;br /&gt;
+&lt;br /&gt;
+view_twygo_users_info&lt;br /&gt;
+view_ai_credit_balance_summary&lt;br /&gt;
+view_ai_action_audit_log&lt;br /&gt;
+view_environment_capabilities				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Ter a feature flag "analise_creditos_ia_beta_test" habilitada para o ambiente &amp;gt; Consultar a view_twygo_users_info						
+					</actions>
+					<expectedresults>
+						
+Validar a criação dos registros para as colunas: · user_id&lt;br /&gt;
+· organization_id&lt;br /&gt;
+· e-mail_domain&lt;br /&gt;
+· role&lt;br /&gt;
+· departament&lt;br /&gt;
+· situation&lt;br /&gt;
+· nome do usuário (coluna nova)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ter a feature flag "analise_creditos_ia_beta_test" habilitada para o ambiente &amp;gt; Consultar a view_ai_credit_balance_summary						
+					</actions>
+					<expectedresults>
+						
+Validar a criação dos registros para as colunas: · ID do ambiente&lt;br /&gt;
+· Saldo do pacote de créditos&lt;br /&gt;
+· Saldo do voucher de crédito&lt;br /&gt;
+· Saldo final total						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ter a feature flag "analise_creditos_ia_beta_test" habilitada para o ambiente &amp;gt; Consultar a view_ai_action_audit_log						
+					</actions>
+					<expectedresults>
+						
+Validar a criação dos registros para as colunas: · ID do ambiente&lt;br /&gt;
+· Nome da ação realizada&lt;br /&gt;
+· Data/hora&lt;br /&gt;
+· Usuário que realizou a ação (ID)&lt;br /&gt;
+· Créditos de IA consumidos&lt;br /&gt;
+· Operação&lt;br /&gt;
+· Fonte&lt;br /&gt;
+· Data da expiração						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ter a feature flag "analise_creditos_ia_beta_test" habilitada para o ambiente &amp;gt; Consultar a view_environment_capabilities						
+					</actions>
+					<expectedresults>
+						
+Validar a criação dos registros para as colunas: · ID do ambiente&lt;br /&gt;
+· Funcionalidades habilitadas por ambiente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal &amp;gt; gerar registros						
+					</actions>
+					<expectedresults>
+						
+Validar as 4 views e suas respectivas colunas desse ambiente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente &amp;gt; gerar registros						
+					</actions>
+					<expectedresults>
+						
+Validar as 4 views e suas respectivas colunas desse ambiente.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Troca de Contratos">
+		<testcase name="Troca de Contrato: Vigente x Expirados">
+			<summary>
+				
+Validar a troca de contrato COM e SEM a funcionalidade do Agente de atendimento.				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Ter um contrato vigente com a funcionalidade de "Agente de atendimento" habilitada com data de término para hoje.&lt;br /&gt;
+Ter um novo contrato para iniciar amanhã com a funcionalidade de "Agente de atendimento" desabilitada						
+					</actions>
+					<expectedresults>
+						
+No dia de hoje a funcionalidade vai continuar funcionando mas amanhã não.&lt;br /&gt;
+E a funcionalidade/toogle vai ficar desabilitada&lt;br /&gt;
+E a toogle "Agente de atendimento" nas configurações do menu de créditos de IA vai ficar desabilitada impossibilitando habilitar						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ter um contrato vigente com a funcionalidade de "Agente de atendimento" desabilitada com data de término para hoje.&lt;br /&gt;
+Ter um novo contrato para iniciar amanhã com a funcionalidade de "Agente de atendimento" habilitada						
+					</actions>
+					<expectedresults>
+						
+No dia de hoje a funcionalidade vai continuar bloqueada mas amanhã não.&lt;br /&gt;
+E a funcionalidade/toogle vai ficar desabilitada&lt;br /&gt;
+E a toogle "Agente de atendimento" nas configurações do menu de créditos de IA vai ficar desabilitada MAS possibilitando habilitar novamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional que herdou as configurações do ambiente principal &amp;gt; trocar o contrato do ambiente principal						
+					</actions>
+					<expectedresults>
+						
+O Ambiente adicional deve respeitar as configurações/funcionalidades do ambiente principal						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional independente &amp;gt; trocar o contrato do ambiente principal						
+					</actions>
+					<expectedresults>
+						
+O Ambiente adicional deve respeitar as configurações/funcionalidades do ambiente principal						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Runner para migrar o modo de uso agente de atendimento antigo e sincronizar">
+		<testcase name="Runner para migrar organizações com modo de uso agente de atendimento antigo e sincronização já ativada">
+			<summary>
+				
+Validar a execução do Runner para migrar organizações com modo de uso agente de atendimento antigo e sincronização já ativada				
+			</summary>
+			<preconditions>Acesso SuperAdmin - Contrato
+Estar com a opção de "Agente de atendimento" habilitada no contrato vigente
+Estar com a feature flag "analise_creditos_ia_beta_test" habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Navegação” &amp;gt; ""Modo de uso” &amp;gt; criar/editar &amp;gt; "Menu" &amp;gt; criar/editar &amp;gt; Modelo de página &amp;gt; "Agente de atendimento"&lt;br /&gt;
+&lt;br /&gt;
+Ao executar o Runner para migrar organizações com modo de uso agente de atendimento antigo e sincronização já ativada						
+					</actions>
+					<expectedresults>
+						
+Os valores do modo de uso devem continuar iguais na nova estrutura.&lt;br /&gt;
+&lt;br /&gt;
+Toogle "Agente de atendimento" = Habilitada&lt;br /&gt;
+&lt;br /&gt;
+Situação dos conteúdos = Em andamento / Liberados / Suspensos (Configurações da indexação)&lt;br /&gt;
+&lt;br /&gt;
+Fontes de conhecimento = Interna ou Externa						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar um ambiente adicional e rodar o RUNNER						
+					</actions>
+					<expectedresults>
+						
+Verificar que o ambiente adicional esta respeitando as configurações que ele já tinha						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
