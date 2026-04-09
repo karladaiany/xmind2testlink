@@ -1,0 +1,4959 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="[API V2 Usuários] QA 1.1 - Criação de usuário (API V2)">
+		<testcase name="Criar usuário com dados mínimos obrigatórios">
+			<summary>
+				
+Verificar se o endpoint POST /api/v2/users cria um usuário com sucesso ao enviar apenas os campos obrigatórios (first_name, last_name, email, enterprise).				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido gerado via OAuth
+Organização configurada no ambiente de testes</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com body: {"first_name": "João", "last_name": "Silva", "email": "joao.silva@teste.com", "enterprise": "Empresa Teste"}						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o body da resposta						
+					</actions>
+					<expectedresults>
+						
+Resposta contém os dados do usuário criado: user_id, name, email, enterprise, created_at						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'user_id' é um inteiro positivo						
+					</actions>
+					<expectedresults>
+						
+user_id é um número inteiro &amp;gt; 0						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'name' retorna o nome completo concatenado						
+					</actions>
+					<expectedresults>
+						
+name = 'João Silva'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'email' retorna o e-mail informado						
+					</actions>
+					<expectedresults>
+						
+email = 'joao.silva@teste.com'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'situation' retorna 'active'						
+					</actions>
+					<expectedresults>
+						
+situation = 'active'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o usuário criado via GET /api/v2/users/:id para confirmar persistência						
+					</actions>
+					<expectedresults>
+						
+Usuário é encontrado com todos os dados corretos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar usuário com todos os campos opcionais preenchidos">
+			<summary>
+				
+Verificar se o endpoint POST /api/v2/users aceita e persiste todos os campos opcionais (cpf, rg, role, department, country, state, city, etc.).				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com todos os campos: first_name, last_name, email, enterprise, cpf, rg, role, department, business_line, number_of_employees, country, state, city, district, address, address_number, zip_code, address2, cell_phone, phone1, phone2						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que todos os campos opcionais foram persistidos na resposta						
+					</actions>
+					<expectedresults>
+						
+Cada campo retornado corresponde ao valor enviado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o usuário via GET /api/v2/users/:id						
+					</actions>
+					<expectedresults>
+						
+Todos os campos opcionais estão presentes e corretos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar usuário com senha definida">
+			<summary>
+				
+Verificar se é possível criar um usuário já definindo uma senha, permitindo login imediato.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com campos obrigatórios + "password": "SenhaForte@123"						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta NÃO retorna o campo password (segurança)						
+					</actions>
+					<expectedresults>
+						
+Campo password não está presente na resposta						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Gerar token de acesso (POST /oauth/token) com o e-mail e senha do usuário criado						
+					</actions>
+					<expectedresults>
+						
+Token é gerado com sucesso, confirmando que a senha foi definida corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o token retornado contém access_token, token_type e expires_in						
+					</actions>
+					<expectedresults>
+						
+Campos presentes na resposta do OAuth						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar usuário com manager_id (vínculo com gerente)">
+			<summary>
+				
+Verificar se é possível criar um usuário vinculado a um gerente existente através do campo manager_id.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário gerente já cadastrado na organização com ID conhecido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com campos obrigatórios + "manager_id": {id_do_gerente}						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém o campo manager_id com o valor informado						
+					</actions>
+					<expectedresults>
+						
+manager_id corresponde ao ID do gerente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o usuário via GET /api/v2/users/:id						
+					</actions>
+					<expectedresults>
+						
+Campo manager_id está presente e correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar no sistema que o usuário aparece como subordinado do gerente						
+					</actions>
+					<expectedresults>
+						
+Vínculo de gerência está correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar usuário com list_control_ips (controle de IPs)">
+			<summary>
+				
+Verificar se é possível criar um usuário com restrição de IPs de acesso.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com campos obrigatórios + "list_control_ips": "192.168.1.1,10.0.0.1"						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém o campo list_control_ips com os IPs informados						
+					</actions>
+					<expectedresults>
+						
+list_control_ips = '192.168.1.1,10.0.0.1'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o usuário via GET /api/v2/users/:id						
+					</actions>
+					<expectedresults>
+						
+Campo list_control_ips está presente e correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar usuário e matricular em curso simultaneamente">
+			<summary>
+				
+Verificar se é possível criar um usuário e automaticamente matriculá-lo em um curso na mesma requisição.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Curso existente na organização com ID conhecido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com campos obrigatórios + parâmetro de matrícula em curso (event_id ou course_id)						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário foi criado com sucesso						
+					</actions>
+					<expectedresults>
+						
+Dados do usuário estão corretos na resposta						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário foi matriculado no curso (GET /api/v1/o/:org_id/students/:id/events ou endpoint equivalente V2)						
+					</actions>
+					<expectedresults>
+						
+Matrícula ativa no curso informado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Criar usuário com e-mail já cadastrado (V2 deve retornar 409)">
+			<summary>
+				
+Verificar se ao tentar criar um usuário com e-mail já existente, a API V2 retorna status 409 Conflict (correção do comportamento da V1 que retornava 201).				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário já cadastrado com e-mail 'existente@teste.com'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com "email": "existente@teste.com" (e-mail já cadastrado)						
+					</actions>
+					<expectedresults>
+						
+Status code 409 Conflict						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro na resposta						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara em português indicando que o e-mail já está cadastrado (ex: 'E-mail já cadastrado' ou similar)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a mensagem NÃO está em inglês						
+					</actions>
+					<expectedresults>
+						
+Mensagem está em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NÃO foi criado um usuário duplicado (GET /api/v2/users?email=existente@teste.com)						
+					</actions>
+					<expectedresults>
+						
+Apenas um registro com esse e-mail existe						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Comparar com V1: Enviar mesma requisição para POST /api/v1/o/:org_id/students						
+					</actions>
+					<expectedresults>
+						
+V1 retorna 201 (comportamento antigo incorreto) - documentar diferença						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Criar usuário sem campos obrigatórios">
+			<summary>
+				
+Verificar se a API V2 retorna erro descritivo ao tentar criar um usuário sem os campos obrigatórios.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com body vazio: {}						
+					</actions>
+					<expectedresults>
+						
+Status code 400 ou 422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a mensagem de erro lista todos os campos obrigatórios faltantes						
+					</actions>
+					<expectedresults>
+						
+Mensagem indica quais campos são obrigatórios (first_name, last_name, email, enterprise)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição sem 'first_name' apenas						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem indicando que first_name é obrigatório						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição sem 'email' apenas						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem indicando que email é obrigatório						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que todas as mensagens de erro estão em português e são descritivas						
+					</actions>
+					<expectedresults>
+						
+Mensagens claras e em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Criar usuário com e-mail em formato inválido">
+			<summary>
+				
+Verificar se a API V2 valida o formato do e-mail e retorna erro descritivo.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com "email": "email-invalido"						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara indicando formato de e-mail inválido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com "email": "@semdominio.com"						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem de e-mail inválido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com "email": "usuario@"						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem de e-mail inválido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com "email": "" (vazio)						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem de campo obrigatório						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Criar usuário com token inválido ou ausente">
+			<summary>
+				
+Verificar se a API V2 retorna 401 Unauthorized quando o token é inválido ou não fornecido.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users SEM header Authorization						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem indicando autenticação necessária						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com header Authorization: Bearer token_invalido_123						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com token expirado						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized com mensagem indicando token expirado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Criar usuário com CPF inválido">
+			<summary>
+				
+Verificar se a API V2 valida o formato do CPF e retorna erro descritivo.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com campos obrigatórios + "cpf": "123"						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem de CPF inválido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com "cpf": "00000000000"						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem de CPF inválido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com "cpf": "abc.def.ghi-jk"						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem de CPF inválido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com CPF válido formatado: "cpf": "350.208.880-73"						
+					</actions>
+					<expectedresults>
+						
+Verificar se aceita CPF com formatação ou apenas sem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Criar usuário com manager_id inexistente">
+			<summary>
+				
+Verificar se a API V2 retorna erro ao informar um manager_id que não existe.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com campos obrigatórios + "manager_id": 999999 (ID inexistente)						
+					</actions>
+					<expectedresults>
+						
+Status code 404 ou 422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara indicando que o gerente informado não foi encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Compatibilidade - Endpoint V1 de criação continua funcionando">
+			<summary>
+				
+Verificar se o endpoint POST /api/v1/o/:org_id/students continua funcionando normalmente após a implementação da V2.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v1/o/:org_id/students com dados válidos						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created (comportamento V1 mantido)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário foi criado com sucesso						
+					</actions>
+					<expectedresults>
+						
+Dados do usuário estão corretos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o usuário criado via V2 (GET /api/v2/users/:id)						
+					</actions>
+					<expectedresults>
+						
+Usuário é encontrado, confirmando que ambas as versões acessam a mesma base						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Comparação V1 vs V2 - Mensagens de erro na criação">
+			<summary>
+				
+Comparar as mensagens de retorno de erro entre V1 e V2 nos cenários de criação, garantindo que V2 retorna mensagens mais claras e em português.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário já cadastrado com e-mail conhecido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar POST /api/v1/o/:org_id/students com e-mail duplicado						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 201 com message: 'Usuário criado com sucesso.' (comportamento incorreto - aceita duplicado)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v2/users com mesmo e-mail duplicado						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 409 Conflict com mensagem clara indicando e-mail já cadastrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v1/o/:org_id/students sem first_name						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 400 com message: 'Nome é obrigatório'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v2/users sem first_name						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 400/422 com mensagem equivalente ou mais descritiva em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v1/o/:org_id/students sem last_name						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 400 com message: 'Sobrenome é obrigatório'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v2/users sem last_name						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 400/422 com mensagem equivalente em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v1/o/:org_id/students sem email						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 400 com message: 'E-mail é obrigatório'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v2/users sem email						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 400/422 com mensagem equivalente em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v1/o/:org_id/students com e-mail inválido						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 400 com message: 'Informe um e-mail válido.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v2/users com e-mail inválido						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 400/422 com mensagem equivalente em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v1/o/:org_id/students com CPF inválido (ex: '12345678900')						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 400 com message: 'Informe um CPF válido.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v2/users com CPF inválido						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 400/422 com mensagem equivalente em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v1/o/:org_id/students com token inválido						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 401 sem body						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>13</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar POST /api/v2/users com token inválido						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 401 com mensagem descritiva em português (melhoria em relação à V1 que não retorna body)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>14</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar usuário com campos contendo caracteres especiais e acentuação">
+			<summary>
+				
+Verificar se a API V2 aceita e persiste corretamente campos com caracteres especiais, acentos e emojis.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com "first_name": "José", "last_name": "Conceição"						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os acentos foram persistidos corretamente						
+					</actions>
+					<expectedresults>
+						
+name = 'José Conceição'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com "enterprise": "Empresa &amp;amp; Filhos Ltda."						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created, campo enterprise correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com "first_name" contendo caracteres Unicode (ex: chinês, árabe)						
+					</actions>
+					<expectedresults>
+						
+Verificar comportamento (aceita ou retorna erro descritivo)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar usuário com campos no limite máximo de caracteres">
+			<summary>
+				
+Verificar o comportamento da API V2 ao enviar campos com o número máximo de caracteres permitido (255).				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com "first_name" de 255 caracteres						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o nome foi persistido com todos os 255 caracteres						
+					</actions>
+					<expectedresults>
+						
+Campo retornado com 255 caracteres						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com "first_name" de 256 caracteres						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem indicando limite de caracteres excedido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com "email" de 255 caracteres (ex: aaa...@dominio.com)						
+					</actions>
+					<expectedresults>
+						
+Verificar comportamento (aceita ou retorna erro)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[API V2 Usuários] QA 1.2 - Buscar usuário por ID e External ID (API V2)">
+		<testcase name="Buscar usuário existente por ID">
+			<summary>
+				
+Verificar se o endpoint GET /api/v2/users/:id retorna os dados completos de um usuário existente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com ID conhecido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/{id_usuario}						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém todos os campos do objeto user						
+					</actions>
+					<expectedresults>
+						
+Campos presentes: user_id, professional_id, name, email, document_1, document_2, enterprise, phone, phone_2, cell_phone, role, industry, country, state, city, district, address, address_number, zip_code, address2, situation, external_id, created_at, updated_at						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os valores dos campos correspondem aos dados cadastrados						
+					</actions>
+					<expectedresults>
+						
+Todos os valores estão corretos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'spaces' lista as organizações do usuário						
+					</actions>
+					<expectedresults>
+						
+Array de spaces com space_id e name						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Buscar usuário existente por External ID">
+			<summary>
+				
+Verificar se o endpoint GET /api/v2/users/by_external_id/:external_id retorna os dados do usuário correto.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com external_id definido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/by_external_id/{external_id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém os mesmos campos do endpoint de busca por ID						
+					</actions>
+					<expectedresults>
+						
+Campos completos do objeto user						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o external_id na resposta corresponde ao informado na URL						
+					</actions>
+					<expectedresults>
+						
+external_id correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Comparar a resposta com GET /api/v2/users/:id do mesmo usuário						
+					</actions>
+					<expectedresults>
+						
+Respostas são idênticas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Buscar usuário com ID inexistente">
+			<summary>
+				
+Verificar se a API V2 retorna 404 com mensagem clara ao buscar um ID que não existe.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/999999999 (ID inexistente)						
+					</actions>
+					<expectedresults>
+						
+Status code 404 Not Found						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara em português (ex: 'Usuário não encontrado')						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a mensagem NÃO está em inglês						
+					</actions>
+					<expectedresults>
+						
+Mensagem em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Buscar usuário com External ID inexistente">
+			<summary>
+				
+Verificar se a API V2 retorna 404 ao buscar um external_id que não existe.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/by_external_id/ext_inexistente_999						
+					</actions>
+					<expectedresults>
+						
+Status code 404 Not Found						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara em português indicando que o external_id não foi encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Buscar usuário com token inválido">
+			<summary>
+				
+Verificar se a API V2 retorna 401 ao tentar buscar sem autenticação.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/:id SEM header Authorization						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/by_external_id/:ext_id SEM header Authorization						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com token inválido						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Comparação de retorno V1 vs V2 - Busca por ID">
+			<summary>
+				
+Verificar e documentar as diferenças entre os campos retornados pela V1 e V2 na busca por ID.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com ID conhecido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v1/o/:org_id/students/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK - anotar campos retornados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/{id} para o mesmo usuário						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK - anotar campos retornados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Comparar os campos retornados entre V1 e V2						
+					</actions>
+					<expectedresults>
+						
+V2 deve conter no mínimo os mesmos campos da V1, podendo ter campos adicionais						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os valores dos campos em comum são idênticos						
+					</actions>
+					<expectedresults>
+						
+Valores correspondem entre V1 e V2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Documentar campos novos ou renomeados na V2						
+					</actions>
+					<expectedresults>
+						
+Diferenças documentadas (ex: 'students' → 'users')						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Buscar usuário com ID no formato inválido">
+			<summary>
+				
+Verificar o comportamento da API V2 ao enviar um ID em formato inválido (texto, negativo, decimal).				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/abc (texto)						
+					</actions>
+					<expectedresults>
+						
+Status code 400 ou 404 com mensagem descritiva						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/-1 (negativo)						
+					</actions>
+					<expectedresults>
+						
+Status code 400 ou 404						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/1.5 (decimal)						
+					</actions>
+					<expectedresults>
+						
+Status code 400 ou 404						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/0 (zero)						
+					</actions>
+					<expectedresults>
+						
+Status code 400 ou 404						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Comparação V1 vs V2 - Mensagens de erro na busca">
+			<summary>
+				
+Comparar as mensagens de retorno de erro entre V1 e V2 nos cenários de busca por ID e External ID.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar GET /api/v1/o/:org_id/students/999999999 (ID inexistente)						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 404 com message: 'Recurso não encontrado'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar GET /api/v2/users/999999999 (ID inexistente)						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 404 com mensagem mais específica: 'Usuário não encontrado'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar GET /api/v1/o/:org_id/students/{id} com token inválido						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 401 sem body						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar GET /api/v2/users/{id} com token inválido						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 401 com mensagem descritiva em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Comparar formato de resposta de sucesso V1 vs V2						
+					</actions>
+					<expectedresults>
+						
+V2 pode ter campos adicionais ou renomeados em relação à V1 - documentar diferenças						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Compatibilidade - Endpoint V1 de consulta continua funcionando">
+			<summary>
+				
+Verificar se o endpoint GET /api/v1/o/:org_id/students/:id continua funcionando normalmente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v1/o/:org_id/students/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta mantém o formato original da V1						
+					</actions>
+					<expectedresults>
+						
+Formato V1 preservado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[API V2 Usuários] QA 1.3 - Listagem de usuários e filtro por CPF (API V2)">
+		<testcase name="Listar usuários sem filtros (paginação padrão)">
+			<summary>
+				
+Verificar se o endpoint GET /api/v2/users retorna a lista paginada de usuários corretamente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Organização com pelo menos 5 usuários cadastrados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?page=1&amp;amp;per_page=10						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém o objeto 'pagination' com 'next_page'						
+					</actions>
+					<expectedresults>
+						
+Objeto pagination presente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém o array 'users' com até 10 registros						
+					</actions>
+					<expectedresults>
+						
+Array users com no máximo 10 itens						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que cada objeto user contém todos os campos esperados						
+					</actions>
+					<expectedresults>
+						
+Campos completos: user_id, name, email, situation, etc.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'spaces' está presente em cada usuário						
+					</actions>
+					<expectedresults>
+						
+Array de spaces presente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar paginação - Navegar entre páginas">
+			<summary>
+				
+Verificar se a paginação funciona corretamente ao navegar entre páginas.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Organização com mais de 10 usuários cadastrados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?page=1&amp;amp;per_page=5						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK com 5 registros e next_page apontando para page=2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?page=2&amp;amp;per_page=5						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK com os próximos 5 registros (diferentes da página 1)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que não há registros duplicados entre página 1 e página 2						
+					</actions>
+					<expectedresults>
+						
+Nenhum user_id repetido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com per_page=1000 (limite máximo)						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK com até 1000 registros						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com per_page=1001 (acima do limite)						
+					</actions>
+					<expectedresults>
+						
+Verificar comportamento: retorna erro ou limita a 1000						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar usuários por CPF (novo filtro)">
+			<summary>
+				
+Verificar se o novo filtro por CPF funciona corretamente no endpoint de listagem.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com CPF '350.208.880-73'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?cpf=35020888073						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém apenas o usuário com o CPF informado						
+					</actions>
+					<expectedresults>
+						
+Array users com 1 registro, document_1 = '35020888073' ou '350.208.880-73'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?cpf=350.208.880-73 (com formatação)						
+					</actions>
+					<expectedresults>
+						
+Verificar se aceita CPF formatado (200 OK com resultado ou 200 OK com lista vazia)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os dados do usuário retornado estão completos						
+					</actions>
+					<expectedresults>
+						
+Todos os campos do objeto user presentes						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar por CPF inexistente">
+			<summary>
+				
+Verificar o comportamento ao filtrar por um CPF que não está cadastrado.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?cpf=00000000000						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém array 'users' vazio						
+					</actions>
+					<expectedresults>
+						
+users: [] (lista vazia, não erro)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar por CPF com formato inválido">
+			<summary>
+				
+Verificar o comportamento ao filtrar por um CPF em formato inválido.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?cpf=abc						
+					</actions>
+					<expectedresults>
+						
+Verificar comportamento: 400 com erro ou 200 com lista vazia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?cpf=123						
+					</actions>
+					<expectedresults>
+						
+Verificar comportamento: 400 com erro ou 200 com lista vazia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?cpf= (vazio)						
+					</actions>
+					<expectedresults>
+						
+Verificar comportamento: ignora filtro e retorna todos ou retorna erro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar por nome (filtro existente)">
+			<summary>
+				
+Verificar se o filtro por nome continua funcionando corretamente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com nome 'João Silva'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?name=João						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém usuários cujo nome contém 'João'						
+					</actions>
+					<expectedresults>
+						
+Filtro por nome funciona (busca parcial)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?name=João Silva						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK com o usuário específico						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar por e-mail (filtro existente)">
+			<summary>
+				
+Verificar se o filtro por e-mail continua funcionando corretamente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com e-mail conhecido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?email=joao.silva@teste.com						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém apenas o usuário com o e-mail informado						
+					</actions>
+					<expectedresults>
+						
+Array users com 1 registro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?email=inexistente@teste.com						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK com lista vazia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Filtrar por user_id (filtro existente)">
+			<summary>
+				
+Verificar se o filtro por user_id continua funcionando corretamente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com ID conhecido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?user_id={id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém apenas o usuário com o ID informado						
+					</actions>
+					<expectedresults>
+						
+Array users com 1 registro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Combinar múltiplos filtros">
+			<summary>
+				
+Verificar se é possível combinar filtros (CPF + nome, CPF + email, etc.).				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com CPF e nome conhecidos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users?cpf=35020888073&amp;amp;name=João						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta retorna apenas usuários que atendem AMBOS os filtros						
+					</actions>
+					<expectedresults>
+						
+Resultado filtrado corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com filtros conflitantes (CPF de um usuário + nome de outro)						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK com lista vazia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Listar usuários com token inválido">
+			<summary>
+				
+Verificar se a API V2 retorna 401 ao tentar listar sem autenticação.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users SEM header Authorization						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com token inválido						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Comparação V1 vs V2 - Mensagens de erro na listagem">
+			<summary>
+				
+Comparar as mensagens de retorno de erro entre V1 e V2 nos cenários de listagem.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar GET /api/v1/o/:org_id/students com token inválido						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 401 sem body						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar GET /api/v2/users com token inválido						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 401 com mensagem descritiva em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Comparar formato de paginação V1 vs V2						
+					</actions>
+					<expectedresults>
+						
+V1 usa formato próprio / V2 usa objeto 'pagination' com 'next_page' - documentar diferenças						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Comparar campos retornados por usuário V1 vs V2						
+					</actions>
+					<expectedresults>
+						
+V2 pode ter campos adicionais (ex: spaces) - documentar						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Compatibilidade - Endpoint V1 de listagem continua funcionando">
+			<summary>
+				
+Verificar se o endpoint GET /api/v1/o/:org_id/students continua funcionando normalmente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v1/o/:org_id/students?page=1&amp;amp;per_page=5						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK com formato V1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os filtros existentes da V1 continuam funcionando						
+					</actions>
+					<expectedresults>
+						
+Filtros V1 operacionais						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[API V2 Usuários] QA 2.1 - Atualização de usuário (API V2)">
+		<testcase name="Atualizar dados básicos do usuário (nome, e-mail)">
+			<summary>
+				
+Verificar se o endpoint PUT/PATCH /api/v2/users/:id atualiza os dados básicos corretamente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com ID conhecido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/{id} com "first_name": "Maria", "last_name": "Santos"						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém os dados atualizados						
+					</actions>
+					<expectedresults>
+						
+name = 'Maria Santos'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o usuário via GET /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Dados atualizados persistidos corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Atualizar o e-mail: "email": "maria.santos@teste.com"						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK com e-mail atualizado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o campo 'updated_at' foi atualizado						
+					</actions>
+					<expectedresults>
+						
+updated_at diferente do valor anterior						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Atualizar list_control_ips do usuário">
+			<summary>
+				
+Verificar se é possível atualizar os IPs de controle de acesso do usuário.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com list_control_ips definido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/{id} com "list_control_ips": "172.16.0.1,172.16.0.2"						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os IPs foram atualizados na resposta						
+					</actions>
+					<expectedresults>
+						
+list_control_ips = '172.16.0.1,172.16.0.2'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição para remover IPs: "list_control_ips": ""						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK, IPs removidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Atualizar external_id do usuário">
+			<summary>
+				
+Verificar se é possível definir ou atualizar o external_id do usuário.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/{id} com "external_id": "EXT-001"						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o external_id foi persistido						
+					</actions>
+					<expectedresults>
+						
+external_id = 'EXT-001'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o usuário via GET /api/v2/users/by_external_id/EXT-001						
+					</actions>
+					<expectedresults>
+						
+Usuário é encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Atualizar para novo external_id: "external_id": "EXT-002"						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK, external_id atualizado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que busca pelo external_id antigo retorna 404						
+					</actions>
+					<expectedresults>
+						
+GET /api/v2/users/by_external_id/EXT-001 retorna 404						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Atualizar manager_id do usuário">
+			<summary>
+				
+Verificar se é possível alterar o gerente vinculado ao usuário.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com manager_id
+Dois gerentes cadastrados</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/{id} com "manager_id": {novo_gerente_id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o manager_id foi atualizado na resposta						
+					</actions>
+					<expectedresults>
+						
+manager_id = novo_gerente_id						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição para remover gerente: "manager_id": null						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK, manager_id removido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Atualizar campos opcionais (endereço, telefone, etc.)">
+			<summary>
+				
+Verificar se é possível atualizar todos os campos opcionais do usuário.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/{id} com campos de endereço: country, state, city, district, address, address_number, zip_code, address2						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que todos os campos de endereço foram atualizados						
+					</actions>
+					<expectedresults>
+						
+Valores corretos na resposta						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Atualizar telefones: cell_phone, phone1, phone2						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK com telefones atualizados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Atualizar campos profissionais: role, department, business_line						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK com campos atualizados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Atualizar usuário com ID inexistente">
+			<summary>
+				
+Verificar se a API V2 retorna 404 ao tentar atualizar um usuário que não existe.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/999999999 com dados válidos						
+					</actions>
+					<expectedresults>
+						
+Status code 404 Not Found						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara em português: 'Usuário não encontrado'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Atualizar e-mail para um já existente">
+			<summary>
+				
+Verificar se a API V2 retorna 409 ao tentar atualizar o e-mail para um já cadastrado.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Dois usuários cadastrados com e-mails diferentes</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/{id_usuario_1} com "email": "{email_usuario_2}"						
+					</actions>
+					<expectedresults>
+						
+Status code 409 Conflict						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara indicando e-mail já cadastrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o e-mail do usuário 1 NÃO foi alterado						
+					</actions>
+					<expectedresults>
+						
+GET /api/v2/users/{id_usuario_1} retorna e-mail original						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Atualizar com dados inválidos">
+			<summary>
+				
+Verificar se a API V2 retorna erros descritivos ao enviar dados inválidos na atualização.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/{id} com "email": "email-invalido"						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem de e-mail inválido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com "first_name": "" (vazio)						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem de campo obrigatório						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que as mensagens de erro estão em português						
+					</actions>
+					<expectedresults>
+						
+Mensagens em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Atualizar com token inválido">
+			<summary>
+				
+Verificar se a API V2 retorna 401 ao tentar atualizar sem autenticação.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/{id} SEM header Authorization						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com token inválido						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Comparação V1 vs V2 - Mensagens de erro na atualização">
+			<summary>
+				
+Comparar as mensagens de retorno de erro entre V1 e V2 nos cenários de atualização, usando dados reais da V1 como referência.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com ID conhecido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar PUT /api/v1/o/:org_id/students/{id} com CPF inválido (ex: '12345678900')						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 400 com message: 'Informe um CPF válido.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PUT /api/v2/users/{id} com CPF inválido						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 400/422 com mensagem equivalente em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PUT /api/v1/o/:org_id/students/{id} com token inválido						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 401 sem body						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PUT /api/v2/users/{id} com token inválido						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 401 com mensagem descritiva em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PUT /api/v1/o/:org_id/students/999999999 (usuário inexistente)						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 404 com message: 'Recurso não encontrado'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PUT /api/v2/users/999999999 (usuário inexistente)						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 404 com mensagem equivalente em português (ex: 'Usuário não encontrado')						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PUT /api/v1/o/:org_id/students/{id} sem campos opcionais (address_number, zip_code, state, country, business_line, number_of_employees, department)						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 200 com message: 'Usuário atualizado com sucesso.' (aceita sem esses campos)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PUT /api/v2/users/{id} sem campos opcionais equivalentes						
+					</actions>
+					<expectedresults>
+						
+V2: Verificar se comportamento é igual (200) ou se agora valida como obrigatório - documentar diferença						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Compatibilidade - Endpoint V1 de atualização continua funcionando">
+			<summary>
+				
+Verificar se o endpoint PUT /api/v1/o/:org_id/students/:id continua funcionando normalmente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v1/o/:org_id/students/{id} com dados válidos						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a atualização foi persistida						
+					</actions>
+					<expectedresults>
+						
+Dados atualizados corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar via V2 para confirmar consistência						
+					</actions>
+					<expectedresults>
+						
+GET /api/v2/users/{id} retorna dados atualizados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[API V2 Usuários] QA 2.2 - Inativar e Ativar usuário (API V2)">
+		<testcase name="Inativar usuário ativo com sucesso">
+			<summary>
+				
+Verificar se o endpoint de inativação altera o status do usuário para inativo.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com situation = 'active'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/{id}/deactivate						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém situation = 'inactive'						
+					</actions>
+					<expectedresults>
+						
+situation = 'inactive'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o usuário via GET /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+situation = 'inactive' confirmado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário inativo NÃO consegue gerar token de acesso (POST /oauth/token)						
+					</actions>
+					<expectedresults>
+						
+Erro de autenticação ou mensagem indicando usuário inativo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ativar usuário inativo com sucesso">
+			<summary>
+				
+Verificar se o endpoint de ativação altera o status do usuário para ativo.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com situation = 'inactive'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/{id}/activate						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém situation = 'active'						
+					</actions>
+					<expectedresults>
+						
+situation = 'active'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o usuário via GET /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+situation = 'active' confirmado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário ativo consegue gerar token de acesso						
+					</actions>
+					<expectedresults>
+						
+Token gerado com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Inativar usuário já inativo (mensagem clara)">
+			<summary>
+				
+Verificar se a API V2 retorna mensagem clara ao tentar inativar um usuário que já está inativo (correção da V1).				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário com situation = 'inactive'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/{id}/deactivate para usuário já inativo						
+					</actions>
+					<expectedresults>
+						
+Status code 422 ou 409						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara em português (ex: 'Usuário já está inativo')						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Comparar com V1: mesma operação no endpoint V1						
+					</actions>
+					<expectedresults>
+						
+V1 retorna mensagem genérica/pouco descritiva - documentar diferença						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Ativar usuário já ativo (mensagem clara)">
+			<summary>
+				
+Verificar se a API V2 retorna mensagem clara ao tentar ativar um usuário que já está ativo.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário com situation = 'active'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/{id}/activate para usuário já ativo						
+					</actions>
+					<expectedresults>
+						
+Status code 422 ou 409						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara em português (ex: 'Usuário já está ativo')						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Inativar/Ativar usuário com ID inexistente">
+			<summary>
+				
+Verificar se a API V2 retorna 404 ao tentar inativar/ativar um usuário que não existe.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/999999999/deactivate						
+					</actions>
+					<expectedresults>
+						
+Status code 404 Not Found						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara: 'Usuário não encontrado'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/999999999/activate						
+					</actions>
+					<expectedresults>
+						
+Status code 404 Not Found						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Inativar/Ativar com token inválido">
+			<summary>
+				
+Verificar se a API V2 retorna 401 ao tentar inativar/ativar sem autenticação.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/{id}/deactivate SEM header Authorization						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/{id}/activate com token inválido						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ciclo completo: Ativar → Inativar → Ativar">
+			<summary>
+				
+Verificar se o ciclo completo de ativação/inativação funciona sem problemas.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado ativo</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que o usuário está ativo: GET /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+situation = 'active'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Inativar: PATCH /api/v2/users/{id}/deactivate						
+					</actions>
+					<expectedresults>
+						
+Status 200, situation = 'inactive'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ativar novamente: PATCH /api/v2/users/{id}/activate						
+					</actions>
+					<expectedresults>
+						
+Status 200, situation = 'active'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os dados do usuário não foram alterados (nome, email, etc.)						
+					</actions>
+					<expectedresults>
+						
+Todos os campos mantidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Comparação V1 vs V2 - Mensagens de erro na inativação/ativação">
+			<summary>
+				
+Comparar as mensagens de retorno de erro entre V1 e V2 nos cenários de inativação e ativação, usando dados reais da V1 como referência.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com situation = 'inactive'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar PATCH inativar via V1 para usuário já inativo						
+					</actions>
+					<expectedresults>
+						
+V1: Anotar status e mensagem retornada (provavelmente genérica ou sem mensagem específica)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PATCH /api/v2/users/{id}/deactivate para usuário já inativo						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 422/409 com mensagem clara: 'Usuário já está inativo'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PATCH ativar via V1 para usuário já ativo						
+					</actions>
+					<expectedresults>
+						
+V1: Anotar status e mensagem retornada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PATCH /api/v2/users/{id}/activate para usuário já ativo						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 422/409 com mensagem clara: 'Usuário já está ativo'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PATCH inativar via V1 com ID inexistente						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 404 com message: 'Recurso não encontrado'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PATCH /api/v2/users/999999999/deactivate						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 404 com mensagem: 'Usuário não encontrado'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PATCH inativar via V1 com token inválido						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 401 sem body						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar PATCH /api/v2/users/{id}/deactivate com token inválido						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 401 com mensagem descritiva em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Compatibilidade - Endpoints V1 de inativar/ativar continuam funcionando">
+			<summary>
+				
+Verificar se os endpoints V1 de inativação/ativação continuam funcionando normalmente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Inativar via V1 e verificar via V2						
+					</actions>
+					<expectedresults>
+						
+Ambas as versões refletem o status inativo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ativar via V1 e verificar via V2						
+					</actions>
+					<expectedresults>
+						
+Ambas as versões refletem o status ativo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[API V2 Usuários] QA 3.1 - Exclusão de usuário por ID e External ID (API V2)">
+		<testcase name="Excluir usuário existente por ID">
+			<summary>
+				
+Verificar se o endpoint DELETE /api/v2/users/:id exclui o usuário definitivamente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com ID conhecido (criado especificamente para este teste)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que o usuário existe: GET /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status 200, usuário encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição DELETE /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200 ou 204						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta confirma a exclusão						
+					</actions>
+					<expectedresults>
+						
+Mensagem de sucesso ou body vazio						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar buscar o usuário excluído: GET /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 404 Not Found						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário não aparece na listagem: GET /api/v2/users?email={email_excluido}						
+					</actions>
+					<expectedresults>
+						
+Lista vazia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Excluir usuário existente por External ID">
+			<summary>
+				
+Verificar se o endpoint DELETE /api/v2/users/by_external_id/:external_id exclui o usuário definitivamente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado com external_id definido (criado especificamente para este teste)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar que o usuário existe: GET /api/v2/users/by_external_id/{ext_id}						
+					</actions>
+					<expectedresults>
+						
+Status 200, usuário encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição DELETE /api/v2/users/by_external_id/{ext_id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200 ou 204						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar buscar o usuário excluído: GET /api/v2/users/by_external_id/{ext_id}						
+					</actions>
+					<expectedresults>
+						
+Status code 404 Not Found						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar pelo ID do mesmo usuário: GET /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 404 Not Found						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificação pós-exclusão - Dados completamente removidos">
+			<summary>
+				
+Verificar se após a exclusão, todos os dados do usuário foram removidos da base.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário recém-excluído</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Após exclusão, tentar gerar token com as credenciais do usuário excluído						
+					</actions>
+					<expectedresults>
+						
+Erro de autenticação (usuário não existe)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar na listagem geral que o usuário não aparece						
+					</actions>
+					<expectedresults>
+						
+GET /api/v2/users não retorna o usuário excluído						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que é possível criar um novo usuário com o mesmo e-mail						
+					</actions>
+					<expectedresults>
+						
+POST /api/v2/users com o e-mail do excluído retorna 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Excluir usuário com ID inexistente">
+			<summary>
+				
+Verificar se a API V2 retorna 404 ao tentar excluir um ID que não existe.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição DELETE /api/v2/users/999999999						
+					</actions>
+					<expectedresults>
+						
+Status code 404 Not Found						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara em português: 'Usuário não encontrado'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Excluir usuário com External ID inexistente">
+			<summary>
+				
+Verificar se a API V2 retorna 404 ao tentar excluir por external_id inexistente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição DELETE /api/v2/users/by_external_id/ext_inexistente						
+					</actions>
+					<expectedresults>
+						
+Status code 404 Not Found						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Excluir com token inválido">
+			<summary>
+				
+Verificar se a API V2 retorna 401 ao tentar excluir sem autenticação.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição DELETE /api/v2/users/{id} SEM header Authorization						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição DELETE /api/v2/users/by_external_id/{ext_id} com token inválido						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Comparação V1 vs V2 - Mensagens de erro na exclusão">
+			<summary>
+				
+Comparar as mensagens de retorno de erro entre V1 e V2 nos cenários de exclusão, usando dados reais da V1 como referência.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar DELETE /api/v1/o/:org_id/students/999999999 (ID inexistente)						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 404 com message: 'Recurso não encontrado'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar DELETE /api/v2/users/999999999 (ID inexistente)						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 404 com mensagem: 'Usuário não encontrado' (mais específica que V1)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar DELETE /api/v1/o/:org_id/students/{id} com token inválido						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 401 sem body						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar DELETE /api/v2/users/{id} com token inválido						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 401 com mensagem descritiva em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar DELETE /api/v1/o/:org_id/students/{id} com usuário válido						
+					</actions>
+					<expectedresults>
+						
+V1 retorna status 200 com message: 'Usuário excluído com sucesso.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar DELETE /api/v2/users/{id} com usuário válido						
+					</actions>
+					<expectedresults>
+						
+V2 retorna status 200/204 com mensagem equivalente em português						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Compatibilidade - Endpoint V1 de exclusão continua funcionando">
+			<summary>
+				
+Verificar se o endpoint DELETE /api/v1/o/:org_id/students/:id continua funcionando normalmente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado para exclusão</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição DELETE /api/v1/o/:org_id/students/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200/204						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o usuário foi excluído via V2: GET /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status 404						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[API V2 Usuários] QA 3.2 - Criação de usuários em massa (API V2)">
+		<testcase name="Criar múltiplos usuários válidos com sucesso (até 25)">
+			<summary>
+				
+Verificar se o endpoint POST /api/v2/users/bulk_create cria múltiplos usuários com sucesso.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Payload com 5 usuários válidos preparado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users/bulk_create com array de 5 usuários válidos						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta contém os 5 usuários criados com seus respectivos IDs						
+					</actions>
+					<expectedresults>
+						
+Array com 5 objetos user, cada um com user_id						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar cada usuário criado via GET /api/v2/users/:id						
+					</actions>
+					<expectedresults>
+						
+Todos os 5 usuários existem e têm dados corretos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criar exatamente 25 usuários (limite máximo)">
+			<summary>
+				
+Verificar se o endpoint aceita o limite máximo de 25 registros.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Payload com exatamente 25 usuários válidos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users/bulk_create com array de 25 usuários						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que todos os 25 usuários foram criados						
+					</actions>
+					<expectedresults>
+						
+Resposta contém 25 objetos user com IDs						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar amostra de 3 usuários via GET /api/v2/users/:id						
+					</actions>
+					<expectedresults>
+						
+Dados corretos e persistidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Exceder limite de 25 registros">
+			<summary>
+				
+Verificar se a API retorna erro ao enviar mais de 25 registros.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users/bulk_create com array de 26 usuários						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara indicando o limite máximo de 25 registros por requisição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NENHUM dos 26 usuários foi criado						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro novo na base						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Rollback total quando um registro é inválido">
+			<summary>
+				
+Verificar se ao enviar um payload com um registro inválido, nenhum dos registros é criado (rollback).				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users/bulk_create com 10 usuários, onde o 5º tem e-mail inválido						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta identifica o registro com erro (posição 5) e o campo (email)						
+					</actions>
+					<expectedresults>
+						
+Erro descritivo indicando registro #5, campo email						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NENHUM dos 10 usuários foi criado (rollback total)						
+					</actions>
+					<expectedresults>
+						
+Buscar os 4 primeiros por e-mail: todos retornam lista vazia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os 5 últimos também não foram criados						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro criado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Validação prévia retorna todos os erros de uma vez">
+			<summary>
+				
+Verificar se ao enviar múltiplos registros com erros diferentes, a API retorna todos os erros identificando cada registro.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição com 5 usuários: #1 sem first_name, #3 com e-mail inválido, #5 com e-mail duplicado						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a resposta lista TODOS os erros de uma vez						
+					</actions>
+					<expectedresults>
+						
+Erros para registros #1, #3 e #5 identificados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que cada erro identifica o número do registro e o campo com problema						
+					</actions>
+					<expectedresults>
+						
+Ex: 'Registro 1: first_name é obrigatório', 'Registro 3: email inválido', 'Registro 5: email já cadastrado'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que nenhum registro foi criado (rollback)						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro na base						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - E-mail duplicado dentro do próprio payload">
+			<summary>
+				
+Verificar se a API detecta e-mails duplicados dentro do mesmo payload de criação em massa.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição com 3 usuários onde o #1 e #3 têm o mesmo e-mail						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a mensagem de erro						
+					</actions>
+					<expectedresults>
+						
+Mensagem indicando e-mails duplicados no payload						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que nenhum registro foi criado (rollback)						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro na base						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - E-mail já existente na base">
+			<summary>
+				
+Verificar se a API detecta conflito com e-mails já cadastrados na base.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário já cadastrado com e-mail 'existente@teste.com'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição com 3 usuários onde o #2 tem e-mail 'existente@teste.com'						
+					</actions>
+					<expectedresults>
+						
+Status code 409 ou 422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o erro identifica o registro #2 e indica conflito de e-mail						
+					</actions>
+					<expectedresults>
+						
+Mensagem clara indicando registro e conflito						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar rollback: nenhum dos 3 foi criado						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro novo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Campos obrigatórios faltantes em registros do payload">
+			<summary>
+				
+Verificar se a API valida campos obrigatórios em cada registro do payload.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição com 3 usuários onde o #2 não tem 'enterprise'						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o erro identifica o registro #2 e o campo 'enterprise'						
+					</actions>
+					<expectedresults>
+						
+Mensagem descritiva por registro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar rollback						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro criado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Payload vazio ou array vazio">
+			<summary>
+				
+Verificar o comportamento ao enviar payload vazio ou array sem registros.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users/bulk_create com body: {"users": []}						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422 com mensagem indicando que é necessário enviar ao menos 1 registro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com body vazio: {}						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição sem body						
+					</actions>
+					<expectedresults>
+						
+Status code 400/422						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Erro - Token inválido na criação em massa">
+			<summary>
+				
+Verificar se a API retorna 401 ao tentar criar em massa sem autenticação.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users/bulk_create SEM header Authorization						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição com token inválido						
+					</actions>
+					<expectedresults>
+						
+Status code 401 Unauthorized						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Performance - Criação em massa vs chamadas individuais">
+			<summary>
+				
+Verificar se a criação em massa é mais performática que chamadas individuais.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Medir tempo de criação de 10 usuários via chamadas individuais (10x POST /api/v2/users)						
+					</actions>
+					<expectedresults>
+						
+Anotar tempo total (ex: 5 segundos)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Medir tempo de criação de 10 usuários via bulk_create (1x POST /api/v2/users/bulk_create)						
+					</actions>
+					<expectedresults>
+						
+Anotar tempo total						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Comparar os tempos						
+					</actions>
+					<expectedresults>
+						
+Criação em massa deve ser significativamente mais rápida que chamadas individuais						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[API V2 Usuários] QA 4.1 - Feature flag (API V2 Usuários)">
+		<testcase name="Feature flag DESABILITADA - Endpoints V2 inacessíveis">
+			<summary>
+				
+Verificar se com a feature flag desabilitada, todos os endpoints da API V2 de usuários retornam erro.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários DESABILITADA
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com dados válidos						
+					</actions>
+					<expectedresults>
+						
+Status code 404 ou 403						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 404 ou 403						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users (listagem)						
+					</actions>
+					<expectedresults>
+						
+Verificar comportamento: se listagem já existia antes, deve continuar funcionando; novos endpoints devem retornar 404/403						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 404 ou 403						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/{id}/deactivate						
+					</actions>
+					<expectedresults>
+						
+Status code 404 ou 403						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/{id}/activate						
+					</actions>
+					<expectedresults>
+						
+Status code 404 ou 403						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição DELETE /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 404 ou 403						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição DELETE /api/v2/users/by_external_id/{ext_id}						
+					</actions>
+					<expectedresults>
+						
+Status code 404 ou 403						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users/bulk_create						
+					</actions>
+					<expectedresults>
+						
+Status code 404 ou 403						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os endpoints V1 continuam funcionando normalmente						
+					</actions>
+					<expectedresults>
+						
+Endpoints V1 operacionais						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Feature flag HABILITADA - Endpoints V2 acessíveis">
+			<summary>
+				
+Verificar se com a feature flag habilitada, todos os endpoints da API V2 de usuários funcionam corretamente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários HABILITADA
+Token de acesso válido</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users com dados válidos						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição GET /api/v2/users (listagem)						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição PUT /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/{id}/deactivate						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição PATCH /api/v2/users/{id}/activate						
+					</actions>
+					<expectedresults>
+						
+Status code 200 OK						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição DELETE /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Status code 200/204						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Enviar requisição POST /api/v2/users/bulk_create						
+					</actions>
+					<expectedresults>
+						
+Status code 201 Created						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Feature flag DESABILITADA após uso - Dados não corrompidos">
+			<summary>
+				
+Verificar se ao desabilitar a feature flag após ter criado dados via V2, os dados permanecem íntegros.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários inicialmente HABILITADA
+Token de acesso válido
+Usuários criados via API V2</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Com feature flag habilitada, criar 3 usuários via POST /api/v2/users						
+					</actions>
+					<expectedresults>
+						
+3 usuários criados com sucesso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desabilitar a feature flag						
+					</actions>
+					<expectedresults>
+						
+Feature flag desabilitada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os usuários criados via V2 ainda existem via V1: GET /api/v1/o/:org_id/students						
+					</actions>
+					<expectedresults>
+						
+Usuários encontrados na listagem V1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os dados dos usuários não foram corrompidos						
+					</actions>
+					<expectedresults>
+						
+Todos os campos estão corretos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que é possível atualizar/excluir esses usuários via V1						
+					</actions>
+					<expectedresults>
+						
+Operações V1 funcionam normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Reabilitar a feature flag						
+					</actions>
+					<expectedresults>
+						
+Feature flag habilitada novamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que os usuários continuam acessíveis via V2						
+					</actions>
+					<expectedresults>
+						
+GET /api/v2/users/{id} retorna dados corretos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="[API V2 Usuários] QA 4.2 - Logs">
+		<testcase name="Validar log de criação de usuário via API V2">
+			<summary>
+				
+Verificar se ao criar um usuário via API V2, o log é registrado corretamente.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Acesso ao banco de dados de logs (MySQL e/ou PostgreSQL)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar um usuário via POST /api/v2/users						
+					</actions>
+					<expectedresults>
+						
+Usuário criado com sucesso (201)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o banco de dados de logs						
+					</actions>
+					<expectedresults>
+						
+Conexão estabelecida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o log referente à criação do usuário						
+					</actions>
+					<expectedresults>
+						
+Log encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o log contém: ação realizada (criação), dados do usuário, timestamp, IP de origem						
+					</actions>
+					<expectedresults>
+						
+Informações completas no log						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se o log está em MySQL ou PostgreSQL (conforme definição do projeto)						
+					</actions>
+					<expectedresults>
+						
+Log no banco correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar log de atualização de usuário via API V2">
+			<summary>
+				
+Verificar se ao atualizar um usuário via API V2, o log registra a alteração.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado
+Acesso ao banco de dados de logs</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Atualizar um usuário via PUT /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Usuário atualizado (200)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o log referente à atualização						
+					</actions>
+					<expectedresults>
+						
+Log encontrado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que o log contém os campos alterados (valores antigos e novos)						
+					</actions>
+					<expectedresults>
+						
+Alterações registradas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar log de inativação/ativação de usuário via API V2">
+			<summary>
+				
+Verificar se ao inativar/ativar um usuário via API V2, o log é registrado.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado
+Acesso ao banco de dados de logs</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Inativar um usuário via PATCH /api/v2/users/{id}/deactivate						
+					</actions>
+					<expectedresults>
+						
+Usuário inativado (200)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o log de inativação						
+					</actions>
+					<expectedresults>
+						
+Log encontrado com ação de inativação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ativar o usuário via PATCH /api/v2/users/{id}/activate						
+					</actions>
+					<expectedresults>
+						
+Usuário ativado (200)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o log de ativação						
+					</actions>
+					<expectedresults>
+						
+Log encontrado com ação de ativação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar log de exclusão de usuário via API V2">
+			<summary>
+				
+Verificar se ao excluir um usuário via API V2, o log é registrado.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Usuário cadastrado para exclusão
+Acesso ao banco de dados de logs</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Excluir um usuário via DELETE /api/v2/users/{id}						
+					</actions>
+					<expectedresults>
+						
+Usuário excluído (200/204)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar o log de exclusão						
+					</actions>
+					<expectedresults>
+						
+Log encontrado com ação de exclusão e dados do usuário excluído						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar log de criação em massa via API V2">
+			<summary>
+				
+Verificar se ao criar usuários em massa, os logs são registrados para cada usuário.				
+			</summary>
+			<preconditions>Feature flag da API V2 de usuários habilitada
+Token de acesso válido
+Acesso ao banco de dados de logs</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar 5 usuários via POST /api/v2/users/bulk_create						
+					</actions>
+					<expectedresults>
+						
+5 usuários criados (201)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Buscar os logs de criação						
+					</actions>
+					<expectedresults>
+						
+5 logs de criação encontrados (um para cada usuário)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que cada log identifica o usuário criado						
+					</actions>
+					<expectedresults>
+						
+Logs com dados individuais						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar exclusão automática de logs antigos (se PostgreSQL)">
+			<summary>
+				
+Verificar se os logs em PostgreSQL são excluídos automaticamente após o período definido (90 dias).				
+			</summary>
+			<preconditions>Acesso ao banco de dados PostgreSQL
+Logs com mais de 90 dias existentes (ou simulação de data)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar se os logs do projeto estão armazenados em PostgreSQL						
+					</actions>
+					<expectedresults>
+						
+Confirmar banco de dados utilizado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a existência de logs com data de criação &amp;gt; 90 dias						
+					</actions>
+					<expectedresults>
+						
+Logs antigos identificados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar se existe job/cron de limpeza automática configurado						
+					</actions>
+					<expectedresults>
+						
+Job de limpeza existe						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Validar que logs com mais de 90 dias são excluídos automaticamente						
+					</actions>
+					<expectedresults>
+						
+Logs antigos removidos, logs recentes mantidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
