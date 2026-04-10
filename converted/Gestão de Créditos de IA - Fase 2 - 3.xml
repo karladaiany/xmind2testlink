@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Trial - Gestão de Créditos F2">
+		<testcase name="Trial - Bloqueios dos recursos de IA">
+			<summary>
+				
+Validar que os bloqueios e mensagens (sem créditos)&lt;br /&gt;
+Validar acesso funcionando (com créditos)&lt;br /&gt;
+&lt;br /&gt;
+Vamos ter 4 tipos de mensagens, são elas:&lt;br /&gt;
+&lt;br /&gt;
+Mensagem 1 (visão do admin)&lt;br /&gt;
+Título: Limite de créditos atingido.&lt;br /&gt;
+Descrição: Todos os créditos disponíveis foram utilizados. Para continuar, entre em contato com o suporte ou aguarde a renovação.&lt;br /&gt;
+[Botão] Contato&lt;br /&gt;
+&lt;br /&gt;
+Mensagem 2 (visão do gestor, instrutor)&lt;br /&gt;
+Título: Limite de créditos atingido.&lt;br /&gt;
+Descrição: Todos os créditos disponíveis foram utilizados. Para continuar, entre em contato com o responsável do ambiente ou aguarde a renovação.&lt;br /&gt;
+&lt;br /&gt;
+Mensagem 3 (visão do aluno)&lt;br /&gt;
+Título: Ação indisponível no momento.&lt;br /&gt;
+Descrição: Não foi possível concluir esta ação agora. Entre em contato com o responsável pelo ambiente para mais informações.&lt;br /&gt;
+&lt;br /&gt;
+Mensagem 4&lt;br /&gt;
+Notificação amarela no topo da tela (componente padrão)				
+			</summary>
+			<preconditions />
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o Super admin &amp;gt; HABILITAR a funcionalidade do "Agente de atendimento" do ambiente &amp;gt; Acessar o ambiente como aluno tendo o respectivo modo de uso para essa funcionalidade &amp;gt; clicar no menu do Agente de atendimento						
+					</actions>
+					<expectedresults>
+						
+Mensagem 3						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o Super admin &amp;gt; HABILITAR a funcionalidade do "Agente de atendimento" do ambiente &amp;gt; Acessar o ambiente como aluno tendo o respectivo modo de uso para essa funcionalidade &amp;gt; clicar no menu do Agente de atendimento &amp;gt; interagir com o chat						
+					</actions>
+					<expectedresults>
+						
+Mensagem 3						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR a toogle: "Indexação de conteúdo"						
+					</actions>
+					<expectedresults>
+						
+Mensagem 4						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR a toogle: "Indexação de conteúdo" &amp;gt; Sincronizar conteúdos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 4						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Ferramenta para criação de conteúdos interativos, no tipo página ou em vídeo com inteligência artificial" &amp;gt; Acessar a listagem de conteúdos e clicar no botão "Criar curso com IA"						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Ferramenta para criação de conteúdos interativos, no tipo página ou em vídeo com inteligência artificial" &amp;gt; Acessar a listagem de conteúdos e clicar no botão "Criar curso com IA" &amp;gt; chegar na etapa de: Geração de imagem em conteúdos do tipo aula						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Ferramenta para criação de conteúdos interativos, no tipo página ou em vídeo com inteligência artificial" &amp;gt; Acessar a listagem de conteúdos e clicar no botão "Criar curso com IA" &amp;gt; chegar na etapa de: Geração de áudio em conteúdos do tipo aula com IA						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Ferramenta para criação de conteúdos interativos, no tipo página ou em vídeo com inteligência artificial" &amp;gt; Acessar a listagem de conteúdos e clicar no botão "Criar curso com IA" &amp;gt; Gerar um curso com AULA &amp;gt; Editar esse curso e fazer a renderização de vídeo de conteúdos do tipo aula						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Gera questionários baseados em novos arquivos ou atividades já existentes" &amp;gt; Acessar a listagem de conteúdos &amp;gt; editar um curso &amp;gt; Acessar o botão da Sophia &amp;gt; Geração de questionários						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>9</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Criador de estrutura de atividades para auxiliar na construção de um conteúdo" &amp;gt; Acessar a listagem de conteúdos &amp;gt; editar um curso &amp;gt; Acessar o botão da Sophia &amp;gt; Sugestão de atividades						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>10</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Gere resumos para suas atividades" &amp;gt; Acessar a listagem de conteúdos &amp;gt; editar um curso &amp;gt; Acessar o botão da Sophia &amp;gt; Geração de resumo						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>11</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Gere resumos para suas atividades" &amp;gt; Acessar a listagem de conteúdos &amp;gt; editar um curso &amp;gt; Acessar o botão da Sophia &amp;gt; Geração de roteiro do narrador						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>12</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Edição de conteúdos do tipo página com recursos de IA" &amp;gt; Editar uma página e utilizar o recurso de IA dela (ícone no editor de texto)						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1 e 2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>13</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Edição de conteúdos do tipo página com recursos de IA" &amp;gt; Editar uma aula e utilizar o recurso de IA dela (renderizar)						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1 e 2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>14</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Parecer da nossa inteligência artificial dos questionários aplicados aos respondentes" &amp;gt; Realizar um curso com o aluno com as opções de IA habilitados para as perguntas desse questionário &amp;gt; realizar o curso como aluno &amp;gt; no final do questionário clicar no botão "Analisar"						
+					</actions>
+					<expectedresults>
+						
+Mensagem 3						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>15</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Permite fazer a importação de arquivos ou textos para a criação de questionários de forma automatizada" &amp;gt; Acessar o menu de Questionário &amp;gt; clicar no botão importar questionário &amp;gt; realizar o upload de algum documento						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1 e 2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>16</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Geração de competências no organograma com base em arquivos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>17</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Regeração de competências no organograma						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>18</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Regeração de funções no organograma						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>19</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Geração de organograma (funções e competências) a partir de arquivos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>20</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; IA no editor de texto de funções						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>21</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; IA no editor de texto de competências						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>22</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Geração de descrição de competências no organograma						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>23</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Geração de descrição de funções no organograma						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>24</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Utilize a IA para ler arquivos e auto preencher os registros de treinamentos externos realizados" &amp;gt; Acessar o menu de "Registros" na tela principal &amp;gt; clicar em autopreenchimento de registros externos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>25</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Utilize a IA para ler arquivos e auto preencher os registros de treinamentos externos realizados" &amp;gt; Acessar o menu de "Registros" na tela principal &amp;gt; clicar na IA do editor de texto para registros externos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>26</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Permite fazer a importação de arquivos ou textos para a criação de questionários de forma automatizada" &amp;gt; Acessar o menu de Questionário &amp;gt; clicar no botão importar questionário &amp;gt; interagir com o chat de alguma importação feita anteriormente						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1 e 2						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>27</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
+“Créditos de IA” &amp;gt; aba "Configurações" &amp;gt; Editar o ambiente principal &amp;gt; HABILITAR o checkbox: "Usar a IA para entender arquivos importados e gerar organograma da sua empresa, função e competências de cada função" &amp;gt; Geração de funções no organograma com base em arquivos						
+					</actions>
+					<expectedresults>
+						
+Mensagem 1						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>28</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
