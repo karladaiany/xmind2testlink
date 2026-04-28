@@ -343,7 +343,7 @@ Acessar um ambiente adicional independente
 					</actions>
 					<expectedresults>
 						
-Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+Verificar que as funcionalidades desse ambiente adicional NÃO herdam as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>3</step_number>
@@ -393,7 +393,7 @@ Acessar um ambiente adicional independente
 					</actions>
 					<expectedresults>
 						
-Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+Verificar que as funcionalidades desse ambiente adicional NÃO herdam as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>3</step_number>
@@ -422,7 +422,13 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 						
 Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que somente TEXTO foi indexado.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>1</step_number>
@@ -437,7 +443,13 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 						
 Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que somente PÁGINA foi indexado.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>2</step_number>
@@ -452,7 +464,13 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 						
 Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que somente AULA foi indexado.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>3</step_number>
@@ -467,7 +485,13 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 						
 Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que somente PDF ESTAMPADO foi indexado.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>4</step_number>
@@ -482,7 +506,13 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 						
 Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que somente VÍDEO foi indexado.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>5</step_number>
@@ -497,7 +527,13 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 						
 Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que somente ARQUIVOS foi indexado.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>6</step_number>
@@ -523,9 +559,15 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 					</actions>
 					<expectedresults>
 						
-Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para essa situação de conteúdo.&lt;br /&gt;
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que somente conteúdos EM DESENVOLVIMENTO foi indexado.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado referente ao conteúdos que estão EM DESENVOLVIMENTO.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>8</step_number>
@@ -538,9 +580,15 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 					</actions>
 					<expectedresults>
 						
-Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para essa situação de conteúdo.&lt;br /&gt;
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que somente conteúdos LIBERADOS foi indexado.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado referente ao conteúdos que estão LIBERADOS.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>9</step_number>
@@ -553,9 +601,15 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 					</actions>
 					<expectedresults>
 						
-Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para essa situação de conteúdo.&lt;br /&gt;
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que somente conteúdos SUSPENSOS foi indexado.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado referente ao conteúdos que estão SUSPENSOS						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>10</step_number>
@@ -568,9 +622,17 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 					</actions>
 					<expectedresults>
 						
-Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que somente que os checkbox marcados foram indexados.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Enviar 3 perguntas para 3 diferentes conteúdos indexados&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>11</step_number>
@@ -583,9 +645,17 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 					</actions>
 					<expectedresults>
 						
-Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que todos os checkbox marcados foram indexados.						
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Enviar 3 perguntas para 3 diferentes conteúdos indexados&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>12</step_number>
@@ -594,15 +664,23 @@ Obs: utilizar recursos de IA para validar que todos os checkbox marcados foram i
 					<actions>
 						
 Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
-“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar alguns checkbox &amp;gt; indexar &amp;gt; depois desmarcar eles &amp;gt; indexar de novo						
+“Créditos de IA” &amp;gt; aba “Configurações” &amp;gt; Editar um ambiente &amp;gt; habilitar a toogle: Indexação de conteúdo &amp;gt; marcar alguns checkbox &amp;gt; indexar &amp;gt; depois desmarcar eles &amp;gt; indexar de novo&lt;br /&gt;
+&lt;br /&gt;
+Criar um curso com a atividade do tipo TEXTO e escrever um texto de até 200 caracteres sobre a descoberta das pirâmides do Egito.						
 					</actions>
 					<expectedresults>
 						
-Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados. E deixar desmarcado o checkbox do TEXTO antes de confirmar/salvar a indexação.&lt;br /&gt;
 &lt;br /&gt;
-E os checkbox desmarcados não devem indexar suas atualizações.&lt;br /&gt;
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que SOMENTE os checkbox marcados foram indexados.						
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
+&lt;br /&gt;
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo NÃO INDEXAÇÃO, ou seja, conteúdo que ficou com o checkbox desmarcado na switch "Indexação de conteúdo" (edit_additional_organization_permissions)&lt;br /&gt;
+&lt;br /&gt;
+Enviar perguntas sobre a descoberta das pirâmides do Egito.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização NÃO vai retornar respostas coerentes de acordo com o assunto perguntado.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>13</step_number>
@@ -615,13 +693,15 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 					</actions>
 					<expectedresults>
 						
-Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
+Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para esse conteúdo.&lt;br /&gt;
 &lt;br /&gt;
-Ao selecionar o tipo de conteúdo “Curso”, o sistema deve considerar os cursos como unidade principal de indexação.&lt;br /&gt;
+Depois confirmar que no contrato da organização em /admin/edit_sys_subscription_settings/ e aba contratos a funcionalidade "Agente de atendimento" esta habilitada.&lt;br /&gt;
 &lt;br /&gt;
-Obs.: Nessa condição, trilhas e pacotes consequentemente passam a ser indexados também (mesmo que não marcados em tela), pois hoje atuam como agrupadores de cursos.&lt;br /&gt;
+Depois acessar a organização com o perfil administrador o menu Créditos de IA (ai_consumption_analysis) &amp;gt; aba Configurações &amp;gt; Editar o ambiente principal &amp;gt; habilitar a switch "Agente de atendimento" &amp;gt; marcar o checkbox "Interna" e Salvar.&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que SOMENTE os checkbox marcados foram indexados.						
+Depois acessar a organização com o perfil aluno &amp;gt; Acessar o menu "IA Beta" &amp;gt; Criar uma "Nova conversa" através do botão dessa tela e escrever e enviar perguntas sobre o conteúdo indexado.&lt;br /&gt;
+&lt;br /&gt;
+Confirmar que a IA da organização vai retornar respostas coerentes de acordo com o assunto perguntado que estão no CURSO						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>14</step_number>
@@ -653,7 +733,7 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 						
 Será apresentado a modal "Processo de indexação de conteúdo" (RN 37), ao Salvar a indexação deve ser feita apenas para os checkbox marcados&lt;br /&gt;
 &lt;br /&gt;
-Quando uma nova reavaliação ou novo processamento for iniciado após alterações nas configurações da indexação, o sistema deve voltar a exibir o status visual de indexação em andamento na interface.						
+Quando uma nova reavaliação ou novo processamento for iniciado após alterações nas configurações da indexação, o sistema deve voltar a exibir o status visual de indexação em andamento na interface (notificação no topo da tela em forma de uma tarja amarela).						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>16</step_number>
@@ -666,7 +746,7 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 					</actions>
 					<expectedresults>
 						
-Caso o usuário desmarque todas as opções (checkbox) dentro de uma categoria, ao desmarcar o último checkbox, automaticamente o toggle deve ser desabilitado.						
+Caso o usuário desmarque todas as opções (checkbox) dentro de uma categoria, ao desmarcar o último checkbox, automaticamente o toggle "Indexação de conteúdo" deve ser desabilitado.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>17</step_number>
@@ -678,7 +758,7 @@ Acessar um ambiente adicional que herdou as configurações do ambiente principa
 					</actions>
 					<expectedresults>
 						
-Verificar que as funcionalidades foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
+Verificar que as funcionalidades (configurações) foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>18</step_number>
@@ -690,7 +770,7 @@ Acessar um ambiente adicional independente
 					</actions>
 					<expectedresults>
 						
-Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+Verificar que as funcionalidades desse ambiente adicional NÃO herdam as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>19</step_number>
@@ -735,9 +815,9 @@ Será habilitado os campos:&lt;br /&gt;
 Data inicial (obrigatório)&lt;br /&gt;
 Data final (opcional)&lt;br /&gt;
 &lt;br /&gt;
-Obs 1: A validação das datas só deve ocorrer quando o switch estiver habilitado.&lt;br /&gt;
+A validação das datas só deve ocorrer quando o switch estiver habilitado.&lt;br /&gt;
 &lt;br /&gt;
-Obs 2: Caso seja informada a “Data inicial” e “Data final”, será realizada a indexação apenas de conteúdos criados/atualizados dentro daquele período. Novos conteúdos ou atualizações fora do período informado não devem ser indexados.						
+Caso seja informada a “Data inicial” e “Data final”, será realizada a indexação apenas de conteúdos criados/atualizados dentro daquele período. Novos conteúdos ou atualizações fora do período informado não devem ser indexados.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>2</step_number>
@@ -785,9 +865,13 @@ Acessar o menu “Configuração” &amp;gt;&lt;br /&gt;
 						
 Ao alterar filtros ou critérios da indexação os conteúdos que já haviam sido indexados, mas que agora não façam mais parte da nova configuração não serão excluídos, mas sim inativados.&lt;br /&gt;
 &lt;br /&gt;
+Os conteúdos inativados significam que eles não são mais utilizados como fonte de dados na utilização do Agente de atendimento (chat utilizado pelo perfil aluno).&lt;br /&gt;
+&lt;br /&gt;
 Caso conteúdos anteriormente inativados voltem a fazer parte do escopo configurado, serão reativados.&lt;br /&gt;
 &lt;br /&gt;
-IMPORTANTE: Para este caso não serão cobrados créditos novamente.						
+Ao reativar os conteúdos eles voltam a ser utilizados como fonte de dados na utilização do Agente de atendimento (chat utilizado pelo perfil aluno).&lt;br /&gt;
+&lt;br /&gt;
+IMPORTANTE: Para este caso não serão cobrados créditos novamentel, pois, o conteúdo já havia sido indexado anteriormente.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>5</step_number>
@@ -799,7 +883,7 @@ Acessar um ambiente adicional que herdou as configurações do ambiente principa
 					</actions>
 					<expectedresults>
 						
-Verificar que as funcionalidades foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
+Verificar que as funcionalidades e configurações foram herdadas e os recursos de IA estão utilizando os conteúdos corretamente.						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>6</step_number>
@@ -811,7 +895,7 @@ Acessar um ambiente adicional independente
 					</actions>
 					<expectedresults>
 						
-Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+Verificar que as funcionalidades desse ambiente adicional NÃO herdam as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>7</step_number>
@@ -869,7 +953,7 @@ Realizar múltiplas seleções&lt;br /&gt;
 &lt;br /&gt;
 Selecionar &amp;gt; indexar &amp;gt; desmarcar &amp;gt; indexar de novo&lt;br /&gt;
 &lt;br /&gt;
-Obs: utilizar recursos de IA para validar que apenas as exceções salvas estão sendo excluídas das análises por recursos de IA						
+Utilizar recursos de IA do Agente de Atendimento para validar que apenas as exceções salvas estão sendo excluídas das análises por recursos de IA						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>2</step_number>
@@ -893,7 +977,7 @@ Acessar um ambiente adicional independente
 					</actions>
 					<expectedresults>
 						
-Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+Verificar que as funcionalidades desse ambiente adicional NÃO herdam as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>4</step_number>
@@ -944,7 +1028,7 @@ Acessar um ambiente adicional independente
 					</actions>
 					<expectedresults>
 						
-Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+Verificar que as funcionalidades desse ambiente adicional NÃO herdam as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>3</step_number>
@@ -995,7 +1079,7 @@ Acessar um ambiente adicional independente
 					</actions>
 					<expectedresults>
 						
-Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+Verificar que as funcionalidades desse ambiente adicional NÃO herdam as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>3</step_number>
@@ -1324,7 +1408,7 @@ Acessar um ambiente adicional independente
 					</actions>
 					<expectedresults>
 						
-Verificar que as funcionalidades desse ambiente adicional estão respeitando as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
+Verificar que as funcionalidades desse ambiente adicional NÃO herdam as configurações do ambiente principal e os recursos de IA estão utilizando os conteúdos						
 					</expectedresults>
 					<execution_type>1</execution_type>
 					<step_number>16</step_number>
