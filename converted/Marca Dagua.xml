@@ -1,0 +1,5133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="">
+	<testsuite name="Configurar a exibição de uma marca d'água para vídeos">
+		<testcase name="Acessar a tela de atividade de vídeo e visualizar a seção 'Marca d'água'">
+			<summary>
+				
+Verificar que ao criar uma atividade do tipo Vídeo, a seção 'Marca d'água no vídeo' é exibida no formulário com o checkbox 'Habilitar marca d'água no vídeo' desmarcado por padrão.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Curso previamente cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu 'Conteúdos' no painel administrativo						
+					</actions>
+					<expectedresults>
+						
+Tela de listagem de conteúdos é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso previamente cadastrado						
+					</actions>
+					<expectedresults>
+						
+Tela de edição do curso é exibida com a aba 'Atividades' disponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Adicionar atividade'						
+					</actions>
+					<expectedresults>
+						
+Modal de seleção de tipo de atividade é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o tipo 'Vídeo'						
+					</actions>
+					<expectedresults>
+						
+Formulário de criação de atividade de Vídeo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar a seção 'Marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Seção 'Marca d'água no vídeo' é exibida com o checkbox 'Habilitar marca d'água no vídeo' desmarcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar o ícone de tooltip (?) ao lado do título 'Marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Ícone de tooltip é exibido ao lado do título 'Marca d'água no vídeo'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar tooltip do título 'Marca d'água no vídeo'">
+			<summary>
+				
+Verificar que ao passar o mouse sobre o ícone de tooltip do título 'Marca d'água no vídeo', o texto literal definido na Discovery é exibido.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Formulário de criação de atividade de Vídeo aberto</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Posicionar o cursor sobre o ícone de tooltip (?) ao lado do título 'Marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Tooltip exibida com o texto: 'Exibe uma identificação do usuário sobre o vídeo durante a reprodução para ajudar a prevenir gravações e compartilhamentos não autorizados.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mover o cursor para fora do ícone de tooltip						
+					</actions>
+					<expectedresults>
+						
+Tooltip é ocultada automaticamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Marcar o checkbox 'Habilitar marca d'água no vídeo' e visualizar os campos">
+			<summary>
+				
+Verificar que ao marcar o checkbox 'Habilitar marca d'água no vídeo', os campos de configuração da estampa e a preview são exibidos.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Formulário de criação de atividade de Vídeo aberto</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Marcar o checkbox 'Habilitar marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Checkbox 'Habilitar marca d'água no vídeo' fica marcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a seção de configuração ser exibida						
+					</actions>
+					<expectedresults>
+						
+Os campos 'Informações a exibir', 'Tamanho da fonte', 'Cor da fonte', 'Posição' e 'Tipo de exibição' são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a exibição da preview da marca d'água						
+					</actions>
+					<expectedresults>
+						
+Área de preview da marca d'água é exibida com os dados fictícios: CPF '123.456.789-00', E-mail 'usuario@email.com', IP '123.123.123.123', ID da sessão '123456'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Desmarcar o checkbox 'Habilitar marca d'água no vídeo'">
+			<summary>
+				
+Verificar que ao desmarcar o checkbox 'Habilitar marca d'água no vídeo' após ele estar marcado, os campos de configuração e a preview são ocultados.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Formulário de criação de atividade de Vídeo aberto
+Checkbox 'Habilitar marca d'água no vídeo' marcado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Desmarcar o checkbox 'Habilitar marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Checkbox 'Habilitar marca d'água no vídeo' fica desmarcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a ocultação dos campos de configuração						
+					</actions>
+					<expectedresults>
+						
+Os campos 'Informações a exibir', 'Tamanho da fonte', 'Cor da fonte', 'Posição', 'Tipo de exibição' e a preview NÃO são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar opções disponíveis no campo 'Informações a exibir'">
+			<summary>
+				
+Verificar que o campo 'Informações a exibir' apresenta as quatro opções definidas pela Discovery: CPF, E-mail, IP e ID da sessão.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Campo 'Informações a exibir' é exibido com as opções disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'CPF'						
+					</actions>
+					<expectedresults>
+						
+Opção 'CPF' é exibida no campo 'Informações a exibir'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'E-mail'						
+					</actions>
+					<expectedresults>
+						
+Opção 'E-mail' é exibida no campo 'Informações a exibir'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'IP'						
+					</actions>
+					<expectedresults>
+						
+Opção 'IP' é exibida no campo 'Informações a exibir'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'ID da sessão'						
+					</actions>
+					<expectedresults>
+						
+Opção 'ID da sessão' é exibida no campo 'Informações a exibir'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NÃO existem opções adicionais além das quatro listadas						
+					</actions>
+					<expectedresults>
+						
+Nenhuma opção além de 'CPF', 'E-mail', 'IP' e 'ID da sessão' é exibida no campo 'Informações a exibir'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Selecionar múltiplas opções no campo 'Informações a exibir' e a preview">
+			<summary>
+				
+Verificar que é possível selecionar mais de uma opção no campo 'Informações a exibir' e que cada seleção é refletida em tempo real na preview.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Marcar a opção 'CPF' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Opção 'CPF' fica selecionada. Preview passa a exibir o texto 'CPF: 123.456.789-00'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'E-mail' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Opção 'E-mail' fica selecionada. Preview passa a exibir os textos 'CPF: 123.456.789-00' e 'E-mail: usuario@email.com'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'IP' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Opção 'IP' fica selecionada. Preview passa a exibir os textos 'CPF: 123.456.789-00', 'E-mail: usuario@email.com' e 'IP: 123.123.123.123'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'ID da sessão' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Opção 'ID da sessão' fica selecionada. Preview passa a exibir os quatro textos: 'CPF: 123.456.789-00', 'E-mail: usuario@email.com', 'IP: 123.123.123.123' e 'ID da sessão: 123456'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desmarcar a opção 'CPF' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Opção 'CPF' fica desmarcada. Preview deixa de exibir 'CPF: 123.456.789-00' e mantém os demais						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar regra de seleção mínima do campo 'Informações a exibir' e salvar">
+			<summary>
+				
+Verificar que NÃO é possível salvar a atividade de vídeo com marca d'água habilitada e nenhuma opção selecionada no campo 'Informações a exibir'.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado
+Demais campos obrigatórios da atividade preenchidos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Desmarcar todas as opções do campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Nenhuma opção do campo 'Informações a exibir' está selecionada. Preview do bloco de informações fica vazia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Não selecionar nenhuma opção do campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Vai ser exibido uma mensagem vermelha abaixo do campo com a mensagem: "Selecione ao menos uma informação para exibir."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Salvar'						
+					</actions>
+					<expectedresults>
+						
+Atividade NÃO é salva. Campo 'Informações a exibir' exibe borda vermelha e mensagem de erro indicando que ao menos uma opção deve ser selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Não selecionar nenhuma opção do campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Vai ser exibido uma mensagem vermelha abaixo do campo com a mensagem: "Selecione ao menos uma posição."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Salvar'						
+					</actions>
+					<expectedresults>
+						
+Atividade NÃO é salva. Campo 'Posição' exibe borda vermelha e mensagem de erro indicando que ao menos uma opção deve ser selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Alterar o campo 'Tamanho da fonte' e validar atualização da preview">
+			<summary>
+				
+Verificar que o campo 'Tamanho da fonte' permite ajustar o tamanho da fonte da estampa e que a alteração é refletida em tempo real na preview.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado
+Opção 'CPF' marcada no campo 'Informações a exibir'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o campo 'Tamanho da fonte'						
+					</actions>
+					<expectedresults>
+						
+Campo 'Tamanho da fonte' é exibido com um valor default						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aumentar o valor do campo 'Tamanho da fonte' para o máximo permitido (72px)						
+					</actions>
+					<expectedresults>
+						
+Valor é aceito. Texto 'CPF: 123.456.789-00' na preview é renderizado com a fonte ampliada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Reduzir o valor do campo 'Tamanho da fonte' para o mínimo permitido (8px)						
+					</actions>
+					<expectedresults>
+						
+Valor é aceito. Texto 'CPF: 123.456.789-00' na preview é renderizado com a fonte reduzida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar definir um valor abaixo do mínimo permitido						
+					</actions>
+					<expectedresults>
+						
+Campo bloqueia o valor ou exibe mensagem de erro indicando o limite mínimo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar definir um valor acima do máximo permitido						
+					</actions>
+					<expectedresults>
+						
+Campo bloqueia o valor ou exibe mensagem de erro indicando o limite máximo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Alterar a cor da estampa via seletor de cores no campo 'Cor da fonte'">
+			<summary>
+				
+Verificar que ao abrir o seletor de cores do campo 'Cor da fonte' e selecionar uma cor pela paleta, a cor é aplicada na preview da marca d'água.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado
+Opção 'CPF' marcada no campo 'Informações a exibir'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no campo 'Cor da fonte'						
+					</actions>
+					<expectedresults>
+						
+Seletor de cores é exibido com paleta, controle de transparência e campos HEX/R/G/B						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a cor default que é exibida						
+					</actions>
+					<expectedresults>
+						
+A cor default é #FFFFFF						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar uma cor diferente da default na paleta						
+					</actions>
+					<expectedresults>
+						
+Cor selecionada é aplicada no seletor. Texto da preview passa a ser exibido na nova cor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Fechar o seletor de cores clicando fora dele						
+					</actions>
+					<expectedresults>
+						
+Seletor de cores é fechado. Cor aplicada permanece na preview						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Definir a cor da estampa informando código HEX/RGB no campo 'Cor da fonte'">
+			<summary>
+				
+Verificar que é possível informar manualmente o código HEX ou os valores R/G/B no seletor de cores do campo 'Cor da fonte' e que o valor é aplicado na preview.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado
+Opção 'CPF' marcada no campo 'Informações a exibir'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no campo 'Cor da fonte'						
+					</actions>
+					<expectedresults>
+						
+Seletor de cores é exibido com paleta, controle de transparência e campos HEX/R/G/B						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher o campo 'HEX' com 'FF0000'						
+					</actions>
+					<expectedresults>
+						
+Campo 'HEX' aceita o valor. Indicadores R/G/B atualizam para 255/0/0. Texto da preview passa a ser exibido em vermelho						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher o campo 'R' com '0', 'G' com '128' e 'B' com '255'						
+					</actions>
+					<expectedresults>
+						
+Campos aceitam os valores. Indicador HEX atualiza para '0080FF'. Texto da preview passa a ser exibido em azul						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher o campo 'HEX' com um valor inválido como 'ZZZZZZ'						
+					</actions>
+					<expectedresults>
+						
+Campo rejeita o valor ou exibe mensagem de erro. Cor da preview permanece a anterior						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Ajustar transparência da cor da estampa no campo 'Cor da fonte'">
+			<summary>
+				
+Verificar que o seletor de cores do campo 'Cor da fonte' permite ajustar a transparência (alpha) e que a alteração é refletida na preview.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado
+Opção 'CPF' marcada no campo 'Informações a exibir'
+Cor sólida definida no campo 'Cor da fonte'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no campo 'Cor da fonte'						
+					</actions>
+					<expectedresults>
+						
+Seletor de cores é exibido com paleta, controle de transparência e campos HEX/R/G/B						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mover o controle de transparência para 50%						
+					</actions>
+					<expectedresults>
+						
+Transparência de 50% é aplicada. Texto da preview passa a ser exibido com opacidade reduzida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mover o controle de transparência para 100% (totalmente opaco)						
+					</actions>
+					<expectedresults>
+						
+Transparência de 100% é aplicada. Texto da preview é exibido sólido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mover o controle de transparência para 0% (totalmente transparente)						
+					</actions>
+					<expectedresults>
+						
+Transparência de 0% é aplicada. Texto da preview fica invisível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a opção de "caneta" da dentro da seleção da Cor da fonte e clicar em qualquer outro lugar da tela para salvar uma nova cor						
+					</actions>
+					<expectedresults>
+						
+Ao clicar em qualquer outro lugar da tela o código da cor vai ser salvo e exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar opções disponíveis no campo 'Posição'">
+			<summary>
+				
+Verificar que o campo 'Posição' apresenta as cinco opções definidas pela Discovery.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Campo 'Posição' é exibido com as opções disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'Lateral esquerda superior'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Lateral esquerda superior' é exibida no campo 'Posição'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'Lateral direita superior'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Lateral direita superior' é exibida no campo 'Posição'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'Lateral esquerda inferior'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Lateral esquerda inferior' é exibida no campo 'Posição'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'Lateral direita inferior'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Lateral direita inferior' é exibida no campo 'Posição'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'Sobre todo o vídeo'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Sobre todo o vídeo' é exibida no campo 'Posição'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NÃO existem opções adicionais além das cinco listadas						
+					</actions>
+					<expectedresults>
+						
+Nenhuma opção além das cinco posições definidas é exibida no campo 'Posição'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Selecionar múltiplas posições no campo 'Posição' e validar preview">
+			<summary>
+				
+Verificar que é possível selecionar mais de uma opção no campo 'Posição' e que cada seleção é refletida em tempo real na preview.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado
+Opção 'CPF' marcada no campo 'Informações a exibir'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Marcar a opção 'Lateral esquerda superior' no campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Lateral esquerda superior' fica selecionada. Preview exibe a estampa no canto superior esquerdo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'Lateral direita superior' no campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Lateral direita superior' fica selecionada. Preview exibe a estampa também no canto superior direito						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'Lateral esquerda inferior' no campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Lateral esquerda inferior' fica selecionada. Preview exibe a estampa também no canto inferior esquerdo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'Lateral direita inferior' no campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Lateral direita inferior' fica selecionada. Preview exibe a estampa também no canto inferior direito						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'Sobre todo o vídeo' no campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Sobre todo o vídeo' fica selecionada. Preview exibe a estampa replicada sobre toda a área do vídeo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desmarcar a opção 'Sobre todo o vídeo' no campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Sobre todo o vídeo' fica desmarcada. Preview deixa de replicar a estampa sobre todo o vídeo e mantém apenas as quatro posições laterais selecionadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar regra de seleção mínima do campo 'Posição' ao salvar a atividade">
+			<summary>
+				
+Verificar que NÃO é possível salvar a atividade de vídeo com marca d'água habilitada e nenhuma posição selecionada.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado
+Opção 'CPF' marcada no campo 'Informações a exibir'
+Demais campos obrigatórios da atividade preenchidos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Desmarcar todas as opções do campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Nenhuma opção do campo 'Posição' está selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Salvar'						
+					</actions>
+					<expectedresults>
+						
+Atividade NÃO é salva. Campo 'Posição' exibe borda vermelha e mensagem de erro indicando que ao menos uma opção deve ser selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar opções e seleção única do campo 'Tipo de exibição'">
+			<summary>
+				
+Verificar que o campo 'Tipo de exibição' apresenta apenas as opções 'Fixa' e 'Em movimento' e permite a seleção de apenas uma delas por vez.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o campo 'Tipo de exibição'						
+					</actions>
+					<expectedresults>
+						
+Campo 'Tipo de exibição' é exibido com as opções 'Fixa' e 'Em movimento'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NÃO existem opções adicionais além de 'Fixa' e 'Em movimento'						
+					</actions>
+					<expectedresults>
+						
+Apenas as opções 'Fixa' e 'Em movimento' são exibidas no campo 'Tipo de exibição'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a opção 'Fixa' no campo 'Tipo de exibição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Fixa' fica selecionada. Opção 'Em movimento' fica não selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a opção 'Em movimento' no campo 'Tipo de exibição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Em movimento' fica selecionada. Opção 'Fixa' fica não selecionada automaticamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar novamente a opção 'Fixa' no campo 'Tipo de exibição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Fixa' fica selecionada. Opção 'Em movimento' fica não selecionada automaticamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar tipo de exibição 'Em movimento' na preview">
+			<summary>
+				
+Verificar que ao selecionar a opção 'Em movimento' no campo 'Tipo de exibição', a estampa exibida na preview se movimenta sobre a área do vídeo.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no vídeo' marcado
+Opção 'CPF' marcada no campo 'Informações a exibir'
+Posição 'Lateral esquerda superior' marcada no campo 'Posição'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Selecionar a opção 'Em movimento' no campo 'Tipo de exibição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Em movimento' fica selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Observar a preview da marca d'água por alguns segundos						
+					</actions>
+					<expectedresults>
+						
+Estampa exibida na preview se movimenta dentro da área do vídeo (não permanece fixa)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a opção 'Fixa' no campo 'Tipo de exibição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Fixa' fica selecionada. Estampa na preview passa a ser exibida fixa na posição definida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Salvar atividade de vídeo com marca d'água habilitada — happy path">
+			<summary>
+				
+Verificar que é possível salvar uma atividade de vídeo com a marca d'água habilitada e todas as configurações preenchidas corretamente.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Formulário de criação de atividade de Vídeo aberto
+Vídeo válido carregado no campo 'Arquivo'
+Demais campos obrigatórios da atividade preenchidos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Marcar o checkbox 'Habilitar marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Seção de configuração da marca d'água é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar as opções 'CPF', 'E-mail' e 'IP' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Três opções ficam selecionadas. Preview exibe os três valores fictícios correspondentes						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ajustar o campo 'Tamanho da fonte' para um valor intermediário						
+					</actions>
+					<expectedresults>
+						
+Valor é aceito e refletido na preview						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Definir uma cor sólida no campo 'Cor da fonte'						
+					</actions>
+					<expectedresults>
+						
+Cor é aplicada e refletida na preview						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'Lateral direita inferior' no campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Lateral direita inferior' fica selecionada. Preview exibe estampa no canto inferior direito						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a opção 'Em movimento' no campo 'Tipo de exibição'						
+					</actions>
+					<expectedresults>
+						
+Opção 'Em movimento' fica selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Salvar'						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva. Toast de sucesso é exibido com o texto 'Alterações salvas com sucesso.'. Usuário é redirecionado para a listagem de atividades do curso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Persistência das configurações de marca d'água em vídeo, salvar e reabrir">
+			<summary>
+				
+Verificar que ao reabrir uma atividade de vídeo previamente salva com marca d'água, todas as configurações são carregadas exatamente como foram definidas.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada e configurações específicas conhecidas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso que contém a atividade de vídeo cadastrada						
+					</actions>
+					<expectedresults>
+						
+Listagem de atividades do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na atividade de vídeo previamente cadastrada para editar						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição da atividade de vídeo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o estado do checkbox 'Habilitar marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Checkbox 'Habilitar marca d'água no vídeo' está marcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar as opções selecionadas no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Mesmas opções selecionadas no cadastro original estão marcadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o valor do campo 'Tamanho da fonte'						
+					</actions>
+					<expectedresults>
+						
+Tamanho da fonte exibido corresponde ao valor salvo originalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o valor do campo 'Cor da fonte'						
+					</actions>
+					<expectedresults>
+						
+Cor exibida (incluindo transparência e HEX/RGB) corresponde ao valor salvo originalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar as opções selecionadas no campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Mesmas posições selecionadas no cadastro original estão marcadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção selecionada no campo 'Tipo de exibição'						
+					</actions>
+					<expectedresults>
+						
+Mesma opção selecionada no cadastro original ('Fixa' ou 'Em movimento') está marcada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar configurações de marca d'água em vídeo de uma atividade existente">
+			<summary>
+				
+Verificar que ao alterar as configurações de marca d'água de uma atividade de vídeo já cadastrada, as novas configurações são persistidas e refletidas no Aprender.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso que contém a atividade de vídeo cadastrada						
+					</actions>
+					<expectedresults>
+						
+Listagem de atividades do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na atividade de vídeo previamente cadastrada para editar						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição da atividade de vídeo é exibido com configurações da marca d'água carregadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar a seleção do campo 'Informações a exibir' para incluir 'ID da sessão'						
+					</actions>
+					<expectedresults>
+						
+Opção 'ID da sessão' fica selecionada. Preview passa a exibir 'ID da sessão: 123456'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar o campo 'Posição' para 'Sobre todo o vídeo' (mantendo somente esta seleção)						
+					</actions>
+					<expectedresults>
+						
+Opção 'Sobre todo o vídeo' fica selecionada e as demais ficam desmarcadas. Preview reflete a alteração						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Salvar'						
+					</actions>
+					<expectedresults>
+						
+Toast de sucesso exibida com o texto 'Alterações salvas com sucesso.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Reabrir a mesma atividade						
+					</actions>
+					<expectedresults>
+						
+Configurações exibidas correspondem aos novos valores salvos ('ID da sessão' selecionado e 'Sobre todo o vídeo' como única posição)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Desabilitar a marca d'água em atividade previamente configurada">
+			<summary>
+				
+Verificar que ao desmarcar o checkbox 'Habilitar marca d'água no vídeo' em uma atividade previamente configurada e salvar, a marca d'água deixa de ser exibida no Aprender.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada
+Aluno previamente matriculado e capaz de acessar o conteúdo no Aprender</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a atividade de vídeo previamente cadastrada para editar						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição é exibido com o checkbox 'Habilitar marca d'água no vídeo' marcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desmarcar o checkbox 'Habilitar marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Checkbox 'Habilitar marca d'água no vídeo' fica desmarcado. Todos os campos de configuração e preview são ocultados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Salvar'						
+					</actions>
+					<expectedresults>
+						
+Toast de sucesso exibida com o texto 'Alterações salvas com sucesso.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como o aluno e acessar a atividade no Aprender						
+					</actions>
+					<expectedresults>
+						
+Vídeo é reproduzido. Marca d'água NÃO é exibida sobre o vídeo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Reprodução do vídeo no Aprender exibe a marca d'água (Desktop)">
+			<summary>
+				
+Verificar que ao reproduzir uma atividade de vídeo com marca d'água habilitada no Aprender em viewport Desktop, a estampa é exibida com os DADOS REAIS do aluno autenticado (não os dados fictícios da preview).				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada (informações: CPF, IP, ID da sessão; posição: 'Lateral esquerda superior'; tipo: 'Fixa')
+Aluno previamente matriculado no curso
+Viewport Desktop (1920x1080)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso no Aprender						
+					</actions>
+					<expectedresults>
+						
+Tela do curso é exibida com a lista de conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a atividade de vídeo						
+					</actions>
+					<expectedresults>
+						
+Player de vídeo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Iniciar a reprodução do vídeo						
+					</actions>
+					<expectedresults>
+						
+Vídeo começa a ser reproduzido. Marca d'água é exibida na 'Lateral esquerda superior' com os dados REAIS do aluno (CPF, IP, ID da sessão) — NÃO os dados fictícios '123.456.789-00', '123.123.123.123', '123456'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a reprodução do vídeo chegar ao meio do vídeo						
+					</actions>
+					<expectedresults>
+						
+Marca d'água continua exibida na 'Lateral esquerda superior' com os mesmos dados do aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a reprodução do vídeo chegar ao final do vídeo						
+					</actions>
+					<expectedresults>
+						
+Marca d'água continua exibida na 'Lateral esquerda superior' com os mesmos dados do aluno durante toda a reprodução						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Reprodução do vídeo no Aprender exibe marca d'água em movimento (Desktop)">
+			<summary>
+				
+Verificar que ao reproduzir um vídeo cujo 'Tipo de exibição' está configurado como 'Em movimento', a estampa se movimenta sobre o vídeo durante a reprodução.				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada (tipo de exibição: 'Em movimento'; posição: 'Sobre todo o vídeo'; informações: 'CPF')
+Aluno previamente matriculado no curso
+Viewport Desktop (1920x1080)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso no Aprender						
+					</actions>
+					<expectedresults>
+						
+Tela do curso é exibida com a lista de conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a atividade de vídeo						
+					</actions>
+					<expectedresults>
+						
+Player de vídeo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Iniciar a reprodução do vídeo						
+					</actions>
+					<expectedresults>
+						
+Vídeo começa a ser reproduzido. Marca d'água é exibida e sua posição sobre o vídeo muda ao longo do tempo (movimentação)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar 10 segundos de reprodução						
+					</actions>
+					<expectedresults>
+						
+Marca d'água continua se movimentando. Estampa não permanece fixa em uma posição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a reprodução do vídeo chegar ao final do vídeo						
+					</actions>
+					<expectedresults>
+						
+Marca d'água continua se movimentando. Estampa não permanece fixa em uma posição						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Reprodução do vídeo no Aprender exibe marca d'água em viewport (Mobile)">
+			<summary>
+				
+Verificar que a marca d'água é exibida corretamente sobre o vídeo no Aprender quando acessado em viewport Mobile.				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada (informações: CPF, E-mail; posição: 'Sobre todo o vídeo')
+Aluno previamente matriculado no curso
+Viewport Mobile (360x740)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso no Aprender						
+					</actions>
+					<expectedresults>
+						
+Tela do curso é exibida no layout mobile						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a atividade de vídeo						
+					</actions>
+					<expectedresults>
+						
+Player de vídeo é exibido no layout mobile						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Iniciar a reprodução do vídeo						
+					</actions>
+					<expectedresults>
+						
+Vídeo é reproduzido. Marca d'água é exibida 'Sobre todo o vídeo' com os dados REAIS do aluno (CPF mascarado e E-mail)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que a marca d'água permanece visível durante toda a reprodução						
+					</actions>
+					<expectedresults>
+						
+Marca d'água continua exibida sobre o vídeo até o final da reprodução						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Download do vídeo NÃO contém a marca d'água">
+			<summary>
+				
+Verificar que quando a opção de download do vídeo está disponível, o arquivo baixado NÃO contém a marca d'água, mesmo que a marca d'água esteja habilitada para a atividade.				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada E com permissão de download habilitada
+Aluno previamente matriculado no curso</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso no Aprender						
+					</actions>
+					<expectedresults>
+						
+Tela do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a atividade de vídeo						
+					</actions>
+					<expectedresults>
+						
+Player de vídeo é exibido com opção de download disponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Iniciar a reprodução do vídeo no player						
+					</actions>
+					<expectedresults>
+						
+Vídeo é reproduzido. Marca d'água é exibida durante a reprodução						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de download do vídeo						
+					</actions>
+					<expectedresults>
+						
+Vídeo é baixado para o dispositivo do aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir o arquivo de vídeo baixado em um player local						
+					</actions>
+					<expectedresults>
+						
+Vídeo é reproduzido no player local SEM a marca d'água sobreposta. A marca d'água existe somente na reprodução pelo Aprender						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Duplicar atividade de vídeo preserva configurações da marca d'água">
+			<summary>
+				
+Verificar que ao duplicar uma atividade de vídeo com marca d'água habilitada, a cópia mantém exatamente as mesmas configurações de marca d'água.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada e configurações específicas conhecidas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso que contém a atividade de vídeo cadastrada						
+					</actions>
+					<expectedresults>
+						
+Listagem de atividades do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acionar a opção 'Duplicar' da atividade de vídeo						
+					</actions>
+					<expectedresults>
+						
+Atividade duplicada é criada na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir a atividade duplicada para edição						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição da atividade duplicada é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o estado do checkbox 'Habilitar marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Checkbox 'Habilitar marca d'água no vídeo' está marcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar as opções selecionadas nos campos 'Informações a exibir', 'Posição' e 'Tipo de exibição'						
+					</actions>
+					<expectedresults>
+						
+Todas as opções selecionadas na atividade original também estão selecionadas na atividade duplicada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar os valores dos campos 'Tamanho da fonte' e 'Cor da fonte'						
+					</actions>
+					<expectedresults>
+						
+Mesmos valores da atividade original estão definidos na atividade duplicada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Compartilhamento de conteúdo (cópia controlada/espelho)">
+			<summary>
+				
+Verificar que ao compartilhar um curso com atividade de vídeo com marca d'água habilitada, a organização destinatária recebe a atividade com as mesmas configurações de marca d'água.				
+			</summary>
+			<preconditions>Usuário logado como Admin na organização origem
+Feature flag de marca d'água habilitada em ambas as organizações
+Curso com atividade de vídeo previamente cadastrada com marca d'água habilitada
+Organização destinatária configurada e capaz de receber compartilhamentos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso na organização origem						
+					</actions>
+					<expectedresults>
+						
+Tela de edição do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acionar a opção de compartilhar o curso com a organização destinatária no modo 'Cópia controlada' (espelho)						
+					</actions>
+					<expectedresults>
+						
+Toast de sucesso é exibida confirmando o compartilhamento						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a organização destinatária e localizar o curso compartilhado (Cópia e Espelho)						
+					</actions>
+					<expectedresults>
+						
+Curso compartilhado é exibido na biblioteca da organização destinatária						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir a atividade de vídeo do curso compartilhado para visualização (Cópia e Espelho)						
+					</actions>
+					<expectedresults>
+						
+Formulário/visualização da atividade é exibido com as mesmas configurações de marca d'água da organização origem (informações, tamanho, cor, posição e tipo de exibição idênticos)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Retrocompatibilidade — Atividade de vídeo cadastrada antes da feature flag">
+			<summary>
+				
+Verificar que atividades de vídeo cadastradas ANTES da implementação da feature de marca d'água continuam acessíveis no Aprender, sem marca d'água e sem erros.				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividade de vídeo cadastrada antes da implementação da feature (sem registros nas tabelas de marca d'água)
+Aluno previamente matriculado no curso correspondente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso que contém a atividade de vídeo legada						
+					</actions>
+					<expectedresults>
+						
+Tela do curso é exibida com a atividade de vídeo legada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a atividade de vídeo legada						
+					</actions>
+					<expectedresults>
+						
+Player de vídeo é exibido sem erros						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Iniciar a reprodução do vídeo						
+					</actions>
+					<expectedresults>
+						
+Vídeo é reproduzido normalmente. Marca d'água NÃO é exibida (atividade legada)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como Admin e abrir a atividade legada para edição						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição é exibido. Checkbox 'Habilitar marca d'água no vídeo' está desmarcado por default						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Cor da fonte com 0% de transparência no Aprender">
+			<summary>
+				
+Verificar que uma cor configurada com 0% de transparência (totalmente transparente) gera uma marca d'água invisível durante a reprodução do vídeo no Aprender.				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada (cor da fonte com transparência 0% — totalmente transparente)
+Aluno previamente matriculado no curso</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso no Aprender						
+					</actions>
+					<expectedresults>
+						
+Tela do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a atividade de vídeo						
+					</actions>
+					<expectedresults>
+						
+Player de vídeo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Iniciar a reprodução do vídeo						
+					</actions>
+					<expectedresults>
+						
+Vídeo é reproduzido. Marca d'água NÃO é visualmente perceptível devido à transparência total						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar a marca d'água nas outras atividades existente num curso">
+			<summary>
+				
+Verificar que uma cor configurada com 0% de transparência (totalmente transparente) gera uma marca d'água invisível durante a reprodução do vídeo no Aprender.				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividades de arquivo previamente cadastradas com marca d'água habilitada, uma para cada formato aceito (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, ZIP)
+Aluno previamente matriculado no curso correspondente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Texto"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Página"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Aula"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "PDF estampado"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Vídeo Externo"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Questionário"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Scorm"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Games"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Configurar a exibição de uma marca d'água para arquivos">
+		<testcase name="Atividade de Arquivo e visualizar a seção 'Marca d'água no arquivo'">
+			<summary>
+				
+Verificar que ao criar uma atividade do tipo Arquivo, a seção 'Marca d'água no arquivo' é exibida no formulário com o checkbox 'Habilitar marca d'água no arquivo' desmarcado por padrão.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Curso previamente cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o menu 'Conteúdos' no painel administrativo						
+					</actions>
+					<expectedresults>
+						
+Tela de listagem de conteúdos é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso previamente cadastrado						
+					</actions>
+					<expectedresults>
+						
+Tela de edição do curso é exibida com a aba 'Atividades' disponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Adicionar atividade'						
+					</actions>
+					<expectedresults>
+						
+Modal de seleção de tipo de atividade é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o tipo 'Arquivo'						
+					</actions>
+					<expectedresults>
+						
+Formulário de criação de atividade de Arquivo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar a seção 'Marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Seção 'Marca d'água no arquivo' é exibida com o checkbox 'Habilitar marca d'água no arquivo' desmarcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar o ícone de tooltip (?) ao lado do título 'Marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Ícone de tooltip é exibido ao lado do título 'Marca d'água no arquivo'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar tooltip do título 'Marca d'água no arquivo'">
+			<summary>
+				
+Verificar que ao passar o mouse sobre o ícone de tooltip do título 'Marca d'água no arquivo', o texto literal definido na Discovery é exibido.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Formulário de criação de atividade de Arquivo aberto</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Posicionar o cursor sobre o ícone de tooltip (?) ao lado do título 'Marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Tooltip exibida com o texto: 'Insere uma identificação do usuário nos arquivos visualizados ou baixados, ajudando a inibir o compartilhamento não autorizado.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mover o cursor para fora do ícone de tooltip						
+					</actions>
+					<expectedresults>
+						
+Tooltip é ocultada automaticamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Marcar o checkbox em arquivo e visualizar os campos de configuração">
+			<summary>
+				
+Verificar que ao marcar o checkbox 'Habilitar marca d'água no arquivo', os campos de configuração da estampa e a preview são exibidos. Confirmar que NÃO existem os campos 'Posição' e 'Tipo de exibição' para arquivos.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Formulário de criação de atividade de Arquivo aberto</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Marcar o checkbox 'Habilitar marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Checkbox 'Habilitar marca d'água no arquivo' fica marcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a seção de configuração ser exibida						
+					</actions>
+					<expectedresults>
+						
+Os campos 'Informações a exibir', 'Tamanho da fonte' e 'Cor da fonte' são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a NÃO exibição do campo 'Posição'						
+					</actions>
+					<expectedresults>
+						
+Campo 'Posição' NÃO é exibido na configuração de marca d'água em arquivo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a NÃO exibição do campo 'Tipo de exibição'						
+					</actions>
+					<expectedresults>
+						
+Campo 'Tipo de exibição' NÃO é exibido na configuração de marca d'água em arquivo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a exibição da preview da marca d'água						
+					</actions>
+					<expectedresults>
+						
+Área de preview da marca d'água é exibida com os dados fictícios: CPF '123.456.789-00', E-mail 'usuario@email.com', IP '123.123.123.123', ID da sessão '123456'. Preview representa a estampa fixa sobre todo o arquivo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Desmarcar o checkbox no arquivo' e validar ocultação dos campos">
+			<summary>
+				
+Verificar que ao desmarcar o checkbox 'Habilitar marca d'água no arquivo' após ele estar marcado, os campos de configuração e a preview são ocultados.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Formulário de criação de atividade de Arquivo aberto
+Checkbox 'Habilitar marca d'água no arquivo' marcado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Desmarcar o checkbox 'Habilitar marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Checkbox 'Habilitar marca d'água no arquivo' fica desmarcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a ocultação dos campos de configuração						
+					</actions>
+					<expectedresults>
+						
+Os campos 'Informações a exibir', 'Tamanho da fonte', 'Cor da fonte' e a preview NÃO são exibidos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar opções disponíveis no campo 'Informações a exibir' para arquivos">
+			<summary>
+				
+Verificar que o campo 'Informações a exibir' apresenta as quatro opções definidas pela Discovery: CPF, E-mail, IP e ID da sessão.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no arquivo' marcado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Campo 'Informações a exibir' é exibido com as opções disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'CPF'						
+					</actions>
+					<expectedresults>
+						
+Opção 'CPF' é exibida no campo 'Informações a exibir'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'E-mail'						
+					</actions>
+					<expectedresults>
+						
+Opção 'E-mail' é exibida no campo 'Informações a exibir'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'IP'						
+					</actions>
+					<expectedresults>
+						
+Opção 'IP' é exibida no campo 'Informações a exibir'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a opção 'ID da sessão'						
+					</actions>
+					<expectedresults>
+						
+Opção 'ID da sessão' é exibida no campo 'Informações a exibir'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar que NÃO existem opções adicionais além das quatro listadas						
+					</actions>
+					<expectedresults>
+						
+Nenhuma opção além de 'CPF', 'E-mail', 'IP' e 'ID da sessão' é exibida no campo 'Informações a exibir'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Remover todas as opções do campo "Informações a exibir"						
+					</actions>
+					<expectedresults>
+						
+Será exibido uma mensagem vermelha abaixo do campo "Selecione ao menos uma informação para exibir."						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Varias opções no campo Informações a exibir em arquivos e validar preview">
+			<summary>
+				
+Verificar que é possível selecionar mais de uma opção no campo 'Informações a exibir' e que cada seleção é refletida em tempo real na preview da marca d'água em arquivo.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no arquivo' marcado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Marcar a opção 'CPF' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Opção 'CPF' fica selecionada. Preview passa a exibir o texto 'CPF: 123.456.789-00'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'E-mail' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Opção 'E-mail' fica selecionada. Preview passa a exibir os textos 'CPF: 123.456.789-00' e 'E-mail: usuario@email.com'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'IP' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Opção 'IP' fica selecionada. Preview passa a exibir 'CPF: 123.456.789-00', 'E-mail: usuario@email.com' e 'IP: 123.123.123.123'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar a opção 'ID da sessão' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Opção 'ID da sessão' fica selecionada. Preview passa a exibir os quatro textos: 'CPF: 123.456.789-00', 'E-mail: usuario@email.com', 'IP: 123.123.123.123' e 'ID da sessão: 123456'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desmarcar a opção 'CPF' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Opção 'CPF' fica desmarcada. Preview deixa de exibir 'CPF: 123.456.789-00' e mantém os demais						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar a seleção mínima do campo Informações a exibir em arquivo">
+			<summary>
+				
+Verificar que NÃO é possível salvar a atividade de arquivo com marca d'água habilitada e nenhuma opção selecionada no campo 'Informações a exibir'.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no arquivo' marcado
+Demais campos obrigatórios da atividade preenchidos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Desmarcar todas as opções do campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Nenhuma opção do campo 'Informações a exibir' está selecionada. Preview do bloco de informações fica vazia						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Salvar'						
+					</actions>
+					<expectedresults>
+						
+Atividade NÃO é salva. Campo 'Informações a exibir' exibe borda vermelha e mensagem de erro indicando que ao menos uma opção deve ser selecionada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Alterar o campo Tamanho da fonte para arquivos e validar preview">
+			<summary>
+				
+Verificar que o campo 'Tamanho da fonte' permite ajustar o tamanho da fonte da estampa do arquivo e que a alteração é refletida em tempo real na preview.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no arquivo' marcado
+Opção 'CPF' marcada no campo 'Informações a exibir'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Localizar o campo 'Tamanho da fonte'						
+					</actions>
+					<expectedresults>
+						
+Campo 'Tamanho da fonte' é exibido com um valor default						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aumentar o valor do campo 'Tamanho da fonte' para o máximo permitido (72px)						
+					</actions>
+					<expectedresults>
+						
+Valor é aceito. Texto 'CPF: 123.456.789-00' na preview é renderizado com a fonte ampliada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Reduzir o valor do campo 'Tamanho da fonte' para o mínimo permitido (8px)						
+					</actions>
+					<expectedresults>
+						
+Valor é aceito. Texto 'CPF: 123.456.789-00' na preview é renderizado com a fonte reduzida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar definir um valor abaixo do mínimo permitido						
+					</actions>
+					<expectedresults>
+						
+Campo bloqueia o valor ou exibe mensagem de erro indicando o limite mínimo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Tentar definir um valor acima do máximo permitido						
+					</actions>
+					<expectedresults>
+						
+Campo bloqueia o valor ou exibe mensagem de erro indicando o limite máximo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Alterar a cor da estampa para arquivos via seletor de cores">
+			<summary>
+				
+Verificar que ao abrir o seletor de cores do campo 'Cor da fonte' em arquivo, é possível selecionar cor pela paleta, informar HEX/RGB e ajustar a transparência.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Checkbox 'Habilitar marca d'água no arquivo' marcado
+Opção 'CPF' marcada no campo 'Informações a exibir'</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Clicar no campo 'Cor da fonte'						
+					</actions>
+					<expectedresults>
+						
+Seletor de cores é exibido com paleta, controle de transparência e campos HEX/R/G/B e a cor default é exibida como sendo #FFFFFF						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar uma cor diferente da default na paleta						
+					</actions>
+					<expectedresults>
+						
+Cor selecionada é aplicada. Texto da preview passa a ser exibido na nova cor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Preencher o campo 'HEX' com 'FF0000'						
+					</actions>
+					<expectedresults>
+						
+Campo 'HEX' aceita o valor. Indicadores R/G/B atualizam para 255/0/0. Texto da preview passa a ser exibido em vermelho						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Mover o controle de transparência para 50%						
+					</actions>
+					<expectedresults>
+						
+Transparência de 50% é aplicada. Texto da preview passa a ser exibido com opacidade reduzida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Fechar o seletor de cores clicando fora dele						
+					</actions>
+					<expectedresults>
+						
+Seletor de cores é fechado. Configuração final permanece na preview						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a opção de "caneta" da dentro da seleção da Cor da fonte e clicar em qualquer outro lugar da tela para salvar uma nova cor						
+					</actions>
+					<expectedresults>
+						
+Ao clicar em qualquer outro lugar da tela o código da cor vai ser salvo e exibido.						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Salvar atividade de arquivo com marca d'água habilitada — happy path">
+			<summary>
+				
+Verificar que é possível salvar uma atividade de arquivo com a marca d'água habilitada e todas as configurações preenchidas corretamente.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Formulário de criação de atividade de Arquivo aberto
+Arquivo PDF válido (até 2GB) carregado no campo 'Arquivo'
+Demais campos obrigatórios da atividade preenchidos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Marcar o checkbox 'Habilitar marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Seção de configuração da marca d'água é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Marcar as opções 'CPF', 'E-mail' e 'IP' no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Três opções ficam selecionadas. Preview exibe os três valores fictícios correspondentes						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Ajustar o campo 'Tamanho da fonte' para um valor intermediário						
+					</actions>
+					<expectedresults>
+						
+Valor é aceito e refletido na preview						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Definir uma cor sólida no campo 'Cor da fonte'						
+					</actions>
+					<expectedresults>
+						
+Cor é aplicada e refletida na preview						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Salvar'						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva. Toast de sucesso é exibido com o texto 'Alterações salvas com sucesso.'. Usuário é redirecionado para a listagem de atividades do curso						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Persistência das configurações de marca d'água em arquivo">
+			<summary>
+				
+Verificar que ao reabrir uma atividade de arquivo previamente salva com marca d'água, todas as configurações são carregadas exatamente como foram definidas.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de arquivo previamente cadastrada com marca d'água habilitada e configurações específicas conhecidas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso que contém a atividade de arquivo cadastrada						
+					</actions>
+					<expectedresults>
+						
+Listagem de atividades do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na atividade de arquivo previamente cadastrada para editar						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição da atividade de arquivo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o estado do checkbox 'Habilitar marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Checkbox 'Habilitar marca d'água no arquivo' está marcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar as opções selecionadas no campo 'Informações a exibir'						
+					</actions>
+					<expectedresults>
+						
+Mesmas opções selecionadas no cadastro original estão marcadas						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o valor do campo 'Tamanho da fonte'						
+					</actions>
+					<expectedresults>
+						
+Tamanho da fonte exibido corresponde ao valor salvo originalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o valor do campo 'Cor da fonte'						
+					</actions>
+					<expectedresults>
+						
+Cor exibida (incluindo transparência e HEX/RGB) corresponde ao valor salvo originalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição do arquivo no Aprender pelo aluno (Desktop)">
+			<summary>
+				
+Verificar que ao acessar uma atividade de arquivo com marca d'água habilitada no Aprender em viewport Desktop, a estampa é exibida sobre todo o arquivo com os DADOS REAIS do aluno autenticado.				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividade de arquivo (PDF) previamente cadastrada com marca d'água habilitada (informações: CPF, IP, ID da sessão)
+Aluno previamente matriculado no curso
+Viewport Desktop (1920x1080)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso no Aprender						
+					</actions>
+					<expectedresults>
+						
+Tela do curso é exibida com a lista de conteúdos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a atividade de arquivo						
+					</actions>
+					<expectedresults>
+						
+Visualizador do arquivo (Box) é exibido com o conteúdo do PDF						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a marca d'água sobre o arquivo						
+					</actions>
+					<expectedresults>
+						
+Marca d'água é exibida de forma FIXA sobre todo o arquivo, com os dados REAIS do aluno (CPF, IP, ID da sessão) — NÃO os dados fictícios da preview						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar scroll dentro do arquivo						
+					</actions>
+					<expectedresults>
+						
+Marca d'água permanece visível sobre o container do arquivo durante o scroll. Estampa não desaparece em nenhum momento da visualização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exibição do arquivo no Aprender exibe a marca d'água em viewport Mobile">
+			<summary>
+				
+Verificar que a marca d'água é exibida corretamente sobre o arquivo no Aprender quando acessado em viewport Mobile.				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividade de arquivo (PDF) previamente cadastrada com marca d'água habilitada (informações: CPF, E-mail)
+Aluno previamente matriculado no curso
+Viewport Mobile (360x740)</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso no Aprender						
+					</actions>
+					<expectedresults>
+						
+Tela do curso é exibida no layout mobile						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a atividade de arquivo						
+					</actions>
+					<expectedresults>
+						
+Visualizador do arquivo é exibido no layout mobile com o conteúdo do PDF						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a marca d'água sobre o arquivo						
+					</actions>
+					<expectedresults>
+						
+Marca d'água é exibida de forma FIXA sobre todo o arquivo, com os dados REAIS do aluno (CPF mascarado e E-mail)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar scroll dentro do arquivo no layout mobile						
+					</actions>
+					<expectedresults>
+						
+Marca d'água permanece visível sobre o container do arquivo durante o scroll						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Download do arquivo CONTÉM a marca d'água">
+			<summary>
+				
+Verificar que quando a opção de download do arquivo está disponível, o arquivo baixado CONTÉM a marca d'água com as mesmas configurações definidas no cadastro da atividade (informações, tamanho e cor).				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividade de arquivo (PDF) previamente cadastrada com marca d'água habilitada (informações: CPF, IP, ID da sessão) E com permissão de download habilitada
+Aluno previamente matriculado no curso</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso no Aprender						
+					</actions>
+					<expectedresults>
+						
+Tela do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a atividade de arquivo						
+					</actions>
+					<expectedresults>
+						
+Visualizador do arquivo é exibido com opção de download disponível						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a marca d'água sobre o arquivo no visualizador						
+					</actions>
+					<expectedresults>
+						
+Marca d'água é exibida sobre todo o arquivo no Aprender						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão de download do arquivo						
+					</actions>
+					<expectedresults>
+						
+Arquivo PDF é baixado para o dispositivo do aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir o arquivo PDF baixado em um leitor local						
+					</actions>
+					<expectedresults>
+						
+Arquivo é exibido com a marca d'água embutida no conteúdo, contendo os dados REAIS do aluno (CPF, IP, ID da sessão). Configurações (tamanho da fonte e cor) idênticas às definidas no cadastro						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Editar configurações de marca d'água em arquivo">
+			<summary>
+				
+Verificar que ao alterar as configurações de marca d'água de uma atividade de arquivo já cadastrada, as novas configurações são persistidas e refletidas no Aprender e no download.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de arquivo previamente cadastrada com marca d'água habilitada</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso que contém a atividade de arquivo cadastrada						
+					</actions>
+					<expectedresults>
+						
+Listagem de atividades do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar na atividade de arquivo previamente cadastrada para editar						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição da atividade é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar a seleção do campo 'Informações a exibir' para incluir 'ID da sessão'						
+					</actions>
+					<expectedresults>
+						
+Opção 'ID da sessão' fica selecionada. Preview passa a exibir 'ID da sessão: 123456'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Alterar a cor no campo 'Cor da fonte' para uma cor diferente da atual						
+					</actions>
+					<expectedresults>
+						
+Nova cor é aplicada e refletida na preview						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Salvar'						
+					</actions>
+					<expectedresults>
+						
+Toast de sucesso exibida com o texto 'Alterações salvas com sucesso.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Reabrir a mesma atividade						
+					</actions>
+					<expectedresults>
+						
+Configurações exibidas correspondem aos novos valores salvos ('ID da sessão' selecionado e nova cor aplicada)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Desabilitar marca d'água em atividade de arquivo">
+			<summary>
+				
+Verificar que ao desmarcar o checkbox 'Habilitar marca d'água no arquivo' em uma atividade previamente configurada e salvar, a marca d'água deixa de ser exibida no Aprender e no download.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de arquivo previamente cadastrada com marca d'água habilitada e download disponível
+Aluno previamente matriculado e capaz de acessar o conteúdo no Aprender</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a atividade de arquivo previamente cadastrada para editar						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição é exibido com o checkbox 'Habilitar marca d'água no arquivo' marcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Desmarcar o checkbox 'Habilitar marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Checkbox 'Habilitar marca d'água no arquivo' fica desmarcado. Campos de configuração e preview são ocultados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Salvar'						
+					</actions>
+					<expectedresults>
+						
+Toast de sucesso exibida com o texto 'Alterações salvas com sucesso.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como o aluno e acessar a atividade no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo é exibido SEM marca d'água sobre o container						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o download do arquivo						
+					</actions>
+					<expectedresults>
+						
+Arquivo baixado é aberto SEM marca d'água embutida no conteúdo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Duplicar atividade de arquivo preserva configurações da marca d'água">
+			<summary>
+				
+Verificar que ao duplicar uma atividade de arquivo com marca d'água habilitada, a cópia mantém exatamente as mesmas configurações de marca d'água.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de arquivo previamente cadastrada com marca d'água habilitada e configurações específicas conhecidas</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso que contém a atividade de arquivo cadastrada						
+					</actions>
+					<expectedresults>
+						
+Listagem de atividades do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acionar a opção 'Duplicar' da atividade de arquivo						
+					</actions>
+					<expectedresults>
+						
+Atividade duplicada é criada na listagem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir a atividade duplicada para edição						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição da atividade duplicada é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar o estado do checkbox 'Habilitar marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Checkbox 'Habilitar marca d'água no arquivo' está marcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar as opções selecionadas no campo 'Informações a exibir' e valores de 'Tamanho da fonte' e 'Cor da fonte'						
+					</actions>
+					<expectedresults>
+						
+Todas as configurações da atividade original também estão presentes na atividade duplicada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Compartilhamento de conteúdo com arquivo">
+			<summary>
+				
+Verificar que ao compartilhar um curso com atividade de arquivo com marca d'água habilitada, a organização destinatária recebe a atividade com as mesmas configurações de marca d'água.				
+			</summary>
+			<preconditions>Usuário logado como Admin na organização origem
+Feature flag de marca d'água habilitada em ambas as organizações
+Curso com atividade de arquivo previamente cadastrada com marca d'água habilitada
+Organização destinatária configurada e capaz de receber compartilhamentos</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso na organização origem						
+					</actions>
+					<expectedresults>
+						
+Tela de edição do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acionar a opção de compartilhar o curso com a organização destinatária no modo 'Cópia controlada' (espelho)						
+					</actions>
+					<expectedresults>
+						
+Toast de sucesso é exibida confirmando o compartilhamento						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a organização destinatária e localizar o curso compartilhado (Cópia e Espelho)						
+					</actions>
+					<expectedresults>
+						
+Curso compartilhado é exibido na biblioteca da organização destinatária						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir a atividade de arquivo do curso compartilhado para visualização (Cópia e Espelho)						
+					</actions>
+					<expectedresults>
+						
+Formulário/visualização da atividade é exibido com as mesmas configurações de marca d'água da organização origem (informações, tamanho e cor idênticos)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Retrocompatibilidade — Atividade de arquivo cadastrada antes da feature">
+			<summary>
+				
+Verificar que atividades de arquivo cadastradas ANTES da implementação da feature de marca d'água continuam acessíveis no Aprender, sem marca d'água e sem erros, inclusive no download.				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividade de arquivo cadastrada antes da implementação da feature (sem registros nas tabelas de marca d'água) com download disponível
+Aluno previamente matriculado no curso correspondente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso que contém a atividade de arquivo legada (curso antigos que já tem vídeo e arquivo)						
+					</actions>
+					<expectedresults>
+						
+Tela do curso é exibida com a atividade de arquivo legada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar a atividade de arquivo legada						
+					</actions>
+					<expectedresults>
+						
+Visualizador do arquivo é exibido sem erros e SEM marca d'água sobre o container						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Realizar o download do arquivo legado						
+					</actions>
+					<expectedresults>
+						
+Arquivo é baixado e ao ser aberto NÃO contém marca d'água embutida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como Admin e abrir a atividade legada para edição						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição é exibido. Checkbox 'Habilitar marca d'água no arquivo' está desmarcado por default						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Validar cada formato de arquivo aceito se exibe a marca d'água no Aprender">
+			<summary>
+				
+Verificar que a marca d'água é exibida sobre o container do arquivo no Aprender independentemente do formato do arquivo enviado (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, ZIP).				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividades de arquivo previamente cadastradas com marca d'água habilitada, uma para cada formato aceito (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, ZIP)
+Aluno previamente matriculado no curso correspondente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a atividade do tipo PDF no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo PDF é exibido no visualizador. Marca d'água é exibida sobre o container com dados reais do aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a atividade do tipo DOC no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo DOC é exibido no visualizador. Marca d'água é exibida sobre o container com dados reais do aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a atividade do tipo DOCX no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo DOCX é exibido no visualizador. Marca d'água é exibida sobre o container com dados reais do aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a atividade do tipo XLS no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo XLS é exibido no visualizador. Marca d'água é exibida sobre o container com dados reais do aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a atividade do tipo XLSX no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo XLSX é exibido no visualizador. Marca d'água é exibida sobre o container com dados reais do aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a atividade do tipo PPT no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo PPT é exibido no visualizador. Marca d'água é exibida sobre o container com dados reais do aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a atividade do tipo PPTX no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo PPTX é exibido no visualizador. Marca d'água é exibida sobre o container com dados reais do aluno						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a atividade do tipo ZIP no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo ZIP é apresentado conforme tratativa atual da plataforma. Marca d'água é exibida sobre o container de acordo com o comportamento esperado para o tipo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Verificar a marca d'água nas outras atividades existente num curso">
+			<summary>
+				
+Verificar que a marca d'água é exibida sobre o container do arquivo no Aprender independentemente do formato do arquivo enviado (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, ZIP).				
+			</summary>
+			<preconditions>Aluno logado
+Feature flag de marca d'água habilitada
+Atividades de arquivo previamente cadastradas com marca d'água habilitada, uma para cada formato aceito (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, ZIP)
+Aluno previamente matriculado no curso correspondente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Texto"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Página"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Aula"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "PDF"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Vídeo Externo"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Questionário"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Scorm"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>7</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o curso o conteúdo do tipo "Games"						
+					</actions>
+					<expectedresults>
+						
+A opção da marca d'água NÃO vai ser exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>8</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Feature flag">
+		<testcase name="Feature flag de marca d'água HABILITADA é exibida na atividade de Vídeo">
+			<summary>
+				
+Verificar que, com a feature flag de marca d'água habilitada, a seção 'Marca d'água no vídeo' é exibida no formulário de criação/edição de atividade de Vídeo.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água HABILITADA na organização
+Curso previamente cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso previamente cadastrado						
+					</actions>
+					<expectedresults>
+						
+Tela de edição do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Adicionar atividade'						
+					</actions>
+					<expectedresults>
+						
+Modal de seleção de tipo de atividade é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o tipo 'Vídeo'						
+					</actions>
+					<expectedresults>
+						
+Formulário de criação de atividade de Vídeo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar a seção 'Marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Seção 'Marca d'água no vídeo' é exibida com o checkbox 'Habilitar marca d'água no vídeo'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Feature flag de marca d'água HABILITADA é exibida na atividade de Arquivo">
+			<summary>
+				
+Verificar que, com a feature flag de marca d'água habilitada, a seção 'Marca d'água no arquivo' é exibida no formulário de criação/edição de atividade de Arquivo.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água HABILITADA na organização
+Curso previamente cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso previamente cadastrado						
+					</actions>
+					<expectedresults>
+						
+Tela de edição do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Adicionar atividade'						
+					</actions>
+					<expectedresults>
+						
+Modal de seleção de tipo de atividade é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o tipo 'Arquivo'						
+					</actions>
+					<expectedresults>
+						
+Formulário de criação de atividade de Arquivo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Localizar a seção 'Marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Seção 'Marca d'água no arquivo' é exibida com o checkbox 'Habilitar marca d'água no arquivo'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Feature flag marca d'água DESABILITADA NÃO é exibida na atividade de Vídeo">
+			<summary>
+				
+Verificar que, com a feature flag de marca d'água desabilitada, a seção 'Marca d'água no vídeo' NÃO é exibida no formulário de criação/edição de atividade de Vídeo.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água DESABILITADA na organização
+Curso previamente cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso previamente cadastrado						
+					</actions>
+					<expectedresults>
+						
+Tela de edição do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Adicionar atividade'						
+					</actions>
+					<expectedresults>
+						
+Modal de seleção de tipo de atividade é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o tipo 'Vídeo'						
+					</actions>
+					<expectedresults>
+						
+Formulário de criação de atividade de Vídeo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a NÃO exibição da seção 'Marca d'água no vídeo'						
+					</actions>
+					<expectedresults>
+						
+Seção 'Marca d'água no vídeo' NÃO é exibida. Demais campos do formulário (Arquivo, Segurança, Legendas, Resumo da atividade) continuam acessíveis normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Feature flag DESABILITADA NÃO é exibida na atividade de Arquivo">
+			<summary>
+				
+Verificar que, com a feature flag de marca d'água desabilitada, a seção 'Marca d'água no arquivo' NÃO é exibida no formulário de criação/edição de atividade de Arquivo.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água DESABILITADA na organização
+Curso previamente cadastrado</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar o curso previamente cadastrado						
+					</actions>
+					<expectedresults>
+						
+Tela de edição do curso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Clicar no botão 'Adicionar atividade'						
+					</actions>
+					<expectedresults>
+						
+Modal de seleção de tipo de atividade é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Selecionar o tipo 'Arquivo'						
+					</actions>
+					<expectedresults>
+						
+Formulário de criação de atividade de Arquivo é exibido						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a NÃO exibição da seção 'Marca d'água no arquivo'						
+					</actions>
+					<expectedresults>
+						
+Seção 'Marca d'água no arquivo' NÃO é exibida. Demais campos do formulário (Arquivo, Segurança, Resumo da atividade) continuam acessíveis normalmente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Feature flag de HABILITADA para DESABILITADA continuam funcionando">
+			<summary>
+				
+Verificar que, ao desabilitar a feature flag após atividades terem sido cadastradas com marca d'água, as atividades existentes continuam acessíveis e a marca d'água deixa de ser exibida no Aprender (ou continua, conforme regra de negócio definida).				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Atividades de vídeo e arquivo previamente cadastradas com marca d'água habilitada (feature flag estava habilitada no momento do cadastro)
+Feature flag de marca d'água DESABILITADA após o cadastro</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Logar como Admin e abrir a atividade de vídeo previamente cadastrada para edição						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição é exibido. Seção 'Marca d'água no vídeo' NÃO é exibida (feature flag desabilitada). Demais campos seguem acessíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Salvar a atividade sem alterações						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva sem erros. Toast de sucesso é exibida com o texto 'Alterações salvas com sucesso.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como Aluno matriculado e acessar a atividade de vídeo no Aprender						
+					</actions>
+					<expectedresults>
+						
+Vídeo é reproduzido normalmente sem erros (sem marca d'água exibida, dado que a feature está desabilitada na organização)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a atividade de arquivo no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo é exibido normalmente sem erros (sem marca d'água exibida)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Feature flag de DESABILITADA para HABILITADA continuam funcionando">
+			<summary>
+				
+Verificar que ao habilitar a feature flag pela primeira vez na organização, as atividades de vídeo e arquivo já cadastradas NÃO passam a exibir marca d'água automaticamente (somente quando o Admin configurar manualmente).				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água DESABILITADA inicialmente
+Atividades de vídeo e arquivo previamente cadastradas SEM marca d'água
+Feature flag de marca d'água HABILITADA posteriormente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Logar como Aluno matriculado e acessar a atividade de vídeo no Aprender						
+					</actions>
+					<expectedresults>
+						
+Vídeo é reproduzido normalmente sem marca d'água (atividade não foi configurada)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar a atividade de arquivo no Aprender						
+					</actions>
+					<expectedresults>
+						
+Arquivo é exibido normalmente SEM marca d'água estar com o checkbox marcado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como Admin e abrir a atividade de vídeo para edição						
+					</actions>
+					<expectedresults>
+						
+Formulário exibe a seção 'Marca d'água no vídeo' com o checkbox 'Habilitar marca d'água no vídeo' DESMARCADO por default						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como Admin e abrir a atividade de arquivo para edição						
+					</actions>
+					<expectedresults>
+						
+Formulário exibe a seção 'Marca d'água no arquivo' com o checkbox 'Habilitar marca d'água no arquivo' DESMARCADO por default						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Tabela do banco de dados">
+		<testcase name="Estrutura das tabelas operacionais de marca d'água">
+			<summary>
+				
+Verificar que as três tabelas operacionais previstas foram criadas no banco com as colunas, tipos, constraints (NOT NULL, DEFAULT, PK) e foreign keys esperadas.				
+			</summary>
+			<preconditions>Acesso ao banco de dados do ambiente Stage
+Feature flag de marca d'água habilitada no ambiente</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Verificar a existência da tabela 'water_mark_config'						
+					</actions>
+					<expectedresults>
+						
+Tabela 'water_mark_config' existe no schema. Estrutura contém colunas de identificação (id, account_id ou organization_id), referência à atividade de origem, tipo (vídeo ou arquivo), flag de habilitado, timestamps (created_at, updated_at) e demais colunas previstas no modelo						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a existência da tabela 'water_mark_config_params'						
+					</actions>
+					<expectedresults>
+						
+Tabela 'water_mark_config_params' existe no schema. Estrutura contém colunas de parâmetros (tamanho da fonte, cor da fonte, tipo de exibição), foreign key para 'water_mark_config' e timestamps						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar a existência da tabela 'water_mark_config_params_index_0'						
+					</actions>
+					<expectedresults>
+						
+Tabela 'water_mark_config_params_index_0' existe no schema. Estrutura contém colunas para os valores multi-seleção (informações a exibir e posições), foreign key para 'water_mark_config_params' e timestamps						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Verificar relacionamentos entre as três tabelas						
+					</actions>
+					<expectedresults>
+						
+Foreign keys estão definidas conforme modelo: 'water_mark_config_params' referencia 'water_mark_config'; 'water_mark_config_params_index_0' referencia 'water_mark_config_params'. Constraints de integridade (ON DELETE) configuradas adequadamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criação de configuração de marca d'água em vídeo persiste nas três tabelas">
+			<summary>
+				
+Verificar que ao salvar uma atividade de vídeo com marca d'água habilitada, são criados registros corretos nas tabelas 'water_mark_config', 'water_mark_config_params' e 'water_mark_config_params_index_0'.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar uma atividade de Vídeo com marca d'água habilitada, com informações 'CPF' e 'E-mail', tamanho da fonte específico, cor sólida, posições 'Lateral esquerda superior' e 'Lateral direita inferior', tipo 'Fixa', e salvar						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva. Toast de sucesso é exibida com o texto 'Alterações salvas com sucesso.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config' filtrando pelo identificador da atividade recém-criada						
+					</actions>
+					<expectedresults>
+						
+Registro criado com identificador correto da atividade, tipo = vídeo, habilitado = true, account_id/organization_id correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params' filtrando pelo registro criado em 'water_mark_config'						
+					</actions>
+					<expectedresults>
+						
+Registro criado com tamanho da fonte, cor da fonte (incluindo transparência/HEX), tipo de exibição = 'Fixa' e foreign key apontando para o registro de 'water_mark_config'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_index_0' filtrando pelo registro criado em 'water_mark_config_params'						
+					</actions>
+					<expectedresults>
+						
+Registros criados para cada valor multi-seleção: 2 registros para 'Informações a exibir' (CPF e E-mail) e 2 registros para 'Posição' (Lateral esquerda superior e Lateral direita inferior). Foreign keys apontam corretamente						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Edição de configuração de marca d'água atualiza registros nas três tabelas">
+			<summary>
+				
+Verificar que ao editar uma configuração de marca d'água, os registros existentes nas três tabelas são atualizados (não duplicados, salvo nos casos de multi-seleção) e os timestamps são atualizados.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Capturar os identificadores (id) e timestamp (updated_at) dos registros atuais nas três tabelas para a atividade						
+					</actions>
+					<expectedresults>
+						
+IDs e timestamps atuais são registrados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Editar a atividade alterando o campo 'Informações a exibir' (adicionar 'IP') e alterar o 'Tamanho da fonte', e salvar						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva. Toast de sucesso é exibida com o texto 'Alterações salvas com sucesso.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar novamente as três tabelas após a edição						
+					</actions>
+					<expectedresults>
+						
+Registro principal em 'water_mark_config' permanece com mesmo id (atualização). Registro em 'water_mark_config_params' permanece com mesmo id, com 'tamanho da fonte' atualizado e 'updated_at' atualizado. Em 'water_mark_config_params_index_0' há novo registro para 'IP' adicionado, registros anteriores preservados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da atividade exclui registros nas três tabelas">
+			<summary>
+				
+Verificar que ao excluir uma atividade que possui configuração de marca d'água, os registros nas três tabelas operacionais são removidos (ou marcados como deletados, conforme política de soft-delete).				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Capturar os identificadores dos registros nas três tabelas para a atividade						
+					</actions>
+					<expectedresults>
+						
+IDs atuais são registrados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Excluir a atividade no painel administrativo						
+					</actions>
+					<expectedresults>
+						
+Atividade é excluída. Toast de sucesso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar as três tabelas após a exclusão						
+					</actions>
+					<expectedresults>
+						
+Registros das três tabelas relacionados à atividade não estão mais visíveis em consultas padrão (excluídos ou marcados como deletados conforme política de soft-delete da Twygo). Constraint ON DELETE CASCADE garante a integridade						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Configuração de marca d'água em ARQUIVO persiste nas três tabelas">
+			<summary>
+				
+Verificar que ao salvar uma atividade de arquivo com marca d'água habilitada, os registros nas três tabelas são criados corretamente, considerando que para arquivos NÃO há campos 'Posição' e 'Tipo de exibição'.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar uma atividade de Arquivo com marca d'água habilitada, com informações 'CPF', 'E-mail' e 'IP', tamanho da fonte específico e cor sólida, e salvar						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva. Toast de sucesso é exibida com o texto 'Alterações salvas com sucesso.'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config' filtrando pelo identificador da atividade recém-criada						
+					</actions>
+					<expectedresults>
+						
+Registro criado com identificador correto, tipo = arquivo, habilitado = true, account_id/organization_id correto						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params' filtrando pelo registro criado em 'water_mark_config'						
+					</actions>
+					<expectedresults>
+						
+Registro criado com tamanho da fonte e cor da fonte. Colunas referentes a 'posição' e 'tipo de exibição' estão nulas/default (conforme modelo de dados) já que arquivos não possuem essas configurações						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_index_0' filtrando pelo registro criado em 'water_mark_config_params'						
+					</actions>
+					<expectedresults>
+						
+Registros criados apenas para 'Informações a exibir' (CPF, E-mail e IP). NÃO existem registros para 'Posição'						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Trial">
+		<testcase name="Criar um TRIAL com e sem a feature flag habilitada">
+			<summary>
+				
+Verificar que ao criar uma organização via URL de trial pública (https://stage.twygoead.com/new/register/steps?1), a feature de marca d'água é provisionada e as configurações pré-definidas da SophiaTech (organização modelo) são repassadas à nova organização.				
+			</summary>
+			<preconditions>Acesso à URL de trial Stage: 'https://stage.twygoead.com/new/register/steps?1'
+Organização modelo SophiaTech com configurações pré-definidas de marca d'água presentes</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Acessar a URL 'https://stage.twygoead.com/new/register/steps?1'						
+					</actions>
+					<expectedresults>
+						
+Página de registro do trial é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Completar todas as etapas de cadastro do trial						
+					</actions>
+					<expectedresults>
+						
+Trial é criado com sucesso. Usuário é redirecionado para a organização recém-criada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como Admin da organização trial recém-criada e acessar o menu 'Conteúdos'						
+					</actions>
+					<expectedresults>
+						
+Tela de listagem de conteúdos é exibida com os conteúdos pré-definidos repassados da SophiaTech						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir uma atividade de vídeo pré-definida que possui marca d'água configurada na SophiaTech						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição da atividade é exibido com a marca d'água habilitada e configurações idênticas às da SophiaTech (informações, tamanho da fonte, cor, posição e tipo de exibição preservados)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir uma atividade de arquivo pré-definida que possui marca d'água configurada na SophiaTech						
+					</actions>
+					<expectedresults>
+						
+Formulário de edição da atividade é exibido com a marca d'água habilitada e configurações idênticas às da SophiaTech (informações, tamanho da fonte e cor preservados)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Criação de trial via API — repasse da configuração padrão de marca d'água">
+			<summary>
+				
+Verificar que ao criar uma organização via API de external_onboarding (https://stage.twygo.com/api/v2/external_onboarding), a feature de marca d'água é provisionada e as configurações pré-definidas da SophiaTech são repassadas à nova organização.				
+			</summary>
+			<preconditions>Token de acesso válido para a API de external_onboarding
+Organização modelo SophiaTech com configurações pré-definidas de marca d'água presentes
+Acesso ao banco de dados ou ao painel administrativo da nova organização para validação</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Enviar requisição POST 'https://stage.twygo.com/api/v2/external_onboarding' com payload válido conforme contrato da API						
+					</actions>
+					<expectedresults>
+						
+Status 201 Created (ou status de sucesso conforme contrato). Body contém identificador da nova organização criada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acessar o painel administrativo da nova organização criada via API						
+					</actions>
+					<expectedresults>
+						
+Painel administrativo é exibido. Conteúdos pré-definidos repassados da SophiaTech estão disponíveis						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir uma atividade de vídeo pré-definida com marca d'água						
+					</actions>
+					<expectedresults>
+						
+Configurações de marca d'água idênticas às da SophiaTech são exibidas (habilitada, informações, tamanho, cor, posição e tipo de exibição preservados)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Abrir uma atividade de arquivo pré-definida com marca d'água						
+					</actions>
+					<expectedresults>
+						
+Configurações de marca d'água idênticas às da SophiaTech são exibidas (habilitada, informações, tamanho e cor preservados)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+[Validação Manual] Consultar as tabelas 'water_mark_config', 'water_mark_config_params' e 'water_mark_config_params_index_0' filtrando pela nova organização						
+					</actions>
+					<expectedresults>
+						
+Registros das três tabelas existem na nova organização replicando os dados da SophiaTech						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão de trial — todas as informações pré-definidas são removidas">
+			<summary>
+				
+Verificar que ao excluir uma organização trial criada com configurações pré-definidas da SophiaTech, todos os registros das três tabelas operacionais e das três tabelas de log relacionados às configurações pré-definidas dessa organização são excluídos.				
+			</summary>
+			<preconditions>Trial previamente criado (via URL ou API) com configurações pré-definidas da SophiaTech ativas
+Acesso administrativo capaz de acionar a exclusão de trial
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Capturar os identificadores dos registros nas seis tabelas (operacionais + logs) relacionados ao trial						
+					</actions>
+					<expectedresults>
+						
+IDs atuais dos registros são listados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acionar o processo de exclusão do trial						
+					</actions>
+					<expectedresults>
+						
+Trial é excluído conforme processo padrão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config' filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado para a organização excluída						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params' filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado para a organização excluída						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_index_0' filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado para a organização excluída						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar as tabelas 'water_mark_config_logs', 'water_mark_config_params_logs' e 'water_mark_config_params_index_0_logs' filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro de log da organização excluída permanece após a exclusão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>6</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão de trial — informações criadas pelos adm também são removidas">
+			<summary>
+				
+Verificar que ao excluir uma organização trial, configurações de marca d'água criadas pelo administrador (além das pré-definidas da SophiaTech) também são removidas das três tabelas operacionais e das três tabelas de log.				
+			</summary>
+			<preconditions>Trial previamente criado com configurações pré-definidas + configurações adicionais criadas pelo administrador (atividades novas com marca d'água habilitada)
+Acesso administrativo capaz de acionar a exclusão de trial
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Logar como Admin do trial e criar uma atividade de vídeo nova com marca d'água habilitada						
+					</actions>
+					<expectedresults>
+						
+Atividade é criada e salva. Toast 'Alterações salvas com sucesso.' exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Criar uma atividade de arquivo nova com marca d'água habilitada						
+					</actions>
+					<expectedresults>
+						
+Atividade é criada e salva. Toast 'Alterações salvas com sucesso.' exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Capturar os identificadores dos registros criados manualmente nas três tabelas operacionais e nas três tabelas de log						
+					</actions>
+					<expectedresults>
+						
+IDs dos registros adicionais são listados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Acionar o processo de exclusão do trial						
+					</actions>
+					<expectedresults>
+						
+Trial é excluído conforme processo padrão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar as seis tabelas filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro (nem pré-definido nem criado pelo administrador) permanece nas seis tabelas após a exclusão						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Banco histórico">
+		<testcase name="Worker HistoricBaseCron exclui registros das três tabelas ao excluir org">
+			<summary>
+				
+Verificar que, ao executar o worker HistoricBaseCron para uma organização excluída, todos os registros relativos a marca d'água nas três tabelas operacionais (water_mark_config, water_mark_config_params, water_mark_config_params_index_0) são removidos do banco histórico.				
+			</summary>
+			<preconditions>Organização previamente cadastrada com configurações de marca d'água em vídeos e arquivos
+Organização marcada como excluída
+Acesso administrativo para executar o worker 'HistoricBaseCron' para a organização
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Capturar os identificadores dos registros da organização nas tabelas 'water_mark_config', 'water_mark_config_params' e 'water_mark_config_params_index_0' antes da execução do worker						
+					</actions>
+					<expectedresults>
+						
+IDs atuais são listados (existência dos registros confirmada)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker 'HistoricBaseCron' para a organização excluída						
+					</actions>
+					<expectedresults>
+						
+Worker conclui a execução sem erros. Logs do worker confirmam o processamento da organização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config' filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado para a organização (registros foram removidos pelo worker)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params' filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado para a organização (registros foram removidos pelo worker)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_index_0' filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado para a organização (registros foram removidos pelo worker)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Worker HistoricBaseCron exclui registros das três tabelas de logs">
+			<summary>
+				
+Verificar que, ao executar o worker HistoricBaseCron para uma organização excluída, todos os registros de log relativos a marca d'água (water_mark_config_logs, water_mark_config_params_logs, water_mark_config_params_index_0_logs) são removidos do banco histórico.				
+			</summary>
+			<preconditions>Organização previamente cadastrada com operações registradas nas tabelas de log de marca d'água
+Organização marcada como excluída
+Acesso administrativo para executar o worker 'HistoricBaseCron' para a organização
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Capturar os identificadores dos registros da organização nas tabelas 'water_mark_config_logs', 'water_mark_config_params_logs' e 'water_mark_config_params_index_0_logs' antes da execução do worker						
+					</actions>
+					<expectedresults>
+						
+IDs atuais são listados (existência dos registros confirmada)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker 'HistoricBaseCron' para a organização excluída						
+					</actions>
+					<expectedresults>
+						
+Worker conclui a execução sem erros. Logs do worker confirmam o processamento da organização						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_logs' filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro de log encontrado para a organização (registros foram removidos pelo worker)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_logs' filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro de log encontrado para a organização (registros foram removidos pelo worker)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_index_0_logs' filtrando pela organização excluída						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro de log encontrado para a organização (registros foram removidos pelo worker)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Worker HistoricBaseCron NÃO afeta registros de outras organizações ativas">
+			<summary>
+				
+Verificar que, ao executar o worker HistoricBaseCron para uma organização específica, registros de marca d'água de outras organizações (ativas ou inativas) permanecem intactos.				
+			</summary>
+			<preconditions>Duas organizações cadastradas no ambiente: Organização A (ativa, com configurações de marca d'água) e Organização B (excluída, com configurações de marca d'água)
+Acesso administrativo para executar o worker 'HistoricBaseCron' para a Organização B
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Capturar os identificadores dos registros da Organização A nas seis tabelas (operacionais + logs) antes da execução						
+					</actions>
+					<expectedresults>
+						
+IDs da Organização A são listados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Executar o worker 'HistoricBaseCron' apenas para a Organização B (excluída)						
+					</actions>
+					<expectedresults>
+						
+Worker conclui a execução para a Organização B sem erros						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar as seis tabelas filtrando pela Organização B						
+					</actions>
+					<expectedresults>
+						
+Nenhum registro encontrado para a Organização B (registros foram removidos)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar as seis tabelas filtrando pela Organização A						
+					</actions>
+					<expectedresults>
+						
+Todos os registros da Organização A permanecem intactos (registros não foram afetados pela execução do worker para a Organização B)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+	<testsuite name="Logs">
+		<testcase name="Criação de configuração de marca d'água registra log nas três tabelas">
+			<summary>
+				
+Verificar que ao salvar uma atividade com marca d'água habilitada pela primeira vez, são criados registros de log nas tabelas 'water_mark_config_logs', 'water_mark_config_params_logs' e 'water_mark_config_params_index_0_logs' com a operação de CREATE.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Criar uma atividade de Vídeo com marca d'água habilitada (informações: CPF e E-mail; posição: Lateral esquerda superior) e salvar						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva. Toast 'Alterações salvas com sucesso.' exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_logs' filtrando pelo registro criado em 'water_mark_config'						
+					</actions>
+					<expectedresults>
+						
+Registro de log criado com operação CREATE, identificação do usuário Admin que realizou a ação, timestamp da operação e dados antes/depois conforme estrutura padrão de logs						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_logs' filtrando pelo registro criado em 'water_mark_config_params'						
+					</actions>
+					<expectedresults>
+						
+Registro de log criado com operação CREATE, identificação do usuário Admin, timestamp e dados dos parâmetros (tamanho da fonte, cor, tipo de exibição)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_index_0_logs' filtrando pelos registros criados em 'water_mark_config_params_index_0'						
+					</actions>
+					<expectedresults>
+						
+Múltiplos registros de log criados, um para cada valor multi-seleção (informações + posições). Operação CREATE, identificação do usuário Admin e timestamp						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Edição de configuração de marca d'água registra log de UPDATE">
+			<summary>
+				
+Verificar que ao alterar parâmetros de uma configuração de marca d'água existente, são criados registros de log de UPDATE nas tabelas 'water_mark_config_params_logs' e 'water_mark_config_params_index_0_logs' contendo os valores anteriores e atuais.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada com marca d'água habilitada
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>3</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Capturar a quantidade de registros de log existentes nas três tabelas para a atividade						
+					</actions>
+					<expectedresults>
+						
+Quantidade atual de logs é registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Editar a atividade alterando o campo 'Tamanho da fonte' para um novo valor e o campo 'Informações a exibir' (adicionar 'IP'), e salvar						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva. Toast 'Alterações salvas com sucesso.' exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_logs' após a edição						
+					</actions>
+					<expectedresults>
+						
+Novo registro de log criado com operação UPDATE, identificação do usuário Admin, timestamp, valor anterior do tamanho da fonte e valor atual						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_index_0_logs' após a edição						
+					</actions>
+					<expectedresults>
+						
+Novo registro de log criado para a adição do valor 'IP' na opção 'Informações a exibir' (CREATE) ou conforme política de log da tabela index						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Desabilitar marca d'água em atividade gera log em 'water_mark_config_logs'">
+			<summary>
+				
+Verificar que ao desmarcar o checkbox 'Habilitar marca d'água' em uma atividade configurada e salvar, é criado um registro de log de UPDATE na tabela 'water_mark_config_logs' indicando a mudança de habilitado=true para habilitado=false.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de vídeo (ou arquivo) previamente cadastrada com marca d'água HABILITADA
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Capturar a quantidade de registros de log existentes na tabela 'water_mark_config_logs' para a atividade						
+					</actions>
+					<expectedresults>
+						
+Quantidade atual de logs é registrada						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Editar a atividade, desmarcar o checkbox 'Habilitar marca d'água no vídeo' (ou 'no arquivo') e salvar						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva. Toast 'Alterações salvas com sucesso.' exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_logs' após a edição						
+					</actions>
+					<expectedresults>
+						
+Novo registro de log criado com operação UPDATE, identificação do usuário Admin, timestamp e mudança de habilitado=true para habilitado=false						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Exclusão da atividade registra log de DELETE nas três tabelas de log">
+			<summary>
+				
+Verificar que ao excluir uma atividade que possui configuração de marca d'água, são criados registros de log de DELETE nas três tabelas de log operacionais.				
+			</summary>
+			<preconditions>Usuário logado como Admin
+Feature flag de marca d'água habilitada
+Atividade de vídeo (ou arquivo) previamente cadastrada com marca d'água habilitada
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Capturar os identificadores dos registros nas três tabelas operacionais e a quantidade de logs existentes nas três tabelas de log para a atividade						
+					</actions>
+					<expectedresults>
+						
+IDs e quantidades atuais são registrados						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Excluir a atividade no painel administrativo						
+					</actions>
+					<expectedresults>
+						
+Atividade é excluída. Toast de sucesso é exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar as três tabelas de log após a exclusão						
+					</actions>
+					<expectedresults>
+						
+Novos registros de log criados com operação DELETE em cada uma das três tabelas, identificação do usuário Admin que executou a exclusão e timestamp da operação						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Logs antigos (&gt;90 dias) são excluídos automaticamente em PostgreSQL">
+			<summary>
+				
+Verificar que, no banco PostgreSQL, registros de log com data de criação superior a 90 dias são automaticamente excluídos das tabelas 'water_mark_config_logs', 'water_mark_config_params_logs' e 'water_mark_config_params_index_0_logs' por mecanismo de retenção configurado.				
+			</summary>
+			<preconditions>Banco de dados PostgreSQL no ambiente Stage
+Registros de log existentes com 'created_at' superior a 90 dias para as três tabelas de log (preferencialmente preparados via massa de teste)
+Mecanismo de exclusão automática (job, trigger, partition pruning) configurado no banco
+Acesso administrativo ao banco para validação</preconditions>
+			<execution_type>1</execution_type>
+			<importance>2</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_logs' filtrando registros com 'created_at' superior a 90 dias						
+					</actions>
+					<expectedresults>
+						
+Registros candidatos à exclusão são listados (massa preparada)						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Aguardar a próxima execução do mecanismo de retenção (job/trigger) ou acionar manualmente conforme processo						
+					</actions>
+					<expectedresults>
+						
+Mecanismo de exclusão automática é executado						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar novamente a tabela 'water_mark_config_logs' filtrando registros com 'created_at' superior a 90 dias						
+					</actions>
+					<expectedresults>
+						
+Registros com idade superior a 90 dias foram excluídos. Apenas registros dentro da janela de retenção (≤90 dias) permanecem						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_logs' filtrando registros com 'created_at' superior a 90 dias						
+					</actions>
+					<expectedresults>
+						
+Registros com idade superior a 90 dias foram excluídos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>4</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar a tabela 'water_mark_config_params_index_0_logs' filtrando registros com 'created_at' superior a 90 dias						
+					</actions>
+					<expectedresults>
+						
+Registros com idade superior a 90 dias foram excluídos						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>5</step_number>
+				</step>
+			</steps>
+		</testcase>
+		<testcase name="Logs registram corretamente o usuário responsável">
+			<summary>
+				
+Verificar que, quando dois usuários Admin distintos realizam operações na mesma atividade, cada registro de log identifica corretamente o autor da operação.				
+			</summary>
+			<preconditions>Dois usuários Admin distintos (Admin A e Admin B) cadastrados na mesma organização
+Feature flag de marca d'água habilitada
+Atividade de vídeo previamente cadastrada (sem marca d'água) por Admin A
+Acesso ao banco de dados do ambiente Stage</preconditions>
+			<execution_type>1</execution_type>
+			<importance>1</importance>
+			<steps>
+				<step>
+					<actions>
+						
+Logar como Admin A, abrir a atividade para edição, habilitar a marca d'água com configurações específicas e salvar						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva por Admin A. Toast 'Alterações salvas com sucesso.' exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>1</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Logar como Admin B, abrir a mesma atividade para edição, alterar a 'Cor da fonte' e salvar						
+					</actions>
+					<expectedresults>
+						
+Atividade é salva por Admin B. Toast 'Alterações salvas com sucesso.' exibida						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>2</step_number>
+				</step>
+				<step>
+					<actions>
+						
+Consultar as tabelas 'water_mark_config_logs', 'water_mark_config_params_logs' e 'water_mark_config_params_index_0_logs' filtrando pela atividade						
+					</actions>
+					<expectedresults>
+						
+Logs de CREATE indicam Admin A como autor. Log de UPDATE da 'Cor da fonte' em 'water_mark_config_params_logs' indica Admin B como autor						
+					</expectedresults>
+					<execution_type>1</execution_type>
+					<step_number>3</step_number>
+				</step>
+			</steps>
+		</testcase>
+	</testsuite>
+</testsuite>
